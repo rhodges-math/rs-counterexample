@@ -1,0 +1,2922 @@
+[
+  {
+    "module": "Schubert.Algebra.Basic",
+    "path": "Schubert/Algebra/Basic.lean",
+    "original_path": "Schubert/Algebra/Basic.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "fbfefeba1f70467a512668bf97a9fed6dc1eea31ecd40b5266b7ecb8b5e09dd3",
+    "sha256": "72d1f846ff1cc7014219180423e121e0e4dafc7f9daeae329bdf19ac672e15d6"
+  },
+  {
+    "module": "Schubert.RS.AdjacentCompletionAllRelations",
+    "path": "Schubert/RS/AdjacentCompletionAllRelations.lean",
+    "original_path": "Schubert/RS/AdjacentCompletionAllRelations.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "ca615ac63cb3e45e241cfbfcac5979e83a15b36f4760fcf1d0dab4defbc282b9",
+    "sha256": "eb7e04630e99a8efd060f094f5138d1702c062941a3ea4d954d8a77595567180"
+  },
+  {
+    "module": "Schubert.RS.AdjacentCompletionComparison",
+    "path": "Schubert/RS/AdjacentCompletionComparison.lean",
+    "original_path": "Schubert/RS/AdjacentCompletionComparison.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "633b7989306e319b81474308d7728befba4f9d33efb94210071be7c003592c59",
+    "sha256": "ab2c242925d903df18ea748bf4b3a8ef86912f1d2b3637e47d30a437659ebe77"
+  },
+  {
+    "module": "Schubert.RS.AdjacentCompletionCyclicity",
+    "path": "Schubert/RS/AdjacentCompletionCyclicity.lean",
+    "original_path": "Schubert/RS/AdjacentCompletionCyclicity.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "2d000b609c6e107e816588738f381e52ce2f798777f37e3e8e681f0b1cc7543e",
+    "sha256": "8ec55e937a03a9aa24e4caf53dfef6431358fd22692153b7c4207e213f5cb611"
+  },
+  {
+    "module": "Schubert.RS.AdjacentCompletionEvaluation",
+    "path": "Schubert/RS/AdjacentCompletionEvaluation.lean",
+    "original_path": "Schubert/RS/AdjacentCompletionEvaluation.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "883be38ddf82758092f01a18111b0945786eae4c6932eb7446bc34a93273a8a8",
+    "sha256": "12cdd707f52fc329b6a0477fbaa446d3fbff31945be791d2e478951b80eace6a"
+  },
+  {
+    "module": "Schubert.RS.AdjacentCompletionGenerator",
+    "path": "Schubert/RS/AdjacentCompletionGenerator.lean",
+    "original_path": "Schubert/RS/AdjacentCompletionGenerator.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "fe02bcc63a58e36e01e7f650baa09bfd53e9cada8cf118c5a316a753ccfaa22c",
+    "sha256": "a99d407dd79fc24957b405c272a16c2c07386a31ec604ab2b665f5354371a48d"
+  },
+  {
+    "module": "Schubert.RS.AdjacentCompletionRelations",
+    "path": "Schubert/RS/AdjacentCompletionRelations.lean",
+    "original_path": "Schubert/RS/AdjacentCompletionRelations.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "4207b12c2b47217b8a2001f5b3655794b460af6ef9b211508daf3affb3ac340c",
+    "sha256": "d0ff24edba1d1be05a489aa16af552ac146c04d9f7acaa9e7de0e91790aa5e37"
+  },
+  {
+    "module": "Schubert.RS.AdjacentGeneratorScalar",
+    "path": "Schubert/RS/AdjacentGeneratorScalar.lean",
+    "original_path": "Schubert/RS/AdjacentGeneratorScalar.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "32f927a50b7323057003e879215011e18cfdcc8ab39d28f36c5ef3ffbe0d1ba8",
+    "sha256": "e6774b11029506032f5f04801855175f29ed60b484be9626a93edc99d35286be"
+  },
+  {
+    "module": "Schubert.RS.AtomBasis",
+    "path": "Schubert/RS/AtomBasis.lean",
+    "original_path": "Schubert/RS/AtomBasis.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "c3457a3c4719d6ec22ff954dde8315362fff638307a0b31ac5c605c67a814d06",
+    "sha256": "5b81ed0573ab5817fd72e3dac7a656b5d357587c52cfdc4d92e567803e1fdab8"
+  },
+  {
+    "module": "Schubert.RS.AtomBox",
+    "path": "Schubert/RS/AtomBox.lean",
+    "original_path": "Schubert/RS/AtomBox.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "d80114a0be070bfb05b0cf8a50efe8d7e0f10d19690afbe0781d336c7420a9ba",
+    "sha256": "7aed1fe474862eb98a6150dd76797bd786baf437ea988263c6a236b6d6f4d383"
+  },
+  {
+    "module": "Schubert.RS.AtomCoefficients",
+    "path": "Schubert/RS/AtomCoefficients.lean",
+    "original_path": "Schubert/RS/AtomCoefficients.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "08b278d6a2761e7152a7b1212d4545e9af8df2d568b489374695f2bf9f3b4b0b",
+    "sha256": "1601aa993cdc7ab72e8d7f2d887c6b90cdeb954ef8ab7b72bdd6d5c210b59e51"
+  },
+  {
+    "module": "Schubert.RS.AtomExpansionCertificate",
+    "path": "Schubert/RS/AtomExpansionCertificate.lean",
+    "original_path": "Schubert/RS/AtomExpansionCertificate.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "59b54b76b426791630ce814efb4fb3434d48d2c36c65e0ea1a7d86c2d27e55a6",
+    "sha256": "11b347118e1a668df8ec81b9dc81c500f88b83390d880320e31ceae47c583f25"
+  },
+  {
+    "module": "Schubert.RS.BasisWeightTorus",
+    "path": "Schubert/RS/BasisWeightTorus.lean",
+    "original_path": "Schubert/RS/BasisWeightTorus.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "729d46a9166e63a9f6a282259659558c1b894fdc30a7eaef548dc404f5e097f4",
+    "sha256": "31ed5d8ab757b04a18e58aa9a5f25594f937f741e241c780d407d84b46dd562b"
+  },
+  {
+    "module": "Schubert.RS.BoundedHeightMultiplicities",
+    "path": "Schubert/RS/BoundedHeightMultiplicities.lean",
+    "original_path": "Schubert/RS/BoundedHeightMultiplicities.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "8467394991eb9eba148c22db5265356dbc9432634da47d2a62d011ad903fda1e",
+    "sha256": "d7cf9f00b0fd4cf0fd08d966b517b51a8c600d2251052015c9beea7e017ea667"
+  },
+  {
+    "module": "Schubert.RS.BoundedRootProduct",
+    "path": "Schubert/RS/BoundedRootProduct.lean",
+    "original_path": "Schubert/RS/BoundedRootProduct.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "297eb6ed3fe806ea3871eda0e2e44a1828dd6f0c3945be6717fc88fb6340a820",
+    "sha256": "54ddb33a183286051cfd2b9083e55d7993bab40c2f03e94351258cd9fc523c06"
+  },
+  {
+    "module": "Schubert.RS.BoxCoordinates",
+    "path": "Schubert/RS/BoxCoordinates.lean",
+    "original_path": "Schubert/RS/BoxCoordinates.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "e1a9871a446269738e08f13c1b0f1ddf021e2c84be342e76504a610d383e4ffa",
+    "sha256": "7e7a9bbdba61ac53db2147fdccde505056938764b8f5f3fa962bac8486cf3597"
+  },
+  {
+    "module": "Schubert.RS.CoefficientWindow",
+    "path": "Schubert/RS/CoefficientWindow.lean",
+    "original_path": "Schubert/RS/CoefficientWindow.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "301a23a34da079bf959586c9e33bf9327cee5395f6aa21f5524497f58e827caf",
+    "sha256": "690758eaf0960a2a2499af86dccaa2338c59dd3458672bd2b0a686498f1a51a3"
+  },
+  {
+    "module": "Schubert.RS.CombinedRootFactors",
+    "path": "Schubert/RS/CombinedRootFactors.lean",
+    "original_path": "Schubert/RS/CombinedRootFactors.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "d93d26fc70fe7f998d889e1e9f32068e44a0169e2a8c54b2652a6cb881bab14b",
+    "sha256": "fddf1a637ef54d6cbb740ad7899c94ee3a6fbe92bdbeb2fc7e07962ae73cf974"
+  },
+  {
+    "module": "Schubert.RS.CompletionEvaluationLinear",
+    "path": "Schubert/RS/CompletionEvaluationLinear.lean",
+    "original_path": "Schubert/RS/CompletionEvaluationLinear.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "bd4aaec8663ebc216632d9a1d1bd158e9d0a5b70d448c0aff700f00c87b7a361",
+    "sha256": "c0b4de204db2d7e1b32eca62233ca05098608ef22518535403b6ed6bdfa0a71a"
+  },
+  {
+    "module": "Schubert.RS.CompletionWeylRelations",
+    "path": "Schubert/RS/CompletionWeylRelations.lean",
+    "original_path": "Schubert/RS/CompletionWeylRelations.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "2d7b258ee3a0662ef22be6a0f8f8e0932be27d1e9af251b6ead6fdfdaa6d81f6",
+    "sha256": "c4fa25e717cb107551ae6bd602df67bf62c273e65e727a44d8925be74641bc4c"
+  },
+  {
+    "module": "Schubert.RS.CompositionPresentation",
+    "path": "Schubert/RS/CompositionPresentation.lean",
+    "original_path": "Schubert/RS/CompositionPresentation.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "d63748199938f5523aa14aae7c3cb447c9a6acfb75d54115b327f55936ffdbb1",
+    "sha256": "b1eac95a3440a7ba8dc13e1863125c00d32115086599fb860622ed600407eaed"
+  },
+  {
+    "module": "Schubert.RS.Compositions",
+    "path": "Schubert/RS/Compositions.lean",
+    "original_path": "Schubert/RS/Compositions.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "bd8f1b1a75c1ab4984b8e33c4005e00564c6ddbdd5ab831d1a6ad106161be742",
+    "sha256": "3b5161fdab57acc05a302bf395aad3e9238d68963a9a76ab16f244b55141cbf1"
+  },
+  {
+    "module": "Schubert.RS.ConcreteData",
+    "path": "Schubert/RS/ConcreteData.lean",
+    "original_path": "Schubert/RS/ConcreteData.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "382ede78d3e8eeea7d38db7c12f095b68438d186de8fd20f9dcb6f1ccb2f2a2c",
+    "sha256": "a1c3c5df9b3045691005aac4bfae7124f111e7d4e71264f8b8d4e5a5aba33854"
+  },
+  {
+    "module": "Schubert.RS.CounterexampleExtraction",
+    "path": "Schubert/RS/CounterexampleExtraction.lean",
+    "original_path": "Schubert/RS/CounterexampleExtraction.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "41572645e37291b96a9986a306b81933e55f1a3ae6b469d775c4c8dd7d2ae70d",
+    "sha256": "b716e0b27fb431ee548e446d0ad5484de916ee737604403333e9e7828befd658"
+  },
+  {
+    "module": "Schubert.RS.DominantFlagCharacter",
+    "path": "Schubert/RS/DominantFlagCharacter.lean",
+    "original_path": "Schubert/RS/DominantFlagCharacter.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "53e8d7743e250144b400d7fe863ca175702fc09252c6c544ab5407220d382708",
+    "sha256": "b321b5f26829ea8c9b53d3e7ff6be5aec5ca2cc12fed956fb6f7d16e306da240"
+  },
+  {
+    "module": "Schubert.RS.DoubleSourceExtraction",
+    "path": "Schubert/RS/DoubleSourceExtraction.lean",
+    "original_path": "Schubert/RS/DoubleSourceExtraction.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "df2802256bf847567e548e0b572143635dd28bb4ba6eea6a79439922e4ad1d50",
+    "sha256": "47c3f59f905ec88fdd02be3ade64496b416c85ff7f8ecbc9e05bb01c39c148a8"
+  },
+  {
+    "module": "Schubert.RS.EnvelopingOrbit",
+    "path": "Schubert/RS/EnvelopingOrbit.lean",
+    "original_path": "Schubert/RS/EnvelopingOrbit.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "dc0f6cd47d293f00f3822b15f8d118107309b89d6444e30d7963cd61476fb798",
+    "sha256": "ee2560e69e18a463e6e6502ec50d96d4d3169e73c69dc980671a53fd60711640"
+  },
+  {
+    "module": "Schubert.RS.Family.CoefficientFormulaFromRepresentation",
+    "path": "Schubert/RS/Family/CoefficientFormulaFromRepresentation.lean",
+    "original_path": "Schubert/RS/Family/AtomTheorem.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "f80e2299c55fb1fdb077f97a6fce58f40929450a17bdc0bc43d5f0d59b6c2904",
+    "sha256": "10d287979f9c4cb456f9d0e6be2cc832fe8cee71172b8611d192422309247eef"
+  },
+  {
+    "module": "Schubert.RS.Family.Coordinates",
+    "path": "Schubert/RS/Family/Coordinates.lean",
+    "original_path": "Schubert/RS/Family/Coordinates.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "1fb8a2810e1b461be57c20fb0c869d347e43f0dd6417f2450c99e515fc303109",
+    "sha256": "74a0ea7be3df1f8b437fc3c619219a8b9589783e62bae44b578cfc9b2d0a84ab"
+  },
+  {
+    "module": "Schubert.RS.Family.Data",
+    "path": "Schubert/RS/Family/Data.lean",
+    "original_path": "Schubert/RS/Family/Data.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "6f807068fb5fdece620943c94217e3a452adea87f295fc25a54257de8b05158d",
+    "sha256": "2e932b6a3918bd0216cf165b3cab59f6a91dc9475c36aa33e85b99a6d8d979ff"
+  },
+  {
+    "module": "Schubert.RS.Family.ElementarySources",
+    "path": "Schubert/RS/Family/ElementarySources.lean",
+    "original_path": "Schubert/RS/Family/ElementarySources.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "aae5746a7ca30695d1dc93d9d454d311e20ced28a9dbb5be68f69700461e6423",
+    "sha256": "1b3404b70fd034674eb524997129ce007eac36e4584b44287057b00fc3d1b456"
+  },
+  {
+    "module": "Schubert.RS.Family.FiniteFactors",
+    "path": "Schubert/RS/Family/FiniteFactors.lean",
+    "original_path": "Schubert/RS/Family/FiniteFactors.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "02c877ca6ceb8c223e7021f18b0f0351c0a18be32b31c5c5a95f849e79894044",
+    "sha256": "b5a3e410cf5684a81500cc3348f728f6590307bdad26370d6f7ea7278948553b"
+  },
+  {
+    "module": "Schubert.RS.Family.HallChoices",
+    "path": "Schubert/RS/Family/HallChoices.lean",
+    "original_path": "Schubert/RS/Family/HallChoices.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "a5fca02ee6860452ece283956add2d48bf4e7c31985b0b3541ea5812615908ec",
+    "sha256": "ec80b774ce69328e7df3f63f70998b1d772a116b997f82cd99b37a4a83850a9c"
+  },
+  {
+    "module": "Schubert.RS.Family.HallEvaluation",
+    "path": "Schubert/RS/Family/HallEvaluation.lean",
+    "original_path": "Schubert/RS/Family/HallEvaluation.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "88257bbca683903d3331ce1f5ca7f91cbc9e4112e0cf8d0bc159fa52e79c15af",
+    "sha256": "8da9b0d79c5a4d27fdb242c54a43125e99cd2daaf37753556bb30fca5c079a32"
+  },
+  {
+    "module": "Schubert.RS.Family.LaurentCoordinates",
+    "path": "Schubert/RS/Family/LaurentCoordinates.lean",
+    "original_path": "Schubert/RS/Family/LaurentCoordinates.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "45026820ca5e90e83a6a2021f5b3832202057dcffb8cde2d291b5738b0633e90",
+    "sha256": "6b4e052f95af678f31dac8531850ff20a25ac8dbf920298a0cb8d7898acf7650"
+  },
+  {
+    "module": "Schubert.RS.Family.LaurentRelabel",
+    "path": "Schubert/RS/Family/LaurentRelabel.lean",
+    "original_path": "Schubert/RS/Family/LaurentRelabel.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "cbd57caf2d09ba9a274a3f108ce581851cec8ae024b0d01e530783e67ad05d29",
+    "sha256": "a178f36bcf1be0be325e94966e2a3c8067ab47b76901050e4cc4ec6497654a7c"
+  },
+  {
+    "module": "Schubert.RS.Family.MarkedPairs",
+    "path": "Schubert/RS/Family/MarkedPairs.lean",
+    "original_path": "Schubert/RS/Family/MarkedPairs.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "fcb721165ec67d4a4c4b8e1ad204f0b6ad17a53e011d3d0906280d1829ea01a3",
+    "sha256": "f572feab9f18b92542b922799970070c81fd4aee862dfba33e24e53469ae9037"
+  },
+  {
+    "module": "Schubert.RS.Family.MarkedSelections",
+    "path": "Schubert/RS/Family/MarkedSelections.lean",
+    "original_path": "Schubert/RS/Family/MarkedSelections.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "28aff4a7de945119af1d1e26b1dfd50d23f134228d83d6744116f034c602bb0f",
+    "sha256": "48703f3b41105a6981969fb939234c5d93dd9be67ec3da60623ded259c21f9f8"
+  },
+  {
+    "module": "Schubert.RS.Family.NestedCoordinates",
+    "path": "Schubert/RS/Family/NestedCoordinates.lean",
+    "original_path": "Schubert/RS/Family/NestedCoordinates.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "2f3146eb785613795d2a2db9bc07fa2ed68663ce77921d74c2cbce01d1baf01d",
+    "sha256": "a2be65e038f1899cf9f8b8f525d0100514bd6f5b2ef7f39aad48bd1b300e6b5e"
+  },
+  {
+    "module": "Schubert.RS.Family.NestedFactors",
+    "path": "Schubert/RS/Family/NestedFactors.lean",
+    "original_path": "Schubert/RS/Family/NestedFactors.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "d24ef242fb682c4084d5cf7bbc3537f32892ffde1c4f7c363bc97b51c7d319e9",
+    "sha256": "58dfba96352c0243984bc84d9c911db6b96e9d453f1ef3739435c45c5aae2d8c"
+  },
+  {
+    "module": "Schubert.RS.Family.CoefficientFormulaFromPBW",
+    "path": "Schubert/RS/Family/CoefficientFormulaFromPBW.lean",
+    "original_path": "Schubert/RS/Family/PBWOnlyTheorem.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "4bc0dce225abe785e43278933eef27f96e2894278d56d9746b406c21bf6740b3",
+    "sha256": "7d063a8b5eef6f7b4ffe2bc84ff5fb02c140772e02210f6d204dbcffa2ce19b8"
+  },
+  {
+    "module": "Schubert.RS.Family.PaperSlots",
+    "path": "Schubert/RS/Family/PaperSlots.lean",
+    "original_path": "Schubert/RS/Family/PaperSlots.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "1aa19caed0e836b0a5c897620294c1c8d4a4568e19199b11193eefa1a7d890b5",
+    "sha256": "8c52f3877f0f53aa512d3e0f3e28115cf5ab54e022172dd8fbd8e5a6df07b423"
+  },
+  {
+    "module": "Schubert.RS.Family.RootGrouping",
+    "path": "Schubert/RS/Family/RootGrouping.lean",
+    "original_path": "Schubert/RS/Family/RootGrouping.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "7338632c1ccb072b8a7e9392a4bb9273c6c697edcbf81c1e696f38b13bed1c0d",
+    "sha256": "660e1026b145013fb51e12566305a5485a4ca0cdac3cf35c2a9ec821852112b3"
+  },
+  {
+    "module": "Schubert.RS.Family.RootPattern",
+    "path": "Schubert/RS/Family/RootPattern.lean",
+    "original_path": "Schubert/RS/Family/RootPattern.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "24deede22c7f48b2727bf1f6c8651d5e8419cd9932209f03334820326249926e",
+    "sha256": "0625816c7f11257e03b65ffa040c64d6b59e83937aec62ce968da4f91629cc1b"
+  },
+  {
+    "module": "Schubert.RS.Family.RootWindow",
+    "path": "Schubert/RS/Family/RootWindow.lean",
+    "original_path": "Schubert/RS/Family/RootWindow.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "08b0b2f712b721c28ac3316e0c8c8972907d6aaf18ff26e3087109ea5872da93",
+    "sha256": "6c44e54584f54a6be76f863751b5ef0c3091c21be1d954a36f997139729c071b"
+  },
+  {
+    "module": "Schubert.RS.Family.Sign",
+    "path": "Schubert/RS/Family/Sign.lean",
+    "original_path": "Schubert/RS/Family/Sign.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "a05dcfe54fe5f2304fb8fa3db9eff2f487ff34886f5f30b2c93227b7d61633e6",
+    "sha256": "ad90818cf010283e6e28f5e4fbb678ed61de75239eee63282732c4a43913ffee"
+  },
+  {
+    "module": "Schubert.RS.Family.Slots",
+    "path": "Schubert/RS/Family/Slots.lean",
+    "original_path": "Schubert/RS/Family/Slots.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "75005119c6fa249200c353638ae08f14f45719bb5c53abb0c10ea8f35e647c5c",
+    "sha256": "98b1dbdbe340c60b9495c526aee71c4071d78625372e610dd5958f5274933f73"
+  },
+  {
+    "module": "Schubert.RS.Family.SourceProducts",
+    "path": "Schubert/RS/Family/SourceProducts.lean",
+    "original_path": "Schubert/RS/Family/SourceProducts.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "ab76311078bb2ee44661605a1de07b9913aa5ee41c7a7b5aa66a03b420131a92",
+    "sha256": "be7b3c0fabea07b7d25e869fe8ab0f8358ddf6278901a7a72ec5386943b2fc82"
+  },
+  {
+    "module": "Schubert.RS.Family.SourceSelections",
+    "path": "Schubert/RS/Family/SourceSelections.lean",
+    "original_path": "Schubert/RS/Family/SourceSelections.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "2dd55b5e61b99cb4268030c21f129d2903e4e0a26461b1c7289246c4d4bfd956",
+    "sha256": "25303aca1743ffb2931604663e23952efccce1d1fe008a00f5e77a3d8f2d3aac"
+  },
+  {
+    "module": "Schubert.RS.Family.SourceSlots",
+    "path": "Schubert/RS/Family/SourceSlots.lean",
+    "original_path": "Schubert/RS/Family/SourceSlots.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "7613c0f4f2f37330eeeee570d5cdb324246a5bb34d27c232fa71608beff8cd65",
+    "sha256": "f4303fc7dba56b077d0b0a0008358644aab5883de9e68d19d6d7a379f850b203"
+  },
+  {
+    "module": "Schubert.RS.Family.SplitRoots",
+    "path": "Schubert/RS/Family/SplitRoots.lean",
+    "original_path": "Schubert/RS/Family/SplitRoots.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "5f5ad51ceb4eab47db1b076c6127639d75c8b807f4bacd3da2b80418ae4c531b",
+    "sha256": "5a5cfd80a61d77a3d5b8fb3ed04b5df0b28989e2420036e0f794adc3e29cd5c6"
+  },
+  {
+    "module": "Schubert.RS.Family.TermWeights",
+    "path": "Schubert/RS/Family/TermWeights.lean",
+    "original_path": "Schubert/RS/Family/TermWeights.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "97b770aabec58692a133354ede503710b45da4e0c9be0fec45ad448723c1189e",
+    "sha256": "eccdc3b4384d2f3e8478dfabcd57ca219342559540076442c40e1a92a7652a8b"
+  },
+  {
+    "module": "Schubert.RS.Family.RectangleFormula",
+    "path": "Schubert/RS/Family/RectangleFormula.lean",
+    "original_path": "Schubert/RS/Family/Theorem.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "1bc956c219dde4941948a577610165bdc301c10cd659135f9d1fa6bd3c9bc657",
+    "sha256": "b4542976d261ba81f94fd4252d4ebaed80bf60e80d3be4abacee08cdce1cf84f"
+  },
+  {
+    "module": "Schubert.RS.Family.Truncation",
+    "path": "Schubert/RS/Family/Truncation.lean",
+    "original_path": "Schubert/RS/Family/Truncation.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "5f557651f53021bf9f731c26d218d9129b030bb723dc1a6859060d15a20dce1f",
+    "sha256": "762a286db6101d65a212a9dbc0ffff121f0294d202b807e6e4fddac7a6b565db"
+  },
+  {
+    "module": "Schubert.RS.Family.TwoSourceCount",
+    "path": "Schubert/RS/Family/TwoSourceCount.lean",
+    "original_path": "Schubert/RS/Family/TwoSourceCount.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "b524b12843b8e20369330491b10041d3551da154aebdd3691bfe6e2ba57bab0e",
+    "sha256": "f41a768940c909d488517a11db1d20fb2ac5a5f2e5e6ae785c0e1a9988d42360"
+  },
+  {
+    "module": "Schubert.RS.Family.Audit",
+    "path": "Schubert/RS/Family/Audit.lean",
+    "original_path": "Schubert/RS/Family/UnconditionalAudit.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "3ef2989debbfaa7ce92c3790e9e87fc98dfad03516565dc32d0952c2002a507c",
+    "sha256": "ec8498346988a159ca93ec5800519160efac66b9c55e8abc1f1107c8342025f1"
+  },
+  {
+    "module": "Schubert.RS.Family.Main",
+    "path": "Schubert/RS/Family/Main.lean",
+    "original_path": "Schubert/RS/Family/UnconditionalTheorem.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "7505eec8591d0cf670b24b30c5f14d46642fe2f0a8fff9f227d56abb160b8527",
+    "sha256": "fe598238f2f9ce2479f7caaa7b034f733a8193b3ec5c12ebb5408ad55ea2df6f"
+  },
+  {
+    "module": "Schubert.RS.Family.WindowData",
+    "path": "Schubert/RS/Family/WindowData.lean",
+    "original_path": "Schubert/RS/Family/WindowData.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "2500d018719c6f5d2f070d6f16bfe797ff41e2d967ce62389b23507a6e2d3758",
+    "sha256": "868f0f7712d65ccb1fa328da1e5fddb7d03a9b569a24cd3a75437e1196e134d7"
+  },
+  {
+    "module": "Schubert.RS.FiniteCoefficientSums",
+    "path": "Schubert/RS/FiniteCoefficientSums.lean",
+    "original_path": "Schubert/RS/FiniteCoefficientSums.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "6e101d7454a523cc4fca1bc65f5be3dda3d2a755e6e0a3920feafbeaf174fc48",
+    "sha256": "9cfeedf5ec7bae1d0b264e933f3980bd284162fe8e200d4b375010beec238cb9"
+  },
+  {
+    "module": "Schubert.RS.FiniteSlotProduct",
+    "path": "Schubert/RS/FiniteSlotProduct.lean",
+    "original_path": "Schubert/RS/FiniteSlotProduct.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "6439f270cb117e99042c31367df9a28b0bf320b869150e429ed7c2a1ee20831c",
+    "sha256": "b67902fde22a9915e419f020986a3c6ff4434ef5ab75fb9f3a91baa3fc6da421"
+  },
+  {
+    "module": "Schubert.RS.FirstPathIntersection",
+    "path": "Schubert/RS/FirstPathIntersection.lean",
+    "original_path": "Schubert/RS/FirstPathIntersection.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "708517ff380218e09ddb71e1f319ae0e67bfdf6767c325925a9f81fab882406d",
+    "sha256": "c6c3d51e4ac0ed8a9f0dabbff222bbe5dbfa1a5d63b1c3f8f64ae6b0bfc328c9"
+  },
+  {
+    "module": "Schubert.RS.FlagCharacterInduction",
+    "path": "Schubert/RS/FlagCharacterInduction.lean",
+    "original_path": "Schubert/RS/FlagCharacterInduction.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "3db392ec1109087ed90136f1f7bda725ddde31c8279afd230976b67b8cf42df2",
+    "sha256": "c365dc7ba24a9ac7ed090ddfcc39753a0d30e8e1681bbd0478323f15f415cb57"
+  },
+  {
+    "module": "Schubert.RS.FlagPresentationRelations",
+    "path": "Schubert/RS/FlagPresentationRelations.lean",
+    "original_path": "Schubert/RS/FlagPresentationRelations.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "f6bda0761083de5d52e2c8fb9ba7c7fb3931ed98788701771f556d718dd7aca7",
+    "sha256": "6510c9fbec280d38bd260bef08627086f82a4e843c9dd37c971b6adcf48d7776"
+  },
+  {
+    "module": "Schubert.RS.FlagRootStringBasis",
+    "path": "Schubert/RS/FlagRootStringBasis.lean",
+    "original_path": "Schubert/RS/FlagRootStringBasis.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "b3eae04ff01371d7590530ddd99dcf37f0f4aa246d88083259967aea3c65f5e6",
+    "sha256": "1e45733276c4d43180936e3124b9458d0e19272d973b92a29d3dc78becf3a2c6"
+  },
+  {
+    "module": "Schubert.RS.FlagStringCharacter",
+    "path": "Schubert/RS/FlagStringCharacter.lean",
+    "original_path": "Schubert/RS/FlagStringCharacter.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "716ffa3dd7016f2a7c419b20445f9032935e9864825b40f0a6e14cb2651b3878",
+    "sha256": "2871fcf96174eed703c0d50d72289f48252b880b27327b3dde7df3b221ed36f4"
+  },
+  {
+    "module": "Schubert.RS.FullWeightSupport",
+    "path": "Schubert/RS/FullWeightSupport.lean",
+    "original_path": "Schubert/RS/FullWeightSupport.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "45378e7e6fa48b4ff41b055f35f84d8aaaaa352c4330913b5bd7dc8f8d7210bb",
+    "sha256": "691756f1ce785e3c82b962de42582a7087fd7a5c8df1a51a79de3ef87217eb14"
+  },
+  {
+    "module": "Schubert.RS.FullWeightWindow",
+    "path": "Schubert/RS/FullWeightWindow.lean",
+    "original_path": "Schubert/RS/FullWeightWindow.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "6589dacec03adde69b5a66ef7fb59bb4b10c1621a4307765fded93335c8706f9",
+    "sha256": "d5ba9fe375f7c13cf37cb79d575600cea8454e9828a1811ea4b116e7e50322c9"
+  },
+  {
+    "module": "Schubert.RS.GlobalDuality",
+    "path": "Schubert/RS/GlobalDuality.lean",
+    "original_path": "Schubert/RS/GlobalDuality.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "b2900b3a245ce1ea65126b4250ea4842bdad9ed44419da462412d65edf1540ee",
+    "sha256": "8420194e8053fa0eccd7cfb5db00d53bfa414cfbb0bd193a9e3392956a6e04d8"
+  },
+  {
+    "module": "Schubert.RS.GradedRootDecomposition",
+    "path": "Schubert/RS/GradedRootDecomposition.lean",
+    "original_path": "Schubert/RS/GradedRootDecomposition.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "c6dc99c0558e84dcc41a8897d7d1bf82eafef425edaf2ebb22572c7f147d5732",
+    "sha256": "0a3ef0944b8d8095f92135343e2cabc9bf2f855bdd759324eb2b9b5e7a2eb3db"
+  },
+  {
+    "module": "Schubert.RS.HallDeterminant",
+    "path": "Schubert/RS/HallDeterminant.lean",
+    "original_path": "Schubert/RS/HallDeterminant.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "302a22c56b2a3a34ce6c6697c89fc535f3a74aabc0f04ebc4637895a21b7677f",
+    "sha256": "bb2614f995769950eece78823d95098f124854e2710c6ac4f1f7b9e8d49c8826"
+  },
+  {
+    "module": "Schubert.RS.HallEdgeCoordinates",
+    "path": "Schubert/RS/HallEdgeCoordinates.lean",
+    "original_path": "Schubert/RS/HallEdgeCoordinates.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "89d7d37913e32a43cea9de986cf9c8fbf9906cd402538e3a5a0e185f6e386f4c",
+    "sha256": "a18de6d69c5b0e1d3d65492dc2fa801109cfa103a71fb9b97ae0c0c986cde27d"
+  },
+  {
+    "module": "Schubert.RS.HallHeightFamilies",
+    "path": "Schubert/RS/HallHeightFamilies.lean",
+    "original_path": "Schubert/RS/HallHeightFamilies.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "41adb244235fd33b75f837fea2eaaaae8d67dfca2614eb127419942883c11f83",
+    "sha256": "613fc7b7856076104555a9285cd49b7e1488544b0ee88b08654cad8fced296dd"
+  },
+  {
+    "module": "Schubert.RS.HallLattice",
+    "path": "Schubert/RS/HallLattice.lean",
+    "original_path": "Schubert/RS/HallLattice.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "98671d9b54b5b2dcb084b09d2fd3c76c272137b7cb5fb7a9860954b8a1af3c6c",
+    "sha256": "0744ae8178796aa0662d52ea87111b2287f74e567ea1968bd4a12a85e76ad294"
+  },
+  {
+    "module": "Schubert.RS.HallLatticePoints",
+    "path": "Schubert/RS/HallLatticePoints.lean",
+    "original_path": "Schubert/RS/HallLatticePoints.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "6ba59fcf4aa6cc906e452a473348d22d0a137e8e2868941ebbb4d8f6ec344469",
+    "sha256": "598814ff22de4ff73d6bfaa50d1f86f1a2a3a987f2381c91a9451d26925fd53a"
+  },
+  {
+    "module": "Schubert.RS.HallOneEastEquivalence",
+    "path": "Schubert/RS/HallOneEastEquivalence.lean",
+    "original_path": "Schubert/RS/HallOneEastEquivalence.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "52deda9838957af6a9fc78e629ef1c129cb1a34742fa89ee7ab0963ac1327dc2",
+    "sha256": "44e71202f14648e435360d6867ea92aa8640880cc5f9afd6cf7e0ec5fd13e2ce"
+  },
+  {
+    "module": "Schubert.RS.HallOneEastWeight",
+    "path": "Schubert/RS/HallOneEastWeight.lean",
+    "original_path": "Schubert/RS/HallOneEastWeight.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "f45bf336b4377c13971a2947c3661c5aa28972bef904d8981fa5eab59af57795",
+    "sha256": "0dbd7d042b64477cb52c59c3afceab8d1083086d42546f959f13d3789dc7f56a"
+  },
+  {
+    "module": "Schubert.RS.HallPathDecode",
+    "path": "Schubert/RS/HallPathDecode.lean",
+    "original_path": "Schubert/RS/HallPathDecode.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "73b6397314576ed9df70dc22ca8a013eb17cc2b85bcd726a3c533f71ef349822",
+    "sha256": "c021b47887f4783c25d6ae4e4548e7b55be389410953948ab2572f7276e3b4a9"
+  },
+  {
+    "module": "Schubert.RS.HallPathEncode",
+    "path": "Schubert/RS/HallPathEncode.lean",
+    "original_path": "Schubert/RS/HallPathEncode.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "3612586b9e50260f6bd9a7cf30ded9600782444286424d3b0025740833dd1e47",
+    "sha256": "086157f14588cae96210ea511880d81e4a3211d8520d01dbf26ff7b3e288a9ec"
+  },
+  {
+    "module": "Schubert.RS.HallPathEndpoints",
+    "path": "Schubert/RS/HallPathEndpoints.lean",
+    "original_path": "Schubert/RS/HallPathEndpoints.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "3662099b7f05ba63e8bcc3f2648ee4b1c7104749f1a91eb4035124f61c563718",
+    "sha256": "2aced7a88d41afb6d64263c5cc8c13375d0c21e2eeb20fa7d98f7abe2fe6412c"
+  },
+  {
+    "module": "Schubert.RS.HallPathEquivalence",
+    "path": "Schubert/RS/HallPathEquivalence.lean",
+    "original_path": "Schubert/RS/HallPathEquivalence.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "553d3e4cf63cbec83ce55fc693b0e1fbffa7983dd3de7458bfed89eb41cc420f",
+    "sha256": "452954c82c6fe7aaf2479515049b95329cbb26819bfc1bc62f7a4b742fa7a8f5"
+  },
+  {
+    "module": "Schubert.RS.HallPathMatching",
+    "path": "Schubert/RS/HallPathMatching.lean",
+    "original_path": "Schubert/RS/HallPathMatching.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "4d713f538773a9d6752dfcada1688dee0d2d70bace133bb363aae83840e4a09f",
+    "sha256": "51ab473886d8fb4e5f6ee535c69b2845f32cbc535ad3310079b59d93bff6d8e6"
+  },
+  {
+    "module": "Schubert.RS.HallPathPhases",
+    "path": "Schubert/RS/HallPathPhases.lean",
+    "original_path": "Schubert/RS/HallPathPhases.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "0c1a1b43c3d89062f95fdb5f622846eeb7f347ef8211587c0f5c3da36bd0ec24",
+    "sha256": "dd363f5ea1e3f92107d23a2a4c2f1457ee8634118616778309b99ac50dc4c50d"
+  },
+  {
+    "module": "Schubert.RS.HallRowEquivalence",
+    "path": "Schubert/RS/HallRowEquivalence.lean",
+    "original_path": "Schubert/RS/HallRowEquivalence.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "6d95d3920e3bdcfaf1007606939fe488bde87f5c7f0d9df7e7ce37d4de085a2b",
+    "sha256": "2ffbd89f33cb0bef367f731f28d7afe790b7fca33a44d8d00c92a1620544bf97"
+  },
+  {
+    "module": "Schubert.RS.HallRowWeight",
+    "path": "Schubert/RS/HallRowWeight.lean",
+    "original_path": "Schubert/RS/HallRowWeight.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "ee9b2bdd47de48e16dd169ebad2ef4aa707085103c9c6696c653dd9831040e58",
+    "sha256": "b48741efc4bf32d1d20862d04ee41f009a465aa3040c3d404697a54b5989d213"
+  },
+  {
+    "module": "Schubert.RS.HallSourceExtraction",
+    "path": "Schubert/RS/HallSourceExtraction.lean",
+    "original_path": "Schubert/RS/HallSourceExtraction.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "02cc9b536151374361764f62aa29dbccb3334f80c9c52e913004cd39cf5178ef",
+    "sha256": "222506b5e0ac6cb3e2eec11db171714ee636c834924c3c012f947d67c98dceae"
+  },
+  {
+    "module": "Schubert.RS.HallSurvivorEquivalence",
+    "path": "Schubert/RS/HallSurvivorEquivalence.lean",
+    "original_path": "Schubert/RS/HallSurvivorEquivalence.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "6b916a7d0f5f8f342dedbda5dfc306cc7edab3bfc529528c377170685f738fdd",
+    "sha256": "5a316e5fc7422645237f77a5b1bf260cf60fb88faed90c0935306cadcc3bd22f"
+  },
+  {
+    "module": "Schubert.RS.HeightMultiplicities",
+    "path": "Schubert/RS/HeightMultiplicities.lean",
+    "original_path": "Schubert/RS/HeightMultiplicities.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "88759ae4d0d888b2f7fe7e36b20a62a600a2da34cd3e76fae7cd19ee899b85ba",
+    "sha256": "5279f1cdab41849d5c96c89b664a70f4c8573741ce1d04d14e1ad88b9424c0a9"
+  },
+  {
+    "module": "Schubert.RS.JosephPolo.Dominant",
+    "path": "Schubert/RS/JosephPolo/Dominant.lean",
+    "original_path": "Schubert/RS/JPExploration/Dominant.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "91be1ca427c4ff7d3c6b715536a056e7fa15e1855fb89a20f734e73ee88f85d9",
+    "sha256": "6293d369647594586f3eee08c175ab8eaa64f23452129a6c135cfe8aab5d8f41"
+  },
+  {
+    "module": "Schubert.RS.JosephPolo.AdjacentCartan",
+    "path": "Schubert/RS/JosephPolo/AdjacentCartan.lean",
+    "original_path": "Schubert/RS/JosephPolo/AdjacentCartan.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "fca5847a23ede8fdb2524ad191f0b27d3c5d57a4e0f0354980135a3c06cfbea2",
+    "sha256": "1d9e30c62d6114e9ddac367a5b1d17483a2edf10f0b32cccc9f05007c2e0fb6b"
+  },
+  {
+    "module": "Schubert.RS.JosephPolo.AdjacentComparison",
+    "path": "Schubert/RS/JosephPolo/AdjacentComparison.lean",
+    "original_path": "Schubert/RS/JosephPolo/AdjacentComparison.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "7107129f5c735f56a16d5c47bb2022a232245f9f0e6d9f58752fdfa38c0fb0db",
+    "sha256": "a1a8174fbf24f745d106ba82f4b5481c32f6f0e51d4ef23f670427bcbe67bccf"
+  },
+  {
+    "module": "Schubert.RS.JosephPolo.AdjacentTop",
+    "path": "Schubert/RS/JosephPolo/AdjacentTop.lean",
+    "original_path": "Schubert/RS/JosephPolo/AdjacentTop.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "203299e8736f31f8b109eb825203e71f5072065d08ebe34788b11a65d744cb1f",
+    "sha256": "e85aa7c062eb08cabb5ebbe4acc5e7441ff78523e299398b4710f9cf37e403b8"
+  },
+  {
+    "module": "Schubert.RS.JosephPolo.BoundaryLift",
+    "path": "Schubert/RS/JosephPolo/BoundaryLift.lean",
+    "original_path": "Schubert/RS/JosephPolo/BoundaryLift.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "a40786b3485f00b38cab0aa8460a31d44bd08e03bccc6f102d4b64371aa63413",
+    "sha256": "f7fa2257f29aa662f94a7952475f744cbef905585b743452a0ed1ec538553047"
+  },
+  {
+    "module": "Schubert.RS.JosephPolo.BruhatLifting",
+    "path": "Schubert/RS/JosephPolo/BruhatLifting.lean",
+    "original_path": "Schubert/RS/JosephPolo/BruhatLifting.lean",
+    "origin_kind": "imports-only",
+    "original_sha256": "14ceba7966fd4cbb68a136135142551045efe2a100c3231df782657ae550bdc1",
+    "sha256": "50ad92d1ff1308840b0dea547d0ec90e47ac6f226a9f2739a1b90dbe2b663c44"
+  },
+  {
+    "module": "Schubert.RS.JosephPolo.BruhatMonotonicity",
+    "path": "Schubert/RS/JosephPolo/BruhatMonotonicity.lean",
+    "original_path": "Schubert/RS/JosephPolo/BruhatMonotonicity.lean",
+    "origin_kind": "imports-only",
+    "original_sha256": "826c3cd19f783ae3de2557f90bff4af661feb613893c7c24aef38e31fc97d20b",
+    "sha256": "ef0ea7f5d014a43c05c9c02a9519e22bd89c069f68676006f2b138b730ef048b"
+  },
+  {
+    "module": "Schubert.RS.JosephPolo.CartanCovariance",
+    "path": "Schubert/RS/JosephPolo/CartanCovariance.lean",
+    "original_path": "Schubert/RS/JosephPolo/CartanCovariance.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "ce086da6e96c8ea78a264ea20fad0c97792a9a53d7406aeeffbed5f3aea4ada4",
+    "sha256": "200e768614bd207d6edf6dba91a0ad8bbe289c0a25efcbe46d26652b346adae4"
+  },
+  {
+    "module": "Schubert.RS.JosephPolo.CartanEnveloping",
+    "path": "Schubert/RS/JosephPolo/CartanEnveloping.lean",
+    "original_path": "Schubert/RS/JosephPolo/CartanEnveloping.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "34a472cd8630efb6badfc8e3961c171fb03b4905b3ad205c5bdf74b102cebb3f",
+    "sha256": "8d9dc9f8144a8dcb0f61089e515d0d3e52e9ba21ee5e9b75cf8d3c6744fb6e85"
+  },
+  {
+    "module": "Schubert.RS.JosephPolo.CartanLie",
+    "path": "Schubert/RS/JosephPolo/CartanLie.lean",
+    "original_path": "Schubert/RS/JosephPolo/CartanLie.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "83de10d4b60464237e047c08b1e02f66d51c9d7ec02feeb421d82ab240018b7f",
+    "sha256": "6dbb53a816dcad8797323acd6a7751c3b1c59074d95fa6fa08f3e3987355e6c6"
+  },
+  {
+    "module": "Schubert.RS.JosephPolo.ChainIndependence",
+    "path": "Schubert/RS/JosephPolo/ChainIndependence.lean",
+    "original_path": "Schubert/RS/JosephPolo/ChainIndependence.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "a1b932184b5c61d62c240206f361d1e4c5d2d33f9fac857c06c0dbc2b35104f7",
+    "sha256": "6a5dda2287a44cc8fa1caa2cb3da018b5f8b97562414e4b0d43f8996c612ebde"
+  },
+  {
+    "module": "Schubert.RS.JosephPolo.ChainStrings",
+    "path": "Schubert/RS/JosephPolo/ChainStrings.lean",
+    "original_path": "Schubert/RS/JosephPolo/ChainStrings.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "57c1ce3dc17a782a8dd4e201bb25039eb37b23a1e6c62be2efc8a50c4788773f",
+    "sha256": "a37aa51ad656ca385817ff6f2ffbc003810dad8839e3e12d28649dbb79849a28"
+  },
+  {
+    "module": "Schubert.RS.JosephPolo.ColumnPartition",
+    "path": "Schubert/RS/JosephPolo/ColumnPartition.lean",
+    "original_path": "Schubert/RS/JosephPolo/ColumnPartition.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "33fbacb2c0bb499073a37c2ca1dbfe411103837b9feae9bf7060064bd8a749b3",
+    "sha256": "aeef5683675d16f6cf82e145e7c06d3f76d53cb8f3fae08ee3662aa8408df99f"
+  },
+  {
+    "module": "Schubert.RS.JosephPolo.ColumnProducts",
+    "path": "Schubert/RS/JosephPolo/ColumnProducts.lean",
+    "original_path": "Schubert/RS/JosephPolo/ColumnProducts.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "5a8b66c10fd8a47d4a2a4eba58100008b0bb7c6809d96a21a0cc904983839bec",
+    "sha256": "95ba3a081f86b5d01a3415e3dee4361c75f4fdc7e62a4ae3b3e90c834d9a8b82"
+  },
+  {
+    "module": "Schubert.RS.JosephPolo.ColumnRealization",
+    "path": "Schubert/RS/JosephPolo/ColumnRealization.lean",
+    "original_path": "Schubert/RS/JosephPolo/ColumnRealization.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "2ddb57cda41f42a56a6691113c2a4cd7c51be3d354c0324376ef9d7e1e869c17",
+    "sha256": "cf04d7d348fa17ca8a55aac51b681dbc2c83da04352569627bc7b387f57747bb"
+  },
+  {
+    "module": "Schubert.RS.JosephPolo.ColumnReflections",
+    "path": "Schubert/RS/JosephPolo/ColumnReflections.lean",
+    "original_path": "Schubert/RS/JosephPolo/ColumnReflections.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "a96cc3b4379681bd3d6bf60b567d5360673f2a41570b7e828cac48b04472e4ea",
+    "sha256": "b0f65e779d2fa6cfe011011317abc20aa30d28154e71b215bfa91ed88633a613"
+  },
+  {
+    "module": "Schubert.RS.JosephPolo.ColumnStringCharacters",
+    "path": "Schubert/RS/JosephPolo/ColumnStringCharacters.lean",
+    "original_path": "Schubert/RS/JosephPolo/ColumnStringCharacters.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "e6828058ab9d575ebe91acd662edf627d41fc9dcd706ebe94072c04de640d7a9",
+    "sha256": "aea52c1f0cfebd8ac580c58ba051272fc2c89cbe98be3384d2e712f12f8d58da"
+  },
+  {
+    "module": "Schubert.RS.JosephPolo.ColumnWeights",
+    "path": "Schubert/RS/JosephPolo/ColumnWeights.lean",
+    "original_path": "Schubert/RS/JosephPolo/ColumnWeights.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "257b7db2bcf9cb8e4c046c774bc887092d132538e14de8170e12a0a51e3d8030",
+    "sha256": "1d9edf6e2e209fccc0f42d2f5b92241e3ea1c4f2acc59953abdabf8b847e4475"
+  },
+  {
+    "module": "Schubert.RS.JosephPolo.CompletionComparison",
+    "path": "Schubert/RS/JosephPolo/CompletionComparison.lean",
+    "original_path": "Schubert/RS/JosephPolo/CompletionComparison.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "a7181c80ebf18bb14c8828903d7c553fc2d4f443340293ebaf27ddc3fd6f4af3",
+    "sha256": "3d799e2775b4a348b6f4ce27a27f87e20de0077735945a77317455b222d7a0d8"
+  },
+  {
+    "module": "Schubert.RS.JosephPolo.CompletionDimension",
+    "path": "Schubert/RS/JosephPolo/CompletionDimension.lean",
+    "original_path": "Schubert/RS/JosephPolo/CompletionDimension.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "857293a0c39fce8ce62ebccefdbadd5ba628817ebf13abf70e5772ec63d88714",
+    "sha256": "17b8bfc315b8e61038447eb2075f114285d0cffa0075d10475c802cc4353a281"
+  },
+  {
+    "module": "Schubert.RS.JosephPolo.CompletionGenerator",
+    "path": "Schubert/RS/JosephPolo/CompletionGenerator.lean",
+    "original_path": "Schubert/RS/JosephPolo/CompletionGenerator.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "c7149fc688c954d565371f70fe66adae7cdc9d6178d0fe30847e2fd05de62c37",
+    "sha256": "2f74251fe4fc61c8f98d0f036b61ef622bfd235c045cbc990cd821a88a1af306"
+  },
+  {
+    "module": "Schubert.RS.JosephPolo.CompletionUpper",
+    "path": "Schubert/RS/JosephPolo/CompletionUpper.lean",
+    "original_path": "Schubert/RS/JosephPolo/CompletionUpper.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "2fbdf2ccf22f217ceec0859986f76027cef69c07f4aaf2efe984bb64206ae8b5",
+    "sha256": "f4a7079b9624cf05ecd2aca111d6816a3593ab85f21b08c40704bd1713492919"
+  },
+  {
+    "module": "Schubert.RS.JosephPolo.CoordinateRestriction",
+    "path": "Schubert/RS/JosephPolo/CoordinateRestriction.lean",
+    "original_path": "Schubert/RS/JosephPolo/CoordinateRestriction.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "4791bc6e59019da422cb14d801ddb473a52766529d16cd2c07ec7c11d5ffa5a3",
+    "sha256": "291a0cac5883a86e4218fa7b1bd62749a51f62f9d62fc90d5520cb7e49a25ff6"
+  },
+  {
+    "module": "Schubert.RS.JosephPolo.CountingCriterion",
+    "path": "Schubert/RS/JosephPolo/CountingCriterion.lean",
+    "original_path": "Schubert/RS/JosephPolo/CountingCriterion.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "c08c1185ab11438a0bdcc49c2077353ac3b67a25db2dad9feec7a8453d9fd596",
+    "sha256": "b7de68f584cdc7f8b4d3b275ba1b4ee6c43f2b48e08e6aec1c5a2d0ca5c27f8f"
+  },
+  {
+    "module": "Schubert.RS.JosephPolo.CyclicScalar",
+    "path": "Schubert/RS/JosephPolo/CyclicScalar.lean",
+    "original_path": "Schubert/RS/JosephPolo/CyclicScalar.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "0e25e822fa097304762a6dd49322ea0b81d9fe9efbc552aff686642a99d36368",
+    "sha256": "05bd3da8e01618cf9cd4d9bbde36fbf9331fd512626eb1d09175f2b4d3dd97f8"
+  },
+  {
+    "module": "Schubert.RS.JosephPolo.DefiningChains",
+    "path": "Schubert/RS/JosephPolo/DefiningChains.lean",
+    "original_path": "Schubert/RS/JosephPolo/DefiningChains.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "3ba86223ee7289ad8dc665d7dd3401b0e0140452c1176090dbddb3d4dc6b7af1",
+    "sha256": "71ebbac3a8f257086809b01e8d0163ce4a1115a50916b488ca9fcb6667f0e83e"
+  },
+  {
+    "module": "Schubert.RS.JosephPolo.FinitePresentation",
+    "path": "Schubert/RS/JosephPolo/FinitePresentation.lean",
+    "original_path": "Schubert/RS/JosephPolo/FinitePresentation.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "863a1a64dc94d8082f8e5363446d08886894e650f32792333162aa21c59ed26a",
+    "sha256": "6a996ee480aea9330602924a983ebdf82041db45543694dd257b6fea394a1e2f"
+  },
+  {
+    "module": "Schubert.RS.JosephPolo.FlagCoordinateDuality",
+    "path": "Schubert/RS/JosephPolo/FlagCoordinateDuality.lean",
+    "original_path": "Schubert/RS/JosephPolo/FlagCoordinateDuality.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "55acf4393ccc842671f6d5ab1d7aa6781682093cb58f95a7139454c02389aa93",
+    "sha256": "2b634bfc00f5aa60d6d305f89a26c837631d0f5abe5416ae3d2dab882faa429e"
+  },
+  {
+    "module": "Schubert.RS.JosephPolo.FlagMinorExpansion",
+    "path": "Schubert/RS/JosephPolo/FlagMinorExpansion.lean",
+    "original_path": "Schubert/RS/JosephPolo/FlagMinorExpansion.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "caa0e6406baee0938e86024c14a7d2e7a126350c2b62979df8e50b348ea1733c",
+    "sha256": "91d0b98bc730b861c2ccebe29f763beb3feca3ff222cd9a301be0c36b10d4cbf"
+  },
+  {
+    "module": "Schubert.RS.JosephPolo.FlagProducts",
+    "path": "Schubert/RS/JosephPolo/FlagProducts.lean",
+    "original_path": "Schubert/RS/JosephPolo/FlagProducts.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "05c97d35b787aeb2aed26c284742c7244f230fd0fcd8f8d72cceea6e8407ee1c",
+    "sha256": "7018be5d4ecaa759996c8a755fb41569772efd3aa816bfebed4b3c732b255712"
+  },
+  {
+    "module": "Schubert.RS.JosephPolo.FlagStringClosure",
+    "path": "Schubert/RS/JosephPolo/FlagStringClosure.lean",
+    "original_path": "Schubert/RS/JosephPolo/FlagStringClosure.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "81ca6e00bce6bea9e280fbd112be4ea6f47150adfba88a9adbb9d0172ab1715f",
+    "sha256": "a2313bb9cc0bb9dc2306af4eec2ba70a5cc4c3ae8f27c6ebb7e18852aaf1084d"
+  },
+  {
+    "module": "Schubert.RS.JosephPolo.FlagStringPartition",
+    "path": "Schubert/RS/JosephPolo/FlagStringPartition.lean",
+    "original_path": "Schubert/RS/JosephPolo/FlagStringPartition.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "62b5a9d1f4f73adecf31fa22bce5de1e2f70219e9ee83c4861ae7cdfdddb778e",
+    "sha256": "5df93546a1e98f0a5878087cb1150a4a0e24bcb8179a962e7c124be72af761f2"
+  },
+  {
+    "module": "Schubert.RS.JosephPolo.FlagStringWeights",
+    "path": "Schubert/RS/JosephPolo/FlagStringWeights.lean",
+    "original_path": "Schubert/RS/JosephPolo/FlagStringWeights.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "d3e25f329a363875191dc7ad5d8cd5c01781cf26f9357a9c07a0a17beefea6eb",
+    "sha256": "f8d044598b53bccf9e58f86780559fd31169bda68dde136fbee0ed1c892ad426"
+  },
+  {
+    "module": "Schubert.RS.JosephPolo.GeneralTheorem",
+    "path": "Schubert/RS/JosephPolo/GeneralTheorem.lean",
+    "original_path": "Schubert/RS/JosephPolo/GeneralTheorem.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "98f09700e7cecb02f449102594021aab25a8ec209296f6f8ffe3e7f532184e53",
+    "sha256": "63d5b5ed403bf757ce4713ed4f13da12421fa4d9c59d05462e304cc74e761be9"
+  },
+  {
+    "module": "Schubert.RS.JosephPolo.GramWitness",
+    "path": "Schubert/RS/JosephPolo/GramWitness.lean",
+    "original_path": "Schubert/RS/JosephPolo/GramWitness.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "e4389ad96777446c327871c3ea400641f2a256cd547456228324138be963b379",
+    "sha256": "11daa7ee3ae18131cf72c65386e6a692b37caa88949c0450e6aeda038b419068"
+  },
+  {
+    "module": "Schubert.RS.JosephPolo.GrinbergCauchyBinet",
+    "path": "Schubert/RS/JosephPolo/GrinbergCauchyBinet.lean",
+    "original_path": "Schubert/RS/JosephPolo/GrinbergCauchyBinet.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "c4dc3283fa4e65a926ff075b14dc95e44c4b4c3ed9c0d7441809b39b2d39e177",
+    "sha256": "bbd156b310e003b6a4b2585da08ba522b492ba95e9c6e76b6b28f20410c83c44"
+  },
+  {
+    "module": "Schubert.RS.JosephPolo.Heisenberg",
+    "path": "Schubert/RS/JosephPolo/Heisenberg.lean",
+    "original_path": "Schubert/RS/JosephPolo/Heisenberg.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "335af3badedae6edbf06cab460d5ec48526e0242b8486b12aaefd6ed91654221",
+    "sha256": "48d48c8e61e61f277b8a06e9afc0f6913d0ab00a518d2555e66ceb9cd01fefd3"
+  },
+  {
+    "module": "Schubert.RS.JosephPolo.HeisenbergMixed",
+    "path": "Schubert/RS/JosephPolo/HeisenbergMixed.lean",
+    "original_path": "Schubert/RS/JosephPolo/HeisenbergMixed.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "9333539f4c68f983b83fb9d21d9a842dfcd79d7d6191e5b40a9a6200d841ef8b",
+    "sha256": "7a609832de9bd7277dc59e41e6bf00291c56efc41ceadbc28dbb3a053b428295"
+  },
+  {
+    "module": "Schubert.RS.JosephPolo.LoweringCartan",
+    "path": "Schubert/RS/JosephPolo/LoweringCartan.lean",
+    "original_path": "Schubert/RS/JosephPolo/LoweringCartan.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "2a8297fedeca0f4516f39ccb3c59b3e1c6196d5cda952dfaad71514aff53a02c",
+    "sha256": "62b8dd50c37938ec9eeb6422b27c2f14e9ff398b8de7910aa7940aab86f6f894"
+  },
+  {
+    "module": "Schubert.RS.JosephPolo.LoweringEnveloping",
+    "path": "Schubert/RS/JosephPolo/LoweringEnveloping.lean",
+    "original_path": "Schubert/RS/JosephPolo/LoweringEnveloping.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "c6c1191706a8fa097c3c8da26e1214a1277e7bacecbfd50ba40e20fa724478aa",
+    "sha256": "ceefce697e0ca472a3f138e9a38e00562f4e0976f5f8885ad1550b70de0daa6b"
+  },
+  {
+    "module": "Schubert.RS.JosephPolo.LoweringHomogeneity",
+    "path": "Schubert/RS/JosephPolo/LoweringHomogeneity.lean",
+    "original_path": "Schubert/RS/JosephPolo/LoweringHomogeneity.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "beccebf9fc9a3be7c9897a5dd75f9b18f5408ac874f25d063a0d77071ab8eaf0",
+    "sha256": "f598e082f26086ede259bb6b09eab9e1a25d8214d0df333966898dd23ce5ee47"
+  },
+  {
+    "module": "Schubert.RS.JosephPolo.LoweringIdeal",
+    "path": "Schubert/RS/JosephPolo/LoweringIdeal.lean",
+    "original_path": "Schubert/RS/JosephPolo/LoweringIdeal.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "6c9b2c552ae9a796499c7bb9b4adc9b3fedc793cd533e1b679baea65ef6c96c1",
+    "sha256": "57d5f2a191d8d5d27819d619f3206dbd19a78072a7c38c6662bf64f6c2bd4aa7"
+  },
+  {
+    "module": "Schubert.RS.JosephPolo.LoweringLie",
+    "path": "Schubert/RS/JosephPolo/LoweringLie.lean",
+    "original_path": "Schubert/RS/JosephPolo/LoweringLie.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "5882a16c5a5537dac02ce424773f32e9bc31fd484d9ff0f5c849aac6f44028ed",
+    "sha256": "11b1149b118a0cb6bc45e7d572465c57bd6aa0ceffef5e7493aeef5e5ad12ca0"
+  },
+  {
+    "module": "Schubert.RS.JosephPolo.LoweringPowers",
+    "path": "Schubert/RS/JosephPolo/LoweringPowers.lean",
+    "original_path": "Schubert/RS/JosephPolo/LoweringPowers.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "ad10eaee728bc880b0fb1c82c200ea10f691375613e8f9ab7265508fe3c10c89",
+    "sha256": "fe120123af1bfb31667a233d2cd4b3ee24101fb44f4f69bfa10991e475c23627"
+  },
+  {
+    "module": "Schubert.RS.JosephPolo.LoweringRootValues",
+    "path": "Schubert/RS/JosephPolo/LoweringRootValues.lean",
+    "original_path": "Schubert/RS/JosephPolo/LoweringRootValues.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "38e84f4979ef52bfc4f7fd782936ecc264daee12d9e37a4d9813a1a8dc905c60",
+    "sha256": "740e982a5c42c93fe6284e8f86d346d447f31e4308aeeafd5677f44bc76c26f1"
+  },
+  {
+    "module": "Schubert.RS.JosephPolo.MinusculeStrings",
+    "path": "Schubert/RS/JosephPolo/MinusculeStrings.lean",
+    "original_path": "Schubert/RS/JosephPolo/MinusculeStrings.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "0a9ab6199f13f5b08e75fc5df3e789f889da839fa3e5469e8313d176f2d88794",
+    "sha256": "a429604a305d0e8fe4434e0a949c3d34abe01b07bc48b08bf5dd3cefbb591c10"
+  },
+  {
+    "module": "Schubert.RS.JosephPolo.MovingChainStrings",
+    "path": "Schubert/RS/JosephPolo/MovingChainStrings.lean",
+    "original_path": "Schubert/RS/JosephPolo/MovingChainStrings.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "d214a979e0a39ef2875415c7363d82febedc82b1c5a9bc93c6aab71c7b4dd4c7",
+    "sha256": "ead017aac2c5f2cde7de7869571efbfdd07638de724c7cf4965ad7a436b83461"
+  },
+  {
+    "module": "Schubert.RS.JosephPolo.OrbitDuality",
+    "path": "Schubert/RS/JosephPolo/OrbitDuality.lean",
+    "original_path": "Schubert/RS/JosephPolo/OrbitDuality.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "531a92ad01abf8c82a6b3b938d66ba64f12cb92eec7dd114fee7a67269d70cc8",
+    "sha256": "cd8a9393d5ed8afbee7c95f88edb8313f612fdc3085d6f673258bd9b557b59b7"
+  },
+  {
+    "module": "Schubert.RS.JosephPolo.OrbitSpan",
+    "path": "Schubert/RS/JosephPolo/OrbitSpan.lean",
+    "original_path": "Schubert/RS/JosephPolo/OrbitSpan.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "e576c44edfdf4c3b8359681728c59582b2a7251e767d851f561899a8e76fe8a0",
+    "sha256": "272ee7ca3def3e6c90162887edbcfc638187a963c8e618b678d82def1aea868e"
+  },
+  {
+    "module": "Schubert.RS.JosephPolo.PolynomialComparison",
+    "path": "Schubert/RS/JosephPolo/PolynomialComparison.lean",
+    "original_path": "Schubert/RS/JosephPolo/PolynomialComparison.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "25ad92e527ce830c35f83287d6677dd10960ccae4569b497cce1d81e1bb80460",
+    "sha256": "0230e0dc52d4472a5b65fc66ea6f74f04aa45ef6a197a207f05608a7a7492405"
+  },
+  {
+    "module": "Schubert.RS.JosephPolo.PolynomialGramSpan",
+    "path": "Schubert/RS/JosephPolo/PolynomialGramSpan.lean",
+    "original_path": "Schubert/RS/JosephPolo/PolynomialGramSpan.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "3175bfc33f30bc172f8acebea231ea2abefb2e54d0653f5691db6c0628042afb",
+    "sha256": "12317b9e995e56dbfbf6060bb2204916c38c49a7558f56068dfeec14a36f518b"
+  },
+  {
+    "module": "Schubert.RS.JosephPolo.PolynomialSpan",
+    "path": "Schubert/RS/JosephPolo/PolynomialSpan.lean",
+    "original_path": "Schubert/RS/JosephPolo/PolynomialSpan.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "438391afcfe1ee9cf37960e7e9261d161b4778a93d3f2b064fa57ece294b98bb",
+    "sha256": "7e849674e586c47345a16071e3bd723a12accc0583683729dfc886afbd39d538"
+  },
+  {
+    "module": "Schubert.RS.JosephPolo.PrefixMinors",
+    "path": "Schubert/RS/JosephPolo/PrefixMinors.lean",
+    "original_path": "Schubert/RS/JosephPolo/PrefixMinors.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "11ef61e7082d068e21479e7340b9282c6b6495314dce2a4547a59c0fce50767f",
+    "sha256": "53e1a3bb76a853325352695169be7ef6232758c2ef56e35fc4c8ed44791fd106"
+  },
+  {
+    "module": "Schubert.RS.JosephPolo.PresentationAction",
+    "path": "Schubert/RS/JosephPolo/PresentationAction.lean",
+    "original_path": "Schubert/RS/JosephPolo/PresentationAction.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "dc01550070b5fce36ef94288a4edcf0861d02d352a00bea0d27c58f6240ea177",
+    "sha256": "f42f9d6094f4a5d61f4772e638adb04b2f25735c9850d290857705a589e4b731"
+  },
+  {
+    "module": "Schubert.RS.JosephPolo.PresentationCommutators",
+    "path": "Schubert/RS/JosephPolo/PresentationCommutators.lean",
+    "original_path": "Schubert/RS/JosephPolo/PresentationCommutators.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "4aa13d039959591401861b33c265c36b8c3573e5b19f8ca2839c050da39dd1aa",
+    "sha256": "ca1de9396d8943b32806b5b2e6d0cf2de6705c788d7343005f3f054605c7e026"
+  },
+  {
+    "module": "Schubert.RS.JosephPolo.PresentationRadical",
+    "path": "Schubert/RS/JosephPolo/PresentationRadical.lean",
+    "original_path": "Schubert/RS/JosephPolo/PresentationRadical.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "81e1b52b6bea3ad0002b66ec47a5112fe1452fff08204834ec7a9ba54a420ae2",
+    "sha256": "e83081a0ca5c64cc642b1f65545607f758d6baf7dc9bc002e9c380dd037da380"
+  },
+  {
+    "module": "Schubert.RS.JosephPolo.PresentationSl2",
+    "path": "Schubert/RS/JosephPolo/PresentationSl2.lean",
+    "original_path": "Schubert/RS/JosephPolo/PresentationSl2.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "8c9acf25d7b36349e538ea9ffa31bc9a6a8660cb1d2652efde6b70c2ede7f2f8",
+    "sha256": "a3a71c5f9770801e01ead4bb77da3e04b8e140a714e4dff78a1f7a7e9db1309b"
+  },
+  {
+    "module": "Schubert.RS.JosephPolo.RadicalLevi",
+    "path": "Schubert/RS/JosephPolo/RadicalLevi.lean",
+    "original_path": "Schubert/RS/JosephPolo/RadicalLevi.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "adb52a11244bda8004bb041a9f355ac411272262732cc60f98f6235ac6c28a60",
+    "sha256": "1076f292277d37ab908419a217f148cde9d9650f21fe0ef09446d11a599511b5"
+  },
+  {
+    "module": "Schubert.RS.JosephPolo.RadicalMatrices",
+    "path": "Schubert/RS/JosephPolo/RadicalMatrices.lean",
+    "original_path": "Schubert/RS/JosephPolo/RadicalMatrices.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "679372c301914f9a54e4b3e05a82a3a73907ac03692bf1352e748dd08dc9ce6a",
+    "sha256": "c678421432a2d34af0ce24414d523d43adb8d0824073fe72a0a45d6585151d04"
+  },
+  {
+    "module": "Schubert.RS.JosephPolo.RootLoweringRelations",
+    "path": "Schubert/RS/JosephPolo/RootLoweringRelations.lean",
+    "original_path": "Schubert/RS/JosephPolo/RootLoweringRelations.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "02aadaee5c35ed49f33080fe1da7d70a12ed4d05b1352d577a53fbd9b49b8a40",
+    "sha256": "896d9530c630bcde8f17b88cce9a720c90a4e52f2e29b2b35dc461c2a5b89b4e"
+  },
+  {
+    "module": "Schubert.RS.JosephPolo.RootOrbit",
+    "path": "Schubert/RS/JosephPolo/RootOrbit.lean",
+    "original_path": "Schubert/RS/JosephPolo/RootOrbit.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "4b63bd9cf1ff009e37f6bb50742e9c3db7b47ec71f0b0a359d89ccc295188ae0",
+    "sha256": "63dab3d592a4fa30488d2d72eeeb9098ea47d198cc612845f0aed04ea6e58268"
+  },
+  {
+    "module": "Schubert.RS.JosephPolo.RootPairRelations",
+    "path": "Schubert/RS/JosephPolo/RootPairRelations.lean",
+    "original_path": "Schubert/RS/JosephPolo/RootPairRelations.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "d52f41b83e6a56d26aad966bb685646e3f8cdf1d5aefde9a7d23bb8d285eb634",
+    "sha256": "acb25bf66a5b523ef200d416b5e7cac0dbf3a7268ecaf7cb0827675a1074da20"
+  },
+  {
+    "module": "Schubert.RS.JosephPolo.RootSubstitution",
+    "path": "Schubert/RS/JosephPolo/RootSubstitution.lean",
+    "original_path": "Schubert/RS/JosephPolo/RootSubstitution.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "89e072634fc46a115cecace31f1f84fc7e6ba4e205e39b1b0a467aa5559e746e",
+    "sha256": "64837fd1645525e0326ad529648a6f7e7eb8ca1a20a70e29e2cd2765fc3a5d36"
+  },
+  {
+    "module": "Schubert.RS.JosephPolo.Sl2RelationsAction",
+    "path": "Schubert/RS/JosephPolo/Sl2RelationsAction.lean",
+    "original_path": "Schubert/RS/JosephPolo/Sl2RelationsAction.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "dc190fd29dc0ba0a8de7157631679c2f648e7fd318900eda639f9568024b4bb1",
+    "sha256": "a13614ed1be3c5523b31d4036c4804a3db5b2f3b8e356162bcc36c94e89a8a4f"
+  },
+  {
+    "module": "Schubert.RS.JosephPolo.StandardMonomialBound",
+    "path": "Schubert/RS/JosephPolo/StandardMonomialBound.lean",
+    "original_path": "Schubert/RS/JosephPolo/StandardMonomialBound.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "313764c38b3ef6515b95f7787567355a02df3d65fa5bc276ee641f48c272f72d",
+    "sha256": "ec6ae133fa5b810aa6c02871ed931eb683a3ca2ad9871faa31463d709786fc4f"
+  },
+  {
+    "module": "Schubert.RS.JosephPolo.StandardMonomialIndependence",
+    "path": "Schubert/RS/JosephPolo/StandardMonomialIndependence.lean",
+    "original_path": "Schubert/RS/JosephPolo/StandardMonomialIndependence.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "be10b8d2a3bfd04b56fb2173497e94233b1ae18fd72d9f3063acaa5d03276ef2",
+    "sha256": "b381fd4c51e26d1e8cb79977771e4c40f49b84f3379007a40a30821bb2809f47"
+  },
+  {
+    "module": "Schubert.RS.JosephPolo.StringPartitions",
+    "path": "Schubert/RS/JosephPolo/StringPartitions.lean",
+    "original_path": "Schubert/RS/JosephPolo/StringPartitions.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "bb0b4c54d7b91ddb24fc409f7c7f7f16012dde57aa3dfb63e5707758f3051647",
+    "sha256": "e2babace12f19f0275b5ada42870e85e8989252a577822bbaf74e35d156944e9"
+  },
+  {
+    "module": "Schubert.RS.JosephPolo.StringSelection",
+    "path": "Schubert/RS/JosephPolo/StringSelection.lean",
+    "original_path": "Schubert/RS/JosephPolo/StringSelection.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "ea72dda4d45252bf570573a83a1874d9fbc8c5fb8c25fa72d16491383a329d39",
+    "sha256": "d22926ee7b5b211d95f166f99a1a87ddfc6b0c610b20c70e60c321e22d1e04d2"
+  },
+  {
+    "module": "Schubert.RS.JosephPolo.TableauCharacterBase",
+    "path": "Schubert/RS/JosephPolo/TableauCharacterBase.lean",
+    "original_path": "Schubert/RS/JosephPolo/TableauCharacterBase.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "06b3b7062a5901f5aa1d1070be226a5e78430077f09d644789bb20eaf00c95f8",
+    "sha256": "34e625b9385abb8f0c8ad1490f08c93658fce7453828925a79c8e4e39af4391b"
+  },
+  {
+    "module": "Schubert.RS.JosephPolo.TableauCharacterRecursion",
+    "path": "Schubert/RS/JosephPolo/TableauCharacterRecursion.lean",
+    "original_path": "Schubert/RS/JosephPolo/TableauCharacterRecursion.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "978698eb96291bccce8eada911828b321bb87a27b26c2acc24f3e3254498c26c",
+    "sha256": "bdab8d83fc11412b955d3f109f7199fa9496e1607bda0f7eaa79fe90612d71c3"
+  },
+  {
+    "module": "Schubert.RS.JosephPolo.TableauCounting",
+    "path": "Schubert/RS/JosephPolo/TableauCounting.lean",
+    "original_path": "Schubert/RS/JosephPolo/TableauCounting.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "0ac7096417fbcad23bccfa7e77c1889aa7c640da74648cdc9b0b4ba41612647a",
+    "sha256": "d5172bb23e7661326e55bd13c547c2868f2383cf6f3c6218af10e7a4e225f5b4"
+  },
+  {
+    "module": "Schubert.RS.JosephPolo.TableauKeys",
+    "path": "Schubert/RS/JosephPolo/TableauKeys.lean",
+    "original_path": "Schubert/RS/JosephPolo/TableauKeys.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "ada55ad1ef44e0f9051ff25ab3a7aab59a0ee25308093787516d0cae2af513b9",
+    "sha256": "7c710d500e4160768d1d3e9ecb3a99638d09b7bf090b694a3941ae21615e470f"
+  },
+  {
+    "module": "Schubert.RS.JosephPolo.TriangularExtension",
+    "path": "Schubert/RS/JosephPolo/TriangularExtension.lean",
+    "original_path": "Schubert/RS/JosephPolo/TriangularExtension.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "e3405600bc313f5fcd370ece417b9ea4c6512eae39716dbeb9d5cbd36ce35a23",
+    "sha256": "23d4ac5d100cf17be9b90e3be5d7c7d412304c66469f0bc2b715ae862ea6cdd2"
+  },
+  {
+    "module": "Schubert.RS.JosephPolo.TriangularMinors",
+    "path": "Schubert/RS/JosephPolo/TriangularMinors.lean",
+    "original_path": "Schubert/RS/JosephPolo/TriangularMinors.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "19fb72366bb606697b46880c14a924f7f5abcf5fca97df053169bb20e57d5d90",
+    "sha256": "b9afecbc872469dc5fab64de8fa61a6d71caa004706946cfd49dc5b71b56afaa"
+  },
+  {
+    "module": "Schubert.RS.JosephPolo.WeightedColumnStrings",
+    "path": "Schubert/RS/JosephPolo/WeightedColumnStrings.lean",
+    "original_path": "Schubert/RS/JosephPolo/WeightedColumnStrings.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "309d74f65f9b7aef201a5f698b23ebe57885973dfd659647ac8e8521b978672e",
+    "sha256": "d3034290fad29c35b1b10db9c36d2ff0c7a45aab893ce274dcd35b0018d5564a"
+  },
+  {
+    "module": "Schubert.RS.JosephPolo.WeylSaturation",
+    "path": "Schubert/RS/JosephPolo/WeylSaturation.lean",
+    "original_path": "Schubert/RS/JosephPolo/WeylSaturation.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "74a11b644e15578b24eea0ccb69c21ca3a2153c8e83e7a3dbfa5b3ba93ad68c2",
+    "sha256": "8088c34b8e5068a902cfd4b2d61ce010647c4f91529949ded309ecf3c3dd3297"
+  },
+  {
+    "module": "Schubert.RS.KeyAction",
+    "path": "Schubert/RS/KeyAction.lean",
+    "original_path": "Schubert/RS/KeyAction.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "a0dbb866f3fe5284a3567d7d8e17b048a05c7464630f532649cfc85cf0d97756",
+    "sha256": "ea656960bc913d126272e42d732d82ccd80e735c58c123e1151c3313eb202a99"
+  },
+  {
+    "module": "Schubert.RS.KeyComplement",
+    "path": "Schubert/RS/KeyComplement.lean",
+    "original_path": "Schubert/RS/KeyComplement.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "f1df4a03d5946564755c0ebb9a3eddef22a3b03fb35a436d912da805fe28851a",
+    "sha256": "c192060f9b0e7b47f1dbf8b9a19519d60c836437e815f752345a40939c002121"
+  },
+  {
+    "module": "Schubert.RS.KeyInitialCoefficient",
+    "path": "Schubert/RS/KeyInitialCoefficient.lean",
+    "original_path": "Schubert/RS/KeyInitialCoefficient.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "7aa69b626140857d9355dd80987d8c5f0a775735ade0fca63bee0d95f3ed3b72",
+    "sha256": "5670ac6884330d8405245e41a57114a932242512368599bc993feef4a8c83771"
+  },
+  {
+    "module": "Schubert.RS.Keys",
+    "path": "Schubert/RS/Keys.lean",
+    "original_path": "Schubert/RS/Keys.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "b6ea2c434bd41ba3dd6846427f088126597a6804c9d8327a4c5efa9aba2573e3",
+    "sha256": "b300cb208be4fe2008c6cc3f8b1d10971d3ff53803330f704f0b7142f0e474e1"
+  },
+  {
+    "module": "Schubert.RS.LatticeCrossings",
+    "path": "Schubert/RS/LatticeCrossings.lean",
+    "original_path": "Schubert/RS/LatticeCrossings.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "8df38675a8e17fca0092b1dbc8c71e4b6077498e012865810b8b2336eac16cb0",
+    "sha256": "e6dadc97e4c1eb4d9b6fcbaa9c404d0d40c0910cad53c2a2df06a07c4f45568a"
+  },
+  {
+    "module": "Schubert.RS.LatticeHeightRecovery",
+    "path": "Schubert/RS/LatticeHeightRecovery.lean",
+    "original_path": "Schubert/RS/LatticeHeightRecovery.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "05d21ff8133e347b45786b7b324843f8621f9db9d860be1b9464ae26037df7ba",
+    "sha256": "b2c8ffba9feb803a5246bd24add1f20f2d1b88fb42873d4175376ebd1c2399a2"
+  },
+  {
+    "module": "Schubert.RS.LatticePathOrder",
+    "path": "Schubert/RS/LatticePathOrder.lean",
+    "original_path": "Schubert/RS/LatticePathOrder.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "8a567bfa7a8a5bb9825664c7f15d8d9930ab1299c6df561fae90161f1457a3aa",
+    "sha256": "1fec3a151fa5ee70b6f04454ab6f6ff9b17abac91ed945cdd38007bf7074689b"
+  },
+  {
+    "module": "Schubert.RS.Laurent",
+    "path": "Schubert/RS/Laurent.lean",
+    "original_path": "Schubert/RS/Laurent.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "6ebff303a83a8e75d4a0a4e8183bc2be293a3b1f104df0913dd3b7eecc1982f4",
+    "sha256": "2bff6816cb4108ce37f0a438ddff56d0bcee52d0b43ef5633a36e6db828ded2f"
+  },
+  {
+    "module": "Schubert.RS.LaurentInitialCoefficient",
+    "path": "Schubert/RS/LaurentInitialCoefficient.lean",
+    "original_path": "Schubert/RS/LaurentInitialCoefficient.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "8f6005a55ab031835383270d7fe1999eb5f2a66304a1dffb8f29ab03f316ac6b",
+    "sha256": "8013b8db23f4604c5f79f69fd2b2c2168548fc33bab2ce1bf0d2093de4bc6894"
+  },
+  {
+    "module": "Schubert.RS.LaurentOperators",
+    "path": "Schubert/RS/LaurentOperators.lean",
+    "original_path": "Schubert/RS/LaurentOperators.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "0479e8396521f8bb82c29b312917dc42251ac8840137b644cc099213ca63e558",
+    "sha256": "2b10bc8d128180ca95f7e71d154d2eb6a2abd5c2007dba5d6a836106068643d7"
+  },
+  {
+    "module": "Schubert.RS.LaurentPrefixSupport",
+    "path": "Schubert/RS/LaurentPrefixSupport.lean",
+    "original_path": "Schubert/RS/LaurentPrefixSupport.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "d3305b7a3b1d05ed64b83cfa8fd7f90c4a781dcc2c6ceec686aaf3a9b540abd8",
+    "sha256": "d4541bfdae62f16c5a718a9cebddbdc5cbcf740a6e922970189c58116f51139e"
+  },
+  {
+    "module": "Schubert.RS.LaurentSymmetry",
+    "path": "Schubert/RS/LaurentSymmetry.lean",
+    "original_path": "Schubert/RS/LaurentSymmetry.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "bb0f2aae7430a174290e065567477fc237ed19023df0c2c2ffdaadafe04fc264",
+    "sha256": "ec7e982e9d43d85bd1569aa829b38fa1a6c9cd36b19e3444ba85342a142bc410"
+  },
+  {
+    "module": "Schubert.RS.LayeredPathFamilies",
+    "path": "Schubert/RS/LayeredPathFamilies.lean",
+    "original_path": "Schubert/RS/LayeredPathFamilies.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "b2ff1e98f09d1fb293947f5d6344cb8c5d9b892bb43c7447d6838c4fd2731d5f",
+    "sha256": "5ba7e614f43d4ad92fd208f5f053827ef3d344f5520dc140853111ea1a25ea41"
+  },
+  {
+    "module": "Schubert.RS.LinearWindowCount",
+    "path": "Schubert/RS/LinearWindowCount.lean",
+    "original_path": "Schubert/RS/LinearWindowCount.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "b91713fd0320340afa0decb2c3d9fc0f4632d45a35385141f4afe270a60616da",
+    "sha256": "fc100471d5209e07edb705b23ac91dc050569a501241a8c08ef20b2da7d3c224"
+  },
+  {
+    "module": "Schubert.RS.PresentationCharacter",
+    "path": "Schubert/RS/PresentationCharacter.lean",
+    "original_path": "Schubert/RS/MarkedInputs.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "4ac6177852d2a01dc61330cb335fb6b61daff38788f40d046f18c9237c2336eb",
+    "sha256": "be701fcd88a06584c284a72de04517c5a7b4c26db072cb9a8e27a893fe6427bc"
+  },
+  {
+    "module": "Schubert.RS.MatrixUnitNilpotence",
+    "path": "Schubert/RS/MatrixUnitNilpotence.lean",
+    "original_path": "Schubert/RS/MatrixUnitNilpotence.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "7a8429cf579a2f9459fcad4047f1222245244dcbf1ab54a4de2931ec07b79791",
+    "sha256": "0a151ebbf50c7bcb77f0d5b4e7353aba45a58900ab46cda8798c567d3c898a30"
+  },
+  {
+    "module": "Schubert.RS.MatrixUnitStringWeights",
+    "path": "Schubert/RS/MatrixUnitStringWeights.lean",
+    "original_path": "Schubert/RS/MatrixUnitStringWeights.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "4894e895ba01226ab6b7ac43ff1b5b52cc0a18e5c3493506fa490344cea1b0f3",
+    "sha256": "4dde44bb22f97d9d6fa216e890e566ee1e7ddf6b3d2b1fba516f668d00d3d1c5"
+  },
+  {
+    "module": "Schubert.RS.MonomialOperators",
+    "path": "Schubert/RS/MonomialOperators.lean",
+    "original_path": "Schubert/RS/MonomialOperators.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "7d370ed315303589609556507c7209d7aad1cdf9387f1ef0eae9831183dee870",
+    "sha256": "949d57320551246762c59685da130563b2df9cf58c45e598de81fbe83ff74215"
+  },
+  {
+    "module": "Schubert.RS.NilpotentStringProjection",
+    "path": "Schubert/RS/NilpotentStringProjection.lean",
+    "original_path": "Schubert/RS/NilpotentStringProjection.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "fd35d86a0ea1f7f64dd9fc897a7044e277c80e2bc416c6a42aef186f9f7bcb41",
+    "sha256": "654985bce1ffa28c805c4928771aa438f1b966e323607080f9ff1970b3444765"
+  },
+  {
+    "module": "Schubert.RS.OneEastFamilies",
+    "path": "Schubert/RS/OneEastFamilies.lean",
+    "original_path": "Schubert/RS/OneEastFamilies.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "97d89b39a154922d43bafe00915d859359d053f76da66d36e2003f74c4557130",
+    "sha256": "41af0e0f86fc024a6a55b87e22713889b8a77a694678cc13638489c901139112"
+  },
+  {
+    "module": "Schubert.RS.OneEastPath",
+    "path": "Schubert/RS/OneEastPath.lean",
+    "original_path": "Schubert/RS/OneEastPath.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "40e90a9eb332764f78f56525683988446fc85c9feed5e7953d6ea4de35e7f076",
+    "sha256": "7a866b03b667202b430af5cd3450d4374bdf745aa9f2acc2193e0693e8b8724c"
+  },
+  {
+    "module": "Schubert.RS.OperatorCyclicSpan",
+    "path": "Schubert/RS/OperatorCyclicSpan.lean",
+    "original_path": "Schubert/RS/OperatorCyclicSpan.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "dc58db98ccb01633cc8c6f1c917c5e18458dbc01481f8779862b933e8395bf1f",
+    "sha256": "3feb7ad639986cbe22cee5ca74403ef8c875658c11de9b636d03331ea247e0de"
+  },
+  {
+    "module": "Schubert.RS.OperatorRelations",
+    "path": "Schubert/RS/OperatorRelations.lean",
+    "original_path": "Schubert/RS/OperatorRelations.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "e74f90d54b2c49344e0b3d2f58ad5ae62acc3b0e7ab0a7eeba399f1ef7f5bca0",
+    "sha256": "55a5066d74d3902e1a611f54f5336a1dd3179c91d5b37fa41bb5b83fefad97da"
+  },
+  {
+    "module": "Schubert.RS.Operators",
+    "path": "Schubert/RS/Operators.lean",
+    "original_path": "Schubert/RS/Operators.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "fb05ee02da300a62591204e66df5bf5935f8051be276871db6e27f639f58cbf5",
+    "sha256": "fbc6ce8413199c36858024e077423ef11fb367e8c4668b1efe49d3108e8a81d7"
+  },
+  {
+    "module": "Schubert.RS.OrthogonalityInduction",
+    "path": "Schubert/RS/OrthogonalityInduction.lean",
+    "original_path": "Schubert/RS/OrthogonalityInduction.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "4b7ad7885bd2c094e7b7e3b111263672e4621df5b1fa3202fed132f16c5e953b",
+    "sha256": "2c36601a87f09c91239fcb7cdb73eda0836df0ef2c5943d92e685662d461a17e"
+  },
+  {
+    "module": "Schubert.RS.PBW.CenteredAction",
+    "path": "Schubert/RS/PBW/CenteredAction.lean",
+    "original_path": "Schubert/RS/PBW/CenteredAction.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "588bfb0accd29d3acce8532c226b42b2daa8342e90f88e2482b82fdaec8c2c35",
+    "sha256": "af64d7e550ae0c71fb8d7d013997c19a85eb3fb6cb690abe4bb71616626164e4"
+  },
+  {
+    "module": "Schubert.RS.PBW.Independence",
+    "path": "Schubert/RS/PBW/Independence.lean",
+    "original_path": "Schubert/RS/PBW/Independence.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "e308ac07bf5aaf5fcce871268274735abf00240796951d72466f5293c2de6a40",
+    "sha256": "600725ead0af2b8f71b0786ea988d9a99d7c57b770cffac344cf7399469667fa"
+  },
+  {
+    "module": "Schubert.RS.PBW.Jets",
+    "path": "Schubert/RS/PBW/Jets.lean",
+    "original_path": "Schubert/RS/PBW/Jets.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "3b7a7b990a71969ece8fe558d7cde5053a8910b52f784656e7818596b8bf7a95",
+    "sha256": "d53762bd9f16863e57c954e857db5a5beeab76037af33cff1b6856b152fd7132"
+  },
+  {
+    "module": "Schubert.RS.PBW.OrderedWords",
+    "path": "Schubert/RS/PBW/OrderedWords.lean",
+    "original_path": "Schubert/RS/PBW/OrderedWords.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "9f40712f47bbf9e3fd8eb8191061a3bfc7ea80fd84f11afc2d2772cd516604d6",
+    "sha256": "acd7bda4efcf53e6ced70710e3432546027918d814422937df866b0d4f61b558"
+  },
+  {
+    "module": "Schubert.RS.PBW.PartialPairing",
+    "path": "Schubert/RS/PBW/PartialPairing.lean",
+    "original_path": "Schubert/RS/PBW/PartialPairing.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "118ca5977fbaa52168f92058d714ddb47784e8781b3acb35f21c79ce497a021b",
+    "sha256": "221803fdae2740e94404c77353ac2848698093d645ccb6138b803aafd82d83b1"
+  },
+  {
+    "module": "Schubert.RS.PBW.Spanning",
+    "path": "Schubert/RS/PBW/Spanning.lean",
+    "original_path": "Schubert/RS/PBW/Spanning.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "c71f40653bf89070d74d5ff26e2919e8717e8339de8f44b9d17b4b1c4c9eaf9c",
+    "sha256": "c750a180ea18117eb47b5d7f8b655dbc314ebddf4c69da0975a9a5fca879d809"
+  },
+  {
+    "module": "Schubert.RS.PBW.Theorem",
+    "path": "Schubert/RS/PBW/Theorem.lean",
+    "original_path": "Schubert/RS/PBW/Theorem.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "fc7e658d65e6a723ef73ba9ce9871eb1afda4c27da9408623f22ad513e10153f",
+    "sha256": "a5a0cd0c6f190e70f08b8a56a3e59ea5d950e2813ff6f156e4a00116194cd8e1"
+  },
+  {
+    "module": "Schubert.RS.Pairing",
+    "path": "Schubert/RS/Pairing.lean",
+    "original_path": "Schubert/RS/Pairing.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "fc9c63b14a3947dd9d43bc45b07d27bbf7d4a548f9a064ba8551c0845b546769",
+    "sha256": "a5457ad0b9eeeb686874c57c22ccb8cf89f50ef479e7e103c6e05d9b83dee5e3"
+  },
+  {
+    "module": "Schubert.RS.PairingAdjoint",
+    "path": "Schubert/RS/PairingAdjoint.lean",
+    "original_path": "Schubert/RS/PairingAdjoint.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "67f3aff72eca4b30bd757bccfe16dc8dc1cb5af4feb27cec8075bda07b653c04",
+    "sha256": "6cb0d7192f7a890011c1d96b8249fab56178053a992a9a011b39aef5cd170bcc"
+  },
+  {
+    "module": "Schubert.RS.PairingSorting",
+    "path": "Schubert/RS/PairingSorting.lean",
+    "original_path": "Schubert/RS/PairingSorting.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "751945e6c2429cf63df06a05e3c3bef3bcb0b3a382d5fc50965b00d75c9db084",
+    "sha256": "dfde413f6e490e7674db5b23b948b6beeca5f08759a7f25319b990d4ad19b15f"
+  },
+  {
+    "module": "Schubert.RS.ParabolicCompletionCyclicity",
+    "path": "Schubert/RS/ParabolicCompletionCyclicity.lean",
+    "original_path": "Schubert/RS/ParabolicCompletionCyclicity.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "607bcadcc615deef73bd20f0eab02f59fde3b149ae3bfef097ca23ef2658e714",
+    "sha256": "38f45e276e20198602f74d64125a250e1af99faec350f97f29d1e0e97223478b"
+  },
+  {
+    "module": "Schubert.RS.ParabolicCyclicOrbit",
+    "path": "Schubert/RS/ParabolicCyclicOrbit.lean",
+    "original_path": "Schubert/RS/ParabolicCyclicOrbit.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "1817d688a0e4c75414f278bdb8850cbac77fc310f2000deacab98eb4306df5a2",
+    "sha256": "69132a586515a0f72884a733c31f36ce19bc77b09067c69c8ff5a976cbf33b86"
+  },
+  {
+    "module": "Schubert.RS.ParabolicCyclicSpan",
+    "path": "Schubert/RS/ParabolicCyclicSpan.lean",
+    "original_path": "Schubert/RS/ParabolicCyclicSpan.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "5547130c434e4ffcfb84a6eee64ea4cb55982451428ab9d9a6e905cc3437ed99",
+    "sha256": "e393b83d6d9a3f9f72d782375752ed9a2ba3cea979a7544aadabaf63279bc332"
+  },
+  {
+    "module": "Schubert.RS.ParabolicSimpleOperator",
+    "path": "Schubert/RS/ParabolicSimpleOperator.lean",
+    "original_path": "Schubert/RS/ParabolicSimpleOperator.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "1e2043fc889bbbeab6733ff3a76a7c11ddc268dcb06ce946388b7e6556b53b2f",
+    "sha256": "a0bf46bed0304b632e462785a8bde77e07fef3c96bfca844c7719c59e9151af8"
+  },
+  {
+    "module": "Schubert.RS.PartialStringCharacter",
+    "path": "Schubert/RS/PartialStringCharacter.lean",
+    "original_path": "Schubert/RS/PartialStringCharacter.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "f9a1312c0ecb6fe6523b97156f53419ee0dd45305e6fb2d97b784e92d47a903c",
+    "sha256": "6f766ebff1e5c7ea495b3bc0c0bcd7d09c1536c8c61345d2e328af3b0d215be7"
+  },
+  {
+    "module": "Schubert.RS.PathDeterminant",
+    "path": "Schubert/RS/PathDeterminant.lean",
+    "original_path": "Schubert/RS/PathDeterminant.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "90036432bb51968988a3b7594e1451b610d84f833269b9243dcb53a249934d85",
+    "sha256": "d32b3e3de3c553e52fc456ebe91b4174830e42812bfc137d316365700b0affc6"
+  },
+  {
+    "module": "Schubert.RS.PathTailSwap",
+    "path": "Schubert/RS/PathTailSwap.lean",
+    "original_path": "Schubert/RS/PathTailSwap.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "2c6d7883ab1be2d3aa1b23feb8d3842aedfcb3c4ba740c097c302d0696916503",
+    "sha256": "7ba1dd6f1d8c0975577d870038a5b91a2df70106a3e69da4b428ead479aaf372"
+  },
+  {
+    "module": "Schubert.RS.PolynomialCompletionCharacter",
+    "path": "Schubert/RS/PolynomialCompletionCharacter.lean",
+    "original_path": "Schubert/RS/PolynomialCompletionCharacter.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "981e6f1f2ffccda2d841217bad19509a820dddab13daf63229fb8800abd86a06",
+    "sha256": "5480ef47cbe87da8d798e334c431156c67d9e39d877cf714420aea66adb3062f"
+  },
+  {
+    "module": "Schubert.RS.PolynomialCompletionCharacterTransfer",
+    "path": "Schubert/RS/PolynomialCompletionCharacterTransfer.lean",
+    "original_path": "Schubert/RS/PolynomialCompletionCharacterTransfer.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "e67f02d540444f7392e9e540211ac2d583495671fc49765221f15f5c8d48d49e",
+    "sha256": "2394aa2a877dd3f3a210f65c6627c71d59d6931462c65b6f7a45c5d9f534031f"
+  },
+  {
+    "module": "Schubert.RS.PolynomialCompletionEvaluationWeights",
+    "path": "Schubert/RS/PolynomialCompletionEvaluationWeights.lean",
+    "original_path": "Schubert/RS/PolynomialCompletionEvaluationWeights.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "3e88af59a452fe4c6724dfb6784761db509b1166c9569b132606cac3776d78b6",
+    "sha256": "f430c3d786c9a6d353415910e5cced393591f7fa9292279d0c66ec4058499727"
+  },
+  {
+    "module": "Schubert.RS.PolynomialCompletionLowering",
+    "path": "Schubert/RS/PolynomialCompletionLowering.lean",
+    "original_path": "Schubert/RS/PolynomialCompletionLowering.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "5dcfa1f16ff68ec37ddd29ca241a984001bb5675c456de9e507c5669538ca9c1",
+    "sha256": "98baa0dc4f2c3235e3593a2c634c17139045e90905552f5192782016770a235c"
+  },
+  {
+    "module": "Schubert.RS.PolynomialCompletionTorus",
+    "path": "Schubert/RS/PolynomialCompletionTorus.lean",
+    "original_path": "Schubert/RS/PolynomialCompletionTorus.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "89eee9d717be873acc54c1a41e9e8cdbe997211451f0e369c445247a79c3fb05",
+    "sha256": "5b663df4db3519f345be258f45f1a2457a3a626d6a3d54f35fb060ebd50562b1"
+  },
+  {
+    "module": "Schubert.RS.PolynomialCompletionWeights",
+    "path": "Schubert/RS/PolynomialCompletionWeights.lean",
+    "original_path": "Schubert/RS/PolynomialCompletionWeights.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "4156ae4111931ab6bbe83dd754ee883f51fc862efb927f4e882c414df724ac21",
+    "sha256": "6eb77888b71fbc45954ab6101d8508efe2a099d04275809dba2a925d09a54d01"
+  },
+  {
+    "module": "Schubert.RS.PolynomialDiagonalWeights",
+    "path": "Schubert/RS/PolynomialDiagonalWeights.lean",
+    "original_path": "Schubert/RS/PolynomialDiagonalWeights.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "6655fbda4cdd8c7c67b8ccdeeb8ac15e28fb797246e5c5e45c35b472dce37d98",
+    "sha256": "08cd736e2b7991aedbdde9a4899c35b105d0cf7128e882a64b845c6a939d817b"
+  },
+  {
+    "module": "Schubert.RS.PolynomialGridWeights",
+    "path": "Schubert/RS/PolynomialGridWeights.lean",
+    "original_path": "Schubert/RS/PolynomialGridWeights.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "78d3cf4688730fc290588ad01aa3a7235ec6cf6fc642db67fee82eca2dcb6796",
+    "sha256": "567837dd97f04d00c50cd38c88e10573ae5397e242641ba19c5cf73b03e41f16"
+  },
+  {
+    "module": "Schubert.RS.PolynomialHomogeneousRoot",
+    "path": "Schubert/RS/PolynomialHomogeneousRoot.lean",
+    "original_path": "Schubert/RS/PolynomialHomogeneousRoot.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "f29be23590ae2bfea415989c18e3abd7ad8c0803365518b860380cf34ed0ef87",
+    "sha256": "42fdef0bb8dc92eaf09b5421c5eceb5953f29c0d87c4fa511f1796eaa98da7cc"
+  },
+  {
+    "module": "Schubert.RS.PolynomialLoweringComparison",
+    "path": "Schubert/RS/PolynomialLoweringComparison.lean",
+    "original_path": "Schubert/RS/PolynomialLoweringComparison.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "1f1d12e4076b43148c4f120d590813eee2fc7d39a25eadb21c3136500de1032d",
+    "sha256": "c8d7b556c280920640027a9cea3f111ad5a921a8b9684fa33e51f5cc3b2d88df"
+  },
+  {
+    "module": "Schubert.RS.PolynomialPrimitiveVector",
+    "path": "Schubert/RS/PolynomialPrimitiveVector.lean",
+    "original_path": "Schubert/RS/PolynomialPrimitiveVector.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "0832ca4032361544de030fdf68ad23df2060837c36de6eef0bbf96790c1d2cc5",
+    "sha256": "f545b8212f0052a6147e2f23e4fd6f297247dad5e378333a40c5e348c8078d2e"
+  },
+  {
+    "module": "Schubert.RS.PolynomialResidualExponent",
+    "path": "Schubert/RS/PolynomialResidualExponent.lean",
+    "original_path": "Schubert/RS/PolynomialResidualExponent.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "24421ee52f3145e6cf5122f6b84c254c5b85f66438123928c9206d28a457b060",
+    "sha256": "6ce00033a2523a28ae087f379f05166bdc1b9db5bc13025b3296026ddaf6ab3b"
+  },
+  {
+    "module": "Schubert.RS.PolynomialRootCompletion",
+    "path": "Schubert/RS/PolynomialRootCompletion.lean",
+    "original_path": "Schubert/RS/PolynomialRootCompletion.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "685cb6e77c41128ad2dc17afbd170966753513778058fd42bdab1e2cb664d2de",
+    "sha256": "8d4b5d572163632959fc331230324180f6c5bd6119776d005423bf0889816478"
+  },
+  {
+    "module": "Schubert.RS.PolynomialRootModule",
+    "path": "Schubert/RS/PolynomialRootModule.lean",
+    "original_path": "Schubert/RS/PolynomialRootModule.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "d10afe4ca076baf44402fd561059792e282ab9db427dc4c0a41cb25c3f520f0a",
+    "sha256": "950e8cadf780ce997a595d2d083fc15a8f5dd30f4c619df0559597fd165868c8"
+  },
+  {
+    "module": "Schubert.RS.PolynomialRootStringBasis",
+    "path": "Schubert/RS/PolynomialRootStringBasis.lean",
+    "original_path": "Schubert/RS/PolynomialRootStringBasis.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "2ca589299984c83c9cc704945b8ffff870a13cda9f53cdf708f00ad6f6783759",
+    "sha256": "bf8ee2a5b0c006685ad23c3bb18d7143583c6bc8e622388637f790076542bcc0"
+  },
+  {
+    "module": "Schubert.RS.PolynomialSl2",
+    "path": "Schubert/RS/PolynomialSl2.lean",
+    "original_path": "Schubert/RS/PolynomialSl2.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "6aa84571f5d51b0c5b580813ec11d8e4f0aa990124c0ed5e58fee0e32643c084",
+    "sha256": "b4fe0c79eb87e568c0652c3f41599ab4e6437a0760b6b55817980094692d19ff"
+  },
+  {
+    "module": "Schubert.RS.PolynomialStringAdmissibility",
+    "path": "Schubert/RS/PolynomialStringAdmissibility.lean",
+    "original_path": "Schubert/RS/PolynomialStringAdmissibility.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "9e266fa5ecf3d67bd10379268787837bfc1ef56890683cc98934632602ea79af",
+    "sha256": "3e17b34e580d3ce08b2cc86633d64e50bd2cb74496d896a067d029d600ee4d62"
+  },
+  {
+    "module": "Schubert.RS.PolynomialStringEquivOperators",
+    "path": "Schubert/RS/PolynomialStringEquivOperators.lean",
+    "original_path": "Schubert/RS/PolynomialStringEquivOperators.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "5a0bbdf9c6f472f82daf7a778a8cdd12acdedaa8053e99c7dc5cd3c6d35f55c6",
+    "sha256": "f2faaf627581d8eca15a285f9f43b9426fcc400b06a841ece1e2bd198c0117d0"
+  },
+  {
+    "module": "Schubert.RS.PolynomialStringExponents",
+    "path": "Schubert/RS/PolynomialStringExponents.lean",
+    "original_path": "Schubert/RS/PolynomialStringExponents.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "57c98a20583fb8cd78231a655182eee173934bfd924ea4d49c05dc5bd0c65198",
+    "sha256": "18b2ef0fa0b9e977e0dc3d9828ac22ef66c6e3bcd8532b6a0b61349188e61487"
+  },
+  {
+    "module": "Schubert.RS.PolynomialStringModels",
+    "path": "Schubert/RS/PolynomialStringModels.lean",
+    "original_path": "Schubert/RS/PolynomialStringModels.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "1cccf82d8dea99683ace075fc00b68ceea8764e4b3dab3f2269da125cb93a328",
+    "sha256": "2db47869ae8efe1e1746146830b1da335d54d92e24fe28869bb98ad842558b5c"
+  },
+  {
+    "module": "Schubert.RS.PolynomialStringNormalization",
+    "path": "Schubert/RS/PolynomialStringNormalization.lean",
+    "original_path": "Schubert/RS/PolynomialStringNormalization.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "fee9e7b2513182e749e27aa268aab5f09973393fba2b1e208d150bc369f8a681",
+    "sha256": "88036b2080a033feffce4ed2e1a24b3a14fee27159556ca9159ec259882c8aa6"
+  },
+  {
+    "module": "Schubert.RS.PolynomialStringSplitting",
+    "path": "Schubert/RS/PolynomialStringSplitting.lean",
+    "original_path": "Schubert/RS/PolynomialStringSplitting.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "04faacce03a3d1b7bb9936e796d510714a61fdff5d1b94269a906fb22e9fb00b",
+    "sha256": "dedfe6bc6e9f3e563c9bc00f7017fd45878b6288c3186f51ab69cb9ab5a39fb1"
+  },
+  {
+    "module": "Schubert.RS.PolynomialWeightFunctional",
+    "path": "Schubert/RS/PolynomialWeightFunctional.lean",
+    "original_path": "Schubert/RS/PolynomialWeightFunctional.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "f0682aaa10896f25d224eb79b1d814c0562a41a44e4b1865c456c886b242c3be",
+    "sha256": "6254139c811f7ed827d81ea06f0eab43ea480d10dc8ea6ee97e146c84a9f12d1"
+  },
+  {
+    "module": "Schubert.RS.PolynomialWeightSpanning",
+    "path": "Schubert/RS/PolynomialWeightSpanning.lean",
+    "original_path": "Schubert/RS/PolynomialWeightSpanning.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "8ac5f2b93df6c6c670f78ba0138ef257567b4f37e19156f00bdf57be042eedef",
+    "sha256": "ec85519a1253032b8a411deb54cb11ee123bab48546c1ac89dc09d1548d03152"
+  },
+  {
+    "module": "Schubert.RS.PrefixOrder",
+    "path": "Schubert/RS/PrefixOrder.lean",
+    "original_path": "Schubert/RS/PrefixOrder.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "4c1af7f6bf1203e8d795d362dc08eda0c4976d5f7ddd36ede6ae98f42bbbd741",
+    "sha256": "3ab3eb0af1ec675cfecacb14a768f388c5febad23d07730142958e4b8112934e"
+  },
+  {
+    "module": "Schubert.RS.PresentationRigidity",
+    "path": "Schubert/RS/PresentationRigidity.lean",
+    "original_path": "Schubert/RS/PresentationRigidity.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "8252165261714ae284d5e11b85d9cd8ccec7f207036a0c48299a1cdfa903ca8b",
+    "sha256": "5d52fd392c59bcb201044479c6d79654b0e1191f6d9fee54bd209dc0b36e5737"
+  },
+  {
+    "module": "Schubert.RS.RankOneCompletionGeneration",
+    "path": "Schubert/RS/RankOneCompletionGeneration.lean",
+    "original_path": "Schubert/RS/RankOneCompletionGeneration.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "6ea2d125ba07b7df664f304eccd5c84c0e70e46ff43b7e1ed6e0e107a2d21bdc",
+    "sha256": "277abc1af25df75c19e3a42360bef6ed7596329cc1f43c838313e632e1e0c512"
+  },
+  {
+    "module": "Schubert.RS.RankOneCompletionTransport",
+    "path": "Schubert/RS/RankOneCompletionTransport.lean",
+    "original_path": "Schubert/RS/RankOneCompletionTransport.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "135a1f67a247caae06121dd90f58b2f31a165d02b36a02495356736d2dc00d1c",
+    "sha256": "405002a84ed2c40e19efa580b9a84bf50177f2207de9fcb35b84e2185a27373f"
+  },
+  {
+    "module": "Schubert.RS.RectangleCoefficient",
+    "path": "Schubert/RS/RectangleCoefficient.lean",
+    "original_path": "Schubert/RS/RectangleCoefficient.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "958d0ebbf0a8c2c8b665ff7d4b359e7aa0d8edbf746a6cea4059c46e778ac267",
+    "sha256": "157cbf3bc7a5ca794c6d95c06b31887d8c70fc1371bd30c82aebe59fb60dc04e"
+  },
+  {
+    "module": "Schubert.RS.ReflectedEndpointRelations",
+    "path": "Schubert/RS/ReflectedEndpointRelations.lean",
+    "original_path": "Schubert/RS/ReflectedEndpointRelations.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "cd140fe411a8d9313e3480d9a1bee42a05cf537c8c91e8df2c3ef3b4fc5a15cd",
+    "sha256": "4da913c33076eb4c11c660d10bbc3269a83790412b1ea205733555d02a0c16e0"
+  },
+  {
+    "module": "Schubert.RS.ReflectedPresentationRelations",
+    "path": "Schubert/RS/ReflectedPresentationRelations.lean",
+    "original_path": "Schubert/RS/ReflectedPresentationRelations.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "30a98f00a4b30b6b88c1845f3b05f30baa95a7e348d6d6dc85ab8e22a81e7b72",
+    "sha256": "9f875b0dff6f5de29604c1d443373a49c92c798ab34382d31213ba2806b0c8d8"
+  },
+  {
+    "module": "Schubert.RS.Representation.AdjacentInclusion",
+    "path": "Schubert/RS/Representation/AdjacentInclusion.lean",
+    "original_path": "Schubert/RS/Representation/AdjacentInclusion.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "cf76c227ce8316fee963fed0e86144845c88f3bbe5fd2ffed21ed7542f152030",
+    "sha256": "eb6bcfd0e59123b0915221da7e27ab6e14a8868a3ef26997228ad351d855337c"
+  },
+  {
+    "module": "Schubert.RS.Representation.AdjacentSaturation",
+    "path": "Schubert/RS/Representation/AdjacentSaturation.lean",
+    "original_path": "Schubert/RS/Representation/AdjacentSaturation.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "df3d2c773746cc0c3ddfd3f62c76a46eea7f1a30caead21df795dbb435b47255",
+    "sha256": "51050c9bb67c5a0ec93966038048c958ac526827ac294221debe1ff25f40ce8d"
+  },
+  {
+    "module": "Schubert.RS.Representation.AdjacentStability",
+    "path": "Schubert/RS/Representation/AdjacentStability.lean",
+    "original_path": "Schubert/RS/Representation/AdjacentStability.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "c6bcaad5a4fddf6dacb3d6029ecfbce57175d5ed58a90015d2d0ffee1d649286",
+    "sha256": "d2f1851116fdad9c3d51e74af5f1a57c2e135173f5ec124a10f3fb7e9c9dc0e3"
+  },
+  {
+    "module": "Schubert.RS.Representation.CartanCommutators",
+    "path": "Schubert/RS/Representation/CartanCommutators.lean",
+    "original_path": "Schubert/RS/Representation/CartanCommutators.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "7e5d42b1e45793cf1074195c6a20d7a88906885e11f0e738dc2c4be07f4ada4b",
+    "sha256": "398da4911f01c057c10aecfaad0ca2c55cd1488e7f8911048a386222b7c1480b"
+  },
+  {
+    "module": "Schubert.RS.Representation.CompositionFlag",
+    "path": "Schubert/RS/Representation/CompositionFlag.lean",
+    "original_path": "Schubert/RS/Representation/CompositionFlag.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "b8f99655f7ddde490ce9e78cd41761dc0da916349b0351e21c80f374f282df31",
+    "sha256": "5ae8f0f572f00b46973cd15d6d0e3e8534e67bf36438f5775578b239106d2b8d"
+  },
+  {
+    "module": "Schubert.RS.Representation.CompositionStringFiltration",
+    "path": "Schubert/RS/Representation/CompositionStringFiltration.lean",
+    "original_path": "Schubert/RS/Representation/CompositionStringFiltration.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "18c89eb2477aa337a5ba8235687ead6fc13827e6bcfbda3e1db2b5e86fc5df6a",
+    "sha256": "c52a9c0b0332c24a276a65104bff757175556fef11fb8735ed3657f0595e1355"
+  },
+  {
+    "module": "Schubert.RS.Representation.CounterexampleWindow",
+    "path": "Schubert/RS/Representation/CounterexampleWindow.lean",
+    "original_path": "Schubert/RS/Representation/CounterexampleWindow.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "664ff63f4fc77e170414d5a6ac9be4e501e7df5016a3cdf67c46b173149e3a73",
+    "sha256": "24d2a8f9770caff448844c1f5eabf67388b34e3516298e9b7ef23c703d7a740c"
+  },
+  {
+    "module": "Schubert.RS.Representation.CyclicGeneration",
+    "path": "Schubert/RS/Representation/CyclicGeneration.lean",
+    "original_path": "Schubert/RS/Representation/CyclicGeneration.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "a6a564ae0632e28317ee89ce85975bb3f8f3b00247f269743262420fd6491c0c",
+    "sha256": "f7b68031e0d63216348b36495599e4089856f7b8ea0384ac4a399f56e6c314b4"
+  },
+  {
+    "module": "Schubert.RS.Representation.DegreeSeparation",
+    "path": "Schubert/RS/Representation/DegreeSeparation.lean",
+    "original_path": "Schubert/RS/Representation/DegreeSeparation.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "21494f0e1adb79092d591bda1c9fa47582f3d47adea6e9062120e1adcf21262d",
+    "sha256": "aa50eeb819ef958b867e1bc7758ddc206bd0b4dda1c598b33f748b991e499d0f"
+  },
+  {
+    "module": "Schubert.RS.Representation.DegreeTorus",
+    "path": "Schubert/RS/Representation/DegreeTorus.lean",
+    "original_path": "Schubert/RS/Representation/DegreeTorus.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "9b30f7523f9c725e27794e704b80c4bc395089a2e1aaa022842f6df2d7532e5b",
+    "sha256": "0e6a7761cfafa3c4e4cdac050a395eb31e50d61991179515fcc96ff3c88395b4"
+  },
+  {
+    "module": "Schubert.RS.Representation.DerivationStrings",
+    "path": "Schubert/RS/Representation/DerivationStrings.lean",
+    "original_path": "Schubert/RS/Representation/DerivationStrings.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "16d2a204ee93ebbec830ddae8b862381905fe3bef5962bbb741a9389e89cda24",
+    "sha256": "2d50f386bf630f21a5ab289b6b7a409ded5bc93a634dd2d3c80f373e5f791c84"
+  },
+  {
+    "module": "Schubert.RS.Representation.Dominant",
+    "path": "Schubert/RS/Representation/Dominant.lean",
+    "original_path": "Schubert/RS/Representation/Dominant.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "2418be60c19d95e69849797573ba8a3fd3fbb2daf67035b7e6afba24723043a7",
+    "sha256": "6a77905b63068aa35906098cb5aeeb9cb3d3be0280a14ccdef2099c222f968e3"
+  },
+  {
+    "module": "Schubert.RS.Representation.DominantCharacter",
+    "path": "Schubert/RS/Representation/DominantCharacter.lean",
+    "original_path": "Schubert/RS/Representation/DominantCharacter.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "9f24e8ba27b5939932baf4293f3c4a85df144cbd38b19bb66f6897c3b15e4093",
+    "sha256": "2c05c2480fa11f90f33367e599e8bf985ac38e6b283253953026e3a75436e0f5"
+  },
+  {
+    "module": "Schubert.RS.Representation.EigenbasisFiltration",
+    "path": "Schubert/RS/Representation/EigenbasisFiltration.lean",
+    "original_path": "Schubert/RS/Representation/EigenbasisFiltration.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "8cca30ebf5d184234cf94076a9628055b987a2bc94354fa39e3fa05f6d78e121",
+    "sha256": "c4fdc8150a1b375d384afc1fc63e9cbc7c4dc1d063dca6e7df907d8a62014c8d"
+  },
+  {
+    "module": "Schubert.RS.Representation.EigenspaceExhaustion",
+    "path": "Schubert/RS/Representation/EigenspaceExhaustion.lean",
+    "original_path": "Schubert/RS/Representation/EigenspaceExhaustion.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "0702c6effa8a5208e7536305265ecbcda6c1fb23fd7a57ee2968c903b3669308",
+    "sha256": "cf97cd5ec70ccdbdb1854fed4ab251c425e550b883df554192ce81be529ba2ec"
+  },
+  {
+    "module": "Schubert.RS.Representation.EnvelopingGrading",
+    "path": "Schubert/RS/Representation/EnvelopingGrading.lean",
+    "original_path": "Schubert/RS/Representation/EnvelopingGrading.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "8a6ad6bfd7c6ac7d94de48c5f5ad8e3d52a03d8142decd87d297cd7ca27f5ee1",
+    "sha256": "0b1a38e182873580a02af96df356df9e2b1cb7ce627d08a398bdfc22e31b63e8"
+  },
+  {
+    "module": "Schubert.RS.Representation.EnvelopingIntertwining",
+    "path": "Schubert/RS/Representation/EnvelopingIntertwining.lean",
+    "original_path": "Schubert/RS/Representation/EnvelopingIntertwining.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "ccaf6c396bfc22667462ddc3f8f289f86224db50e7dbc96238f5b92f05dd5c08",
+    "sha256": "8e6dfe414e4e90885fd5dc4a8bae4459ab1d7aae0f244ba9158399cdc98da8b6"
+  },
+  {
+    "module": "Schubert.RS.Representation.ExtremalStrings",
+    "path": "Schubert/RS/Representation/ExtremalStrings.lean",
+    "original_path": "Schubert/RS/Representation/ExtremalStrings.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "73a487de7a028873f671264f7bfc166b4bfc28e7a4547a1b3098a193b8133fd9",
+    "sha256": "4fd595a5c114ea71f1fa4dc1a44f8b607a5f57d44e5c96ad139f2aa0dc261c27"
+  },
+  {
+    "module": "Schubert.RS.Representation.FlagChoice",
+    "path": "Schubert/RS/Representation/FlagChoice.lean",
+    "original_path": "Schubert/RS/Representation/FlagChoice.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "0144edc16f3ff88aee00165b5b8360f0f01c11727d8ed9beb97686ac5ce62096",
+    "sha256": "c3203e512e0226a095d9754437681f6a2e7a36cf1b2fe31a87e0a718ce5fdc4d"
+  },
+  {
+    "module": "Schubert.RS.Representation.FlagCyclic",
+    "path": "Schubert/RS/Representation/FlagCyclic.lean",
+    "original_path": "Schubert/RS/Representation/FlagCyclic.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "5992fa47706923069e80e0101222d94cfcc59a9f9084e028484eb96007d33f83",
+    "sha256": "798cb611c4742569c5c1d55f4a34e4dd67647225e7b57754eafb9e9233af71e6"
+  },
+  {
+    "module": "Schubert.RS.Representation.FlagDiagonal",
+    "path": "Schubert/RS/Representation/FlagDiagonal.lean",
+    "original_path": "Schubert/RS/Representation/FlagDiagonal.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "f2051d45f5b3b8c3970c286004c8be13d509627050c8dc1709fa6a5d11e55d43",
+    "sha256": "3500b40c97c196260aa9bf4c2830a048019994f39283e34dd0b5b1159dc7920c"
+  },
+  {
+    "module": "Schubert.RS.Representation.FlagFinite",
+    "path": "Schubert/RS/Representation/FlagFinite.lean",
+    "original_path": "Schubert/RS/Representation/FlagFinite.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "d2f083e82deef10337ebfd41566866abb95be859b23298ec90797599d7105c88",
+    "sha256": "7bbf8a5721beb9d0a4f3d89fb94871651f9515ed850bfbbba72e154f4d501641"
+  },
+  {
+    "module": "Schubert.RS.Representation.FlagSeeds",
+    "path": "Schubert/RS/Representation/FlagSeeds.lean",
+    "original_path": "Schubert/RS/Representation/FlagSeeds.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "51a17dc0be8e4a4a59527f533547ec527aae4ca1b13592dd190948bd344c45c0",
+    "sha256": "148767db97fe62c82332d722651a8b7c9a6591966ce1dcf2a596a86711e4d340"
+  },
+  {
+    "module": "Schubert.RS.Representation.FlagTies",
+    "path": "Schubert/RS/Representation/FlagTies.lean",
+    "original_path": "Schubert/RS/Representation/FlagTies.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "882d347f1b97535fc41b2fb1b8a7b1141afbf11376de4d7c78f7258e8513d992",
+    "sha256": "78c9227e392702fb43d9ffa0e8dadb3b21fd3816377acdf0e71d9f7c363b8c90"
+  },
+  {
+    "module": "Schubert.RS.Representation.FlagTorus",
+    "path": "Schubert/RS/Representation/FlagTorus.lean",
+    "original_path": "Schubert/RS/Representation/FlagTorus.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "34671579d9a6be80719e5c352ede66a197ff53189708a684f4f6db03d826ad0e",
+    "sha256": "d327b1a66d5666ce7a32c352bf0df30e85c18845174289e29628fea03982c854"
+  },
+  {
+    "module": "Schubert.RS.Representation.FlagWeights",
+    "path": "Schubert/RS/Representation/FlagWeights.lean",
+    "original_path": "Schubert/RS/Representation/FlagWeights.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "b0d5ebee446054625c4d17bb02af129f979f03a5955d0ece61647133f3666815",
+    "sha256": "bd518aa5930bc668852a7f8fef4dc9dc85d8f116cb1d0df23a6d6bdaa42e94f0"
+  },
+  {
+    "module": "Schubert.RS.Representation.FlagWeyl",
+    "path": "Schubert/RS/Representation/FlagWeyl.lean",
+    "original_path": "Schubert/RS/Representation/FlagWeyl.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "ef727a855cd24ef210d49714b4c4b4247be9d610825ea0129dbecd2b3ca3293d",
+    "sha256": "cbd106468e4041b593d7061f953da2f331d297d675fcc969c3a3fc1c7d4ac371"
+  },
+  {
+    "module": "Schubert.RS.Representation.FullWeightSpaces",
+    "path": "Schubert/RS/Representation/FullWeightSpaces.lean",
+    "original_path": "Schubert/RS/Representation/FullWeightSpaces.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "166ffc638a408d4dd362db89226966cbbfa6ddda5729100fbfd31ea13957ea7b",
+    "sha256": "55699e4f844de67a13fbfe4b281718ab249b65e99f1d00a7f44ef399c9bbda51"
+  },
+  {
+    "module": "Schubert.RS.Representation.HighestAnnihilation",
+    "path": "Schubert/RS/Representation/HighestAnnihilation.lean",
+    "original_path": "Schubert/RS/Representation/HighestAnnihilation.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "e5266db8d05f3a7e83dde148fb2ecb05e7841391b3d5ab85edfa11fd322ba5a5",
+    "sha256": "12cff0566736ff2b226f93de0e313cebb7738c1ac55f0984f60d9cfe728854e2"
+  },
+  {
+    "module": "Schubert.RS.Representation.HighestStrings",
+    "path": "Schubert/RS/Representation/HighestStrings.lean",
+    "original_path": "Schubert/RS/Representation/HighestStrings.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "fad5d57195ebd4372ac33815189e857f16fc2be7d5a103fe5efadc47146166fe",
+    "sha256": "2d6a9362c2d3872ee60164aabd748484ffd5bea9f56894e39e9d67d0d98db626"
+  },
+  {
+    "module": "Schubert.RS.Representation.KillingCommutators",
+    "path": "Schubert/RS/Representation/KillingCommutators.lean",
+    "original_path": "Schubert/RS/Representation/KillingCommutators.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "fb0bcdb6a2ae2789f8539c929aa4527aa0e78bcdb245c68de3819b4e82bad235",
+    "sha256": "06e6be7787e5ac796384b3583e6f3b0721947d028de34af84ec1361b4f9c5b4a"
+  },
+  {
+    "module": "Schubert.RS.Representation.KillingStraightening",
+    "path": "Schubert/RS/Representation/KillingStraightening.lean",
+    "original_path": "Schubert/RS/Representation/KillingStraightening.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "43c14519fc79c9120490c25e3e161d22243375733c6fe4ede2966c3280e75a6d",
+    "sha256": "b08d496772cbf659f8a80d940526cc7b6f15afaeecbc77ebfd169f50b760feae"
+  },
+  {
+    "module": "Schubert.RS.Representation.KillingWordFiltration",
+    "path": "Schubert/RS/Representation/KillingWordFiltration.lean",
+    "original_path": "Schubert/RS/Representation/KillingWordFiltration.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "8b3ce1dabd1a41571ed8eab1cb36414b7e87cdb6c4a6068cb5efbb7925aae1d7",
+    "sha256": "859bff86d4717101cdb5bc456a7db85bda2141d5986e58efcfb4cdea81fdbf13"
+  },
+  {
+    "module": "Schubert.RS.Representation.LieActionExponential",
+    "path": "Schubert/RS/Representation/LieActionExponential.lean",
+    "original_path": "Schubert/RS/Representation/LieActionExponential.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "086b1639dd777ef8c2bce549353b7ebdd77e201a73e46cb5792b5f21a09b3396",
+    "sha256": "4114a9ad7a96ac2e34dd21d3253875ba4f66e19c08feeeb0d9840534c90f291f"
+  },
+  {
+    "module": "Schubert.RS.Representation.LoweringSpan",
+    "path": "Schubert/RS/Representation/LoweringSpan.lean",
+    "original_path": "Schubert/RS/Representation/LoweringSpan.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "371ef0cbc0a89a226b2450060ae85fdfd49fefdc145b0f84a44ab2118bcb968f",
+    "sha256": "a8e7642e4c434bd3efe19e9fe160836503af8cb96a113f0e0249bc61baa417b6"
+  },
+  {
+    "module": "Schubert.RS.Representation.MinorStrings",
+    "path": "Schubert/RS/Representation/MinorStrings.lean",
+    "original_path": "Schubert/RS/Representation/MinorStrings.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "f4248dac85b819698505540e54a3ed0b507e3d1c5469a2171c86f15fa6b35697",
+    "sha256": "a2419fd82cd8f452136c5b710b064564e4f141df4e216189132914d545badf86"
+  },
+  {
+    "module": "Schubert.RS.Representation.OrderedPBWBasis",
+    "path": "Schubert/RS/Representation/OrderedPBWBasis.lean",
+    "original_path": "Schubert/RS/Representation/PBWInterface.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "db30519dd64d14da4bd25e155bc31d1f709f96def71274f3b665fde367ec5d2e",
+    "sha256": "e9460e87e8c1e7a137af25ad23e6e7ec5c697d3724173480886e44a0afbc0379"
+  },
+  {
+    "module": "Schubert.RS.Representation.ParabolicRadical",
+    "path": "Schubert/RS/Representation/ParabolicRadical.lean",
+    "original_path": "Schubert/RS/Representation/ParabolicRadical.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "da673d8c08cc2ddecb5d04387aee36528dfca3526d827efa81b6295b5c2dc975",
+    "sha256": "23c3b564cb73c1f35a130f01e189ca3af42f2fccd1d2194764939ced5d83e391"
+  },
+  {
+    "module": "Schubert.RS.Representation.ParabolicRadicalAction",
+    "path": "Schubert/RS/Representation/ParabolicRadicalAction.lean",
+    "original_path": "Schubert/RS/Representation/ParabolicRadicalAction.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "32fecd9433bd014520cb1d08c5bdece2c350555c5f7240abe62f4c8c9adb4912",
+    "sha256": "e645e1f5bf32566d6093178b6712aa2a0a278d798530b607ebe1a2c5268e8109"
+  },
+  {
+    "module": "Schubert.RS.Representation.ParabolicRadicalLie",
+    "path": "Schubert/RS/Representation/ParabolicRadicalLie.lean",
+    "original_path": "Schubert/RS/Representation/ParabolicRadicalLie.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "6bbccfe9e07525fdc7514002b982640aede50b926f1d48b6c9ebdec0763bd8a8",
+    "sha256": "0c7af5a2645919fa13b4726612bfe4eeca36a504a5d107a65139983baababf2b"
+  },
+  {
+    "module": "Schubert.RS.Representation.ParabolicRadicalNilpotence",
+    "path": "Schubert/RS/Representation/ParabolicRadicalNilpotence.lean",
+    "original_path": "Schubert/RS/Representation/ParabolicRadicalNilpotence.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "2ff47354b9f380dc272b64ea4107d9f63749aae93750fa5c5a6cefaac2f7b2ce",
+    "sha256": "94195cbf40581ae5dd315eeed0595ad19536c024ad1970ba3884e797729adc48"
+  },
+  {
+    "module": "Schubert.RS.Representation.ParabolicRadicalSpan",
+    "path": "Schubert/RS/Representation/ParabolicRadicalSpan.lean",
+    "original_path": "Schubert/RS/Representation/ParabolicRadicalSpan.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "bbba645562d4c51a4b81528503db52a38def56d6b83120e6a2446f3c99b12506",
+    "sha256": "fbd78e14fc2fd7636cd8f5356bfb407eee4bd72eec9d7420f2d184dfd0ac7495"
+  },
+  {
+    "module": "Schubert.RS.Representation.ParabolicRadicalWeyl",
+    "path": "Schubert/RS/Representation/ParabolicRadicalWeyl.lean",
+    "original_path": "Schubert/RS/Representation/ParabolicRadicalWeyl.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "18a21be9291dcb949189d5a8adc7b305fba5ac735d8ed036b828cfc33889f660",
+    "sha256": "ea36ff893413b949aed01898681802c7c9b4d5d7ccfc8905056c1f873609bdf4"
+  },
+  {
+    "module": "Schubert.RS.Representation.ParabolicUpperRepresentation",
+    "path": "Schubert/RS/Representation/ParabolicUpperRepresentation.lean",
+    "original_path": "Schubert/RS/Representation/ParabolicUpperRepresentation.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "0fbc6d22415cfe5910dd29a6ef5a4a5644c9ee67ddeb46e8d9d16d398055a345",
+    "sha256": "e4434cba7fcfa1bbe80c59a158043889f94d6e265713891f6fe72b3685dee79b"
+  },
+  {
+    "module": "Schubert.RS.Representation.PolynomialAmbient",
+    "path": "Schubert/RS/Representation/PolynomialAmbient.lean",
+    "original_path": "Schubert/RS/Representation/PolynomialAmbient.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "ee3b4e6463a7a1def97f10fa50541195574d80f86848eb596c67af0e582aa399",
+    "sha256": "9c7b3d04ef39b569ef6063455607da5f4d6a04d0798ed37adfee1362ce2937fc"
+  },
+  {
+    "module": "Schubert.RS.Representation.PolynomialCompletionEvaluation",
+    "path": "Schubert/RS/Representation/PolynomialCompletionEvaluation.lean",
+    "original_path": "Schubert/RS/Representation/PolynomialCompletionEvaluation.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "f52c9c3d17bf4884fc4ae02ddc6a452d303bd0840f8acf08623749f7c1b952b0",
+    "sha256": "d7f9ed0470812eff1510da4ecacdc4663cf62423d71aa219c22d4419ddeba06f"
+  },
+  {
+    "module": "Schubert.RS.Representation.PolynomialCompletionNilpotence",
+    "path": "Schubert/RS/Representation/PolynomialCompletionNilpotence.lean",
+    "original_path": "Schubert/RS/Representation/PolynomialCompletionNilpotence.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "a37ff63b524d441a76d08f6d951c4a3ecc28603466502b7e11bbda1ca5c2ec56",
+    "sha256": "ddbf105985adeab08e686ebf36eb2a928fde5a29506833a30c6fb8ce5f5687d5"
+  },
+  {
+    "module": "Schubert.RS.Representation.PolynomialCompletionRadical",
+    "path": "Schubert/RS/Representation/PolynomialCompletionRadical.lean",
+    "original_path": "Schubert/RS/Representation/PolynomialCompletionRadical.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "d5627c1675648043961d09198992852b2492d85d58844f3a8c1ca2c17c462d09",
+    "sha256": "c3fa40e1c3f7726d7c05d4ed0b13cf41b5a6567b33c22cb74e5a2de5c6ab5f7a"
+  },
+  {
+    "module": "Schubert.RS.Representation.PolynomialCompletionUpper",
+    "path": "Schubert/RS/Representation/PolynomialCompletionUpper.lean",
+    "original_path": "Schubert/RS/Representation/PolynomialCompletionUpper.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "a2ee1b6ef0300df0e35bf37c8c8c7b4988da35df33975576690347e2ec75e3da",
+    "sha256": "fc665808de1be8068118a72c49f25135ef6b2f94012dd71443408e2ef9a86e14"
+  },
+  {
+    "module": "Schubert.RS.Representation.PolynomialCompletionWeyl",
+    "path": "Schubert/RS/Representation/PolynomialCompletionWeyl.lean",
+    "original_path": "Schubert/RS/Representation/PolynomialCompletionWeyl.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "e81dfa18baa606216b528040721cd0868d833ed772e8124f4e415446cdf0328e",
+    "sha256": "09e1943b356e4420bbc6c9f4b1533e359edb9d807447a225b93c5e40c46d460e"
+  },
+  {
+    "module": "Schubert.RS.Representation.PolynomialCovariance",
+    "path": "Schubert/RS/Representation/PolynomialCovariance.lean",
+    "original_path": "Schubert/RS/Representation/PolynomialCovariance.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "4b558e8fc329121d9a0af6ecd5a50901dc78252701e510f92618aabebc8b103f",
+    "sha256": "d8c81b9e174b0c1e86286a14ac6b584d7bcbe23d39c7d267ed5cb2f5525f9cd2"
+  },
+  {
+    "module": "Schubert.RS.Representation.PolynomialWeylEndpoint",
+    "path": "Schubert/RS/Representation/PolynomialWeylEndpoint.lean",
+    "original_path": "Schubert/RS/Representation/PolynomialWeylEndpoint.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "d917ada9d720d2c4bddd17dccf0f85ca297f97059304c9b522e7800b3362dfa9",
+    "sha256": "cffb86ee030e121146a911832e323294a6d257f6cb3fabf794ea5da0d5d2ea19"
+  },
+  {
+    "module": "Schubert.RS.Representation.Presentation",
+    "path": "Schubert/RS/Representation/Presentation.lean",
+    "original_path": "Schubert/RS/Representation/Presentation.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "ad1eddaecc9c33fc69965e1593f9d8303e5626978b49f4b2783d5ce9cff40e13",
+    "sha256": "c8e35e9dcb97a61942348464489fb73e8ce33ca21b61e61e137ef1f7316786e0"
+  },
+  {
+    "module": "Schubert.RS.Representation.PrimitiveStringExtension",
+    "path": "Schubert/RS/Representation/PrimitiveStringExtension.lean",
+    "original_path": "Schubert/RS/Representation/PrimitiveStringExtension.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "7896e4d8707e6ee814dab777be2a9a1582b6d9add657f490193d66b7cf25e4aa",
+    "sha256": "93820dd37f443058850569a2bb6848270ae98308428b757b9749c76841e15e1c"
+  },
+  {
+    "module": "Schubert.RS.Representation.PrimitiveStringModule",
+    "path": "Schubert/RS/Representation/PrimitiveStringModule.lean",
+    "original_path": "Schubert/RS/Representation/PrimitiveStringModule.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "a941cfc2c5511f21b604b97930f3213c35eb22e6906b4d3f476e2d2498d012b8",
+    "sha256": "844c4da8b3a55b33c410f65ef3a5d261c96d55e2862cce549fcc2cfc2e76e552"
+  },
+  {
+    "module": "Schubert.RS.Representation.PrimitiveStringUniversal",
+    "path": "Schubert/RS/Representation/PrimitiveStringUniversal.lean",
+    "original_path": "Schubert/RS/Representation/PrimitiveStringUniversal.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "6332fcba6a974668793023af7e2b0f1811a324258e351dcc14cd8fdd2724f2f6",
+    "sha256": "68a5c350889c4bc5ed404295017fe5f397d86d6bdcb0a1f35e4f6d1b338e5f02"
+  },
+  {
+    "module": "Schubert.RS.Representation.RankOne",
+    "path": "Schubert/RS/Representation/RankOne.lean",
+    "original_path": "Schubert/RS/Representation/RankOne.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "9d6901a9ad1b244ee655bf7224ed855ae1b8589679441da95a3c3d939afa4a52",
+    "sha256": "57560cb1e293366a0dae389f89ee6a06055f509a878ce6f55446cbc5e716a215"
+  },
+  {
+    "module": "Schubert.RS.Representation.RankOneActionExtension",
+    "path": "Schubert/RS/Representation/RankOneActionExtension.lean",
+    "original_path": "Schubert/RS/Representation/RankOneActionExtension.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "8e9ee6e2f9a0f0fa7a1f236797ee356a04f3cfb12a057d58f904be66275f6b2b",
+    "sha256": "a0ac5e79e1139016b78d7206cad256edee615c4f85bbb699ca04ea28c06b2d97"
+  },
+  {
+    "module": "Schubert.RS.Representation.RankOneActionJacobi",
+    "path": "Schubert/RS/Representation/RankOneActionJacobi.lean",
+    "original_path": "Schubert/RS/Representation/RankOneActionJacobi.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "14524eb286f3575d2b29b91d5b36e66ea1d8414d186f0c0da1f419ba363a4c98",
+    "sha256": "a2d1bcb3a4f85b3e5b65638f900d354c4423f721baace844acbee57e8d322caf"
+  },
+  {
+    "module": "Schubert.RS.Representation.RankOneActionNaturality",
+    "path": "Schubert/RS/Representation/RankOneActionNaturality.lean",
+    "original_path": "Schubert/RS/Representation/RankOneActionNaturality.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "d2e12ab9a9fc63ef594d99a7241b27d39d44f318f37dc7bc6b8f6c15845ea364",
+    "sha256": "1632c95c0f28b22baac3ab055926f1ed0e87f3038360dca1a5432cd004b92c2b"
+  },
+  {
+    "module": "Schubert.RS.Representation.RankOneCharacter",
+    "path": "Schubert/RS/Representation/RankOneCharacter.lean",
+    "original_path": "Schubert/RS/Representation/RankOneCharacter.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "07d0b4a9ca64fa1f34b37e85f2ebdac7dceef0cd4a138ba10e3e40e3794d3f96",
+    "sha256": "28f1b28f281dea6e87cb3e536307d7f1011ab8d3ac638b8b1a235d492a70c7a7"
+  },
+  {
+    "module": "Schubert.RS.Representation.RankOneCompletion",
+    "path": "Schubert/RS/Representation/RankOneCompletion.lean",
+    "original_path": "Schubert/RS/Representation/RankOneCompletion.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "32b37b68799160996aef25f29959eecfe1af3f447d4eb541ece8bb6b4744a54b",
+    "sha256": "0feab969cf9c66f0d35b9cf264ebeb3dc14a2c4378ee9ec02c3d33a856380d22"
+  },
+  {
+    "module": "Schubert.RS.Representation.RankOnePiCompletion",
+    "path": "Schubert/RS/Representation/RankOnePiCompletion.lean",
+    "original_path": "Schubert/RS/Representation/RankOnePiCompletion.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "4ca5d7f86de5ae910fa635be989d66e150c39a8b6d5806f7190b94fc989ee170",
+    "sha256": "026e371890b587a4349c05aec537f22b8276f6b91b16e074ed0035b8ceb1597a"
+  },
+  {
+    "module": "Schubert.RS.Representation.RankOnePiModule",
+    "path": "Schubert/RS/Representation/RankOnePiModule.lean",
+    "original_path": "Schubert/RS/Representation/RankOnePiModule.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "994be6a266731c2c35088fbffc1c01d726581c6085cf7943f00b030580b70240",
+    "sha256": "bf0b0a22b53febd13c3092b6d759ba9e2a55f2615438450b4c9e9a7a90dd284e"
+  },
+  {
+    "module": "Schubert.RS.Representation.RankOneRadicalModule",
+    "path": "Schubert/RS/Representation/RankOneRadicalModule.lean",
+    "original_path": "Schubert/RS/Representation/RankOneRadicalModule.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "adb1203f1ee7cd2e1db6f48c134a636d0a3421d171f52efe9ec0a256f2a6eead",
+    "sha256": "bd35efb53f1e952d245359ea41e459029d18c2be55013789fb35b3b883d702b2"
+  },
+  {
+    "module": "Schubert.RS.Representation.RankOneTensorAdjunction",
+    "path": "Schubert/RS/Representation/RankOneTensorAdjunction.lean",
+    "original_path": "Schubert/RS/Representation/RankOneTensorAdjunction.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "bf56e0fe9d704c02ed3cb3b97bb06f23ea8d0d43afe1a8bb20a0ae9635e4c150",
+    "sha256": "feb01a5a9ab9101329a80b4cfffb1a05cc88d7cb323d9762741dc8b8a55e90e0"
+  },
+  {
+    "module": "Schubert.RS.Representation.RankOneTensorCoherence",
+    "path": "Schubert/RS/Representation/RankOneTensorCoherence.lean",
+    "original_path": "Schubert/RS/Representation/RankOneTensorCoherence.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "3464fc584e05837f7e69f545abda0519f305b137d33f2285223991bfb9e88b58",
+    "sha256": "5717619aa6cd4d61f6b4b56c519caedf06be31c46342126c8bf299ef8051e46b"
+  },
+  {
+    "module": "Schubert.RS.Representation.RankOneTensorCompletion",
+    "path": "Schubert/RS/Representation/RankOneTensorCompletion.lean",
+    "original_path": "Schubert/RS/Representation/RankOneTensorCompletion.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "1c7e99bc03c103864f2acd7e5e0258ed6c86e848818fcfc3aa16e95f846bbbc1",
+    "sha256": "017086681a195bdbbad850a1b675cef6bb8d736d6e15b30c7eb14c9517ffb6c6"
+  },
+  {
+    "module": "Schubert.RS.Representation.RelativePBW",
+    "path": "Schubert/RS/Representation/RelativePBW.lean",
+    "original_path": "Schubert/RS/Representation/RelativePBW.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "73562a60d5f11d3bad028600adebf1f36dcbed0e6afb58fb873ddd77c1b5b839",
+    "sha256": "3795a1bd577b5a32aa11ba6e25dbed62333a977d24f735249a3fa20162cbaa4b"
+  },
+  {
+    "module": "Schubert.RS.Representation.RelativePBWBasis",
+    "path": "Schubert/RS/Representation/RelativePBWBasis.lean",
+    "original_path": "Schubert/RS/Representation/RelativePBWBasis.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "345c9b20f0536f4a1107bfcd462a11d895d9a4eb5576245b09bca9e75c0cf0a3",
+    "sha256": "2a960100e3f4c8685d07ddb8bc72b2e8ac99aef1b485c1f12cb4298c6ff607a0"
+  },
+  {
+    "module": "Schubert.RS.Representation.RelativePBWIdeal",
+    "path": "Schubert/RS/Representation/RelativePBWIdeal.lean",
+    "original_path": "Schubert/RS/Representation/RelativePBWIdeal.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "c35a344c3e0dc05a51b713f20735eb1c145cb91355a665d6e24fa9f84be6e4cd",
+    "sha256": "a676036d5ff37941d13189a78389087189083607c5d3e101ff0efbd6931affc8"
+  },
+  {
+    "module": "Schubert.RS.Representation.RootBasis",
+    "path": "Schubert/RS/Representation/RootBasis.lean",
+    "original_path": "Schubert/RS/Representation/RootBasis.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "a88a1518f5fc865b53494cc571324b2a8729bafb9d6cd378b8fd50d714f0c1a2",
+    "sha256": "c4778deb4074011f194ba2d4a2787dfd6a395c5717d11377827b06e0ac7e914e"
+  },
+  {
+    "module": "Schubert.RS.Representation.Sl2AdjointWeyl",
+    "path": "Schubert/RS/Representation/Sl2AdjointWeyl.lean",
+    "original_path": "Schubert/RS/Representation/Sl2AdjointWeyl.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "80d7032ee68166b0452a233471fc6bdc9b6edcc282ba20a5c089d69e20e5088c",
+    "sha256": "df44c53560a3b0b6693c459ffa9bf7c6cd4a8fb7c78509f6a9ce2c19705da348"
+  },
+  {
+    "module": "Schubert.RS.Representation.Sl2WeylEndpoint",
+    "path": "Schubert/RS/Representation/Sl2WeylEndpoint.lean",
+    "original_path": "Schubert/RS/Representation/Sl2WeylEndpoint.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "d280d4103bf55ffdd0c48ed741f1bf1219a2ef7dcfbffeb6af20f37b6793308b",
+    "sha256": "8f88c499ee674f4ccbca4659eb8dbfe218e72d172101cef8733b532a72236f78"
+  },
+  {
+    "module": "Schubert.RS.Representation.StringEndpoints",
+    "path": "Schubert/RS/Representation/StringEndpoints.lean",
+    "original_path": "Schubert/RS/Representation/StringEndpoints.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "242637cbe41f6e814c18006d1b25712035a184a10bb05884dd2075a855bcffe0",
+    "sha256": "ab58892a9eb82e668edab10326be132989f968c5befc6462d94ea397546c3742"
+  },
+  {
+    "module": "Schubert.RS.Representation.StringFiltration",
+    "path": "Schubert/RS/Representation/StringFiltration.lean",
+    "original_path": "Schubert/RS/Representation/StringFiltration.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "7574d543e4910c829a8a24905e97f8ffb4bb71e63d6da950a37dccfd7373a0e4",
+    "sha256": "b06225413e7d3a299ce5b6de8a012aa7861aa63d3a9673d47a52bc225cb27020"
+  },
+  {
+    "module": "Schubert.RS.Representation.StringFiltrationStructure",
+    "path": "Schubert/RS/Representation/StringFiltrationStructure.lean",
+    "original_path": "Schubert/RS/Representation/StringFiltrationStructure.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "ff0c0613a01724989daeb592f4439795517eb9cbaecc8e286497059bf028457d",
+    "sha256": "5da64c572dc698a89c39e9287a705b78639eadd01754a7191724d2512fd11239"
+  },
+  {
+    "module": "Schubert.RS.Representation.TensorExponentialCovariance",
+    "path": "Schubert/RS/Representation/TensorExponentialCovariance.lean",
+    "original_path": "Schubert/RS/Representation/TensorExponentialCovariance.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "457f84d1373f0127617b4e65ce4fdb1d15d80abeb358fc7f6f75ec6af03abd8c",
+    "sha256": "fd413aa7fb3ff9192de0178df9f63e43e9b6904693835c6e6cb8a5c212b4255c"
+  },
+  {
+    "module": "Schubert.RS.Representation.Torus",
+    "path": "Schubert/RS/Representation/Torus.lean",
+    "original_path": "Schubert/RS/Representation/Torus.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "90a54e8fd82eb2abb49d219633e30287776dbe1dce6ca2ee52d434116ea85ae9",
+    "sha256": "7a089de651f1e5de823dbdcd954566f214a0f42ef4065c5fbffd4bf7cf400850"
+  },
+  {
+    "module": "Schubert.RS.Representation.TypeA",
+    "path": "Schubert/RS/Representation/TypeA.lean",
+    "original_path": "Schubert/RS/Representation/TypeA.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "fae62d820579a439e817123182bce7273b0e8366282fb54cbdc334f5b053eff8",
+    "sha256": "bc2548f65ccf0e73c7ff72c297a116c7d8ed3a8a7fb99ce25f5ac5ca12b64e7d"
+  },
+  {
+    "module": "Schubert.RS.Representation.UpperRadicalDecomposition",
+    "path": "Schubert/RS/Representation/UpperRadicalDecomposition.lean",
+    "original_path": "Schubert/RS/Representation/UpperRadicalDecomposition.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "b9ecafe7707444319dc42be9318e553866a2eb31604cf2dc5f42823da72a8fe3",
+    "sha256": "6f55c916b5e89276eb5a068d1c63a46752779e6820d00747d917bebb441a7fcd"
+  },
+  {
+    "module": "Schubert.RS.Representation.WeightFiltration",
+    "path": "Schubert/RS/Representation/WeightFiltration.lean",
+    "original_path": "Schubert/RS/Representation/WeightFiltration.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "e5309981db33052c10f26c73b8a3f02fe7bfef8d408abd95b16a595334037f32",
+    "sha256": "fc1180dfd8cc0419ea36cd9f259d1c9e1bd0887e7b2d4541a9eafc270ad97249"
+  },
+  {
+    "module": "Schubert.RS.Representation.WindowIdeal",
+    "path": "Schubert/RS/Representation/WindowIdeal.lean",
+    "original_path": "Schubert/RS/Representation/WindowIdeal.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "ac567f7716b16cfcc7ac18f4fbeec730a6ad7dd4ce7e2027c09680b3a08aa2e4",
+    "sha256": "9624b28e254686811f51eacf7686553c3db46fd00efcb9af7faabd3388e51537"
+  },
+  {
+    "module": "Schubert.RS.Representation.WindowPieces",
+    "path": "Schubert/RS/Representation/WindowPieces.lean",
+    "original_path": "Schubert/RS/Representation/WindowPieces.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "6467a139a9c8fd7c0e053194eb35308b98636626f3ed02a02c9b1519ba630646",
+    "sha256": "30f54117c36fd07ace28cebce608ba980de8bdf609cb92832b739cf2384e85d3"
+  },
+  {
+    "module": "Schubert.RS.Representation.WindowWeightSpaces",
+    "path": "Schubert/RS/Representation/WindowWeightSpaces.lean",
+    "original_path": "Schubert/RS/Representation/WindowWeightSpaces.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "3ec945607619e570583ddcc5351f55f44f3b14b1279fa36a7e4c5b767d691883",
+    "sha256": "2f7bbf7b19b19ebf9e319015f7f64756506a1a043f433f805c8c29e377c4b2ae"
+  },
+  {
+    "module": "Schubert.RS.RootConeCoordinates",
+    "path": "Schubert/RS/RootConeCoordinates.lean",
+    "original_path": "Schubert/RS/RootConeCoordinates.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "7fd62751419ca0b2f84a1cb0a1412d0f05c6cedd7d2b478a1848e614778086f1",
+    "sha256": "6f89657085f86fa483ee550e51baea02578e84a05f19c6b915b6d0f91c04e690"
+  },
+  {
+    "module": "Schubert.RS.RootDegreeFibers",
+    "path": "Schubert/RS/RootDegreeFibers.lean",
+    "original_path": "Schubert/RS/RootDegreeFibers.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "4b5ddc983ee2c59f8861e9fc8f63f8afd6e36b493d42add631bb391a6f3ef53e",
+    "sha256": "1ec7e396ad247ab6958b6ed738a6d109037af892ace20bedc87d5b2ccc8061a9"
+  },
+  {
+    "module": "Schubert.RS.RootDegrees",
+    "path": "Schubert/RS/RootDegrees.lean",
+    "original_path": "Schubert/RS/RootDegrees.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "4eaa85b8c25aed19d6bf4a0e56b17a0f1d30720947cf39bd8737074719b85b73",
+    "sha256": "f19bd17471872be8758250f38f7628529c48c92becd95e2f78fd2f14b24e5f47"
+  },
+  {
+    "module": "Schubert.RS.RootGeometricSeries",
+    "path": "Schubert/RS/RootGeometricSeries.lean",
+    "original_path": "Schubert/RS/RootGeometricSeries.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "8f1a7cc16dee2e53196a6d6ecf41925567a73a1141f930cb2fecb4f361ce0dc1",
+    "sha256": "3484118e6bad25a5bbc936e1e42779be8b7ef5088a288b1296f6f4b732b1255c"
+  },
+  {
+    "module": "Schubert.RS.RootPattern",
+    "path": "Schubert/RS/RootPattern.lean",
+    "original_path": "Schubert/RS/RootPattern.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "5bececa9eb984d39e1eb947b5b428f654dceb3d46a17bd5d544b2544d712452a",
+    "sha256": "1055a4da7d54d73b29b445bb991257cc3deb5e7ec0504284b277a893a7652544"
+  },
+  {
+    "module": "Schubert.RS.RootSeriesWindow",
+    "path": "Schubert/RS/RootSeriesWindow.lean",
+    "original_path": "Schubert/RS/RootSeriesWindow.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "36ff8ffeaf7926777676b3c77a8e3e2a4a9dcdfff1650bc4d253fbe4cb98e2b3",
+    "sha256": "fc054665ecdd1735fe511b500fb72e990bcf30ee5af0405472cf167f2ebd53f9"
+  },
+  {
+    "module": "Schubert.RS.RootWeights",
+    "path": "Schubert/RS/RootWeights.lean",
+    "original_path": "Schubert/RS/RootWeights.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "0b74912cdd0614078e9ee02788d97fe9bab512c95fa7a31cbd0927ec6d496c50",
+    "sha256": "bc241c62a538228a60cf7a70cceff2bd0532e52de0b13cfac6c47464645546e5"
+  },
+  {
+    "module": "Schubert.RS.Sl2EndpointGeneration",
+    "path": "Schubert/RS/Sl2EndpointGeneration.lean",
+    "original_path": "Schubert/RS/Sl2EndpointGeneration.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "dc583b87b3bff60631ca80bd562360c21466ac1fa0f846fc7887e8b98301dcbb",
+    "sha256": "dd677be1b3456952a4f6fa5ca561153bc4b72aaa7aa05a292679df1751141838"
+  },
+  {
+    "module": "Schubert.RS.Sl2EndpointNilpotence",
+    "path": "Schubert/RS/Sl2EndpointNilpotence.lean",
+    "original_path": "Schubert/RS/Sl2EndpointNilpotence.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "a5eed012c307cfb8e2b8c4abd619f7f287876adb08af2b3a4be91554e9e27cd1",
+    "sha256": "e21fac01cd6077c03a75460034c58907730164605e518f8638b197f12d75537b"
+  },
+  {
+    "module": "Schubert.RS.Sl2FullPrimitive",
+    "path": "Schubert/RS/Sl2FullPrimitive.lean",
+    "original_path": "Schubert/RS/Sl2FullPrimitive.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "e1c44ef69fc41acaf4f7aa1bae4d9ce8f60392a38f6cd7fa7cd312bf7ec023b5",
+    "sha256": "b35cf3c7c48633ecf1ea7b36e0dec6917e17d949e7ba9a933563469573994ebd"
+  },
+  {
+    "module": "Schubert.RS.Sl2PrimitiveCompletion",
+    "path": "Schubert/RS/Sl2PrimitiveCompletion.lean",
+    "original_path": "Schubert/RS/Sl2PrimitiveCompletion.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "717bb61437e8fb04adcaaeb7eb4c145bcac7dac8d31995b771bea0d7263a9e18",
+    "sha256": "e88edd4ca2042d2656089d1557cc101259f51873ccb0dd942aedb0b0cce23ec5"
+  },
+  {
+    "module": "Schubert.RS.Sl2TerminalString",
+    "path": "Schubert/RS/Sl2TerminalString.lean",
+    "original_path": "Schubert/RS/Sl2TerminalString.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "c3d6b7528f739cdc8b9d974bb2ac68d00bb36c890c27413260c3ab0706b72917",
+    "sha256": "03b22c292d74392abe59092f4f038a2ac2fb1828831798c122cff86db11301dc"
+  },
+  {
+    "module": "Schubert.RS.Sl2TwistedCompletion",
+    "path": "Schubert/RS/Sl2TwistedCompletion.lean",
+    "original_path": "Schubert/RS/Sl2TwistedCompletion.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "81aa7aef32deeb8f4d03c7a39a413d60c31dc44b8bd7011b9bd751243a9ac1e2",
+    "sha256": "9f6e2c298952e0dedcdd41cfc863fe7a13e11076eb8e94a21e219e7ab890c9c9"
+  },
+  {
+    "module": "Schubert.RS.Sorting",
+    "path": "Schubert/RS/Sorting.lean",
+    "original_path": "Schubert/RS/Sorting.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "54b1abdd156ea54020c381e8a02c55cf5269c93e399a99a75ff9bbbd5b09208f",
+    "sha256": "1fd912cfede3707f7925b070a595c71afbf6a029c3e2af58294990c854a34a68"
+  },
+  {
+    "module": "Schubert.RS.SortingIndependence",
+    "path": "Schubert/RS/SortingIndependence.lean",
+    "original_path": "Schubert/RS/SortingIndependence.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "91afb8a97f97ae0e56434db48aca3e6ef0104dc6c4798efa275145908b0393d4",
+    "sha256": "6e060739b62da9b34f79d80be0791427b3ec0d2d5234477cdccfd23c868d2ef3"
+  },
+  {
+    "module": "Schubert.RS.SortingRelations",
+    "path": "Schubert/RS/SortingRelations.lean",
+    "original_path": "Schubert/RS/SortingRelations.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "facddac726159edc50ff4e6860349886ee75bc9c2375d23e118c6ecafad9af7b",
+    "sha256": "2b5b0e3157647823bddcb9bc3f1134a64d17a0c9b6b25df7f65812db2ea48c47"
+  },
+  {
+    "module": "Schubert.RS.SourceAlternant",
+    "path": "Schubert/RS/SourceAlternant.lean",
+    "original_path": "Schubert/RS/SourceAlternant.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "aea2cbedc96a856176a2bdfc42446cc3910f8f7e8923665ddc928e7be2b87799",
+    "sha256": "92c996725f71b00a80e8e1f727776145d89670c4be99849ed9cd37ebdffffa58"
+  },
+  {
+    "module": "Schubert.RS.SourceExpressionFactors",
+    "path": "Schubert/RS/SourceExpressionFactors.lean",
+    "original_path": "Schubert/RS/SourceExpressionFactors.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "9a1cb1126ff0c82135fbbc1dc404e2dd6345c91cda5da6013cfd90cd71402ad3",
+    "sha256": "5799636b16e7bf233c6d0c10178b768f47b5fd078a7b15a4ed7a6cf1b6084be7"
+  },
+  {
+    "module": "Schubert.RS.SourceExtractionDet",
+    "path": "Schubert/RS/SourceExtractionDet.lean",
+    "original_path": "Schubert/RS/SourceExtractionDet.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "722616fedfb797efdd9836fd221a8834eaaae27a3ae556cdef6159b3ba6eae1b",
+    "sha256": "0faaef171b95c347ab29c47de5a7608f89cbfe508d12fe14f537ee4c09468cd2"
+  },
+  {
+    "module": "Schubert.RS.SourceRows",
+    "path": "Schubert/RS/SourceRows.lean",
+    "original_path": "Schubert/RS/SourceRows.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "639931bad6f6923f4e89580090c1c4cb39b1fe23eacd82828a0c2eb5d57b7c24",
+    "sha256": "a2b9dadb5e46e5e0af8dd1f5e8effac9764bfbe4ddf429ee51f7afd9cbbc9bcc"
+  },
+  {
+    "module": "Schubert.RS.Support.BruhatRanks",
+    "path": "Schubert/RS/Support/BruhatRanks.lean",
+    "original_path": "Schubert/RS/Support/BruhatRanks.lean",
+    "origin_kind": "extracted-support",
+    "original_sha256": "fa1fe2ccb20fae293292629ac41ea05ae41e2882eb3c30d556d16efa7a21968c",
+    "sha256": "f758b29fd9b4719476051955f07360ebe430a17ec6880df5e47309a2cc6e9032"
+  },
+  {
+    "module": "Schubert.RS.Support.PolynomialRing",
+    "path": "Schubert/RS/Support/PolynomialRing.lean",
+    "original_path": "Schubert/RS/Support/PolynomialRing.lean",
+    "origin_kind": "extracted-support",
+    "original_sha256": "35d0b2a5f0d3ae31883110124ce971e7dd8cd0f9ae6f42cfa3c4b738fb25c899",
+    "sha256": "b3acf830cf1a10cbec7f83127eee2b60d8518072b52deeb5dab76a5c2aef3748"
+  },
+  {
+    "module": "Schubert.RS.ThresholdEvents",
+    "path": "Schubert/RS/ThresholdEvents.lean",
+    "original_path": "Schubert/RS/ThresholdEvents.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "1424c6e2b8b78df80256a21f1380e5c0b76e6ec3a62ecabb46dd04275c0c4995",
+    "sha256": "c5234290478e55dbf221e477f4ff4ee0f07ae83f2bfd04e77249f897a4f6c0ba"
+  },
+  {
+    "module": "Schubert.RS.ThresholdPaths",
+    "path": "Schubert/RS/ThresholdPaths.lean",
+    "original_path": "Schubert/RS/ThresholdPaths.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "1a4c4549b7226bc2d1e953882feed763d0d2f94213a92365dc1a166f8f5ab9c9",
+    "sha256": "5a10d8fc40c372861f28327da10d67bbe998880f906cb1c4441c808e18b4249a"
+  },
+  {
+    "module": "Schubert.RS.TorusCharacterTransport",
+    "path": "Schubert/RS/TorusCharacterTransport.lean",
+    "original_path": "Schubert/RS/TorusCharacterTransport.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "4c66606d0798edc1fd1b132bf9030c7388ee57c4170d68c994153a00545ca508",
+    "sha256": "e0fbd414809299923aba532739cb196def8850915ec977eee06b757652c894ad"
+  },
+  {
+    "module": "Schubert.RS.TorusEigenbasisCharacter",
+    "path": "Schubert/RS/TorusEigenbasisCharacter.lean",
+    "original_path": "Schubert/RS/TorusEigenbasisCharacter.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "eb436bc8c13bd7587799d134ac1039413a9aa55f83b23320defc325fa65a8fdb",
+    "sha256": "91cca827215619c6cb6794dff2778dcf58c8552049f0a3467b477cc0868d8f4d"
+  },
+  {
+    "module": "Schubert.RS.UniformRootTruncation",
+    "path": "Schubert/RS/UniformRootTruncation.lean",
+    "original_path": "Schubert/RS/UniformRootTruncation.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "25e477cc4a901a49b2a965de3cff13c0efee5edfc74dcd1866df06bb912601aa",
+    "sha256": "ad36965359806a15cc96ba9b9a0b7a6bfbacd13cbbde5cd9283e8eee8bf7ab0b"
+  },
+  {
+    "module": "Schubert.RS.UpperRadicalGenerators",
+    "path": "Schubert/RS/UpperRadicalGenerators.lean",
+    "original_path": "Schubert/RS/UpperRadicalGenerators.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "cad0162011e568de7e7b9aa936270fb20d03f8948fb61f9b734dc6fb234066bc",
+    "sha256": "d42c70f45ac3f357912e7c1d306a5c448e8cb65416edb97097d7fb0631ea9664"
+  },
+  {
+    "module": "Schubert.RS.WeylDenominator",
+    "path": "Schubert/RS/WeylDenominator.lean",
+    "original_path": "Schubert/RS/WeylDenominator.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "0c4a1f20f5936e129bbe33c6d2ccaaf170cf429a98c6a5c3c8439a4df6a15864",
+    "sha256": "613c48926a9e34b8b56c6d90273c6b166ff011a9d5f38abbdb562f89a66f9159"
+  },
+  {
+    "module": "Schubert.RS.WeylRootSeries",
+    "path": "Schubert/RS/WeylRootSeries.lean",
+    "original_path": "Schubert/RS/WeylRootSeries.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "5f3235909b309ef86d0eeaa9f49f9f7e7dd9fdc7b2b82b6aa1e8e2cc9f68b25d",
+    "sha256": "fa3d78734fceb21155cb4dda1407ee78b495d3b2680674ac7cbe0f7381e176fa"
+  },
+  {
+    "module": "Schubert.RS.WindowKeyCoefficient",
+    "path": "Schubert/RS/WindowKeyCoefficient.lean",
+    "original_path": "Schubert/RS/WindowKeyCoefficient.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "7a95f7b098078817e43c62c08f58563b8b4ff2e23ebe2110196c371a7ae35fea",
+    "sha256": "814a2f7e9854bff011a5b86fd2c0cdd44082c73cd2ad2308ef03bfa40c29c98b"
+  },
+  {
+    "module": "Schubert.TypeA.Permutations.AdjacentLength",
+    "path": "Schubert/TypeA/Permutations/AdjacentLength.lean",
+    "original_path": "Schubert/TypeA/Permutations/AdjacentLength.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "60ed05daa4cdc95a7c0b00e1c52ba8aaf85c61dbe4da33a087f3563897af9c5e",
+    "sha256": "90cd2aaa8c96f7b087ddb0a4915d1697dd7200af36a1c4bc50fd79b3422aae00"
+  },
+  {
+    "module": "Schubert.TypeA.Permutations.AdjacentTranspositions",
+    "path": "Schubert/TypeA/Permutations/AdjacentTranspositions.lean",
+    "original_path": "Schubert/TypeA/Permutations/AdjacentTranspositions.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "3a58fe385d789fd5f74772eb30d7884dc2dbf5f762f8d37306d66c97715663df",
+    "sha256": "b4bb63116f3be83e4d4343a3fb547b5db566e7148a61f7895227e57bd733d711"
+  },
+  {
+    "module": "Schubert.TypeA.Permutations.Basic",
+    "path": "Schubert/TypeA/Permutations/Basic.lean",
+    "original_path": "Schubert/TypeA/Permutations/Basic.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "bc9c2459bde9b5c9df3600d3331b865c2c0a3eafa319f4a6db9e6bf101267dd6",
+    "sha256": "9c419474f8ef5fb5b46b04f3404256ceb0b7c0e89137c6d6612cd7daa3e5f4bc"
+  },
+  {
+    "module": "Schubert.TypeA.Permutations.Bruhat",
+    "path": "Schubert/TypeA/Permutations/Bruhat.lean",
+    "original_path": "Schubert/TypeA/Permutations/Bruhat.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "f2cbdbe33c8bd2aba3595b1808741e7d1e50445e23dd0d1baf501d7f9f71cadf",
+    "sha256": "ed70c77ab17656306915dd8eff7342deafd506da93d01202b441f6628ed29fdb"
+  },
+  {
+    "module": "Schubert.TypeA.Permutations.BruhatCovers",
+    "path": "Schubert/TypeA/Permutations/BruhatCovers.lean",
+    "original_path": "Schubert/TypeA/Permutations/BruhatCovers.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "eabc75c79eed44fc20b26583e5ab64b156396366e1f96dbb464ec4f302b72384",
+    "sha256": "95afc1750ec5f859096f1060ad17b21e6112e1d210af178cd42780be3d8a5ab0"
+  },
+  {
+    "module": "Schubert.TypeA.Permutations.BruhatGraded",
+    "path": "Schubert/TypeA/Permutations/BruhatGraded.lean",
+    "original_path": "Schubert/TypeA/Permutations/BruhatGraded.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "84f91531c8abe7cbbb03f312b5fb96ef6683352f035d123aa24efde719271c46",
+    "sha256": "13766bf0c6bb5ea3ca460be6e270a315ac00ef51721db835535286f12a815d79"
+  },
+  {
+    "module": "Schubert.TypeA.Permutations.EssentialBigrassmannian",
+    "path": "Schubert/TypeA/Permutations/EssentialBigrassmannian.lean",
+    "original_path": "Schubert/TypeA/Permutations/EssentialBigrassmannian.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "b89e9680df3bb451f92292f99cb663b9ef3cb8277ca8adc7c863b38ac9b0ff15",
+    "sha256": "cac77f45aa89e0bc4fb755767de7cdd4670cc1dad64d0014fc9c9961e8f84004"
+  },
+  {
+    "module": "Schubert.TypeA.Permutations.EssentialSet",
+    "path": "Schubert/TypeA/Permutations/EssentialSet.lean",
+    "original_path": "Schubert/TypeA/Permutations/EssentialSet.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "e5a5de25a0049313cb1e2245b37240f88d6f383bb0314bf35214473270103867",
+    "sha256": "7dd3db5d2cc84bf23cd049d429ec32e5f607d0029a9505c4412aeb949e6476aa"
+  },
+  {
+    "module": "Schubert.TypeA.Permutations.LongestBruhatDuality",
+    "path": "Schubert/TypeA/Permutations/LongestBruhatDuality.lean",
+    "original_path": "Schubert/TypeA/Permutations/LongestBruhatDuality.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "b003b975b3c7673031035a7dffb921c6944498bc79b6a6fba8ff4573e3aba403",
+    "sha256": "9fbe75ac4d015f9a884789b8acedae70fb46724684aa9a3f0b95b3870b32e3a1"
+  },
+  {
+    "module": "Schubert.TypeA.Permutations.NorthwestRankBounds",
+    "path": "Schubert/TypeA/Permutations/NorthwestRankBounds.lean",
+    "original_path": "Schubert/TypeA/Permutations/NorthwestRankBounds.lean",
+    "origin_kind": "imports-only",
+    "original_sha256": "6de3d11f5d9bf133fdb4769cd7548b3d639399139751f7b700edc87476e64276",
+    "sha256": "38a399f1d30593c8d70314a9844e424e339516c256af51da167e043e70c6c587"
+  },
+  {
+    "module": "Schubert.TypeA.Permutations.RotheDiagram",
+    "path": "Schubert/TypeA/Permutations/RotheDiagram.lean",
+    "original_path": "Schubert/TypeA/Permutations/RotheDiagram.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "65dd8ace48fb84a46505bd1d7123b025e98c09a4b18025ad3311c809d3bab32d",
+    "sha256": "fe9e94cac3c68b3dad003ccfc30c0e7adc8a4e4bed45d9d4371ec20993e319bb"
+  },
+  {
+    "module": "Schubert.TypeA.Polynomials.DividedDifferenceRelations",
+    "path": "Schubert/TypeA/Polynomials/DividedDifferenceRelations.lean",
+    "original_path": "Schubert/TypeA/Polynomials/DividedDifferenceRelations.lean",
+    "origin_kind": "unchanged",
+    "original_sha256": "2abb48d95ae88b9af405b1776fd7b9c9a6828ac746a7fa1ef1963d2dc2015516",
+    "sha256": "725b25b9f10a30abe14eceffe216d6a99b8bc46d5bb064be5b2109dc950dc8af"
+  },
+  {
+    "module": "Schubert.TypeA.Polynomials.DividedDifferences",
+    "path": "Schubert/TypeA/Polynomials/DividedDifferences.lean",
+    "original_path": "Schubert/TypeA/Polynomials/DividedDifferences.lean",
+    "origin_kind": "imports-only",
+    "original_sha256": "315824dd37e9e4aad7d610c96aee06d60b00aa5f7deff479e9328789c278b26d",
+    "sha256": "d8ac337bcd458ef839494bb0b04276a61f9ee3374844c2c2c99986112be9fa61"
+  }
+]
