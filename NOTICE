@@ -1,0 +1,13 @@
+rs-counterexample: Lean verification of the key-product counterexamples
+Copyright 2026 Reuven Hodges
+
+This formalization accompanies R. Hodges, *Counterexamples to the
+Reiner-Shimozono conjecture and the failure of Schubert filtrations*
+(arXiv:2609.28169). If you use or adapt this code, please cite the paper and
+this repository.
+
+The file Schubert/RS/JosephPolo/GrinbergCauchyBinet.lean contains adapted
+third-party material (Copyright Meta Platforms, Inc. and affiliates) licensed
+under the Creative Commons Attribution-NonCommercial 4.0 International License
+(CC BY-NC 4.0), not under the Apache License. Its license is reproduced in
+Schubert/RS/JosephPolo/Grinberg.LICENSE. See THIRD_PARTY_NOTICES.md.

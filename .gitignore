@@ -1,0 +1,31 @@
+# Lean dependencies, local artifacts, and logs
+.lake/
+*.olean
+*.olean.*
+*.ilean
+*.trace
+*.log
+
+# Python and editor state
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.vscode/
+.idea/
+
+# Local credentials and private configuration
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+.netrc
+.git-credentials
+
+# Operating-system files and release archives
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.zip

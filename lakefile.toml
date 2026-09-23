@@ -1,0 +1,12 @@
+name = "rs-counterexample"
+version = "1.0.0"
+defaultTargets = ["Schubert.RS.Family.Audit"]
+
+[[require]]
+name = "mathlib"
+scope = "leanprover-community"
+rev = "v4.33.0"
+
+[[lean_lib]]
+name = "Schubert"
+globs = ["Schubert.+"]

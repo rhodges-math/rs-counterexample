@@ -1,0 +1,34 @@
+cff-version: 1.2.0
+message: "If you use or adapt this code, please cite the paper and this repository."
+type: software
+title: "rs-counterexample: Lean verification of the key-product counterexamples"
+abstract: >-
+  A Lean 4 formalization of Theorem 1.1 of R. Hodges, "Counterexamples to the
+  Reiner-Shimozono conjecture and the failure of Schubert filtrations": the
+  coefficient formula for the full counterexample family, its exact negativity
+  criterion, and an explicit negative coefficient in 28 variables.
+authors:
+  - family-names: Hodges
+    given-names: Reuven
+repository-code: "https://github.com/rhodges-math/rs-counterexample"
+license: Apache-2.0
+keywords:
+  - Lean 4
+  - Mathlib
+  - formalization
+  - key polynomials
+  - Schubert polynomials
+preferred-citation:
+  type: article
+  title: "Counterexamples to the Reiner-Shimozono conjecture and the failure of Schubert filtrations"
+  authors:
+    - family-names: Hodges
+      given-names: Reuven
+  year: 2026
+  identifiers:
+    - type: other
+      value: "arXiv:2609.28169"
+      description: "arXiv identifier"
+    - type: url
+      value: "https://arxiv.org/abs/2609.28169"
+  url: "https://arxiv.org/abs/2609.28169"

@@ -1,0 +1,26 @@
+{
+  "success": true,
+  "verified_utc": "2026-09-23T20:30:23.114762+00:00",
+  "lean_toolchain": "leanprover/lean4:v4.33.0",
+  "entry": "Schubert.RS.Family.Audit",
+  "local_modules": 365,
+  "source_lines": 32311,
+  "build_method": "python build.py --jobs 3 --resume; all local sources compiled with dependency-sensitive source fingerprints",
+  "final_source_fingerprints_match_build": true,
+  "copied_local_olean_files": 0,
+  "public_dependencies": "Pinned public dependencies and their build caches; no imported local proof caches.",
+  "local_import_closure_complete": true,
+  "extra_local_modules": [],
+  "axiom_audit_count": 16,
+  "kernel_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "rank28_coefficient": -350,
+  "statements_and_proofs_match_archive_modulo_renaming_comments_whitespace": true,
+  "renamed_modules": 8,
+  "renamed_identifiers": 33,
+  "nonfatal_compiler_warnings": 308,
+  "original_archive_sha256": "05cbaa2b41e171160a2f371f0355b243dbf76ae2dcb1a1fab6947f0dd507efbd"
+}

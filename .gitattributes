@@ -1,0 +1,2 @@
+# Preserve release bytes so SHA256SUMS.json works across Git checkouts.
+* -text

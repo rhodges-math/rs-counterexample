@@ -1,0 +1,68 @@
+orderedPBWBasis_exists : ∀ (n : ℕ), HasOrderedPBWBasis n
+@orderedRootMonomial_linearIndependent : ∀ {n : ℕ} (order : RootOrdering n),
+  LinearIndependent ℂ (orderedRootMonomial order)
+atomCoefficient_eq : ∀ (P : Parameters),
+  atomCoefficient (key (a P) * key (b P)) (c P) =
+    2 * ↑(P.m.choose (P.p - 1)) * ↑(P.m.choose P.p) - ↑P.m * ↑((P.m - 1).choose (P.p - 1)) ^ 2
+atomCoefficient_factorization : ∀ (P : Parameters),
+  ↑(atomCoefficient (key (a P) * key (b P)) (c P)) =
+    ↑P.m / (↑P.p * ↑P.q) * ↑((P.m - 1).choose (P.p - 1)) ^ 2 * (2 - (↑P.p - 2) * (↑P.q - 2))
+atomCoefficient_neg_iff : ∀ (P : Parameters),
+  atomCoefficient (key (a P) * key (b P)) (c P) < 0 ↔ 2 < (↑P.p - 2) * (↑P.q - 2)
+existsUnique_atomExpansion : ∀ (P : Parameters),
+  ∃! t, (key (a P) * key (b P) = t.sum fun u z => z • atom u) ∧ t (c P) = coefficientValue P.m P.p
+not_atomPositive : ∀ (P : Parameters), 2 < (↑P.p - 2) * (↑P.q - 2) → ¬AtomPositive (key (a P) * key (b P))
+rank28_atomCoefficient : atomCoefficient (key Counterexample.a * key Counterexample.b) Counterexample.c = -350
+rank28_not_atomPositive : ¬AtomPositive (key Counterexample.a * key Counterexample.b)
+reiner_shimozono_false : ¬∀ (n : ℕ) (a b : Schubert.RS.Composition n), AtomPositive (key a * key b)
+'Schubert.RS.Representation.orderedRootMonomial_span_eq_top' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.PBW.differentialWord_principal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Representation.centerPolynomial_word' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.PBW.partialWord_constant' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Representation.orderedRootMonomial_linearIndependent' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Schubert.RS.Representation.orderedPBWBasis_exists' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Representation.compositionFlagJosephPolo' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Representation.compositionFlagDemazureCharacter' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Family.atomCoefficient_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Family.atomCoefficient_factorization' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Family.atomCoefficient_neg_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Family.existsUnique_atomExpansion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Family.not_atomPositive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Family.rank28_atomCoefficient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Family.rank28_not_atomPositive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Family.reiner_shimozono_false' depends on axioms: [propext, Classical.choice, Quot.sound]
+def Schubert.RS.Representation.HasOrderedPBWBasis : ℕ → Prop :=
+fun n => ∀ (order : RootOrdering n), ∃ b, ∀ (powers : PositiveRoot n → ℕ), b powers = orderedRootMonomial order powers
+def Schubert.RS.Representation.orderedRootMonomial : {n : ℕ} → RootOrdering n → (PositiveRoot n → ℕ) → Enveloping n :=
+fun {n} order powers =>
+  (List.map (fun r => (UniversalEnvelopingAlgebra.ι ℂ) ((rootBasis n) r) ^ powers r) order.roots).prod
+@[reducible] def Schubert.RS.Representation.Enveloping : ℕ → Type :=
+fun n => UniversalEnvelopingAlgebra ℂ ↥(upperNilpotent n)
+def Schubert.RS.Representation.orderedRootBasis : {n : ℕ} →
+  RootOrdering n → Module.Basis (PositiveRoot n → ℕ) ℂ (Enveloping n) :=
+fun {n} order => Module.Basis.mk ⋯ ⋯
+theorem Schubert.RS.Representation.orderedPBWBasis_exists : ∀ (n : ℕ), HasOrderedPBWBasis n :=
+fun n order => Exists.intro (orderedRootBasis order) (orderedRootBasis_apply order)
+theorem Schubert.RS.Family.atomCoefficient_eq : ∀ (P : Parameters),
+  atomCoefficient (key (a P) * key (b P)) (c P) =
+    2 * ↑(P.m.choose (P.p - 1)) * ↑(P.m.choose P.p) - ↑P.m * ↑((P.m - 1).choose (P.p - 1)) ^ 2 :=
+fun P => atomCoefficient_eq_of_pbw P (orderedPBWBasis_exists P.rank)
+structure Schubert.RS.Family.Parameters : Type
+number of parameters: 0
+fields:
+  Schubert.RS.Family.Parameters.p : ℕ
+  Schubert.RS.Family.Parameters.q : ℕ
+  Schubert.RS.Family.Parameters.K : ℕ
+  Schubert.RS.Family.Parameters.p_pos : 0 < self.p
+  Schubert.RS.Family.Parameters.q_pos : 0 < self.q
+  Schubert.RS.Family.Parameters.scale_bound : self.p + self.q ≤ self.K
+constructor:
+  Schubert.RS.Family.Parameters.mk (p q K : ℕ) (p_pos : 0 < p) (q_pos : 0 < q) (scale_bound : p + q ≤ K) : Parameters
+def Schubert.RS.Counterexample.a : Fin 28 → ℕ :=
+![0, 0, 0, 0, 8, 8, 8, 8, 16, 24, 32, 40, 48, 56, 64, 0, 0, 0, 8, 8, 8, 64, 56, 48, 40, 32, 24, 16]
+def Schubert.RS.Counterexample.b : Fin 28 → ℕ :=
+![8, 8, 8, 8, 0, 0, 0, 0, 64, 56, 48, 40, 32, 24, 16, 8, 8, 8, 0, 0, 0, 16, 24, 32, 40, 48, 56, 64]
+def Schubert.RS.Counterexample.c : Fin 28 → ℕ :=
+![9, 9, 9, 9, 9, 9, 9, 9, 79, 79, 79, 79, 79, 79, 79, 9, 9, 9, 9, 9, 9, 79, 79, 79, 79, 79, 79, 79]
