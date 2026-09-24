@@ -11,7 +11,7 @@
   "provenance/LOCAL_MODULES.json": "0d9d0ba6fc56bfd86090d360df6ace9e83b4eec0055bf01e18868950066a5568",
   "provenance/PACKAGE_NOTES.md": "3f30b25555353a3dd1ecf4b2c6fce98eb67be2afbd43459bb7de14d8a4168fef",
   "provenance/RENAMINGS.json": "d2a0902dfb5b057306f4c12c68e9ed3c92faea57d26caee5f773d42feb899144",
-  "README.md": "8ab8e356f6763ea67c18d3efa1a7c157ae85a61e8a540394ae622c977e9a1f17",
+  "README.md": "6c080df382fb0a0280d92c4313a15eade68fa62a41acaad2a8daa712d6a44ebf",
   "Schubert/Algebra/Basic.lean": "72d1f846ff1cc7014219180423e121e0e4dafc7f9daeae329bdf19ac672e15d6",
   "Schubert/RS/AdjacentCompletionAllRelations.lean": "eb7e04630e99a8efd060f094f5138d1702c062941a3ea4d954d8a77595567180",
   "Schubert/RS/AdjacentCompletionComparison.lean": "ab2c242925d903df18ea748bf4b3a8ef86912f1d2b3637e47d30a437659ebe77",

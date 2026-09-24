@@ -8,6 +8,18 @@ It proves the coefficient formula for the full counterexample family, its
 exact negativity criterion, and an explicit negative coefficient in 28
 variables. It uses Lean **4.33.0** and a pinned version of **Mathlib**.
 
+## AI assistance and verification
+
+**I used GPT-6 Astra to help construct the Lean files.** I reviewed the
+definitions, hypotheses, and theorem statements to check that they faithfully
+express the intended mathematics and correspond to Theorem 1.1 in the paper.
+
+The development was compiled with Lean, and the final theorems' axiom
+dependencies were audited: they use only `propext`, `Classical.choice`, and
+`Quot.sound`, with no `sorry`-based proofs or additional unproved axioms.
+The mathematical review addresses the correspondence between the formal
+statements and the paper, which Lean's proof checking alone does not establish.
+
 ## Main result
 
 For positive integers $p,q$ and an integer scale $\delta\ge p+q$, the paper
