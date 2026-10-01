@@ -33,8 +33,7 @@ theorem IsRankOneCompletion.tensor :
     let Φ := tensorFlipLiftLie F
     have hΦ : ∀ z, Φ (ι.lTensor R z) = g z := by
       intro z
-      induction z using TensorProduct.induction_on with
-      | zero => simp
+      induction z using TensorProduct.inductionOn with
       | tmul r m =>
           change tensorFlipLiftLie F (ι.lTensor R (r ⊗ₜ[ℂ] m)) = g (r ⊗ₜ[ℂ] m)
           rw [LinearMap.lTensor_tmul,tensorFlipLiftLie_tmul]

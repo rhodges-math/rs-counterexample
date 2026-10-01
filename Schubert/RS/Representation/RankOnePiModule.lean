@@ -21,7 +21,7 @@ instance completionPiLieModule : LieModule ℂ L (∀ i, X i) where
   smul_lie c a x := by funext i; exact smul_lie c a (x i)
   lie_smul c a x := by funext i; exact lie_smul c a (x i)
 
-omit [∀ i, LieModule ℂ L (X i)] in
+omit [LieAlgebra ℂ L] [∀ i, Module ℂ (X i)] [∀ i, LieModule ℂ L (X i)] in
 @[simp] theorem completionPiLie_apply (a : L) (x : ∀ i, X i) (i : I) :
     ⁅a,x⁆ i = ⁅a,x i⁆ := rfl
 
@@ -36,7 +36,7 @@ def piLieSingle [DecidableEq I] (i : I) : X i →ₗ⁅ℂ,L⁆ (∀ j, X j) whe
     · subst j; simp
     · simp only [Pi.single_eq_of_ne hji,lie_zero]
 
-omit [∀ i, LieModule ℂ L (X i)] in
+omit [LieAlgebra ℂ L] [∀ i, LieModule ℂ L (X i)] in
 @[simp] theorem piLieSingle_apply [DecidableEq I] (i : I) (x : X i) :
     piLieSingle (L := L) X i x = Pi.single i x := rfl
 
@@ -58,16 +58,19 @@ def piLieSum [Fintype I] [DecidableEq I] (F : ∀ i, X i →ₗ⁅ℂ,L⁆ N) :
       LinearMap.proj_apply,completionPiLie_apply,LieModuleHom.coe_toLinearMap,
       LieModuleHom.map_lie,lie_sum]
 
+omit [LieAlgebra ℂ L] [∀ i, LieModule ℂ L (X i)] [LieModule ℂ L N] in
 theorem piLieSum_apply [Fintype I] [DecidableEq I] (F : ∀ i, X i →ₗ⁅ℂ,L⁆ N)
     (x : ∀ i, X i) : piLieSum F x = ∑ i, F i (x i) := by
   change (LinearMap.lsum ℂ X ℂ (fun i => (F i).toLinearMap)) x = _
   simp only [LinearMap.lsum_apply,LinearMap.sum_apply,LinearMap.comp_apply,
     LinearMap.proj_apply,LieModuleHom.coe_toLinearMap]
 
+omit [LieAlgebra ℂ L] [∀ i, LieModule ℂ L (X i)] [LieModule ℂ L N] in
 theorem piLieSum_single [Fintype I] [DecidableEq I] (F : ∀ i, X i →ₗ⁅ℂ,L⁆ N)
     (i : I) (x : X i) : piLieSum F (Pi.single i x) = F i x :=
   LinearMap.lsum_piSingle ℂ X ℂ (fun i => (F i).toLinearMap) i x
 
+omit [LieAlgebra ℂ L] [∀ i, LieModule ℂ L (X i)] [LieModule ℂ L N] in
 theorem piLieHom_ext [Fintype I] [DecidableEq I]
     {F G : (∀ i, X i) →ₗ⁅ℂ,L⁆ N}
     (h : ∀ i x, F (Pi.single i x) = G (Pi.single i x)) : F = G := by

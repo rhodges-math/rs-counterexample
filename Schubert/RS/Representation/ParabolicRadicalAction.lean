@@ -17,8 +17,8 @@ def radicalPolynomialAction : (radicalEndLie i ⊗[ℂ] S) →ₗ[ℂ] S :=
 
 theorem radicalPolynomialAction_tmul_val (r : radicalEndLie i) (p : S) :
     (radicalPolynomialAction i S hS (r ⊗ₜ[ℂ] p) : MatrixPolynomial n) = r.val p.val := by
-  letI := radicalPolynomialLieRingModule i S hS
-  letI := radicalPolynomialLieModule i S hS
+  let := radicalPolynomialLieRingModule i S hS
+  let := radicalPolynomialLieModule i S hS
   change ((LieModule.toModuleHom ℂ (radicalEndLie i) S (r ⊗ₜ[ℂ] p) : S) : MatrixPolynomial n) = _
   rw [LieModule.toModuleHom_apply]
   rfl
@@ -35,8 +35,7 @@ theorem radicalPolynomialAction_intertwines
     (D : Module.End ℂ S) (hD : ∀ p : S, (D p : MatrixPolynomial n) = a.val p.val)
     (z : radicalEndLie i ⊗[ℂ] S) :
     radicalPolynomialAction i S hS (tensorBorelOperator a D z) = D (radicalPolynomialAction i S hS z) := by
-  induction z using TensorProduct.induction_on with
-  | zero => simp
+  induction z using TensorProduct.inductionOn with
   | tmul r p =>
       rw [tensorBorelOperator_tmul,map_add]
       apply Subtype.ext

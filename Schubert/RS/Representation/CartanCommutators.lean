@@ -34,7 +34,7 @@ theorem diagonalDerivation_minor {n : ℕ} (a k : Fin n) :
     matrixUnitDerivation a a (flagMinor k) = (if a≤k then 1 else 0 : ℕ) • flagMinor k := by
   classical
   by_cases ha : a≤k
-  · rw [if_pos ha, one_nsmul]
+  · rw [ite_eq_left ha, one_nsmul]
     let D := matrixUnitDerivation a a
     let M : Matrix (Fin (k.val+1)) (Fin (k.val+1)) (MatrixPolynomial n) :=
       fun i j => MvPolynomial.X (prefixIndex k i,prefixIndex k j)
@@ -45,14 +45,14 @@ theorem diagonalDerivation_minor {n : ℕ} (a k : Fin n) :
     · have hr : (fun c => D (M j c)) = M j := by
         funext c
         change matrixUnitDerivation a a (MvPolynomial.X (prefixIndex k j,prefixIndex k c)) = MvPolynomial.X (prefixIndex k j,prefixIndex k c)
-        rw [hj, matrixUnitDerivation_X, if_pos rfl]
+        rw [hj, matrixUnitDerivation_X, ite_eq_left rfl]
       rw [hr, Matrix.updateRow_eq_self]
     · intro s hs c
       change matrixUnitDerivation a a (MvPolynomial.X (prefixIndex k s,prefixIndex k c)) = 0
-      rw [matrixUnitDerivation_X, if_neg]
+      rw [matrixUnitDerivation_X, ite_eq_right]
       intro h
       exact hs (prefixIndex_injective k (h.trans hj.symm))
-  · rw [if_neg ha, zero_nsmul]
+  · rw [ite_eq_right ha, zero_nsmul]
     exact matrixUnitDerivation_minor_absent a a k (lt_of_not_ge ha)
 
 theorem diagonalDerivation_highestFlag {n : ℕ} (m : ColumnShape n) (a : Fin n) :

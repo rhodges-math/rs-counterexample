@@ -20,11 +20,11 @@ theorem dominant_pairing_of_key_support
       if a = (fun i => u i.rev) then 1 else 0 := by
   classical
   by_cases he : a = (fun i => u i.rev)
-  · rw [if_pos he, pairing_monomial_coefficient]
+  · rw [ite_eq_left he, pairing_monomial_coefficient]
     have h := prefixSupported_mul_initial (hs a) (weylFactor_prefixSupported n)
     simp only [add_zero, hc a, weylFactor_constant, mul_one] at h
     simpa only [he] using h
-  · rw [if_neg he]
+  · rw [ite_eq_right he]
     by_contra hn
     exact he (dominant_pairing_index hs u hu a hn)
 

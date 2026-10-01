@@ -4,7 +4,7 @@ Licensed under CC BY-NC 4.0; see Grinberg.LICENSE.
 Adapted from facebookresearch/algebraic-combinatorics,
 commit b6022318e986a0c20764569208ba8ebbe1c04dbf,
 AlgebraicCombinatorics/CauchyBinet.lean, rectangular Cauchy-Binet section.
-Changes: narrowed imports; independent namespace; Lean 4.33 compatibility.
+Changes: narrowed imports; independent namespace; Lean 4.33 and 4.35 compatibility.
 The namespace is Schubert.RS.GrinbergCauchyBinet.
 No other declarations from the upstream library are imported.
 -/
@@ -157,7 +157,7 @@ private lemma sum_over_image_eq_sum_perm {n m : ℕ} (S : Finset (Fin m)) (hS : 
     ext k
     exact congrArg Fin.val (orderIsoOfFin_symm_orderEmbOfFin S hS (τ k))
   · intro f hf; simp only [Finset.mem_filter, Finset.mem_univ, true_and] at hf; funext k
-    simp only [toFun, invFun, Equiv.ofBijective_apply]
+    simp only [toFun, invFun]
     exact orderEmbOfFin_symm S hS (f k) (by rw [← hf.2]; simp)
   · intro τ _; rfl
 
@@ -174,7 +174,7 @@ private lemma sum_injective_eq_sum_over_subsets {n m : ℕ} (F : (Fin n → Fin 
     simp only [g, Finset.mem_powersetCard, Finset.subset_univ, true_and]
     rw [Finset.card_image_of_injective _ hf]; simp
   rw [← Finset.sum_fiberwise_of_maps_to hg F]; apply Finset.sum_congr rfl; intro S hS
-  simp only [Finset.mem_powersetCard, Finset.subset_univ, true_and] at hS; rw [dif_pos hS]
+  simp only [Finset.mem_powersetCard, Finset.subset_univ, true_and] at hS; rw [dite_eq_left hS]
   have h_fiber : (Finset.filter Function.Injective Finset.univ).filter (fun f => g f = S) =
       ((Finset.univ : Finset (Fin n → Fin m)).filter Function.Injective).filter 
         (fun f => Finset.univ.image f = S) := by ext f; simp [g]

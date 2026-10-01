@@ -31,8 +31,8 @@ theorem presentation_raisingString (k : ℕ) :
     letI := presentationSl2LieModule u i hu
     primitiveStringVector (sl2RaisingElement (polynomialSl2Triple i.left i.right i.left_ne_right))
       (presentationGenerator u) k = rootOperator (adjacentPositiveRoot i)^k • presentationGenerator u := by
-  letI := presentationSl2LieRingModule u i hu
-  letI := presentationSl2LieModule u i hu
+  let := presentationSl2LieRingModule u i hu
+  let := presentationSl2LieModule u i hu
   induction k with
   | zero => simp
   | succ k ih =>
@@ -46,8 +46,8 @@ theorem adjacentCompletionToPresentation_generator_mem :
     letI := presentationSl2LieRingModule u i hu
     letI := presentationSl2LieModule u i hu
     presentationGenerator u ∈ (adjacentCompletionToPresentation u i hu hJP B).toLinearMap.range := by
-  letI := presentationSl2LieRingModule u i hu
-  letI := presentationSl2LieModule u i hu
+  let := presentationSl2LieRingModule u i hu
+  let := presentationSl2LieModule u i hu
   let t := polynomialSl2Triple i.left i.right i.left_ne_right
   let G := adjacentCompletionToPresentation u i hu hJP B
   apply lowestVector_mem_of_top (sl2SubalgebraTriple t) (d := u i.right-u i.left)

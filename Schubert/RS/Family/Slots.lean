@@ -66,7 +66,8 @@ theorem pairSlots_card (hm : 0<m) (s : Finset (Fin m) × Finset (Fin m)) :
 
 theorem slotSum_low (hm : 0<m) (j : Fin m ⊕ Fin m) :
     ((slotSumEquiv hm) j).val<m ↔ j.isRight := by
-  cases j <;> simp [slotSumEquiv,slotSum,slotRight,slotLeft,Fin.rev] <;> omega
+  cases j <;> simp [slotSumEquiv,slotSum,slotRight,slotLeft,Fin.rev]
+  omega
 
 theorem pairSlots_low_card (hm : 0<m) (s : Finset (Fin m) × Finset (Fin m)) :
     ((pairSlots hm s).filter (fun j => j.val<m)).card=s.2.card := by

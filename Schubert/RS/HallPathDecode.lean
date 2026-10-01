@@ -17,7 +17,7 @@ def pathHorizontal (t : ℕ) : ℤ :=
 theorem pathHorizontal_grid (t : ℕ) (ht : t+1 < d+M+3)
     (p : Fin (d+1) × Fin (M+1)) (hp : P.vertex ⟨t+1, ht⟩ = .inr (.inl p)) :
     pathHorizontal y P t = p.1.val := by
-  simp only [pathHorizontal, dif_pos ht]
+  simp only [pathHorizontal, dite_eq_left ht]
   rw [hp]
 
 theorem active_tick_bound (t : ℕ) (ht : t ≤ hallSource i+1+(y i).val) :

@@ -37,19 +37,19 @@ decreasing_by exact sortingMeasure_firstAscent a h
 
 theorem key_ascent (a : Composition n) (h : (ascentSet a).Nonempty) :
     key a = isobaric (firstAscent a h) (key (swapComposition a (firstAscent a h))) := by
-  rw [key, dif_pos h]
+  rw [key, dite_eq_left h]
 
 theorem atom_ascent (a : Composition n) (h : (ascentSet a).Nonempty) :
     atom a = atomOperator (firstAscent a h) (atom (swapComposition a (firstAscent a h))) := by
-  rw [atom, dif_pos h]
+  rw [atom, dite_eq_left h]
 
 theorem key_of_no_ascent (a : Composition n) (h : ¬(ascentSet a).Nonempty) :
     key a = compositionMonomial a := by
-  rw [key, dif_neg h]
+  rw [key, dite_eq_right h]
 
 theorem atom_of_no_ascent (a : Composition n) (h : ¬(ascentSet a).Nonempty) :
     atom a = compositionMonomial a := by
-  rw [atom, dif_neg h]
+  rw [atom, dite_eq_right h]
 
 theorem no_ascent_of_antitone (a : Composition n) (h : Antitone a) :
     ¬(ascentSet a).Nonempty := by

@@ -14,7 +14,7 @@ theorem mem_ascentRootList {n : ℕ} (u : Fin n → ℕ) (r : PositiveRoot n) :
 
 theorem mem_killingRootList {n : ℕ} (u : Fin n → ℕ) (r : PositiveRoot n) :
     r ∈ killingRootList u ↔ u r.val.2 ≤ u r.val.1 := by
-  simp [killingRootList, isAscentRoot, (defaultRootOrdering n).complete r, Nat.not_lt]
+  simp [killingRootList, isAscentRoot, (defaultRootOrdering n).complete r]
 
 def blockProduct {n : ℕ} (roots : List (PositiveRoot n)) (powers : PositiveRoot n → ℕ) :
     Enveloping n := (roots.map fun r => rootOperator r ^ powers r).prod

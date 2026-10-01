@@ -3,13 +3,21 @@ message: "If you use or adapt this code, please cite the paper and this reposito
 type: software
 title: "rs-counterexample: Lean verification of the key-product counterexamples"
 abstract: >-
-  A Lean 4 formalization of Theorem 1.1 of R. Hodges, "Counterexamples to the
-  Reiner-Shimozono conjecture and the failure of Schubert filtrations": the
-  coefficient formula for the full counterexample family, its exact negativity
-  criterion, and an explicit negative coefficient in 28 variables.
+  A Lean 4 formalization of R. Hodges, "Counterexamples to the Reiner-Shimozono
+  conjecture and the failure of Schubert filtrations": the coefficient formula
+  for the full counterexample family, its exact negativity criterion and an
+  explicit negative coefficient in 28 variables (Theorem 1.1); the failure of
+  relative Schubert filtrations and of Schubert filtrations in Polo's sense
+  (Corollary 1.2); the failure of Lascoux-atom positivity (Corollary 1.3); the
+  quiver-theoretic results of Theorems 1.4 and 5.3 and Corollary 1.5. The
+  standard results used for them are proved in three accompanying libraries:
+  representations of general linear groups and their Levi subgroups,
+  polynomial-time rational feasibility of linear inequalities, and the
+  saturation of semi-invariants of quivers.
 authors:
   - family-names: Hodges
     given-names: Reuven
+version: "2.0.0"
 repository-code: "https://github.com/rhodges-math/rs-counterexample"
 license: Apache-2.0
 keywords:
@@ -17,7 +25,12 @@ keywords:
   - Mathlib
   - formalization
   - key polynomials
-  - Schubert polynomials
+  - Demazure atoms
+  - Schubert filtrations
+  - Lascoux polynomials
+  - quiver representations
+  - representation theory
+  - linear programming
 preferred-citation:
   type: article
   title: "Counterexamples to the Reiner-Shimozono conjecture and the failure of Schubert filtrations"

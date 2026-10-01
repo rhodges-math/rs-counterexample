@@ -1,7 +1,7 @@
 import Mathlib.Algebra.Lie.Matrix
 import Mathlib.Algebra.Lie.Subalgebra
 import Mathlib.Data.Matrix.Basis
-import Mathlib.Data.Complex.Basic
+import Mathlib.Basic.Complex.Basic
 
 namespace Schubert.RS.Representation
 
@@ -16,7 +16,8 @@ def SupportedOn {n : ℕ} (r : Fin n → Fin n → Prop) (A : Square n) : Prop :
   ∀ i j, ¬ r i j → A i j = 0
 
 theorem supportedOn_mul {n : ℕ} (r : Fin n → Fin n → Prop)
-    (hr : Transitive r) {A B : Square n} (hA : SupportedOn r A) (hB : SupportedOn r B) :
+    (hr : ∀ ⦃x y z⦄, r x y → r y z → r x z)
+    {A B : Square n} (hA : SupportedOn r A) (hB : SupportedOn r B) :
     SupportedOn r (A * B) := by
   intro i j hij
   rw [Matrix.mul_apply]
@@ -28,7 +29,7 @@ theorem supportedOn_mul {n : ℕ} (r : Fin n → Fin n → Prop)
   · rw [hA i k hik, zero_mul]
 
 /-- A transitive matrix support pattern is closed under the actual commutator. -/
-def patternLie {n : ℕ} (r : Fin n → Fin n → Prop) (hr : Transitive r) :
+def patternLie {n : ℕ} (r : Fin n → Fin n → Prop) (hr : ∀ ⦃x y z⦄, r x y → r y z → r x z) :
     LieSubalgebra ℂ (Square n) where
   carrier := {A | SupportedOn r A}
   zero_mem' := by intro i j _; rfl
@@ -55,7 +56,7 @@ def killingRelation {n : ℕ} (u : Fin n → ℕ) (i j : Fin n) : Prop :=
   i < j ∧ u j ≤ u i
 
 theorem killingRelation_transitive {n : ℕ} (u : Fin n → ℕ) :
-    Transitive (killingRelation u) := by
+    ∀ ⦃x y z⦄, killingRelation u x y → killingRelation u y z → killingRelation u x z := by
   intro i j k hij hjk
   exact ⟨hij.1.trans hjk.1, hjk.2.trans hij.2⟩
 
@@ -70,7 +71,7 @@ theorem killingSubalgebra_le {n : ℕ} (u : Fin n → ℕ) :
 
 /-- A matrix unit belongs to any support pattern containing its root. -/
 theorem single_mem_pattern {n : ℕ} (r : Fin n → Fin n → Prop)
-    (hr : Transitive r) {i j : Fin n} (hij : r i j) :
+    (hr : ∀ ⦃x y z⦄, r x y → r y z → r x z) {i j : Fin n} (hij : r i j) :
     Matrix.single i j (1 : ℂ) ∈ patternLie r hr := by
   intro p q hpq
   rw [Matrix.single_apply]
@@ -81,7 +82,8 @@ theorem single_mem_pattern {n : ℕ} (r : Fin n → Fin n → Prop)
 
 /-- The matrix support description agrees with the ordinary linear span
 of the specified matrix-unit roots; no Lie closure is silently added. -/
-theorem pattern_eq_span {n : ℕ} (r : Fin n → Fin n → Prop) (hr : Transitive r) :
+theorem pattern_eq_span {n : ℕ} (r : Fin n → Fin n → Prop)
+    (hr : ∀ ⦃x y z⦄, r x y → r y z → r x z) :
     (patternLie r hr).toSubmodule = Submodule.span ℂ
       {A | ∃ i j, r i j ∧ A = Matrix.single i j (1 : ℂ)} := by
   classical

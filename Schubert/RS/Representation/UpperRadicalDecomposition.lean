@@ -46,7 +46,7 @@ theorem upperRadicalRemainder_mem {n : ℕ} (i : AdjacentPosition n) (A : upperN
       exact (radicalEndSpan i).zero_mem
     · have hre : r.val≠(i.left,i.right) := fun hh => he (Subtype.ext hh)
       have hz : upperSimpleCoefficient i (rootBasis n r)=0 := by
-        simp [upperSimpleCoefficient,Module.Basis.coord_apply,he,Ne.symm he]
+        simp [upperSimpleCoefficient,Module.Basis.coord_apply,Ne.symm he]
       change polynomialUpperLie n (rootBasis n r) -
         upperSimpleCoefficient i (rootBasis n r) • (matrixUnitDerivation i.left i.right).toLinearMap∈_
       rw [hz,zero_smul,sub_zero,rootBasis_apply]

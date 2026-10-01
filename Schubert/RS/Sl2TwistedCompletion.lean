@@ -19,6 +19,8 @@ variable {L : Type*} [LieRing L] [LieAlgebra ℂ L]
 def twistedPrimitiveBoundary : V →ₗ[ℂ] (V ⊗[ℂ] fullPrimitiveModule t P) :=
   ((fullPrimitiveBoundary t P).lTensor V).comp (TensorProduct.rid ℂ V).symm.toLinearMap
 
+omit [LieRingModule (t.toLieSubalgebra ℂ) V] [LieModule ℂ (t.toLieSubalgebra ℂ) V]
+  [Module.Finite ℂ V] in
 theorem twistedPrimitiveBoundary_apply (x : V) :
     twistedPrimitiveBoundary t P V x=x ⊗ₜ[ℂ] fullPrimitiveBasis t P 0 := by
   simp [twistedPrimitiveBoundary,TensorProduct.rid_symm_apply,fullPrimitiveBoundary_apply]

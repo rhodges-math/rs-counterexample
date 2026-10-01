@@ -38,8 +38,7 @@ theorem IsRankOneCompletion.extendAction_unique
     (hA : ∀ r m, A (r ⊗ₜ[ℂ] ι m) = ι (ρ (r ⊗ₜ[ℂ] m))) : A = C.extendAction ρ he hh := by
   apply (C.tensor R).hom_ext
   intro z
-  induction z using TensorProduct.induction_on with
-  | zero => simp
+  induction z using TensorProduct.inductionOn with
   | tmul r m => exact (hA r m).trans (C.extendAction_boundary ρ he hh r m).symm
   | add z w hz hw => simp only [map_add,hz,hw]
 

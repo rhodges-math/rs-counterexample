@@ -16,7 +16,7 @@ def paddedVertex (t : Fin (d+M+3)) : Vertex d M :=
 
 theorem paddedVertex_before (t : Fin (d+M+3)) (ht : t.val ≤ hallSource j) :
     paddedVertex y P t = start j := by
-  simp only [paddedVertex, dif_pos ht]
+  simp only [paddedVertex, dite_eq_left ht]
 
 theorem paddedVertex_after (t : Fin (d+M+3)) (ht : endpointTime y i < t.val) :
     paddedVertex y P t = finish i := by
@@ -24,14 +24,14 @@ theorem paddedVertex_after (t : Fin (d+M+3)) (ht : endpointTime y i < t.val) :
     have h := P.nonempty
     unfold endpointTime at ht
     omega
-  simp only [paddedVertex, dif_neg hn, dif_pos ht]
+  simp only [paddedVertex, dite_eq_right hn, dite_eq_left ht]
 
 theorem paddedVertex_active (t : Fin (d+M+3))
     (hs : hallSource j < t.val) (he : t.val ≤ endpointTime y i) :
     paddedVertex y P t = .inr (.inl (latticePoint y P (t.val-1) (by omega) (by
       unfold endpointTime at he
       omega))) := by
-  simp only [paddedVertex, dif_neg (not_le.mpr hs), dif_neg (not_lt.mpr he)]
+  simp only [paddedVertex, dite_eq_right (not_le.mpr hs), dite_eq_right (not_lt.mpr he)]
 
 theorem paddedVertex_edges (t : Fin (d+M+2)) :
     edges y t (paddedVertex y P t.castSucc) (paddedVertex y P t.succ) := by

@@ -53,8 +53,8 @@ theorem PolynomialRootStringBasis.completedWeyl_radical
     B.completedWeyl i.left_ne_right (B.completedRadicalAction hE hR (r ⊗ₜ[ℂ] x)) =
       B.completedRadicalAction hE hR
         (radicalWeyl i r ⊗ₜ[ℂ] B.completedWeyl i.left_ne_right x) := by
-  letI := complexRationalModule (radicalEndLie i)
-  letI := complexRationalModule (B.completedModule i.left_ne_right)
+  let := complexRationalModule (radicalEndLie i)
+  let := complexRationalModule (B.completedModule i.left_ne_right)
   exact LieModuleHom.weyl_tensor_covariance (B.completedRadicalAction hE hR)
     (sl2RaisingElement (polynomialSl2Triple i.left i.right i.left_ne_right))
     (sl2LoweringElement (polynomialSl2Triple i.left i.right i.left_ne_right))
@@ -79,7 +79,8 @@ theorem PolynomialRootStringBasis.completedWeyl_radicalRoot
       ((congrArg (fun s => A (s ⊗ₜ[ℂ] w x)) hr).trans
         ((congrArg A (TensorProduct.smul_tmul' c (radicalEndRoot i r) (w x)).symm).trans
           (A.map_smul c (radicalEndRoot i r ⊗ₜ[ℂ] w x))))
-  exact smul_involution_symm c (radicalWeylSign_mul_self i (radicalReflectedRoot i r)) hc
+  exact smul_involution_symm (X := B.completedModule i.left_ne_right) c
+    (radicalWeylSign_mul_self i (radicalReflectedRoot i r)) hc
 
 theorem upperSimpleCoefficient_radicalRoot {n : ℕ} (i : AdjacentPosition n) (r : RadicalRoot i) :
     upperSimpleCoefficient i (rootVector r.val)=0 := by
@@ -87,7 +88,7 @@ theorem upperSimpleCoefficient_radicalRoot {n : ℕ} (i : AdjacentPosition n) (r
   change (Matrix.single r.val.val.1 r.val.val.2 (1:ℂ)) i.left i.right=0
   by_cases ha : r.val.val.1=i.left <;> by_cases hb : r.val.val.2=i.right
   · exact (r.property (Prod.ext ha hb)).elim
-  all_goals simp [Matrix.single_apply,ha,hb,eq_comm]
+  all_goals simp [ha,hb]
 
 theorem upperRadicalPart_radicalRoot {n : ℕ} (i : AdjacentPosition n) (r : RadicalRoot i) :
     upperRadicalPart i (rootVector r.val)=radicalEndRoot i r := by

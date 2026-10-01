@@ -17,7 +17,6 @@ theorem enveloping_intertwines {n : ℕ} {X Y : Type*}
   | hC c => simp
   | hι A => exact hf A x
   | hmul a b ha hb =>
-      change f ((ρ (a*b)) x) = (σ (a*b)) (f x)
       rw [map_mul,map_mul]
       exact (ha (ρ b x)).trans (congrArg (σ a) (hb x))
   | hadd a b ha hb => simp only [map_add,LinearMap.add_apply,ha,hb]

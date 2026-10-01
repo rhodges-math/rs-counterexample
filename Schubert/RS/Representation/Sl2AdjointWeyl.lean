@@ -44,7 +44,7 @@ theorem sl2AdjointE_cube : sl2AdjointE t ^ 3 = 0 := by
   obtain ⟨u,v,w,rfl⟩ := sl2_element_expansion t z
   change sl2AdjointE t (sl2AdjointE t (sl2AdjointE t
     (u • sl2RaisingElement t+v • sl2LoweringElement t+w • sl2CartanElement t)))=0
-  simp only [map_add,map_smul,sl2AdjointE_e,sl2AdjointE_f,sl2AdjointE_h,map_zero,smul_zero,add_zero,zero_add]
+  simp only [map_add,map_smul,sl2AdjointE_e,sl2AdjointE_f,sl2AdjointE_h,smul_zero,add_zero,zero_add]
 
 theorem sl2AdjointF_cube : sl2AdjointF t ^ 3 = 0 := by
   apply LinearMap.ext
@@ -52,8 +52,7 @@ theorem sl2AdjointF_cube : sl2AdjointF t ^ 3 = 0 := by
   obtain ⟨u,v,w,rfl⟩ := sl2_element_expansion t z
   change sl2AdjointF t (sl2AdjointF t (sl2AdjointF t
     (u • sl2RaisingElement t+v • sl2LoweringElement t+w • sl2CartanElement t)))=0
-  simp only [map_add,map_smul,map_neg,sl2AdjointF_e,sl2AdjointF_f,sl2AdjointF_h,map_zero,
-    smul_zero,neg_zero,add_zero,zero_add]
+  simp only [map_add,map_smul,map_neg,sl2AdjointF_e,sl2AdjointF_f,sl2AdjointF_h,smul_zero,neg_zero,add_zero]
 
 def sl2AdjointWeyl : t.toLieSubalgebra ℂ ≃ₗ[ℂ] t.toLieSubalgebra ℂ :=
   letI := complexRationalModule (t.toLieSubalgebra ℂ)
@@ -61,15 +60,15 @@ def sl2AdjointWeyl : t.toLieSubalgebra ℂ ≃ₗ[ℂ] t.toLieSubalgebra ℂ :=
     ⟨3,sl2AdjointE_cube t⟩ ⟨3,sl2AdjointF_cube t⟩
 
 theorem sl2AdjointWeyl_h : sl2AdjointWeyl t (sl2CartanElement t) = -sl2CartanElement t := by
-  letI := complexRationalModule (t.toLieSubalgebra ℂ)
-  have hn : (-sl2AdjointF t)^3=0 := by rw [neg_pow,sl2AdjointF_cube]; simp
+  let := complexRationalModule (t.toLieSubalgebra ℂ)
+  have hn : (-sl2AdjointF t)^3=0 := by rw [neg_pow (sl2AdjointF t) 3,sl2AdjointF_cube]; simp
   change IsNilpotent.exp (sl2AdjointE t)
     (IsNilpotent.exp (-sl2AdjointF t) (IsNilpotent.exp (sl2AdjointE t) (sl2CartanElement t)))=_
   rw [exp_of_cube_zero _ (sl2AdjointE_cube t),exp_of_cube_zero _ hn]
   simp only [LinearMap.add_apply,Module.End.one_apply,LinearMap.smul_apply,LinearMap.neg_apply,
     pow_two,Module.End.mul_apply,map_add,map_smul,map_neg,
     sl2AdjointE_e,sl2AdjointE_f,sl2AdjointE_h,sl2AdjointF_e,sl2AdjointF_f,sl2AdjointF_h,
-    map_zero,smul_zero,neg_zero,zero_add,add_zero]
+    map_zero,smul_zero,neg_zero,add_zero]
   module
 
 end

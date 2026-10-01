@@ -73,27 +73,22 @@ theorem IsColumnWeightString.add_low {n L : ℕ} {i : AdjacentPosition n}
     (c : Composition n) (hca : c i.left = 1) (hcb : c i.right = 0) :
     IsColumnWeightString i L (fun k a => W k.succ a + c a) := by
   constructor
-  · change W (0 : Fin (L+1)).succ i.left + c i.left =
-      W (0 : Fin (L+1)).succ i.right + c i.right + L
-    have h0 := hW.head
+  · have h0 := hW.head
     have ha := hW.left (0 : Fin (L+1)).succ
     have hb := hW.right (0 : Fin (L+1)).succ
     simp only [Fin.val_succ,Fin.val_zero,zero_add] at ha hb
     omega
   · intro k
-    change W k.succ i.left + c i.left + k.val = W (0 : Fin (L+1)).succ i.left + c i.left
     have h0 := hW.left (0 : Fin (L+1)).succ
     have hk := hW.left k.succ
     simp only [Fin.val_succ,Fin.val_zero,zero_add] at h0 hk
     omega
   · intro k
-    change W k.succ i.right + c i.right = W (0 : Fin (L+1)).succ i.right + c i.right + k.val
     have h0 := hW.right (0 : Fin (L+1)).succ
     have hk := hW.right k.succ
     simp only [Fin.val_succ,Fin.val_zero,zero_add] at h0 hk
     omega
   · intro k a ha hb
-    change W k.succ a + c a = W (0 : Fin (L+1)).succ a + c a
     rw [hW.other k.succ a ha hb,hW.other (0 : Fin (L+1)).succ a ha hb]
 
 end

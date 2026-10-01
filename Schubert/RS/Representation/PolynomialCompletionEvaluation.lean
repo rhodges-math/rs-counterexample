@@ -19,7 +19,7 @@ variable {n : ℕ} {i : AdjacentPosition n} {S T : Submodule ℂ (MatrixPolynomi
 theorem PolynomialRootStringBasis.completedUpperTower :
     letI := B.completedUpperModule hE hR
     IsScalarTower ℂ (Enveloping n) (B.completedModule i.left_ne_right) := by
-  letI := B.completedUpperModule hE hR
+  let := B.completedUpperModule hE hR
   exact ⟨fun c a x => by
     change B.completedUpperEnveloping hE hR (c • a) x = c • B.completedUpperEnveloping hE hR a x
     rw [map_smul]
@@ -52,8 +52,7 @@ def polynomialRootRadicalAction :
     intro a z
     change polynomialRootRadicalLinear hTE hTF hTR ⁅a,z⁆ =
       ⁅a,polynomialRootRadicalLinear hTE hTF hTR z⁆
-    induction z using TensorProduct.induction_on with
-    | zero => simp
+    induction z using TensorProduct.inductionOn with
     | tmul r p =>
         rw [TensorProduct.LieModule.lie_tmul_right,map_add]
         apply Subtype.ext

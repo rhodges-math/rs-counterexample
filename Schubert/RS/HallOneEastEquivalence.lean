@@ -27,8 +27,8 @@ theorem heightPath_injective : Function.Injective (heightPath y i) := by
     have hh := congrArg (fun P => pathHorizontal y P (hallSource i+r.val+1)) heq
     rw [heightPath_horizontal y i r _ (by omega) (by omega),
       heightPath_horizontal y i q _ (by omega) (by omega)] at hh
-    simp only [oneEastHorizontal, if_neg (show ¬hallSource i+r.val+1 ≤ hallSource i+r.val by omega),
-      if_pos (show hallSource i+r.val+1 ≤ hallSource i+q.val by omega)] at hh
+    simp only [oneEastHorizontal, ite_eq_right (show ¬hallSource i+r.val+1 ≤ hallSource i+r.val by omega),
+      ite_eq_left (show hallSource i+r.val+1 ≤ hallSource i+q.val by omega)] at hh
     omega
   rcases lt_or_gt_of_ne hn with h | h
   · exact neq r q h hp

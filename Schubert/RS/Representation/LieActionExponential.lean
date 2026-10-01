@@ -9,6 +9,7 @@ variable {L R X : Type*} [LieRing L] [LieAlgebra ℂ L]
   [AddCommGroup R] [Module ℂ R] [Module ℚ R] [LieRingModule L R] [LieModule ℂ L R]
   [AddCommGroup X] [Module ℂ X] [Module ℚ X] [LieRingModule L X] [LieModule ℂ L X]
 
+omit [Module ℚ R] [Module ℚ X] in
 theorem lie_tensor_operator (a : L) :
     (LieModule.toEnd ℂ L R a).rTensor X + (LieModule.toEnd ℂ L X a).lTensor R =
       LieModule.toEnd ℂ L (R ⊗[ℂ] X) a := by

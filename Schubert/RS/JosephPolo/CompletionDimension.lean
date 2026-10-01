@@ -32,7 +32,7 @@ theorem PolynomialRootStringBasis.adjacentEvaluation_surjective {n : ℕ}
     (u : Composition n) (i : AdjacentPosition n) (hu : u i.left < u i.right)
     (B : PolynomialRootStringBasis i.left i.right (compositionFlag (swapComposition u i))) :
     Function.Surjective (B.adjacentEvaluation u i hu) := by
-  letI := B.completedUpperModule
+  let := B.completedUpperModule
     (compositionFlag_adjacent_raising_stable (swapComposition u i) i)
     (compositionFlag_radical_stable i (swapComposition u i))
   obtain ⟨c,hc,hmap⟩ := presentation_adjacent_evaluation_scalar u i hu B

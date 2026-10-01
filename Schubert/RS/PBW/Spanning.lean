@@ -17,7 +17,7 @@ theorem rootWord_span_eq_top (n : ℕ) :
     | mem x hx =>
       obtain ⟨roots, rfl⟩ := hx
       exact Submodule.subset_span ⟨r :: roots, rootWord_cons r roots⟩
-    | zero => simpa using S.zero_mem
+    | zero => simp
     | add x y hx hy ix iy => simpa only [mul_add] using S.add_mem ix iy
     | smul c x hx ix => rw [mul_smul_comm]; exact S.smul_mem c ix
   have hLie (A : upperNilpotent n) (x : Enveloping n) (hx : x ∈ S) :

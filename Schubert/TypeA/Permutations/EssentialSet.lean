@@ -52,7 +52,7 @@ essential-set decomposition. -/
 theorem exists_mem_essentialSet_le_of_not_le
     {w u : FinPermutation n} (hu : ¬u ≤ᴮ w) :
     ∃ v : FinPermutation n, v ∈ w.essentialSet ∧ v ≤ᴮ u := by
-  letI : PartialOrder (FinPermutation n) := strongBruhatPartialOrder n
+  let : PartialOrder (FinPermutation n) := strongBruhatPartialOrder n
   let S : Set (FinPermutation n) := {x | ¬x ≤ w ∧ x ≤ u}
   have huS : u ∈ S := ⟨hu, le_rfl⟩
   obtain ⟨v, hv⟩ := (Set.toFinite S).exists_minimal ⟨u, huS⟩

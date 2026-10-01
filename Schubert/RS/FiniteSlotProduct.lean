@@ -40,7 +40,7 @@ theorem finiteSlotProduct_negative (slot : ι → R) (B : ℕ) {z : ℤ} (hz : z
   apply Finset.sum_eq_zero
   intro e _
   have he : 0 ≤ ∑ h, ((e h).val : ℤ) := Finset.sum_nonneg (by intro h _; omega)
-  exact if_neg (by omega)
+  exact ite_eq_right (by omega)
 
 theorem finiteSlotProduct_natural (slot : ι → R) (B k : ℕ) :
     (finiteSlotProduct slot B).coeff (k : ℤ) =
@@ -66,16 +66,16 @@ theorem finiteSlotProduct_weak_heights {y : ℕ} (slot : Fin (y+1) → R)
 
 theorem finiteSlotProduct_completeHomogeneous {M : ℕ} (slot : Fin (M+1) → R)
     (y : Fin (M+1)) (B : ℕ) (z : ℤ) (hz : z ≤ B) :
-    (finiteSlotProduct (fun h : Fin (y.val+1) => slot ⟨h.val, by have hh := h.isLt; have hy := y.isLt; omega⟩) B).coeff z =
+    (finiteSlotProduct (fun h : Fin (y.val+1) => slot ⟨h.val, by have hh := h.isLt; have _hy := y.isLt; omega⟩) B).coeff z =
       completeHomogeneous slot y z := by
   classical
   by_cases hnonneg : 0 ≤ z
   · have hk : z.toNat ≤ B := by have h := Int.toNat_of_nonneg hnonneg; omega
-    rw [completeHomogeneous, if_pos hnonneg]
+    rw [completeHomogeneous, ite_eq_left hnonneg]
     convert finiteSlotProduct_weak_heights
-      (fun h : Fin (y.val+1) => slot ⟨h.val, by have hh := h.isLt; have hy := y.isLt; omega⟩) B z.toNat hk using 1
+      (fun h : Fin (y.val+1) => slot ⟨h.val, by have hh := h.isLt; have _hy := y.isLt; omega⟩) B z.toNat hk using 1
     rw [Int.toNat_of_nonneg hnonneg]
-  · rw [finiteSlotProduct_negative _ _ (by omega), completeHomogeneous, if_neg hnonneg]
+  · rw [finiteSlotProduct_negative _ _ (by omega), completeHomogeneous, ite_eq_right hnonneg]
 
 end
 end Schubert.RS

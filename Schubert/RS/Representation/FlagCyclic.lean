@@ -82,7 +82,7 @@ theorem flagCyclicMap_surjective {n : ℕ} (m : ColumnShape n) (w : Equiv.Perm (
 instance flagDemazureModule {n : ℕ} (m : ColumnShape n) (w : Equiv.Perm (Fin n)) :
     Module (Enveloping n) (flagDemazure m w) where
   smul a p := ⟨a • p.val, upperCyclic_stable (extremalFlag m w) a p.property⟩
-  one_smul p := Subtype.ext (one_smul _ _)
+  one_smul _ := Subtype.ext (one_smul _ _)
   mul_smul a b p := Subtype.ext (mul_smul a b p.val)
   smul_add a p q := Subtype.ext (smul_add a p.val q.val)
   smul_zero a := Subtype.ext (smul_zero a)

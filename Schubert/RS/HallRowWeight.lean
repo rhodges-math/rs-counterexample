@@ -54,7 +54,7 @@ theorem heightWord_eastWeight (q : Fin k) :
     omega
   change edgeWeight slot t _ _ = _
   rw [hp, hp']
-  simp only [edgeWeight, if_pos (show p.1.val+1 = p'.1.val by omega), hv]
+  simp only [edgeWeight, ite_eq_left (show p.1.val+1 = p'.1.val by omega), hv]
 
 theorem heightWord_noneastWeight (t : Fin (d+M+2))
     (hn : ∀ q, eastTick y hk r q ≠ t) :
@@ -73,7 +73,7 @@ theorem heightWord_noneastWeight (t : Fin (d+M+2))
     hn q (Fin.ext he))
   have hpq : p.1.val = q.1.val := by omega
   rw [hp, hq]
-  simp only [edgeWeight, if_neg (show ¬p.1.val+1 = q.1.val by omega)]
+  simp only [edgeWeight, ite_eq_right (show ¬p.1.val+1 = q.1.val by omega)]
 
 theorem heightWord_weight :
     layeredPathWeight (edgeWeight slot) (heightWordPath y hk r) =

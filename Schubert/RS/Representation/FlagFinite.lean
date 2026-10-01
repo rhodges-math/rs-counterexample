@@ -61,7 +61,7 @@ theorem scalar_eigen_homogeneous {n D : ℕ} (p : MatrixPolynomial n)
     (fun d => (2:ℂ)^d.sum (fun _ k => k))
     (fun d => polynomialTorus_scalar_monomial (Units.mk0 2 (by norm_num)) d) d p
   rw [hp, map_smul] at h
-  change (2:ℂ)^D * MvPolynomial.coeff d p = (2:ℂ)^d.sum (fun _ k => k) * MvPolynomial.coeff d p at h
+  change (2:ℂ)^D * p.coeff d = (2:ℂ)^d.sum (fun _ k => k) * p.coeff d at h
   have he := complex_two_pow_injective (mul_right_cancel₀ hd h)
   simpa [Finsupp.weight, Finsupp.linearCombination] using he.symm
 

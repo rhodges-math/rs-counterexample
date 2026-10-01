@@ -1,0 +1,22 @@
+{
+  "note": "For each standard result stated in Schubert/RS/Statements/ (each is proved in this repository), the audited declarations whose types, as printed by Lean in ENDPOINT_AUDIT.txt, take it as a hypothesis.",
+  "used_by": {
+    "Schubert.RS.QuiverSaturation": [
+      "Schubert.RS.Algorithms.quiverPositivity_decision",
+      "Schubert.RS.Algorithms.quiverPositivity_decision_of_saturation",
+      "Schubert.RS.Quiver.Flat.quiverCoefficient_pos_iff_nonempty",
+      "Schubert.RS.Quiver.Flat.quiverCoefficient_pos_iff_ratFeasible",
+      "Schubert.RS.quiverSaturation_holds"
+    ],
+    "Schubert.RS.PolyTimeRationalFeasibility": [
+      "Schubert.RS.Algorithms.quiverPositivity_decision",
+      "Schubert.RS.Algorithms.quiverPositivity_decision_of_iff",
+      "Schubert.RS.polyTimeRationalFeasibility_holds"
+    ],
+    "Schubert.RS.GLCharacterMultiplicity": [
+      "Schubert.RS.Quiver.Flat.quiverTheorem_counts",
+      "Schubert.RS.Quiver.atomCoefficient_eq_finrank_hom",
+      "Schubert.RS.glCharacterMultiplicity_holds"
+    ]
+  }
+}

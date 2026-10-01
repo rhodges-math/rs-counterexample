@@ -43,7 +43,7 @@ theorem dominant_target_weight_finrank {n : ℕ} {E : Type*} [AddCommGroup E] [M
   classical
   obtain ⟨e, hξ, he⟩ := hJP
   let ec : E ≃ₗ[ℂ] ℂ := (e.restrictScalars ℂ).symm.trans (dominantQuotientEquiv u hu hpbw)
-  letI : FiniteDimensional ℂ E := Module.Finite.equiv ec.symm
+  let : FiniteDimensional ℂ E := Module.Finite.equiv ec.symm
   have hs : ∀ t x, ρ t x = integerWeightScalar (fun i => (u i : ℤ)) t • x := by
     intro t x
     obtain ⟨q, rfl⟩ := e.surjective x
@@ -81,7 +81,7 @@ theorem dominant_hasDemazureCharacter {n : ℕ} {E : Type*} [AddCommGroup E] [Mo
   by_cases hz : z = (fun i => (u i : ℤ))
   · subst z
     norm_num
-  · simp only [if_neg hz, if_neg (Ne.symm hz), Nat.cast_zero]
+  · simp only [ite_eq_right hz, ite_eq_right (Ne.symm hz), Nat.cast_zero]
 
 end
 end Schubert.RS.Representation

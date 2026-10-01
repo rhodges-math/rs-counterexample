@@ -39,7 +39,7 @@ theorem exists_maximal_weight_string {n : ℕ} (a b : Fin n) (hab : a≠b)
   classical
   let E := matrixUnitOnSubmodule a b S hE
   have hnil : ∃ k, E^k=0 := matrixUnitOnSubmodule_nilpotent a b hab S hE
-  haveI : Nontrivial S := Submodule.nontrivial_iff_ne_bot.mpr hS0
+  have : Nontrivial S := Submodule.nontrivial_iff_ne_bot.mpr hS0
   have hpos : 0<Nat.find hnil := (Nat.find_pos hnil).mpr (by simp)
   let d := Nat.find hnil-1
   have hd : d+1=Nat.find hnil := by omega

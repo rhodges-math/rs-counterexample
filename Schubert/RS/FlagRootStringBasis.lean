@@ -11,8 +11,8 @@ theorem exists_flagRootStringBasis {n : ℕ} (m : ColumnShape n)
     (w : Equiv.Perm (Fin n)) (r : PositiveRoot n) :
     Nonempty (PolynomialRootStringBasis r.val.1 r.val.2 (flagDemazure m w)) :=
   exists_polynomialRootStringBasis r.val.1 r.val.2 (ne_of_lt r.property) _
-    (fun p hp => upperCyclic_root_stable _ r hp)
-    (fun t p hp => flagDemazure_torus_stable m w t hp)
+    (fun _ hp => upperCyclic_root_stable _ r hp)
+    (fun t _ hp => flagDemazure_torus_stable m w t hp)
 
 theorem exists_compositionRootStringBasis {n : ℕ} (u : Composition n)
     (r : PositiveRoot n) : Nonempty (PolynomialRootStringBasis r.val.1 r.val.2 (compositionFlag u)) :=

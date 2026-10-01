@@ -14,20 +14,20 @@ theorem rowAction_root_X {n : ℕ} (a b r c : Fin n) (t : ℂ) :
     simp [rowAction_X,Matrix.add_apply,Matrix.single,Matrix.one_apply,
       add_smul,Finset.sum_add_distrib,ite_smul,eq_comm]
   · simp [rowAction_X,Matrix.add_apply,Matrix.single,Matrix.one_apply,
-      add_smul,Finset.sum_add_distrib,ite_smul,h,Ne.symm h]
+      ite_smul,h,Ne.symm h]
 
 theorem rootSubstitution_eval {n : ℕ} (a b : Fin n) (p : MatrixPolynomial n) (t : ℂ) :
     (rootSubstitution a b p).eval (MvPolynomial.C t) =
       rowAction (1 + t • Matrix.single a b (1:ℂ)) p := by
   induction p using MvPolynomial.induction_on with
-  | C c => simp [rootSubstitution_C]
+  | C c => simp
   | add p q hp hq => simp [map_add,hp,hq]
   | mul_X p rc hp =>
     obtain ⟨r,c⟩ := rc
     rw [map_mul,Polynomial.eval_mul,hp,rootSubstitution_X,map_mul,rowAction_root_X]
     congr 1
     by_cases h : r=b
-    · simp only [if_pos h,Polynomial.eval_add,Polynomial.eval_C,Polynomial.eval_mul,
+    · simp only [ite_eq_left h,Polynomial.eval_add,Polynomial.eval_C,Polynomial.eval_mul,
         Polynomial.eval_X,MvPolynomial.C_mul']
     · simp [h]
 

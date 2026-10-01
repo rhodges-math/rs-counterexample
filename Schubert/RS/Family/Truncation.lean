@@ -39,7 +39,7 @@ theorem finiteRootFactor_window (P : Parameters) (B : ℕ) (hB : P.m+1≤B)
     exact WindowEq.refl _ _
 
 theorem finite_root_product_coefficient (P : Parameters) (B : ℕ) (hB : P.m+1≤B) :
-    MvPolynomial.coeff (coefficientBox P) (∏ r : PositiveRoot P.rank,finiteRootFactor P B r)=
+    (∏ r : PositiveRoot P.rank,finiteRootFactor P B r).coeff (coefficientBox P)=
       MvPowerSeries.coeff (coefficientBox P) (∏ r : PositiveRoot P.rank,familyRootFactor P r) := by
   have hw:=WindowEq.prod (coefficientBox P) Finset.univ
     (fun r : PositiveRoot P.rank => ((finiteRootFactor P B r : MvPolynomial (Fin (P.rank-1)) ℤ) :

@@ -30,7 +30,7 @@ theorem operatorCyclicSpan_extra (A : Module.End ℂ X)
     {x : X} (hx : x∈operatorCyclicSpan D z) : A x∈operatorCyclicSpan D z :=
   cyclic_core_stability (operatorCyclicSpan D z) z D A
     (operatorCyclicSpan_le D z) (operatorCyclicSpan_generator D z)
-    (fun i x hx => operatorCyclicSpan_stable D z i hx) hz hcomm hx
+    (fun i _ hx => operatorCyclicSpan_stable D z i hx) hz hcomm hx
 
 end
 end Schubert.RS.Representation

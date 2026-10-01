@@ -42,7 +42,7 @@ theorem derivation_det_updateRow {A ι : Type*} [CommRing A] [Algebra ℂ A]
   intro i hi
   by_cases hij : i = j
   · subst i; simp
-  · simp only [Function.update_of_ne hij, Matrix.updateRow_apply, if_neg hij]
+  · simp only [Function.update_of_ne hij, Matrix.updateRow_apply, ite_eq_right hij]
 
 theorem rootDerivation_X {n : ℕ} (r : PositiveRoot n) (i j : Fin n) :
     rowDerivation (rootVector r).val (MvPolynomial.X (i,j)) =
@@ -73,18 +73,18 @@ theorem rootDerivation_flagMinor {n : ℕ} (r : PositiveRoot n) (k : Fin n) :
         funext c
         change rowDerivation (rootVector r).val (MvPolynomial.X (prefixIndex k j, prefixIndex k c)) =
           MvPolynomial.X (prefixIndex k i, prefixIndex k c)
-        rw [hjr, hir, rootDerivation_X, if_pos rfl]
+        rw [hjr, hir, rootDerivation_X, ite_eq_left rfl]
       rw [hr]
       exact Matrix.det_updateRow_eq_zero (M := M) hij
     · intro s hs c
       change rowDerivation (rootVector r).val (MvPolynomial.X (prefixIndex k s, prefixIndex k c)) = 0
-      rw [rootDerivation_X, if_neg]
+      rw [rootDerivation_X, ite_eq_right]
       intro he
       apply hs
       exact prefixIndex_injective k (he.trans hjr.symm)
   · have hz (i c : Fin (k.val+1)) : D (M i c) = 0 := by
       change rowDerivation (rootVector r).val (MvPolynomial.X (prefixIndex k i, prefixIndex k c)) = 0
-      rw [rootDerivation_X, if_neg]
+      rw [rootDerivation_X, ite_eq_right]
       intro he
       have hv := congrArg Fin.val he
       have hi := i.isLt

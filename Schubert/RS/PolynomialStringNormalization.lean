@@ -53,12 +53,12 @@ theorem PolynomialRootStringBasis.normalizedBasis_h (hab : a≠b)
   congr 1
   have hk : j.2.val≤B.length j.1 := by omega
   simp only [Pi.add_apply,Pi.smul_apply,positiveRoot,Pi.sub_apply,Pi.single_apply,
-    if_pos rfl,if_neg hab,if_neg hab.symm,
+    ite_eq_right hab,ite_eq_right hab.symm,
     sub_zero,zero_sub,Int.nsmul_eq_mul,Nat.cast_sub hk]
   push_cast
   ring
 
-def PolynomialRootStringBasis.cartan (hab : a≠b) : Module.End ℂ S :=
+def PolynomialRootStringBasis.cartan (_hab : a≠b) : Module.End ℂ S :=
   B.normalizedBasis.constr ℂ (fun j =>
     (((B.weight j.1 a-B.weight j.1 b:ℤ):ℂ)+2*((B.length j.1:ℂ)-j.2.val)) • B.normalizedBasis j)
 

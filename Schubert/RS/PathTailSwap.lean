@@ -48,7 +48,7 @@ theorem swapPathTails_edges (p : Fin d → Fin (T + 1) → V)
   intro i k
   by_cases hn : k.succ ≤ t
   · have ho : k.castSucc ≤ t := by have h : k.val + 1 ≤ t.val := hn; change k.val ≤ t.val; omega
-    simpa only [swapPathTails, if_pos hn, if_pos ho] using hp i k
+    simpa only [swapPathTails, ite_eq_left hn, ite_eq_left ho] using hp i k
   · by_cases ho : k.castSucc ≤ t
     · have ht : k.castSucc = t := by
         have h : ¬ k.val + 1 ≤ t.val := hn
@@ -56,10 +56,10 @@ theorem swapPathTails_edges (p : Fin d → Fin (T + 1) → V)
         apply Fin.ext
         change k.val = t.val
         omega
-      rw [swapPathTails, if_pos ho, swapPathTails, if_neg hn]
+      rw [swapPathTails, ite_eq_left ho, swapPathTails, ite_eq_right hn]
       rw [ht, ← swapPathTails_cut p t a b i hab, ← ht]
       exact hp (Equiv.swap a b i) k
-    · simpa only [swapPathTails, if_neg hn, if_neg ho] using hp (Equiv.swap a b i) k
+    · simpa only [swapPathTails, ite_eq_right hn, ite_eq_right ho] using hp (Equiv.swap a b i) k
 
 /-- At each diagonal time, tail exchange preserves the product of edge
 weights over all path labels. It therefore preserves the full path weight. -/
@@ -70,7 +70,7 @@ theorem swapPathTails_edge_weight {R : Type*} [CommMonoid R]
       (swapPathTails p t a b i k.succ)) = ∏ i, w k (p i k.castSucc) (p i k.succ) := by
   by_cases hn : k.succ ≤ t
   · have ho : k.castSucc ≤ t := by have h : k.val + 1 ≤ t.val := hn; change k.val ≤ t.val; omega
-    simp only [swapPathTails, if_pos hn, if_pos ho]
+    simp only [swapPathTails, ite_eq_left hn, ite_eq_left ho]
   · by_cases ho : k.castSucc ≤ t
     · have ht : k.castSucc = t := by
         have h : ¬ k.val + 1 ≤ t.val := hn
@@ -78,7 +78,7 @@ theorem swapPathTails_edge_weight {R : Type*} [CommMonoid R]
         apply Fin.ext
         change k.val = t.val
         omega
-      simp only [swapPathTails, if_pos ho, if_neg hn]
+      simp only [swapPathTails, ite_eq_left ho, ite_eq_right hn]
       have he (i : Fin d) : p i k.castSucc = p (Equiv.swap a b i) k.castSucc := by
         rw [ht]; exact (swapPathTails_cut p t a b i hab).symm
       calc
@@ -87,7 +87,7 @@ theorem swapPathTails_edge_weight {R : Type*} [CommMonoid R]
           intro i _
           exact congrArg (fun x => w k x (p (Equiv.swap a b i) k.succ)) (he i)
         _ = _ := Equiv.prod_comp (Equiv.swap a b) (fun i => w k (p i k.castSucc) (p i k.succ))
-    · simp only [swapPathTails, if_neg ho, if_neg hn]
+    · simp only [swapPathTails, ite_eq_right ho, ite_eq_right hn]
       exact Equiv.prod_comp (Equiv.swap a b) (fun i => w k (p i k.castSucc) (p i k.succ))
 
 theorem swapPathTails_weight {R : Type*} [CommMonoid R]

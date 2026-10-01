@@ -26,7 +26,7 @@ def presentationCartan {n : ℕ} (u : Composition n) (i : AdjacentPosition n) :
     Module.End ℂ (PresentationQuotient u) :=
   ((jpLeftIdeal u).restrictScalars ℂ).mapQ ((jpLeftIdeal u).restrictScalars ℂ)
     (cartanEnveloping (adjacentCartanDiagonal i)+((u i.left : ℂ)-(u i.right : ℂ)) • 1)
-    (fun a ha => (jpLeftIdeal u).add_mem (cartanEnveloping_mem_jp _ u ha)
+    (fun _ ha => (jpLeftIdeal u).add_mem (cartanEnveloping_mem_jp _ u ha)
       (((jpLeftIdeal u).restrictScalars ℂ).smul_mem _ ha))
 
 def presentationRaising {n : ℕ} (u : Composition n) (i : AdjacentPosition n) :

@@ -21,9 +21,9 @@ theorem isobaric_monomial (i : AdjacentPosition n) (a : Fin n →₀ ℕ)
   have hlt : (Finsupp.single i.left 1 + a : Fin n →₀ ℕ) i.right <
       (Finsupp.single i.left 1 + a : Fin n →₀ ℕ) i.left := by rw [hl, hr]; omega
   unfold isobaric
-  rw [MvPolynomial.X, MvPolynomial.monomial_mul]
+  rw [MvPolynomial.X, MvPolynomial.monomial_mul_monomial]
   simp only [one_mul, adjacentDividedDifference_monomial_one]
-  rw [monomialDividedDifference, dif_pos hlt, hl, hr]
+  rw [monomialDividedDifference, dite_eq_left hlt, hl, hr]
   have hlen : a i.left + 1 - a i.right = a i.left - a i.right + 1 := by omega
   rw [hlen]
   apply Finset.sum_congr rfl

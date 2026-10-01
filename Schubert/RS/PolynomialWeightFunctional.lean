@@ -25,25 +25,25 @@ theorem polynomialTorus_monomial {n : ℕ} (t : DiagonalTorus n)
 
 theorem polynomialTorus_coeff {n : ℕ} (t : DiagonalTorus n)
     (d : (Fin n × Fin n) →₀ ℕ) (p : MatrixPolynomial n) :
-    MvPolynomial.coeff d (polynomialTorus n t p) =
-      matrixMonomialTorusScalar d t * MvPolynomial.coeff d p := by
+    (polynomialTorus n t p).coeff d =
+      matrixMonomialTorusScalar d t * p.coeff d := by
   exact basis_coord_eigenmap (MvPolynomial.basisMonomials (Fin n × Fin n) ℂ)
     (polynomialTorus n t) (fun d => matrixMonomialTorusScalar d t)
     (polynomialTorus_monomial t) d p
 
 def normalizedPolynomialCoefficient {n : ℕ} (d : (Fin n × Fin n) →₀ ℕ)
     (p : MatrixPolynomial n) : MatrixPolynomial n →ₗ[ℂ] ℂ :=
-  (MvPolynomial.coeff d p)⁻¹ • MvPolynomial.lcoeff ℂ d
+  (p.coeff d)⁻¹ • MvPolynomial.lcoeff ℂ d
 
 theorem normalizedPolynomialCoefficient_self {n : ℕ} (d : (Fin n × Fin n) →₀ ℕ)
-    (p : MatrixPolynomial n) (hd : MvPolynomial.coeff d p≠0) :
+    (p : MatrixPolynomial n) (hd : p.coeff d≠0) :
     normalizedPolynomialCoefficient d p p=1 := by
-  change (MvPolynomial.coeff d p)⁻¹ * MvPolynomial.coeff d p=1
+  change (p.coeff d)⁻¹ * p.coeff d=1
   exact inv_mul_cancel₀ hd
 
 theorem normalizedPolynomialCoefficient_equivariant {n : ℕ}
     (d : (Fin n × Fin n) →₀ ℕ) (p : MatrixPolynomial n)
-    (hd : MvPolynomial.coeff d p≠0) (ν : DiagonalTorus n → ℂ)
+    (hd : p.coeff d≠0) (ν : DiagonalTorus n → ℂ)
     (hp : ∀ t, polynomialTorus n t p=ν t • p) (t : DiagonalTorus n)
     (x : MatrixPolynomial n) :
     normalizedPolynomialCoefficient d p (polynomialTorus n t x) =
@@ -52,8 +52,8 @@ theorem normalizedPolynomialCoefficient_equivariant {n : ℕ}
     apply mul_right_cancel₀ hd
     rw [← polynomialTorus_coeff,hp]
     simp
-  change (MvPolynomial.coeff d p)⁻¹ * MvPolynomial.coeff d (polynomialTorus n t x) =
-    ν t * ((MvPolynomial.coeff d p)⁻¹ * MvPolynomial.coeff d x)
+  change (p.coeff d)⁻¹ * (polynomialTorus n t x).coeff d =
+    ν t * ((p.coeff d)⁻¹ * x.coeff d)
   rw [polynomialTorus_coeff,he]
   ring
 
@@ -62,7 +62,7 @@ theorem exists_polynomial_weight_functional {n : ℕ} (p : MatrixPolynomial n)
     (hp : ∀ t, polynomialTorus n t p=ν t • p) :
     ∃ φ : MatrixPolynomial n →ₗ[ℂ] ℂ, φ p=1 ∧
       ∀ t x, φ (polynomialTorus n t x)=ν t * φ x := by
-  obtain ⟨d,hd⟩ : ∃ d, MvPolynomial.coeff d p≠0 := by
+  obtain ⟨d,hd⟩ : ∃ d, p.coeff d≠0 := by
     by_contra hn
     push Not at hn
     apply hp0
@@ -105,7 +105,7 @@ theorem matrixUnit_string_top_functional {n : ℕ} (a b : Fin n) (hab : a≠b)
   by_cases hje : j=d
   · subst j
     simpa using hφtop
-  · rw [if_neg hje]
+  · rw [ite_eq_right hje]
     apply homogeneous_functional_vanishes_of_weight_ne (polynomialTorus n) φ
       (v+j • positiveRoot a b) (v+d • positiveRoot a b) ?_ hφ
       (derivationIter (matrixUnitDerivation a b) j p)

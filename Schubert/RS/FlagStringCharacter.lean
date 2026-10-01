@@ -8,7 +8,7 @@ open FinPermutation
 theorem polynomial_weight_nonnegative {n : ℕ} (p : MatrixPolynomial n) (hp0 : p≠0)
     (v : Weight n) (hp : ∀ t, polynomialTorus n t p=integerWeightScalar v t • p) :
     ∀ i, 0≤v i := by
-  obtain ⟨d,hd⟩ : ∃ d, MvPolynomial.coeff d p≠0 := by
+  obtain ⟨d,hd⟩ : ∃ d, p.coeff d≠0 := by
     by_contra hn
     push Not at hn
     apply hp0

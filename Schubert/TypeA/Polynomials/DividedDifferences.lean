@@ -11,8 +11,6 @@ by `x_i - x_(i+1)`: polynomiality is built into the finite-sum formula.
 
 namespace Schubert
 
-namespace Schubert
-
 noncomputable section
 
 open FinPermutation
@@ -113,7 +111,7 @@ theorem X_left_mul_replaceAdjacentExponents
     MvPolynomial.X i.left *
         MvPolynomial.monomial (replaceAdjacentExponents a i p q) (1 : ℤ) =
       MvPolynomial.monomial (replaceAdjacentExponents a i (p + 1) q) 1 := by
-  rw [MvPolynomial.X, MvPolynomial.monomial_mul,
+  rw [MvPolynomial.X, MvPolynomial.monomial_mul_monomial,
     single_left_add_replaceAdjacentExponents]
   simp
 
@@ -122,7 +120,7 @@ theorem X_right_mul_replaceAdjacentExponents
     MvPolynomial.X i.right *
         MvPolynomial.monomial (replaceAdjacentExponents a i p q) (1 : ℤ) =
       MvPolynomial.monomial (replaceAdjacentExponents a i p (q + 1)) 1 := by
-  rw [MvPolynomial.X, MvPolynomial.monomial_mul,
+  rw [MvPolynomial.X, MvPolynomial.monomial_mul_monomial,
     single_right_add_replaceAdjacentExponents]
   simp
 
@@ -238,10 +236,9 @@ moving the excess exponent from left to right occurs with coefficient one. -/
 theorem coeff_monomialDividedDifference_positive_endpoint
     (i : AdjacentPosition n) (a : Fin n →₀ ℕ)
     (h : a i.right < a i.left) :
-    MvPolynomial.coeff
-        (replaceAdjacentExponents a i (a i.right) (a i.left - 1))
-        (monomialDividedDifference i a) = 1 := by
-  rw [monomialDividedDifference, dif_pos h]
+    (monomialDividedDifference i a).coeff
+        (replaceAdjacentExponents a i (a i.right) (a i.left - 1)) = 1 := by
+  rw [monomialDividedDifference, dite_eq_left h]
   simp only [MvPolynomial.coeff_sum, MvPolynomial.coeff_monomial]
   let k₀ := a i.left - a i.right - 1
   have hk₀ : k₀ < a i.left - a i.right := by
@@ -272,7 +269,7 @@ theorem coeff_monomialDividedDifference_positive_endpoint
           replaceAdjacentExponents a i (a i.right) (a i.left - 1) := by
       intro heq
       exact hpair ((replaceAdjacentExponents_injective_pair a i) heq)
-    rw [if_neg hrepl]
+    rw [ite_eq_right hrepl]
   · simp [hk₀]
 
 private theorem positive_monomial_telescoping
@@ -555,7 +552,5 @@ private theorem replaceAdjacentExponents_single_right_zero
   exact monomialDividedDifference_other_variable i j hjleft hjright
 
 end
-
-end Schubert
 
 end Schubert

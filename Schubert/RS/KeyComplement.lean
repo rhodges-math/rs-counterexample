@@ -23,7 +23,7 @@ def reverseComplement (w : ℕ) (a : Composition n) : Composition n :=
 theorem positiveRoot_ne_zero (i j : Fin n) (h : i ≠ j) : positiveRoot i j ≠ 0 := by
   intro he
   have hz := congrFun he i
-  simp [positiveRoot, Pi.single_apply, h] at hz
+  simp [positiveRoot, h] at hz
 
 theorem simpleWeyl_ne_zero (i : AdjacentPosition n) :
     (1 : Laurent n) - AddMonoidAlgebra.single (positiveRoot i.left i.right) 1 ≠ 0 := by

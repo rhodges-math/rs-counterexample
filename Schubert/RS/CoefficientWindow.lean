@@ -52,7 +52,7 @@ theorem monomial_mul_zero (β d : σ →₀ ℕ) (z : ℤ)
     (f : MvPowerSeries σ ℤ) (h : ¬d ≤ β) :
     WindowEq β (MvPowerSeries.monomial d z * f) 0 := by
   intro e he
-  rw [MvPowerSeries.coeff_monomial_mul, if_neg (fun hde => h (hde.trans he))]
+  rw [MvPowerSeries.coeff_monomial_mul, ite_eq_right (fun hde => h (hde.trans he))]
   simp
 
 end WindowEq

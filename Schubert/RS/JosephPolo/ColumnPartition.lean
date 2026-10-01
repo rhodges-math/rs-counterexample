@@ -33,21 +33,21 @@ def flagColumnPartition {n : ℕ} (i : AdjacentPosition n) (k : Fin n) :
       else C.val.permute (Equiv.swap i.left i.right)
   left_inv C := by
     by_cases hf : i.left ∈ C.val ↔ i.right ∈ C.val
-    · simp only [dif_pos hf]
-    · simp only [dif_neg hf]
+    · simp only [dite_eq_left hf]
+    · simp only [dite_eq_right hf]
       by_cases ha : i.left ∈ C.val
-      · simp only [dif_pos ha,Fin.val_zero,ite_true]
-      · simp only [dif_neg ha,Fin.val_one,one_ne_zero,ite_false]
+      · simp only [dite_eq_left ha,Fin.val_zero,ite_true]
+      · simp only [dite_eq_right ha,Fin.val_one,one_ne_zero,ite_false]
         exact C.permute_swap_involutive _ _
   right_inv x := by
     rcases x with C | ⟨C,b⟩
-    · simp only [dif_pos C.property]
+    · simp only [dite_eq_left C.property]
     · have hf : ¬ (i.left ∈ C.val.val ↔ i.right ∈ C.val.val) :=
         fun h => C.property.2 (h.mp C.property.1)
       by_cases hb : b.val = 0
       · have he : b = 0 := Fin.ext hb
         subst b
-        simp only [Fin.val_zero,ite_true,dif_neg hf,dif_pos C.property.1]
+        simp only [Fin.val_zero,ite_true,dite_eq_right hf,dite_eq_left C.property.1]
       · have he : b = 1 := Fin.ext (by have := b.isLt; omega)
         subst b
         have hDa : i.left ∉ (C.val.permute (Equiv.swap i.left i.right)).val := by
@@ -57,7 +57,7 @@ def flagColumnPartition {n : ℕ} (i : AdjacentPosition n) (k : Fin n) :
         have hDf : ¬ (i.left ∈ (C.val.permute (Equiv.swap i.left i.right)).val ↔
             i.right ∈ (C.val.permute (Equiv.swap i.left i.right)).val) :=
           fun h => hDa (h.mpr hDb)
-        simp only [Fin.val_one,one_ne_zero,ite_false,dif_neg hDf,dif_neg hDa]
+        simp only [Fin.val_one,one_ne_zero,ite_false,dite_eq_right hDf,dite_eq_right hDa]
         congr 3
         exact C.val.permute_swap_involutive _ _
 

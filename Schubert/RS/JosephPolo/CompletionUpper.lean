@@ -46,9 +46,9 @@ theorem adjacentCompletionToPresentation_radical
         (compositionFlag_radical_stable i (swapComposition u i)) (r ⊗ₜ[ℂ] x)) =
       UniversalEnvelopingAlgebra.ι ℂ (radicalUpper i r) •
         adjacentCompletionToPresentation u i hu hJP B x := by
-  letI := presentationSl2LieRingModule u i hu
-  letI := presentationSl2LieModule u i hu
-  letI := presentation_finite u
+  let := presentationSl2LieRingModule u i hu
+  let := presentationSl2LieModule u i hu
+  let := presentation_finite u
   let G := adjacentCompletionToPresentation u i hu hJP B
   let A := presentationRadicalAction u i hu
   have hb (s : radicalEndLie i) (p : compositionFlag (swapComposition u i)) :
@@ -80,9 +80,9 @@ theorem adjacentCompletionToPresentation_upper
   let sourceRing : LieRingModule
       ((polynomialSl2Triple i.left i.right i.left_ne_right).toLieSubalgebra ℂ)
       (B.completedModule i.left_ne_right) := inferInstance
-  letI := presentationSl2LieRingModule u i hu
-  letI := presentationSl2LieModule u i hu
-  letI := sourceRing
+  let := presentationSl2LieRingModule u i hu
+  let := presentationSl2LieModule u i hu
+  let := sourceRing
   let G := adjacentCompletionToPresentation u i hu hJP B
   have he := G.map_lie (sl2RaisingElement (polynomialSl2Triple i.left i.right i.left_ne_right)) x
   rw [presentationSl2_raising u i hu] at he
@@ -111,8 +111,8 @@ theorem adjacentCompletionToPresentation_enveloping
       (B.completedUpperEnveloping (compositionFlag_adjacent_raising_stable (swapComposition u i) i)
         (compositionFlag_radical_stable i (swapComposition u i)) a x) =
       a • adjacentCompletionToPresentation u i hu hJP B x := by
-  letI := presentationSl2LieRingModule u i hu
-  letI := presentationSl2LieModule u i hu
+  let := presentationSl2LieRingModule u i hu
+  let := presentationSl2LieModule u i hu
   apply enveloping_intertwines
     (B.completedUpperEnveloping (compositionFlag_adjacent_raising_stable (swapComposition u i) i)
       (compositionFlag_radical_stable i (swapComposition u i)))

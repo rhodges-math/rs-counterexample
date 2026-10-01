@@ -23,7 +23,7 @@ variable {E : Fin T → V → V → Prop} {s f : Fin d → V}
 
 instance [Finite V] : Finite (LayeredPathFamily E s f) := by
   classical
-  letI : Fintype V := Fintype.ofFinite V
+  let : Fintype V := Fintype.ofFinite V
   exact Finite.of_injective (fun P : LayeredPathFamily E s f => (P.matching, P.path)) (by
     intro P Q h
     apply LayeredPathFamily.ext
@@ -50,11 +50,11 @@ def exchangePathFamily (P : LayeredPathFamily E s f)
     (ofLex (firstPathPair P.path hp)).1 (ofLex (firstPathPair P.path hp)).2
   path := exchangeFirstPathTails P.path hp
   start i := by
-    simp only [exchangeFirstPathTails, swapPathTails, Fin.zero_le, if_true]
+    simp only [exchangeFirstPathTails, swapPathTails, Fin.zero_le, ite_true]
     exact P.start i
   finish i := by
     have ht := firstIntersection_lt_finish P hf hp
-    simp only [exchangeFirstPathTails, swapPathTails, not_le.mpr ht, if_false]
+    simp only [exchangeFirstPathTails, swapPathTails, not_le.mpr ht, ite_false]
     exact P.finish _
   edges := swapPathTails_edges P.path _ _ _ (firstPathPair_spec P.path hp).2 E P.edges
 

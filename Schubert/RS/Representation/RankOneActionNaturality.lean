@@ -27,8 +27,7 @@ theorem IsRankOneCompletion.extendAction_natural
       A.comp (TensorProduct.LieModule.map (LieModuleHom.id : R →ₗ⁅ℂ,L⁆ R) F) := by
   apply (C.tensor R).hom_ext
   intro z
-  induction z using TensorProduct.induction_on with
-  | zero => simp
+  induction z using TensorProduct.inductionOn with
   | tmul r m =>
       change F (C.extendAction ρ he hh (r ⊗ₜ[ℂ] ι m)) = A (r ⊗ₜ[ℂ] F (ι m))
       rw [C.extendAction_boundary]

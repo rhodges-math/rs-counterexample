@@ -16,7 +16,7 @@ theorem degree_fiber_bound {ι σ : Type*} [Fintype ι]
   have h := Finset.single_le_sum (f := fun s => p s * degree s (cut r))
     (fun s _ => Nat.zero_le _) (Finset.mem_univ r)
   have he := congrArg (fun d : σ →₀ ℕ => d (cut r)) hp
-  simp only [Finsupp.finset_sum_apply, Finsupp.smul_apply, smul_eq_mul] at he
+  simp only [Finsupp.finsetSum_apply, Finsupp.smul_apply, smul_eq_mul] at he
   simpa only [hcut, mul_one, he] using h
 
 /-- The simple-root degree fibers are finite before any character is defined.

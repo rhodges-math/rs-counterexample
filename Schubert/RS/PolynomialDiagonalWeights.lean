@@ -33,7 +33,7 @@ theorem diagonalDerivation_monomial {n : ℕ} (a : Fin n) (d : (Fin n × Fin n) 
 
 theorem polynomial_support_weight {n : ℕ} (p : MatrixPolynomial n) (v : Weight n)
     (hp : ∀ t, polynomialTorus n t p=integerWeightScalar v t • p)
-    (d : (Fin n × Fin n) →₀ ℕ) (hd : MvPolynomial.coeff d p≠0) : matrixMonomialWeight d=v := by
+    (d : (Fin n × Fin n) →₀ ℕ) (hd : p.coeff d≠0) : matrixMonomialWeight d=v := by
   apply integerWeightScalar_injective
   funext t
   apply mul_right_cancel₀ hd
@@ -48,10 +48,10 @@ theorem diagonalDerivation_of_weight {n : ℕ} (a : Fin n) (p : MatrixPolynomial
   have he := basis_coord_eigenmap (MvPolynomial.basisMonomials (Fin n × Fin n) ℂ)
     (matrixUnitDerivation a a).toLinearMap (fun d => (matrixMonomialWeight d a : ℂ))
     (diagonalDerivation_monomial a) d p
-  change MvPolynomial.coeff d (matrixUnitDerivation a a p)=
-    (matrixMonomialWeight d a : ℂ) * MvPolynomial.coeff d p at he
+  change (matrixUnitDerivation a a p).coeff d=
+    (matrixMonomialWeight d a : ℂ) * p.coeff d at he
   rw [he,MvPolynomial.coeff_smul,smul_eq_mul]
-  by_cases hd : MvPolynomial.coeff d p=0
+  by_cases hd : p.coeff d=0
   · rw [hd,mul_zero,mul_zero]
   · rw [polynomial_support_weight p v hp d hd]
 

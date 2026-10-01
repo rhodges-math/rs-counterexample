@@ -48,7 +48,7 @@ theorem jpWeight_finite (u : Composition n)
     (hJP : HasJosephPoloPresentation u ρ ξ) (hDCF : HasDemazureCharacter u ρ) (w : Weight n) :
     FiniteDimensional ℂ (torusWeightSpace (jpTorusRepresentation u) w) := by
   obtain ⟨e, hξ, he⟩ := hJP
-  letI := (hDCF w).1
+  let := (hDCF w).1
   exact FiniteDimensional.of_injective
     (torusWeightSpaceEquiv (jpTorusRepresentation u) ρ (e.restrictScalars ℂ) he w).toLinearMap
     (torusWeightSpaceEquiv (jpTorusRepresentation u) ρ (e.restrictScalars ℂ) he w).injective

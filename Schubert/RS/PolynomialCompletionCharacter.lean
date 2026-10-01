@@ -46,7 +46,7 @@ theorem PolynomialRootStringBasis.completedCharacter_eq :
 theorem PolynomialRootStringBasis.hasPartialCharacter :
     HasTorusCharacter B.sourceTorus
       (∑ j, partialStringCharacter i (B.residualExponent j) (B.length j)) := by
-  letI : FiniteDimensional ℂ S := Module.Finite.of_basis B.normalizedBasis
+  let : FiniteDimensional ℂ S := Module.Finite.of_basis B.normalizedBasis
   rw [← B.partialCharacter_eq]
   apply hasTorusCharacter_of_eigenbasis _ B.normalizedBasis B.partialExponent
   intro t j

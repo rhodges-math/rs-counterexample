@@ -20,7 +20,7 @@ theorem upperSimpleCoefficient_root_ne {n : ℕ} (i : AdjacentPosition n)
   have hn : ¬ (r.val.1=i.left ∧ r.val.2=i.right) := by
     rintro ⟨ha,hb⟩
     exact hr (Subtype.ext (Prod.ext ha hb))
-  simp [Matrix.single_apply, hn]
+  simp [hn]
 
 theorem loweringUpper_simple {n : ℕ} (i : AdjacentPosition n) :
     loweringUpper i (rootVector (adjacentPositiveRoot i))=0 := by

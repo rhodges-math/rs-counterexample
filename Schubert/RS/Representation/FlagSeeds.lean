@@ -47,7 +47,7 @@ theorem identityEvaluation_flagMinor {n : ℕ} (k : Fin n) :
     ext i j
     change identityEvaluation n (MvPolynomial.X (prefixIndex k i, prefixIndex k j)) =
       if i = j then 1 else 0
-    simp [identityEvaluation, Matrix.one_apply, (prefixIndex_injective k).eq_iff]
+    simp [identityEvaluation, (prefixIndex_injective k).eq_iff]
   exact hdet.trans (by rw [hm, Matrix.det_one])
 
 theorem identityEvaluation_highestFlag {n : ℕ} (m : ColumnShape n) :

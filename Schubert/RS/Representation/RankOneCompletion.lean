@@ -1,6 +1,6 @@
 import Mathlib.Algebra.Lie.TensorProduct
 import Mathlib.LinearAlgebra.FiniteDimensional.Basic
-import Mathlib.Data.Complex.Basic
+import Mathlib.Basic.Complex.Basic
 
 namespace Schubert.RS.Representation
 noncomputable section

@@ -13,29 +13,29 @@ theorem splitWeight_singleA (P : Parameters) (i : Fin (2*P.p-1)) (z : ℤ) :
     simp only [splitWeight,Pi.single_apply,(sourceA_strictMono P).injective.eq_iff]
   · apply Prod.ext
     · funext j
-      simp [splitWeight,Pi.single_apply,sourceA_ne_B,(sourceA_ne_B P i j).symm]
+      simp [splitWeight,Pi.single_apply,sourceA_ne_B]
     · funext j
-      simp [splitWeight,Pi.single_apply,sourceA_ne_target,(sourceA_ne_target P i j.rev).symm]
+      simp [splitWeight,Pi.single_apply,sourceA_ne_target]
 
 theorem splitWeight_singleB (P : Parameters) (i : Fin (2*P.q-1)) (z : ℤ) :
     splitWeight P (Pi.single (sourceB P i) z)=(0,(Pi.single i z,0)) := by
   apply Prod.ext
   · funext j
-    simp [splitWeight,Pi.single_apply,sourceA_ne_B,(sourceA_ne_B P j i).symm]
+    simp [splitWeight,Pi.single_apply,sourceA_ne_B]
   · apply Prod.ext
     · funext j
       simp only [splitWeight,Pi.single_apply,(sourceB_strictMono P).injective.eq_iff]
     · funext j
-      simp [splitWeight,Pi.single_apply,sourceB_ne_target,(sourceB_ne_target P i j.rev).symm]
+      simp [splitWeight,Pi.single_apply,sourceB_ne_target]
 
 theorem splitWeight_singleTarget (P : Parameters) (i : Slot P.m) (z : ℤ) :
     splitWeight P (Pi.single (target P i) z)=(0,(0,-Pi.single i.rev z)) := by
   apply Prod.ext
   · funext j
-    simp [splitWeight,Pi.single_apply,sourceA_ne_target,(sourceA_ne_target P j i).symm]
+    simp [splitWeight,Pi.single_apply,sourceA_ne_target]
   · apply Prod.ext
     · funext j
-      simp [splitWeight,Pi.single_apply,sourceB_ne_target,(sourceB_ne_target P j i).symm]
+      simp [splitWeight,Pi.single_apply,sourceB_ne_target]
     · funext j
       simp only [splitWeight,Pi.single_apply,Pi.neg_apply,(target_strictMono P).injective.eq_iff,
         Fin.rev_eq_iff]

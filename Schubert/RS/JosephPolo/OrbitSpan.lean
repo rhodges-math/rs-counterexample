@@ -31,7 +31,7 @@ theorem root_derivation_mem_of_rowActions_mem {n : ℕ} (S : Submodule ℂ (Matr
     (r : PositiveRoot n) (p : MatrixPolynomial n)
     (h : ∀ t : ℂ, rowAction (1 + t • Matrix.single r.val.1 r.val.2 (1:ℂ)) p ∈ S) :
     matrixUnitDerivation r.val.1 r.val.2 p ∈ S := by
-  letI : Infinite ℂ := Infinite.of_injective (fun k : ℕ => (k : ℂ)) Nat.cast_injective
+  let : Infinite ℂ := Infinite.of_injective (fun k : ℕ => (k : ℂ)) Nat.cast_injective
   have hc : (rootSubstitution r.val.1 r.val.2 p).coeff 1 ∈ S :=
     polynomial_coeff_mem_of_eval_mem S _ (fun t => by
       change (rootSubstitution r.val.1 r.val.2 p).eval (MvPolynomial.C t) ∈ S

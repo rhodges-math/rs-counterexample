@@ -51,7 +51,7 @@ theorem orbitSpanFunctionals_range (ρ : Ω → V) :
 the span of restricted minor products, including all polynomial relations. -/
 theorem polynomialOrbitFunctionals_range {σ ι : Type*} [Fintype ι]
     (p : ι → MvPolynomial σ ℂ)
-    (hp : ∀ i m, conj (MvPolynomial.coeff m (p i)) = MvPolynomial.coeff m (p i))
+    (hp : ∀ i m, conj ((p i).coeff m) = (p i).coeff m)
     (φ : MvPolynomial σ ℂ →ₗ[ℂ] (Ω → ℂ)) (ρ : Ω → MvPolynomial σ ℂ)
     (hρ : ∀ w, ρ w = ∑ i, φ (p i) w • p i) :
     LinearMap.range (orbitFunctionals ρ) = Submodule.span ℂ (Set.range (fun i => φ (p i))) := by
@@ -70,13 +70,13 @@ theorem polynomialOrbitFunctionals_range {σ ι : Type*} [Fintype ι]
     rintro x ⟨m,rfl⟩
     refine ⟨MvPolynomial.lcoeff ℂ m,?_⟩
     funext w
-    simp [orbitFunctionals,hρ,MvPolynomial.coeff_sum,MvPolynomial.coeff_smul,smul_eq_mul,mul_comm]
+    simp [orbitFunctionals,hρ,smul_eq_mul,mul_comm]
 
 /-- A nondegenerate pairing between the actual orbit span and its restricted
 coordinate model. This is independent of a character formula or a basis. -/
 def polynomialOrbitDuality {σ ι : Type*} [Fintype ι]
     (p : ι → MvPolynomial σ ℂ)
-    (hp : ∀ i m, conj (MvPolynomial.coeff m (p i)) = MvPolynomial.coeff m (p i))
+    (hp : ∀ i m, conj ((p i).coeff m) = (p i).coeff m)
     (φ : MvPolynomial σ ℂ →ₗ[ℂ] (Ω → ℂ)) (ρ : Ω → MvPolynomial σ ℂ)
     (hρ : ∀ w, ρ w = ∑ i, φ (p i) w • p i) :
     Module.Dual ℂ (Submodule.span ℂ (Set.range ρ)) ≃ₗ[ℂ]

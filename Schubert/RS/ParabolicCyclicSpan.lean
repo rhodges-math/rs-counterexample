@@ -22,6 +22,7 @@ def raisingRadicalCyclicSpan (z : X) : Submodule ℂ X :=
 
 variable (z : X)
 
+omit [LieModule ℂ (t.toLieSubalgebra ℂ) R] in
 theorem raisingRadicalCyclicSpan_cartan (c : ℂ)
     (hz : ⁅sl2CartanElement t,z⁆=c • z) {x : X}
     (hx : x∈raisingRadicalCyclicSpan t (R := R) z) :
@@ -45,6 +46,7 @@ theorem raisingRadicalCyclicSpan_cartan (c : ℂ)
       rw [IsLieTower.leibniz_lie,add_sub_cancel_right]
       exact operatorCyclicSpan_stable _ z (.inr ⁅sl2CartanElement t,r⁆) hy
 
+omit [LieModule ℂ (t.toLieSubalgebra ℂ) R] in
 theorem raisingRadicalCyclicSpan_lowering (c : ℂ)
     (hh : ⁅sl2CartanElement t,z⁆=c • z) (hf : ⁅sl2LoweringElement t,z⁆=0)
     {x : X} (hx : x∈raisingRadicalCyclicSpan t (R := R) z) :

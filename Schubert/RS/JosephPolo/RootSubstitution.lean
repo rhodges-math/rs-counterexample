@@ -25,7 +25,7 @@ theorem rootSubstitution_C {n : ℕ} (a b : Fin n) (c : ℂ) :
 theorem rootSubstitution_eval_zero {n : ℕ} (a b : Fin n) (p : MatrixPolynomial n) :
     (rootSubstitution a b p).eval 0 = p := by
   induction p using MvPolynomial.induction_on with
-  | C c => simp [rootSubstitution_C]
+  | C c => simp
   | add p q hp hq => simp [map_add,hp,hq]
   | mul_X p rc hp =>
     obtain ⟨r,c⟩ := rc
@@ -44,7 +44,7 @@ theorem rootSubstitution_derivative {n : ℕ} (a b : Fin n) (hab : a≠b)
     (p : MatrixPolynomial n) : Polynomial.derivative (rootSubstitution a b p) =
       rootSubstitution a b (matrixUnitDerivation a b p) := by
   induction p using MvPolynomial.induction_on with
-  | C c => simp [rootSubstitution_C,Derivation.map_algebraMap]
+  | C c => simp
   | add p q hp hq => simp [map_add,hp,hq]
   | mul_X p rc hp =>
     obtain ⟨r,c⟩ := rc

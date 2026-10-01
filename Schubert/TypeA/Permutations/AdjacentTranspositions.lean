@@ -426,8 +426,8 @@ theorem eq_right_of_bruhatRank_rows_eq
     have hlt : v a.right < u a.right := lt_of_not_ge h
     have hu := bruhatRank_right_eq_left_add_ite u a (u a.right)
     have hv := bruhatRank_right_eq_left_add_ite v a (u a.right)
-    rw [if_pos le_rfl] at hu
-    rw [if_neg (not_le_of_gt hlt)] at hv
+    rw [ite_eq_left le_rfl] at hu
+    rw [ite_eq_right (not_le_of_gt hlt)] at hv
     have hl := hleft (u a.right)
     have hr := hright (u a.right)
     omega
@@ -435,8 +435,8 @@ theorem eq_right_of_bruhatRank_rows_eq
     have hlt : u a.right < v a.right := lt_of_not_ge h
     have hu := bruhatRank_right_eq_left_add_ite u a (v a.right)
     have hv := bruhatRank_right_eq_left_add_ite v a (v a.right)
-    rw [if_neg (not_le_of_gt hlt)] at hu
-    rw [if_pos le_rfl] at hv
+    rw [ite_eq_right (not_le_of_gt hlt)] at hu
+    rw [ite_eq_left le_rfl] at hv
     have hl := hleft (v a.right)
     have hr := hright (v a.right)
     omega

@@ -137,22 +137,22 @@ def rank28Parameters : Parameters := ⟨4,4,8,by decide,by decide,by decide⟩
 theorem rank28_a : a rank28Parameters = Counterexample.a := by
   apply funext
   change ∀ i : Fin 28, a rank28Parameters i=Counterexample.a i
-  simp only [a,b,c,g,sourceClass,coordinateClass,rank28Parameters,Parameters.rank,Parameters.m,Parameters.rectangle]
+  simp only [a,coordinateClass,rank28Parameters,Parameters.rank,Parameters.m]
   decide
 theorem rank28_b : b rank28Parameters = Counterexample.b := by
   apply funext
   change ∀ i : Fin 28, b rank28Parameters i=Counterexample.b i
-  simp only [a,b,c,g,sourceClass,coordinateClass,rank28Parameters,Parameters.rank,Parameters.m,Parameters.rectangle]
+  simp only [b,coordinateClass,rank28Parameters,Parameters.rank,Parameters.m]
   decide
 theorem rank28_c : c rank28Parameters = Counterexample.c := by
   apply funext
   change ∀ i : Fin 28, c rank28Parameters i=Counterexample.c i
-  simp only [a,b,c,g,sourceClass,coordinateClass,rank28Parameters,Parameters.rank,Parameters.m,Parameters.rectangle]
+  simp only [c,sourceClass,coordinateClass,rank28Parameters,Parameters.rank,Parameters.m,Parameters.rectangle]
   decide
 theorem rank28_g : g rank28Parameters = Counterexample.g := by
   apply funext
   change ∀ i : Fin 28, g rank28Parameters i=Counterexample.g i
-  simp only [a,b,c,g,sourceClass,coordinateClass,rank28Parameters,Parameters.rank,Parameters.m,Parameters.rectangle]
+  simp only [c,g,sourceClass,coordinateClass,rank28Parameters,Parameters.rank,Parameters.m,Parameters.rectangle]
   decide
 
 end Schubert.RS.Family

@@ -17,8 +17,8 @@ theorem matrixMonomialTorusScalar_eq_weight {n : ℕ}
 
 theorem polynomialTorus_coeff_weight {n : ℕ} (t : DiagonalTorus n)
     (d : (Fin n × Fin n) →₀ ℕ) (p : MatrixPolynomial n) :
-    MvPolynomial.coeff d (polynomialTorus n t p) =
-      integerWeightScalar (matrixMonomialWeight d) t * MvPolynomial.coeff d p := by
+    (polynomialTorus n t p).coeff d =
+      integerWeightScalar (matrixMonomialWeight d) t * p.coeff d := by
   rw [polynomialTorus_coeff,matrixMonomialTorusScalar_eq_weight]
 
 def polynomialWeightFilter {n : ℕ} (t : DiagonalTorus n) (v w : Weight n)
@@ -28,10 +28,10 @@ def polynomialWeightFilter {n : ℕ} (t : DiagonalTorus n) (v w : Weight n)
 
 theorem polynomialWeightFilter_coeff {n : ℕ} (t : DiagonalTorus n) (v w : Weight n)
     (p : MatrixPolynomial n) (d : (Fin n × Fin n) →₀ ℕ) :
-    MvPolynomial.coeff d (polynomialWeightFilter t v w p) =
+    (polynomialWeightFilter t v w p).coeff d =
       (integerWeightScalar v t-integerWeightScalar w t)⁻¹ *
         (integerWeightScalar (matrixMonomialWeight d) t-integerWeightScalar w t) *
-          MvPolynomial.coeff d p := by
+          p.coeff d := by
   simp only [polynomialWeightFilter,MvPolynomial.coeff_smul,MvPolynomial.coeff_sub,
     polynomialTorus_coeff_weight,smul_eq_mul]
   ring

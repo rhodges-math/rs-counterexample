@@ -25,7 +25,7 @@ theorem laurentSwap_toLaurent (i : AdjacentPosition n) (p : Polynomial n) :
     rw [adjacentVariableSwap_monomial, toLaurent_monomial, toLaurent_monomial,
       laurentSwap_single, weightSwap_exponent]
   induction p using MvPolynomial.monomial_add_induction_on with
-  | C z => simpa [MvPolynomial.C_apply] using hm 0 z
+  | C z => simp
   | monomial_add a z p _ _ ih => simp only [map_add, hm, ih]
 
 theorem exponentWeight_single (i : Fin n) :

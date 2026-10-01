@@ -25,7 +25,7 @@ theorem class_pattern (P : Parameters) (i j : Fin P.rank) :
     simpa using Nat.mul_le_mul_right P.K (show 1 ≤ P.m by omega)
   have hG : 0 < (P.m+2)*P.K-2 := by rw [Nat.add_mul]; omega
   by_cases hsi : sourceClass P i <;> by_cases hsj : sourceClass P j <;>
-    simp only [comparisonWeight,g_value,hsi,hsj,if_true,if_false,a,b,
+    simp only [comparisonWeight,g_value,hsi,hsj,ite_true,ite_false,a,b,
       Nat.mul_lt_mul_right P.K_pos,Fin.ext_iff,true_and,false_and,not_true_eq_false,not_false_eq_true]
   all_goals simp only [sourceClass] at hsi hsj
   all_goals split_ifs <;> omega
@@ -54,7 +54,7 @@ theorem combinedRootFactor_family (P : Parameters) (r : PositiveRoot P.rank) :
     by_cases hC : coordinateClass P r.val.1=coordinateClass P r.val.2 <;>
     by_cases hS : sourceClass P r.val.1 ∧ ¬sourceClass P r.val.2 <;>
     simp only [combinedRootFactor,familyRootFactor,comparisonWeight,
-      hA,hB,hG,hC,hS,if_true,if_false,mul_one,one_mul,mul_assoc] at hp ⊢ <;>
+      hA,hB,hG,hC,hS,ite_true,ite_false,mul_one,one_mul,mul_assoc] at hp ⊢ <;>
     norm_num at hp <;> simp [hi]
 
 theorem family_root_series_eq_product (P : Parameters) :

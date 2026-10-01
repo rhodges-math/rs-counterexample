@@ -87,7 +87,7 @@ theorem compositionFlagDemazureCharacter_of_antitone {n : ℕ} (u : Composition 
   by_cases hz : z = (fun i => (u i : ℤ))
   · subst z
     norm_num
-  · simp only [if_neg hz, if_neg (Ne.symm hz), Nat.cast_zero]
+  · simp only [ite_eq_right hz, ite_eq_right (Ne.symm hz), Nat.cast_zero]
 
 end
 end Schubert.RS.Representation

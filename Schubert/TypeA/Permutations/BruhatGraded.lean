@@ -46,7 +46,7 @@ private theorem bruhatRank_eq_before_add_ite
     have hpnot :
         p ∉ Finset.univ.filter (fun k : Fin n ↦ k < p ∧ q ≤ w k) := by
       simp
-    rw [hset, Finset.card_insert_of_notMem hpnot, if_pos hq]
+    rw [hset, Finset.card_insert_of_notMem hpnot, ite_eq_left hq]
   · have hset :
         Finset.univ.filter (fun k : Fin n ↦ k ≤ p ∧ q ≤ w k) =
           Finset.univ.filter fun k : Fin n ↦ k < p ∧ q ≤ w k := by
@@ -60,7 +60,7 @@ private theorem bruhatRank_eq_before_add_ite
         exact hq hqk
       · rintro ⟨hkp, hqk⟩
         exact ⟨hkp.le, hqk⟩
-    rw [hset, if_neg hq]
+    rw [hset, ite_eq_right hq]
     omega
 
 /-- Bruhat comparison also compares the ranks in a strict position prefix. -/
@@ -186,7 +186,7 @@ theorem length_le_of_strongBruhatLE {u v : FinPermutation n}
         have hueq : u = Equiv.refl (Fin n) :=
           strongBruhat_antisymm huv (refl_strongBruhatLE u)
         subst u
-        simpa using Nat.zero_le m
+        simp
       · obtain ⟨i, j, hj, hdescent⟩ := exists_descent_of_ne_refl v hvrefl
         let a : AdjacentPosition n :=
           { left := i

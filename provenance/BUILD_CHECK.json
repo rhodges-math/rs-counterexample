@@ -1,26 +1,38 @@
 {
   "success": true,
-  "verified_utc": "2026-09-23T20:30:23.114762+00:00",
-  "lean_toolchain": "leanprover/lean4:v4.33.0",
-  "entry": "Schubert.RS.Family.Audit",
-  "local_modules": 365,
-  "source_lines": 32311,
-  "build_method": "python build.py --jobs 3 --resume; all local sources compiled with dependency-sensitive source fingerprints",
+  "verified_utc": "2026-10-01T17:38:17.864535+00:00",
+  "lean_toolchain": "leanprover/lean4:v4.35.0-rc3",
+  "mathlib_rev": "b2bf051988bf69448bce88722cc09a05fea31662",
+  "tauceti_rev": "48fe7a5f9ba49e3b1c11a72f54f665abc128b36a",
+  "entry": "Schubert.RS.Audit",
+  "local_modules": 565,
+  "vendored_complexitylib_modules": 197,
+  "source_lines": 81707,
+  "build_method": "python build.py --jobs 3: lake build of the imported Tau Ceti modules and of the vendored complexitylib library, then all local sources compiled with lake env lean and dependency-sensitive source fingerprints",
+  "lake_phase_seconds": 9.46,
   "final_source_fingerprints_match_build": true,
   "copied_local_olean_files": 0,
-  "public_dependencies": "Pinned public dependencies and their build caches; no imported local proof caches.",
+  "public_dependencies": "Mathlib, Tau Ceti and their dependencies reused from the development tree through a directory junction (same pinned revisions as lake-manifest.json); Mathlib objects from the public cache",
   "local_import_closure_complete": true,
   "extra_local_modules": [],
-  "axiom_audit_count": 16,
+  "axiom_audit_count": 185,
   "kernel_axioms": [
     "Classical.choice",
     "Quot.sound",
     "propext"
   ],
-  "rank28_coefficient": -350,
-  "statements_and_proofs_match_archive_modulo_renaming_comments_whitespace": true,
-  "renamed_modules": 8,
-  "renamed_identifiers": 33,
-  "nonfatal_compiler_warnings": 308,
-  "original_archive_sha256": "05cbaa2b41e171160a2f371f0355b243dbf76ae2dcb1a1fab6947f0dd507efbd"
+  "standard_result_hypotheses": {
+    "Schubert.RS.QuiverSaturation": 5,
+    "Schubert.RS.PolyTimeRationalFeasibility": 3,
+    "Schubert.RS.GLCharacterMultiplicity": 3
+  },
+  "origin_kinds": {
+    "unchanged": 563,
+    "generated": 2
+  },
+  "nonfatal_compiler_warnings": 0,
+  "build_seconds": 124.89,
+  "local_environment_notes": [
+    "Verification build on Windows 10, Lean v4.35.0-rc3, python build.py --jobs 3 (resumed after source updates)"
+  ]
 }

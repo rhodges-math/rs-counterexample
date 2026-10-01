@@ -19,7 +19,7 @@ theorem derivationIter_linear_mul (D : Derivation ℂ A A) (f g : A)
     derivationIter D (k+1) (f*g) = f * derivationIter D (k+1) g +
       (k+1) • (D f * derivationIter D k g) := by
   induction k with
-  | zero => simp [derivationIter_succ, Derivation.leibniz, smul_eq_mul, mul_comm, add_comm]
+  | zero => simp [derivationIter_succ, Derivation.leibniz, smul_eq_mul, mul_comm]
   | succ k ih =>
     rw [derivationIter_succ D (k+1), ih, map_add, map_nsmul]
     simp only [Derivation.leibniz, smul_eq_mul, hf, mul_zero, add_zero]

@@ -24,9 +24,9 @@ theorem geometric_truncation_uniform {σ : Type*} [Fintype σ] [DecidableEq σ]
 
 theorem rootCoordinateEmbedding_coeff {n : ℕ} (p : MvPolynomial (Fin (n-1)) ℤ)
     (d : RootDegree n) :
-    (rootCoordinateEmbedding p).coeff (rootWeight d) = MvPolynomial.coeff d p := by
+    (rootCoordinateEmbedding p).coeff (rootWeight d) = p.coeff d := by
   change Finsupp.mapDomain rootWeight (AddMonoidAlgebra.coeff p) (rootWeight d) = _
-  exact Finsupp.mapDomain_apply rootWeight_injective _ _
+  exact Finsupp.mapDomain_apply_of_injective rootWeight_injective _ _
 
 namespace Counterexample
 
@@ -58,7 +58,7 @@ theorem finiteRootFactor_window (B : ℕ) (hB : 8 ≤ B) (r : PositiveRoot 28) :
     exact WindowEq.refl _ _
 
 theorem finite_root_product_coefficient (B : ℕ) (hB : 8 ≤ B) :
-    MvPolynomial.coeff coefficientBox (∏ r : PositiveRoot 28, finiteRootFactor B r) =
+    (∏ r : PositiveRoot 28, finiteRootFactor B r).coeff coefficientBox =
       MvPowerSeries.coeff coefficientBox (∏ r : PositiveRoot 28, counterexampleRootFactor r) := by
   have hw := WindowEq.prod coefficientBox Finset.univ
     (fun r : PositiveRoot 28 => ((finiteRootFactor B r : MvPolynomial (Fin 27) ℤ) : MvPowerSeries (Fin 27) ℤ))

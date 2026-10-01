@@ -9,11 +9,11 @@ open FinPermutation Schubert
 variable {n : ℕ}
 
 def exponentBox (n w : ℕ) : Submodule ℤ (Polynomial n) where
-  carrier:={f | ∀ d,MvPolynomial.coeff d f≠0 → ∀ i,d i≤w}
+  carrier:={f | ∀ d,f.coeff d≠0 → ∀ i,d i≤w}
   zero_mem':=by simp
   add_mem':=by
     intro f g hf hg d hd i
-    by_cases h : MvPolynomial.coeff d f=0
+    by_cases h : f.coeff d=0
     · apply hg d
       intro he
       simp [h,he] at hd
@@ -22,12 +22,12 @@ def exponentBox (n w : ℕ) : Submodule ℤ (Polynomial n) where
     intro z f hf d hd i
     apply hf d
     intro he
-    change MvPolynomial.coeff d (z • f)≠0 at hd
+    change (z • f).coeff d≠0 at hd
     rw [MvPolynomial.coeff_smul,he,smul_zero] at hd
     exact hd rfl
 
 theorem mem_exponentBox (w : ℕ) (f : Polynomial n) :
-    f∈exponentBox n w ↔ ∀ d,MvPolynomial.coeff d f≠0 → ∀ i,d i≤w := Iff.rfl
+    f∈exponentBox n w ↔ ∀ d,f.coeff d≠0 → ∀ i,d i≤w := Iff.rfl
 
 theorem monomial_mem_exponentBox (w : ℕ) (d : Fin n →₀ ℕ) (z : ℤ) (hd : ∀ i,d i≤w) :
     MvPolynomial.monomial d z∈exponentBox n w := by
@@ -92,7 +92,7 @@ theorem atomOperator_monomial_mem_exponentBox (w : ℕ) (i : AdjacentPosition n)
 
 theorem atomOperator_mem_exponentBox (w : ℕ) (i : AdjacentPosition n)
     (f : Polynomial n) (hf : f∈exponentBox n w) : atomOperator i f∈exponentBox n w := by
-  have he : atomOperator i f=∑ d ∈ f.support,atomOperator i (MvPolynomial.monomial d (MvPolynomial.coeff d f)) := by
+  have he : atomOperator i f=∑ d ∈ f.support,atomOperator i (MvPolynomial.monomial d (f.coeff d)) := by
     change atomOperatorLinearMap i f=_
     conv_lhs => rw [f.as_sum]
     exact map_sum (atomOperatorLinearMap i) _ _

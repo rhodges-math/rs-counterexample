@@ -39,7 +39,6 @@ theorem loweringEnvelopingCocycle_lie {n : ℕ} (i : AdjacentPosition n) (w : �
   rw [loweringEnvelopingCocycle_apply, upperSimpleCoefficient_bracket, zero_smul, sub_zero]
   change ρ (UniversalEnvelopingAlgebra.ι ℂ (loweringUpper i ⁅A,B⁆)) = _
   rw [hr]
-  change _ = _
   rw [show ρ (UniversalEnvelopingAlgebra.ι ℂ (cartanUpper (adjacentCartanDiagonal i) B)) =
       (cartanEnveloping (adjacentCartanDiagonal i)+w • 1) * ρ (UniversalEnvelopingAlgebra.ι ℂ B) -
       ρ (UniversalEnvelopingAlgebra.ι ℂ B) * (cartanEnveloping (adjacentCartanDiagonal i)+w • 1)

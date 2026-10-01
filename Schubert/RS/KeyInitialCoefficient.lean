@@ -30,7 +30,7 @@ theorem ascentDegreeFiber_zero_card (u : Composition n) :
     funext r
     simp [extendAscentPowers]
   let z : AscentDegreeFiber u 0 := ⟨0, by rw [hz]; simp [monomialDegree]⟩
-  letI : Unique (AscentDegreeFiber u 0) :=
+  let : Unique (AscentDegreeFiber u 0) :=
     { default := z
       uniq := by
         intro a

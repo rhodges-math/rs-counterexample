@@ -23,12 +23,12 @@ theorem sum_single_same {d : ℕ} (f : Fin m → Fin d) (hf : Function.Injective
     (∑ j ∈ s, (Pi.single (f j) (1 : ℤ) : Weight d)) (f i) = memberInt s i := by
   classical
   simp only [Finset.sum_apply, Pi.single_apply, hf.eq_iff]
-  simp [memberInt, eq_comm]
+  simp [memberInt]
 
 theorem sum_single_other {d : ℕ} (f : Fin m → Fin d) (z : Fin d)
     (h : ∀ j, f j ≠ z) (s : Finset (Fin m)) :
     (∑ j ∈ s, (Pi.single (f j) (1 : ℤ) : Weight d)) z = 0 := by
-  simp [Finset.sum_apply, Pi.single_apply, h]
+  simp [Finset.sum_apply, h]
 
 theorem pairChoiceWeight_right (s : PairedChoice m p) (i : Fin m) :
     pairChoiceWeight s (slotRight i) = memberInt s.val.1 i := by

@@ -8,12 +8,12 @@ attribute [local instance 100] LieRing.ofAssociativeRing
 set_option maxHeartbeats 300000
 
 theorem polynomialLie_matrix_entry {n : ℕ} (A : Square n) (a b : Fin n) :
-    MvPolynomial.coeff (Finsupp.single (a,b) 1)
-      (polynomialLie n A (MvPolynomial.X (b,b))) = A a b := by
+    (polynomialLie n A (MvPolynomial.X (b,b))).coeff
+      (Finsupp.single (a,b) 1) = A a b := by
   classical
-  change MvPolynomial.coeff _ (rowDerivation A (MvPolynomial.X (b,b)))=_
+  change (rowDerivation A (MvPolynomial.X (b,b))).coeff _=_
   rw [rowDerivation_X, MvPolynomial.coeff_sum]
-  simp [MvPolynomial.coeff_smul, MvPolynomial.coeff_X, Finsupp.single_left_inj]
+  simp [MvPolynomial.coeff_X, Finsupp.single_left_inj]
 
 theorem polynomialLie_injective (n : ℕ) : Function.Injective (polynomialLie n) := by
   intro A B h

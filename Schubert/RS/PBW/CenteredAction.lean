@@ -15,7 +15,7 @@ private theorem derivation_sum_apply {n : ℕ} {α : Type*} (s : Finset α)
   classical
   induction s using Finset.induction_on with
   | empty => simp
-  | @insert i s hi ih => simp [Finset.sum_insert hi, Derivation.add_apply, ih]
+  | @insert i s hi ih => simp [Finset.sum_insert hi, ih]
 
 def rootCoordinate {n : ℕ} (r : PositiveRoot n) : Fin n × Fin n := (r.val.2, r.val.1)
 
@@ -37,8 +37,8 @@ theorem matrixUnitDerivation_eq_sum {n : ℕ} (a b : Fin n) :
     pderiv_X, Pi.single_apply, smul_eq_mul]
   by_cases h : i = b
   · subst i
-    simp [Prod.ext_iff, eq_comm]
-  · simp [Prod.ext_iff, h, Ne.symm h]
+    simp [Prod.ext_iff]
+  · simp [Prod.ext_iff, h]
 
 theorem matrixUnitDerivation_mem_jet {n : ℕ} (a b : Fin n) (d : ℕ)
     (p : MatrixPolynomial n) (hp : p ∈ jet d) : matrixUnitDerivation a b p ∈ jet d := by
@@ -65,7 +65,7 @@ def evaluateIdentity (n : ℕ) : MatrixPolynomial n →ₐ[ℂ] ℂ :=
   aeval (fun ij => if ij.1 = ij.2 then 1 else 0)
 
 theorem evaluateIdentity_center {n : ℕ} (p : MatrixPolynomial n) :
-    evaluateIdentity n (centerPolynomial n p) = coeff 0 p := by
+    evaluateIdentity n (centerPolynomial n p) = p.coeff 0 := by
   have h : (evaluateIdentity n).comp (centerPolynomial n) =
       aeval (fun _ : Fin n × Fin n => (0 : ℂ)) := by
     apply MvPolynomial.algHom_ext
@@ -89,7 +89,7 @@ theorem centerPolynomial_intertwines {n : ℕ} (r : PositiveRoot n) (p : MatrixP
       by_cases hj : j = r.val.1
       · subst j; simp
       · simp [hj, Ne.symm hj]
-    · simp [hi, Ne.symm hi]
+    · simp [hi]
   induction p using MvPolynomial.induction_on with
   | C c => simp
   | add p q hp hq => simp [hp, hq]
@@ -110,7 +110,7 @@ theorem centerPolynomial_word {n : ℕ} (w : List (PositiveRoot n)) (p : MatrixP
 theorem rootWord_principal {n : ℕ} (w : List (PositiveRoot n))
     (p : MatrixPolynomial n) (hp : p ∈ jet w.length) :
     evaluateIdentity n (polynomialEnveloping n (rootWord w) (centerPolynomial n p)) =
-      coeff 0 (differentialWord (fun r => (pderiv (rootCoordinate r)).toLinearMap) w p) := by
+      (differentialWord (fun r => (pderiv (rootCoordinate r)).toLinearMap) w p).coeff 0 := by
   rw [centerPolynomial_word, evaluateIdentity_center]
   exact differentialWord_principal _ rootCoordinate centeredRootDerivative_lowers
     centeredRootDerivative_error w hp

@@ -1,12 +1,22 @@
 name = "rs-counterexample"
-version = "1.0.0"
-defaultTargets = ["Schubert.RS.Family.Audit"]
+version = "2.0.0"
+defaultTargets = ["Schubert.RS.Audit"]
 
 [[require]]
 name = "mathlib"
-scope = "leanprover-community"
-rev = "v4.33.0"
+git = "https://github.com/leanprover-community/mathlib4"
+rev = "b2bf051988bf69448bce88722cc09a05fea31662"
+
+[[require]]
+name = "TauCeti"
+git = "https://github.com/TauCetiProject/TauCeti"
+rev = "48fe7a5f9ba49e3b1c11a72f54f665abc128b36a"
 
 [[lean_lib]]
 name = "Schubert"
 globs = ["Schubert.+"]
+
+[[lean_lib]]
+name = "Complexitylib"
+srcDir = "vendor/complexitylib"
+globs = ["Complexitylib.+"]

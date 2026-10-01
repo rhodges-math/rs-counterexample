@@ -65,7 +65,7 @@ theorem heightFamily_weight {R : Type*} [CommRing R] (slot : Fin (M+1) → R)
   change ((1 : Equiv.Perm (Fin d)).sign : ℤ) •
     (∏ k, ∏ i, edgeWeight slot k ((heightPath y i (r i)).vertex k.castSucc)
       ((heightPath y i (r i)).vertex k.succ)) = _
-  simp only [map_one, Int.cast_one, Units.val_one, one_smul]
+  simp only [map_one, Units.val_one, one_smul]
   rw [Finset.prod_comm]
   apply Finset.prod_congr rfl
   intro i _

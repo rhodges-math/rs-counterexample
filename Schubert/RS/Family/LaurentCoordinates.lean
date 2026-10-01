@@ -120,7 +120,7 @@ theorem splitLaurent_single (P : Parameters) (w : Weight P.rank) (z : ℤ) :
 theorem splitLaurent_coefficient (P : Parameters) (f : Laurent P.rank) (w : Weight P.rank) :
     (splitLaurent P f).coeff (splitWeight P w)=f.coeff w := by
   change Finsupp.mapDomain (splitWeight P) f.coeff (splitWeight P w)=_
-  exact Finsupp.mapDomain_apply (splitWeightEquiv P).injective _ _
+  exact Finsupp.mapDomain_apply_of_injective (splitWeightEquiv P).injective _ _
 
 end
 end Schubert.RS.Family

@@ -189,7 +189,7 @@ theorem northwestRankNat_succ_left_eq
           exact ⟨by simp [k], hk⟩
         · exact ⟨by omega, his⟩
     change A.card = B.card + if (w k).1 < s then 1 else 0
-    rw [if_pos hk, hset, Finset.card_insert_of_notMem hkB]
+    rw [ite_eq_left hk, hset, Finset.card_insert_of_notMem hkB]
   · have hset : A = B := by
       ext i
       simp only [A, B, Finset.mem_filter, Finset.mem_univ, true_and]
@@ -206,7 +206,7 @@ theorem northwestRankNat_succ_left_eq
       · rintro ⟨hir, his⟩
         exact ⟨by omega, his⟩
     change A.card = B.card + if (w k).1 < s then 1 else 0
-    rw [if_neg hk, hset, add_zero]
+    rw [ite_eq_right hk, hset, add_zero]
 
 /-- Adding one value to a northwest rectangle increases its rank by at most
 one. -/
@@ -291,7 +291,7 @@ theorem northwestRankNat_le_add
 the corner rank plus the positive increases of the two cutoffs. -/
 theorem northwestRankNat_le_corner_add
     (w : FinPermutation n) {r s R S : ℕ}
-    (hrn : r ≤ n) (hsn : s ≤ n) (hRn : R ≤ n) (hSn : S ≤ n) :
+    (_hrn : r ≤ n) (_hsn : s ≤ n) (hRn : R ≤ n) (hSn : S ≤ n) :
     northwestRankNat w R S ≤
       northwestRankNat w r s + (R - r) + (S - s) := by
   by_cases hrR : r ≤ R

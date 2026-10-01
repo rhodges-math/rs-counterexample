@@ -24,10 +24,10 @@ theorem ascentRootSeries_eq_product (u : Composition n) :
   symm
   apply Finset.prod_congr_set {r : PositiveRoot n | u r.val.1 < u r.val.2}
   · intro r hr
-    simp only [Set.mem_setOf_eq] at hr
+    simp only [Set.mem_ofPred_eq] at hr
     simp [hr]
   · intro r hr
-    simp only [Set.mem_setOf_eq] at hr
+    simp only [Set.mem_ofPred_eq] at hr
     simp [hr]
 
 theorem three_root_series_eq_product (a b g : Composition n) :
@@ -62,7 +62,7 @@ theorem combinedRootFactor_concrete (r : PositiveRoot 28) :
     by_cases hC : coordinateClass r.val.1 = coordinateClass r.val.2 <;>
     by_cases hS : isSource r.val.1 ∧ ¬isSource r.val.2 <;>
     simp only [combinedRootFactor, counterexampleRootFactor, comparisonWeight,
-      hA, hB, hG, hC, hS, if_true, if_false, mul_one, one_mul, mul_assoc] at hp ⊢ <;>
+      hA, hB, hG, hC, hS, ite_true, ite_false, mul_one, one_mul, mul_assoc] at hp ⊢ <;>
     norm_num at hp <;> simp [hi]
 
 theorem concrete_root_series_eq_product :

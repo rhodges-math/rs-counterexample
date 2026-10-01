@@ -37,7 +37,7 @@ theorem rootBasis_apply (n : ℕ) (r : PositiveRoot n) : rootBasis n r = rootVec
   · have hne : ¬ (r.val.1 = i ∧ r.val.2 = j) := by
       rintro ⟨hi, hj⟩
       exact hij (hi ▸ hj ▸ r.property)
-    simp [rootBasis, rootCoordinates, rootVector, hij, Matrix.single_apply, hne]
+    simp [rootBasis, rootCoordinates, rootVector, hij, hne]
 
 end
 end Schubert.RS.Representation

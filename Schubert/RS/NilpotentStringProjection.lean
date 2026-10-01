@@ -1,5 +1,5 @@
 import Mathlib.LinearAlgebra.Projection
-import Mathlib.Data.Complex.Basic
+import Mathlib.Basic.Complex.Basic
 import Mathlib.Algebra.BigOperators.Intervals
 
 /-! A constructive splitting step for a finite nilpotent string. The
@@ -45,7 +45,7 @@ theorem nilpotentStringProjection_chain (E : Module.End ℂ V) (v : V) (d : ℕ)
       simp only [he]
     · rw [end_pow_zero_of_le E hE (by omega),LinearMap.zero_apply,map_zero]
       have hne : j≠k := by omega
-      simp only [hne,if_false]
+      simp only [hne,ite_false]
   change (∑ j ∈ Finset.range (d+1), φ ((E^(d-j)) ((E^k) v)) • (E^j) v) = _
   calc
     _ = ∑ j ∈ Finset.range (d+1), (if j=k then (1:ℂ) else 0) • (E^j) v := by

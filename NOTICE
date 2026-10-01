@@ -10,4 +10,11 @@ The file Schubert/RS/JosephPolo/GrinbergCauchyBinet.lean contains adapted
 third-party material (Copyright Meta Platforms, Inc. and affiliates) licensed
 under the Creative Commons Attribution-NonCommercial 4.0 International License
 (CC BY-NC 4.0), not under the Apache License. Its license is reproduced in
-Schubert/RS/JosephPolo/Grinberg.LICENSE. See THIRD_PARTY_NOTICES.md.
+Schubert/RS/JosephPolo/Grinberg.LICENSE.
+
+The directory vendor/complexitylib contains unmodified source files of
+complexitylib (github.com/SamuelSchlesinger/complexitylib), licensed under the
+Apache License 2.0, which is reproduced in vendor/complexitylib/LICENSE. Their
+copyright notices are retained in the files.
+
+See THIRD_PARTY_NOTICES.md.

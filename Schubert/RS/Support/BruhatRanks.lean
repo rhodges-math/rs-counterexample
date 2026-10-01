@@ -24,11 +24,11 @@ theorem bruhatRank_add_northwestRankNat
   have hH : H.card = w.bruhatRank p q := by
     congr 1
     ext i
-    simp [H, P, bruhatRank]
+    simp [H, P]
   have hL : L.card = northwestRankNat w (p.1 + 1) q.1 := by
     congr 1
     ext i
-    simp [L, P, northwestRankNat, not_le]
+    simp [L, P, not_le]
   have hP : P.card = p.1 + 1 := by simp [P]
   rw [← hH, ← hL, ← hP]
   simpa [H, L] using hpart
@@ -94,7 +94,7 @@ theorem strongBruhatLE_iff_northwestRankNat_all
         unfold northwestRankNat
         congr 1
         ext i
-        simp [w i |>.isLt]
+        simp
       rw [hfull v, hfull u]
     · let p : Fin n := ⟨r - 1, by omega⟩
       let q : Fin n := ⟨s, by omega⟩

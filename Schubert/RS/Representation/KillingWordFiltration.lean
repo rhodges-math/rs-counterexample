@@ -87,7 +87,8 @@ theorem killingWord_perm_difference {n : ℕ} (u : Fin n → ℕ)
     have h₂ := ihq hm
     rw [← hp.length_eq] at h₂
     have hh := (shorterKillingSpan u roots.length).add_mem h₁ h₂
-    convert hh using 1 <;> abel
+    convert hh using 1
+    abel
 
 end
 end Schubert.RS.Representation

@@ -20,7 +20,7 @@ theorem rowAction_flagRowMinor_sum {n : ℕ} (g : Square n) (k : Fin n)
   rw [rowAction_flagRowMinor,← Finset.sum_coe_sort]
   apply Finset.sum_congr rfl
   intro S hS
-  rw [dif_pos (Finset.mem_powersetCard.mp S.property).2]
+  rw [dite_eq_left (Finset.mem_powersetCard.mp S.property).2]
   rfl
 
 abbrev FlagColumns {n : ℕ} (m : ColumnShape n) := Σ k : Fin n, Fin (m k)
@@ -61,12 +61,12 @@ theorem flagRowMinor_conjugation {n : ℕ} (k : Fin n) (s : Fin (k.val+1) → Fi
 
 theorem flagTableauPolynomial_real_coeff {n : ℕ} (m : ColumnShape n) (T : FlagTableauRows m)
     (d : (Fin n × Fin n) →₀ ℕ) :
-    conj (MvPolynomial.coeff d (flagTableauPolynomial m T)) =
-      MvPolynomial.coeff d (flagTableauPolynomial m T) := by
+    conj ((flagTableauPolynomial m T).coeff d) =
+      (flagTableauPolynomial m T).coeff d := by
   have h : MvPolynomial.map (starRingEnd ℂ) (flagTableauPolynomial m T) =
       flagTableauPolynomial m T := by
     simp only [flagTableauPolynomial,map_prod,flagRowMinor_conjugation]
-  have hc := congrArg (MvPolynomial.coeff d) h
+  have hc := congrArg (fun q => q.coeff d) h
   simpa only [MvPolynomial.coeff_map] using hc
 
 end

@@ -14,7 +14,7 @@ def polynomialGram (p : ι → MvPolynomial σ ℂ) :
     simp only [LinearMap.smul_apply,Finset.smul_sum,smul_smul,RingHom.id_apply,smul_eq_mul]
 
 theorem polynomialGram_range (p : ι → MvPolynomial σ ℂ)
-    (hp : ∀ i m, conj (MvPolynomial.coeff m (p i)) = MvPolynomial.coeff m (p i)) :
+    (hp : ∀ i m, conj ((p i).coeff m) = (p i).coeff m) :
     LinearMap.range (polynomialGram p) = Submodule.span ℂ (Set.range p) := by
   classical
   apply le_antisymm
@@ -40,7 +40,7 @@ theorem polynomialGram_orbit {Ω : Type*} (p : ι → MvPolynomial σ ℂ)
 /-- The same Gram witness works for both restrictions. Hence inclusion of
 actual orbit spans transfers vanishing of every polynomial in the minor span. -/
 theorem restriction_zero_of_orbitSpan_le {Ω Λ : Type*} (p : ι → MvPolynomial σ ℂ)
-    (hp : ∀ i m, conj (MvPolynomial.coeff m (p i)) = MvPolynomial.coeff m (p i))
+    (hp : ∀ i m, conj ((p i).coeff m) = (p i).coeff m)
     (φ : MvPolynomial σ ℂ →ₗ[ℂ] (Ω → ℂ)) (ρ : Ω → MvPolynomial σ ℂ)
     (hρ : ∀ w, ρ w = ∑ i, φ (p i) w • p i)
     (ψ : MvPolynomial σ ℂ →ₗ[ℂ] (Λ → ℂ)) (τ : Λ → MvPolynomial σ ℂ)

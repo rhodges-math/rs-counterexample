@@ -25,11 +25,11 @@ theorem highestFlag_columnMultiplicity {n d : ℕ} (h : Fin d → Fin n) :
 
 theorem flagColumnProduct_real_coeff {n d : ℕ} (h : Fin d → Fin n)
     (T : (j : Fin d) → FlagMinorRowSet (h j)) (a : (Fin n × Fin n) →₀ ℕ) :
-    star (MvPolynomial.coeff a (flagColumnProduct h T)) =
-      MvPolynomial.coeff a (flagColumnProduct h T) := by
+    star ((flagColumnProduct h T).coeff a) =
+      (flagColumnProduct h T).coeff a := by
   have he : MvPolynomial.map (starRingEnd ℂ) (flagColumnProduct h T) = flagColumnProduct h T := by
     simp only [flagColumnProduct,map_prod,flagRowMinor_conjugation]
-  simpa only [MvPolynomial.coeff_map,starRingEnd_apply] using congrArg (MvPolynomial.coeff a) he
+  simpa only [MvPolynomial.coeff_map,starRingEnd_apply] using congrArg (fun q => q.coeff a) he
 
 theorem flagOrbitRestriction_columnProduct {n d : ℕ} (h : Fin d → Fin n)
     (T : (j : Fin d) → FlagMinorRowSet (h j)) (w : FinPermutation n)

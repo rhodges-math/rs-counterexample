@@ -15,8 +15,7 @@ def lieTensorComm : (R ⊗[ℂ] S) ≃ₗ⁅ℂ,L⁆ (S ⊗[ℂ] R) :=
     map_lie' := by
       intro a z
       change (TensorProduct.comm ℂ R S) ⁅a,z⁆ = ⁅a,(TensorProduct.comm ℂ R S) z⁆
-      induction z using TensorProduct.induction_on with
-      | zero => simp
+      induction z using TensorProduct.inductionOn with
       | tmul r s => simp [TensorProduct.LieModule.lie_tmul_right,add_comm]
       | add z w hz hw => simp only [lie_add,map_add,hz,hw] }
 
@@ -28,11 +27,9 @@ def lieTensorAssoc : ((R ⊗[ℂ] S) ⊗[ℂ] X) ≃ₗ⁅ℂ,L⁆ (R ⊗[ℂ] (
     map_lie' := by
       intro a z
       change (TensorProduct.assoc ℂ R S X) ⁅a,z⁆ = ⁅a,(TensorProduct.assoc ℂ R S X) z⁆
-      induction z using TensorProduct.induction_on with
-      | zero => simp
+      induction z using TensorProduct.inductionOn with
       | tmul rs x =>
-          induction rs using TensorProduct.induction_on with
-          | zero => simp
+          induction rs using TensorProduct.inductionOn with
           | tmul r s => simp [TensorProduct.LieModule.lie_tmul_right,
               TensorProduct.add_tmul,TensorProduct.tmul_add,add_assoc]
           | add rs st hrs hst => simp only [TensorProduct.add_tmul,lie_add,map_add,hrs,hst]

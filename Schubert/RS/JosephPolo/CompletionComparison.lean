@@ -30,7 +30,7 @@ theorem presentationToAdjacentCompletion_surjective :
       (compositionFlag_adjacent_raising_stable (swapComposition u i) i)
       (compositionFlag_radical_stable i (swapComposition u i))
     Function.Surjective (presentationToAdjacentCompletion u i hu B) := by
-  letI := B.completedUpperModule
+  let := B.completedUpperModule
     (compositionFlag_adjacent_raising_stable (swapComposition u i) i)
     (compositionFlag_radical_stable i (swapComposition u i))
   exact presentationLift_surjective u (B.adjacentEndpoint u i)
@@ -42,8 +42,8 @@ theorem adjacentCompletionToPresentation_surjective :
     letI := presentationSl2LieRingModule u i hu.le
     letI := presentationSl2LieModule u i hu.le
     Function.Surjective (adjacentCompletionToPresentation u i hu.le hJP B) := by
-  letI := presentationSl2LieRingModule u i hu.le
-  letI := presentationSl2LieModule u i hu.le
+  let := presentationSl2LieRingModule u i hu.le
+  let := presentationSl2LieModule u i hu.le
   obtain ⟨z,hz⟩ := adjacentCompletionToPresentation_generator_mem u i hu.le hJP B
   intro x
   obtain ⟨a,rfl⟩ := presentation_is_cyclic u x
@@ -63,11 +63,11 @@ theorem presentationToAdjacentCompletion_bijective :
     Function.Bijective (presentationToAdjacentCompletion u i hu B) := by
   let hE := compositionFlag_adjacent_raising_stable (swapComposition u i) i
   let hR := compositionFlag_radical_stable i (swapComposition u i)
-  letI := B.completedUpperModule hE hR
-  letI := B.completedUpperTower hE hR
-  letI := presentationSl2LieRingModule u i hu.le
-  letI := presentationSl2LieModule u i hu.le
-  letI := presentation_finite u
+  let := B.completedUpperModule hE hR
+  let := B.completedUpperTower hE hR
+  let := presentationSl2LieRingModule u i hu.le
+  let := presentationSl2LieModule u i hu.le
+  let := presentation_finite u
   let f := (presentationToAdjacentCompletion u i hu B).restrictScalars ℂ
   let g := (adjacentCompletionToPresentation u i hu.le hJP B).toLinearMap
   have hf : Function.Surjective f := presentationToAdjacentCompletion_surjective u i hu B

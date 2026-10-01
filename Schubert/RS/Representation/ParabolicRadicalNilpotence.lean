@@ -15,9 +15,9 @@ theorem matrixUnitEnd_ad_square_zero {n : ℕ} (a b c d : Fin n)
   by_cases hbc : b=c <;> by_cases hda : d=a
   · exact (hcd (Prod.ext hbc.symm hda)).elim
   · subst c
-    simp [hda,matrixUnitEnd_commutator,hab,Ne.symm hab]
+    simp [hda,matrixUnitEnd_commutator,Ne.symm hab]
   · subst d
-    simp [hbc,matrixUnitEnd_commutator,hab,Ne.symm hab]
+    simp [hbc,matrixUnitEnd_commutator,Ne.symm hab]
   · simp [hbc,hda]
 
 def radicalRaisingEnd {n : ℕ} (i : AdjacentPosition n) : Module.End ℂ (radicalEndLie i) :=

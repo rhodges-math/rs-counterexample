@@ -23,8 +23,8 @@ theorem PolynomialRootStringBasis.completedWeyl_jp_relations (u : Composition n)
       (rootOperator (adjacentPositiveRoot i)^jpExponent u (adjacentPositiveRoot i)) η=0) :
     ∀ r : PositiveRoot n, B.completedUpperEnveloping hE hR (rootOperator r^jpExponent u r) η=0 := by
   classical
-  letI := B.completedUpperModule hE hR
-  letI := B.completedUpperTower hE hR
+  let := B.completedUpperModule hE hR
+  let := B.completedUpperTower hE hR
   let c : PositiveRoot n → ℂ := fun r =>
     if hr : r.val≠(i.left,i.right) then radicalWeylSign i (radicalReflectedRoot i ⟨r,hr⟩) else 1
   apply reflected_endpoint_jp_relations u i ξ η (B.completedWeyl i.left_ne_right).toLinearMap
@@ -33,7 +33,7 @@ theorem PolynomialRootStringBasis.completedWeyl_jp_relations (u : Composition n)
   change B.completedUpperEnveloping hE hR (rootOperator r) (B.completedWeyl i.left_ne_right x)=
     c r • B.completedWeyl i.left_ne_right
       (B.completedUpperEnveloping hE hR (rootOperator (adjacentReflectedRoot i r hr)) x)
-  have hc : c r=radicalWeylSign i (radicalReflectedRoot i ⟨r,hr⟩) := dif_pos hr
+  have hc : c r=radicalWeylSign i (radicalReflectedRoot i ⟨r,hr⟩) := dite_eq_left hr
   exact (B.completedWeyl_root_transport hE hR ⟨r,hr⟩ x).trans
     (congrArg (fun z : ℂ => z • B.completedWeyl i.left_ne_right
       (B.completedUpperEnveloping hE hR (rootOperator (adjacentReflectedRoot i r hr)) x))

@@ -20,7 +20,7 @@ theorem extendAscentPowers_injective (u : Composition n) :
 
 instance ascentDegreeFiber_finite (u : Composition n) (d : RootDegree n) :
     Finite (AscentDegreeFiber u d) := by
-  letI : Finite {a : PositiveRoot n → ℕ // monomialDegree a = d} :=
+  let : Finite {a : PositiveRoot n → ℕ // monomialDegree a = d} :=
     (monomialDegree_fiber_finite d).to_subtype
   apply Finite.of_injective (fun a : AscentDegreeFiber u d =>
     (⟨extendAscentPowers u a.val, a.property⟩ : {a : PositiveRoot n → ℕ // monomialDegree a = d}))

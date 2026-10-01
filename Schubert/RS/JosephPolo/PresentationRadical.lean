@@ -67,10 +67,10 @@ theorem presentationRadical_isLieTower {n : ℕ} (u : Composition n) (i : Adjace
     letI := presentationRadicalLieRingModule u i
     IsLieTower ((polynomialSl2Triple i.left i.right i.left_ne_right).toLieSubalgebra ℂ)
       (radicalEndLie i) (PresentationQuotient u) := by
-  letI := presentationSl2LieRingModule u i hu
-  letI := presentationSl2LieModule u i hu
-  letI := presentationRadicalLieRingModule u i
-  letI := presentationRadicalLieModule u i
+  let := presentationSl2LieRingModule u i hu
+  let := presentationSl2LieModule u i hu
+  let := presentationRadicalLieRingModule u i
+  let := presentationRadicalLieModule u i
   have hcomm (z : (polynomialSl2Triple i.left i.right i.left_ne_right).toLieSubalgebra ℂ)
       (r : radicalEndLie i) :
       ⁅presentationSl2Action u i hu z,presentationRadicalLie u i r⁆=
@@ -120,8 +120,7 @@ def presentationRadicalAction {n : ℕ} (u : Composition n) (i : AdjacentPositio
         intro z t
         change LieModule.toModuleHom ℂ (radicalEndLie i) (PresentationQuotient u) ⁅z,t⁆ =
           ⁅z,LieModule.toModuleHom ℂ (radicalEndLie i) (PresentationQuotient u) t⁆
-        induction t using TensorProduct.induction_on with
-        | zero => simp
+        induction t using TensorProduct.inductionOn with
         | tmul r x =>
           simp only [TensorProduct.LieModule.lie_tmul_right, map_add, LieModule.toModuleHom_apply]
           exact (IsLieTower.leibniz_lie z r x).symm
@@ -133,8 +132,8 @@ theorem presentationRadicalAction_tmul {n : ℕ} (u : Composition n) (i : Adjace
     letI := presentationSl2LieModule u i hu
     presentationRadicalAction u i hu (r ⊗ₜ[ℂ] x) =
       UniversalEnvelopingAlgebra.ι ℂ (radicalUpper i r) • x := by
-  letI := presentationRadicalLieRingModule u i
-  letI := presentationRadicalLieModule u i
+  let := presentationRadicalLieRingModule u i
+  let := presentationRadicalLieModule u i
   change LieModule.toModuleHom ℂ (radicalEndLie i) (PresentationQuotient u) (r ⊗ₜ[ℂ] x)=_
   rw [LieModule.toModuleHom_apply, presentationRadical_apply]
 

@@ -1,48 +1,44 @@
 # Source scope and verification
 
-This repository contains the 365-module local import closure of
-`Schubert.RS.Family.Audit`. All local imports are included.
-External imports come from the pinned public Lake dependencies.
+This repository contains the 565-module local import closure of `Schubert.RS.Audit`. All local
+imports are included. It consists of 474 modules under `Schubert/RS/`, the generated entry
+modules `Schubert.RS.Main` and `Schubert.RS.Audit`, 37 modules of the library `Schubert/GLRep/`
+(polynomial and rational representations of general linear groups and their Levi subgroups), 26
+modules of the library `Schubert/LinearProgramming/` (polynomial-time feasibility of systems of
+linear inequalities), 12 modules of the library `Schubert/QuiverInvariants/` (semi-invariants
+of quivers and the saturation property), and 14 prerequisite modules under `Schubert/Algebra/`
+and `Schubert/TypeA/` that were already part of release 1.0.0. Each of these libraries proves
+one of the statements of `Schubert/RS/Statements/` (see `docs/STATEMENTS.md`); their modules
+are included as far as the endpoints import them. The 197 complexitylib files imported by this
+closure are vendored under `vendor/complexitylib/` (see `THIRD_PARTY_NOTICES.md`). Mathlib
+(`b2bf051`) and Tau Ceti (`48fe7a5`) are pinned public Lake dependencies and are not included.
 
 ## Source preparation
 
-This release was prepared from the standalone source archive dated
-21 September 2026. Modules, declarations, and the common namespace were
-renamed consistently, and comments were edited to describe their mathematical
-content. The main results are in `Schubert.RS.Family.Main` under the namespace
-`Schubert.RS.Family`.
+The sources are those of the development tree, unchanged. No module or identifier
+was renamed for this release; the renamings made when release 1.0.0 was prepared
+are recorded in that release. `LOCAL_MODULES.json` records, for every module, the
+path and hash in this release, with `origin_kind` `unchanged` (563)
+or `generated` (2).
 
-The statements and proofs match the original archive after the documented
-identifier and import renamings, removal of comments, and normalization of
-whitespace. `RENAMINGS.json` lists those substitutions; `LOCAL_MODULES.json`
-records the source paths and hashes for this release and the original archive.
-The adapted Cauchy–Binet file received the same namespace change; its
-copyright, source attribution, and license are retained.
+`Schubert.RS.Main` imports the Lean counterparts of the labelled statements of the paper
+(listed in `docs/STATEMENTS.md`) and the endpoint modules; `Schubert.RS.Audit` prints the
+signatures of the main declarations and their axioms. Both are generated for this
+release.
 
-## Original dependency isolation
-
-The standalone archive narrowed imports in four prerequisite modules:
-
-- `Schubert/TypeA/Polynomials/DividedDifferences.lean`
-- `Schubert/TypeA/Permutations/NorthwestRankBounds.lean`
-- `Schubert/RS/JosephPolo/BruhatLifting.lean`
-- `Schubert/RS/JosephPolo/BruhatMonotonicity.lean`
-
-Two small support modules contain the polynomial-ring abbreviation and
-elementary northwest-rank definitions and lemmas needed by this import closure.
-Unrelated developments, research notes, Git history, and compiled local proof
-files are not part of the source release.
+Development records, development audit modules, unrelated library developments
+and compiled local proof files are not part of the source release.
 
 ## Build and axiom checks
 
-`BUILD_CHECK.json` records the build of the prepared Lean sources.
-`ENDPOINT_AUDIT.txt` contains theorem signatures and transitive axiom output.
-Only pinned public dependency caches are reused; no compiled local `Schubert`
-module is imported from another project.
-
-The final family results supply proofs of the Joseph–Polo presentation,
-Demazure character formula, and PBW theorem. Their axiom lists contain only
-`propext`, `Classical.choice`, and `Quot.sound`.
+`BUILD_CHECK.json` records the build of the prepared Lean sources with `build.py`:
+Lake first builds the Tau Ceti modules imported by the local files and the vendored
+complexitylib files (Mathlib objects come from the public Mathlib cache), then
+`build.py` compiles all local modules from the distributed sources.
+`ENDPOINT_AUDIT.txt` contains the output of the audit module: signatures, including
+hypotheses, and transitive axioms.
 
 `SHA256SUMS.json` covers every distributed file except itself. The verification
-helper checks these hashes and that all local imports are present.
+helper checks these hashes, that all local and vendored imports are present, that
+the Lake requirements match `lake-manifest.json`, and that the vendored complexitylib
+files match their recorded upstream hashes.

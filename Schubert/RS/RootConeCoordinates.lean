@@ -19,8 +19,8 @@ def rootCoordinates (p : Laurent n) : MvPolynomial (Fin (n-1)) ℤ :=
   AddMonoidAlgebra.comapDomain rootWeight rootWeight_injective p
 
 @[simp] theorem rootCoordinates_coeff (p : Laurent n) (d : RootDegree n) :
-    MvPolynomial.coeff d (rootCoordinates p) = p.coeff (rootWeight d) := by
-  simp [rootCoordinates, MvPolynomial.coeff, AddMonoidAlgebra.coeff_comapDomain]
+    (rootCoordinates p).coeff d = p.coeff (rootWeight d) := by
+  simp [rootCoordinates, AddMonoidAlgebra.coeff_comapDomain]
 
 theorem rootCoordinateEmbedding_injective :
     Function.Injective (rootCoordinateEmbedding (n := n)) :=

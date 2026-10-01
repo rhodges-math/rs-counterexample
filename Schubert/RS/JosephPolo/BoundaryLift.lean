@@ -87,9 +87,9 @@ theorem adjacentCompletionToPresentation_boundary (p : compositionFlag (swapComp
     letI := presentationSl2LieModule u i hu
     adjacentCompletionToPresentation u i hu hJP B (B.completionBoundary i.left_ne_right p) =
       adjacentPresentationBoundary u i hu hJP p := by
-  letI := presentationSl2LieRingModule u i hu
-  letI := presentationSl2LieModule u i hu
-  letI := presentation_finite u
+  let := presentationSl2LieRingModule u i hu
+  let := presentationSl2LieModule u i hu
+  let := presentation_finite u
   exact IsRankOneCompletion.lift_boundary _ _ _ _ p
 
 end

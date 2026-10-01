@@ -63,10 +63,10 @@ theorem sourceA_class (P : Parameters) (i : Fin (2*P.p-1)) :
   have hi:=i.isLt
   by_cases h : i.val<P.p
   · apply early_source_A
-    simpa only [sourceA,h,if_true] using h
+    simp only [sourceA,h,ite_true]
   · apply middle_source_A
-    · simp only [sourceA,h,if_false]; omega
-    · simp only [sourceA,h,if_false]; omega
+    · simp only [sourceA,h,ite_false]; omega
+    · simp only [sourceA,h,ite_false]; omega
 
 theorem sourceB_class (P : Parameters) (i : Fin (2*P.q-1)) :
     (coordinateClass P (sourceB P i)).val=1 := by
@@ -74,11 +74,11 @@ theorem sourceB_class (P : Parameters) (i : Fin (2*P.q-1)) :
   have he:=P.pq_eq
   by_cases h : i.val<P.q
   · apply early_source_B
-    · simp only [sourceB,h,if_true]; omega
-    · simp only [sourceB,h,if_true]; omega
+    · simp only [sourceB,h,ite_true]; omega
+    · simp only [sourceB,h,ite_true]; omega
   · apply middle_source_B
-    · simp only [sourceB,h,if_false]; omega
-    · simp only [sourceB,h,if_false]; omega
+    · simp only [sourceB,h,ite_false]; omega
+    · simp only [sourceB,h,ite_false]; omega
 
 theorem target_class (P : Parameters) (i : Slot P.m) :
     (coordinateClass P (target P i)).val=
@@ -87,14 +87,14 @@ theorem target_class (P : Parameters) (i : Slot P.m) :
   have hm:=P.m_pos
   by_cases h : i.val<P.m
   · have he:=early_target P (target P i)
-      (by simp only [target,h,if_true]; omega)
-      (by simp only [target,h,if_true]; omega)
+      (by simp only [target,h,ite_true]; omega)
+      (by simp only [target,h,ite_true]; omega)
     rw [he]
-    simp only [target,h,if_true]
+    simp only [target,h,ite_true]
     omega
-  · have he:=late_target P (target P i) (by simp only [target,h,if_false]; omega)
+  · have he:=late_target P (target P i) (by simp only [target,h,ite_false]; omega)
     rw [he]
-    simp only [target,h,if_false]
+    simp only [target,h,ite_false]
     omega
 
 theorem target_not_source (P : Parameters) (i : Slot P.m) : ¬sourceClass P (target P i) := by

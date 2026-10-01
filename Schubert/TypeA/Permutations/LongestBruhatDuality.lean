@@ -38,13 +38,13 @@ theorem northwestRankNat_trans_revPerm_add
   have hL : L.card = northwestRankNat w R (n - S) := by
     congr 1
     ext i
-    simp [L, P, northwestRankNat]
+    simp [L, P]
   have hH : H.card =
       northwestRankNat
         (w.trans (Fin.revPerm : FinPermutation n)) R S := by
     congr 1
     ext i
-    simp only [H, P, northwestRankNat, Finset.mem_filter,
+    simp only [H, P, Finset.mem_filter,
       Finset.mem_univ, true_and, Equiv.trans_apply, Fin.revPerm_apply,
       Fin.rev, Fin.val_mk]
     constructor

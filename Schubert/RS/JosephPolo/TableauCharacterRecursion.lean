@@ -19,13 +19,13 @@ theorem flagString_character_recursion {n d L : ℕ} {h : Fin d → Fin n}
   have htarget := hT.descent_iff_head w hw
   rcases hT.trichotomy (w.leftAdjacentSwap i) with he | hh | hf
   · have h0 := he 0
-    simp only [he,htarget,h0,ite_false,Finset.sum_const_zero,isobaric_zero]
+    simp only [he,htarget,ite_false,Finset.sum_const_zero,isobaric_zero]
   · have h0 := (hh 0).mpr rfl
-    simp only [hh,htarget,h0,ite_true]
+    simp only [hh,htarget,ite_true]
     simp only [Finset.sum_ite_eq',Finset.mem_univ,ite_true]
     exact hW.character.symm
   · have h0 := hf 0
-    simp only [hf,htarget,h0,ite_true]
+    simp only [hf,htarget,ite_true]
     exact hW.character_fixed
 
 /-- The generating polynomial of exactly the tuples with a defining chain.

@@ -21,8 +21,7 @@ def lieEquivariantBracket
     intro a z
     change (TensorProduct.lift (LieModule.toEnd ℂ R R).toLinearMap) ⁅a,z⁆ =
       ⁅a,(TensorProduct.lift (LieModule.toEnd ℂ R R).toLinearMap) z⁆
-    induction z using TensorProduct.induction_on with
-    | zero => simp
+    induction z using TensorProduct.inductionOn with
     | tmul r s =>
         rw [TensorProduct.LieModule.lie_tmul_right,map_add]
         exact (hder a r s).symm
@@ -70,11 +69,9 @@ theorem IsRankOneCompletion.action_jacobi
       (iteratedAction A).comp (lieTensorSwapFirst (L := L) R R X) := by
     apply ((C.tensor R).tensor R).hom_ext
     intro z
-    induction z using TensorProduct.induction_on with
-    | zero => simp
+    induction z using TensorProduct.inductionOn with
     | tmul r z =>
-        induction z using TensorProduct.induction_on with
-        | zero => simp
+        induction z using TensorProduct.inductionOn with
         | tmul s m =>
             change A (⁅r,s⁆ ⊗ₜ[ℂ] ι m) =
               A (r ⊗ₜ[ℂ] A (s ⊗ₜ[ℂ] ι m)) - A (s ⊗ₜ[ℂ] A (r ⊗ₜ[ℂ] ι m))

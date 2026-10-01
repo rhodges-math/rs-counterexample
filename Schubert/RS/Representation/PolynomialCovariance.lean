@@ -21,7 +21,7 @@ theorem rowDerivation_torus {n : ℕ} (t : DiagonalTorus n) (A : Square n)
     apply Finset.sum_congr rfl
     intro i hi
     congr 1
-    simp [torusMatrix, rootScalar, div_eq_mul_inv, mul_assoc, mul_left_comm, mul_comm]
+    simp [torusMatrix, rootScalar, div_eq_mul_inv, mul_left_comm, mul_comm]
     field_simp
   induction p using MvPolynomial.induction_on with
   | C c => simp [rowAction]

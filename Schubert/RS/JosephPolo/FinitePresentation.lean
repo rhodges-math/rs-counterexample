@@ -48,7 +48,7 @@ private theorem shorter_word_smul_mem {n : ℕ} (u : Composition n)
   | mem a ha =>
     obtain ⟨roots, _, _, hd, rfl⟩ := ha
     exact hshort roots hd
-  | zero => simpa using S.zero_mem
+  | zero => simp
   | add a b ha hb ia ib => simpa only [add_smul] using S.add_mem ia ib
   | smul c a ha ia => simpa only [smul_assoc] using S.smul_mem c ia
 
@@ -97,7 +97,7 @@ theorem rootWord_presentation_span {n : ℕ} (u : Composition n) :
     | mem x hx =>
       obtain ⟨roots, rfl⟩ := hx
       exact Submodule.subset_span ⟨r :: roots, by simp only [rootWord_cons, mul_smul]⟩
-    | zero => simpa using S.zero_mem
+    | zero => simp
     | add x y hx hy ix iy => simpa only [smul_add] using S.add_mem ix iy
     | smul c x hx ix => rw [smul_comm]; exact S.smul_mem c ix
   have hLie (A : upperNilpotent n) (x : PresentationQuotient u) (hx : x ∈ S) :
@@ -126,7 +126,7 @@ theorem presentation_finite {n : ℕ} (u : Composition n) :
   let order := defaultRootOrdering n
   let v := fun powers : BoundedJPPowers u =>
     orderedRootMonomial order (fun r => (powers r).val) • presentationGenerator u
-  letI := FiniteDimensional.span_of_finite ℂ (Set.finite_range v)
+  let := FiniteDimensional.span_of_finite ℂ (Set.finite_range v)
   have h : Submodule.span ℂ (Set.range v) = ⊤ := boundedJPSpan_eq_top u order
   exact Module.Finite.of_surjective (Submodule.subtype (Submodule.span ℂ (Set.range v)))
     (by intro x; exact ⟨⟨x, by rw [h]; trivial⟩, rfl⟩)

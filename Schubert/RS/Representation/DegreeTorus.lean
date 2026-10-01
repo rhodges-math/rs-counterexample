@@ -41,7 +41,7 @@ theorem orderedMonomialScalar_cut {n : ℕ} (order : RootOrdering n)
   rw [← List.prod_toFinset _ order.nodup, rootOrder_toFinset]
   rw [Finset.prod_pow_eq_pow_sum]
   congr 1
-  simp [monomialDegree, Finsupp.finset_sum_apply, Finsupp.smul_apply, mul_comm]
+  simp [monomialDegree, Finsupp.finsetSum_apply, Finsupp.smul_apply, mul_comm]
 
 theorem torusEnveloping_monomialDegree {n : ℕ} (order : RootOrdering n)
     (a : PositiveRoot n → ℕ) (k : Fin (n - 1)) :

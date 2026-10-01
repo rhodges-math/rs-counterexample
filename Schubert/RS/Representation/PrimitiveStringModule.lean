@@ -1,7 +1,7 @@
 import Mathlib.Algebra.Lie.Sl2
 import Mathlib.Algebra.Lie.Submodule
 import Mathlib.LinearAlgebra.Basis.Basic
-import Mathlib.Data.Complex.Basic
+import Mathlib.Basic.Complex.Basic
 import Mathlib.Tactic.NormNum
 
 namespace Schubert.RS.Representation

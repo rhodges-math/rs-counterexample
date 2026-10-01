@@ -37,11 +37,11 @@ theorem highestFlag_derivationTop {n : ℕ} (m : ColumnShape n) (a b : Fin n) (h
     · have ht := ih.linear_pow_mul (flagMinor k)
         (matrixUnitDerivation_minor_active_twice a b k h.2 h.1) (m k)
       rw [matrixUnitDerivation_minor_active a b k h.2 h.1] at ht
-      simpa only [stringMinor, if_pos h, Nat.add_comm] using ht
+      simpa only [stringMinor, ite_eq_left h, Nat.add_comm] using ht
     · have hz : matrixUnitDerivation a b (flagMinor k ^ m k) = 0 := by
         rw [Derivation.leibniz_pow, inactiveMinor_derivation a b k hba h]
         simp
-      simpa only [stringMinor, if_neg h, zero_add] using ih.inert_mul (flagMinor k ^ m k) hz
+      simpa only [stringMinor, ite_eq_right h, zero_add] using ih.inert_mul (flagMinor k ^ m k) hz
 
 theorem shapeWeight_single {n : ℕ} (k i : Fin n) :
     shapeWeight (Pi.single k 1) i = if i ≤ k then 1 else 0 := by
@@ -50,7 +50,7 @@ theorem shapeWeight_single {n : ℕ} (k i : Fin n) :
   rw [Finset.sum_eq_single k]
   · simp
   · intro j hj hjk
-    simp [Pi.single_apply, hjk, Ne.symm hjk]
+    simp [hjk]
   · simp
 
 theorem inactiveMinor_prefix {n : ℕ} (a b k : Fin n) (hba : b<a)
@@ -58,7 +58,7 @@ theorem inactiveMinor_prefix {n : ℕ} (a b k : Fin n) (hba : b<a)
   unfold activeMinor at h
   omega
 
-def inactiveMinorStabilizer {n : ℕ} (a b k : Fin n) (hba : b<a) (h : ¬activeMinor a b k) :
+theorem inactiveMinorStabilizer {n : ℕ} (a b k : Fin n) (hba : b<a) (h : ¬activeMinor a b k) :
     ∀ i, shapeWeight (Pi.single k 1) (Equiv.swap a b i) = shapeWeight (Pi.single k 1) i := by
   intro i
   rw [shapeWeight_single, shapeWeight_single]

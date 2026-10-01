@@ -122,7 +122,7 @@ theorem torusEnveloping_mem_jp {n : ℕ} (u : Fin n → ℕ) (t : DiagonalTorus 
     obtain ⟨r, rfl⟩ := ha
     rw [map_pow, torusEnveloping_root, smul_pow]
     exact ((jpLeftIdeal u).restrictScalars ℂ).smul_mem _ (Submodule.subset_span ⟨r, rfl⟩)
-  | zero => simpa using (jpLeftIdeal u).zero_mem
+  | zero => simp
   | add a b ha hb ia ib => simpa using (jpLeftIdeal u).add_mem ia ib
   | smul c a ha ia =>
     change torusEnveloping t (c * a) ∈ jpLeftIdeal u
@@ -138,7 +138,7 @@ theorem torusEnveloping_mem_linear {n : ℕ} (u : Fin n → ℕ) (t : DiagonalTo
     rw [torusEnveloping_root]
     exact ((linearLeftIdeal u).restrictScalars ℂ).smul_mem _
       (Submodule.subset_span ⟨r, hr, rfl⟩)
-  | zero => simpa using (linearLeftIdeal u).zero_mem
+  | zero => simp
   | add a b ha hb ia ib => simpa using (linearLeftIdeal u).add_mem ia ib
   | smul c a ha ia =>
     change torusEnveloping t (c * a) ∈ linearLeftIdeal u

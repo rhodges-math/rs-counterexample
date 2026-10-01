@@ -22,9 +22,9 @@ theorem PolynomialRootStringBasis.adjacentEndpoint_cyclic (hu : u i.left<u i.rig
           (B.adjacentEndpoint u i)=x := by
   let hE := compositionFlag_adjacent_raising_stable (swapComposition u i) i
   let hR := compositionFlag_radical_stable i (swapComposition u i)
-  letI := B.completedRadicalLieRingModule hE hR
-  letI := B.completedRadicalLieModule hE hR
-  letI := B.completedRadical_isLieTower hE hR
+  let := B.completedRadicalLieRingModule hE hR
+  let := B.completedRadicalLieModule hE hR
+  let := B.completedRadical_isLieTower hE hR
   let ρ := polynomialSubmoduleEnveloping (compositionFlag (swapComposition u i))
     (positiveRoot_stable_of_simple_radical hE hR)
   have hc : ∀ m : compositionFlag (swapComposition u i), ∃ a : Enveloping n,

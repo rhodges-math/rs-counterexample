@@ -1,30 +1,825 @@
-orderedPBWBasis_exists : ∀ (n : ℕ), HasOrderedPBWBasis n
-@orderedRootMonomial_linearIndependent : ∀ {n : ℕ} (order : RootOrdering n),
-  LinearIndependent ℂ (orderedRootMonomial order)
-atomCoefficient_eq : ∀ (P : Parameters),
-  atomCoefficient (key (a P) * key (b P)) (c P) =
+Schubert.RS.Family.atomCoefficient_eq : ∀ (P : Schubert.RS.Family.Parameters),
+  Schubert.RS.atomCoefficient (Schubert.RS.key (Schubert.RS.Family.a P) * Schubert.RS.key (Schubert.RS.Family.b P))
+      (Schubert.RS.Family.c P) =
     2 * ↑(P.m.choose (P.p - 1)) * ↑(P.m.choose P.p) - ↑P.m * ↑((P.m - 1).choose (P.p - 1)) ^ 2
-atomCoefficient_factorization : ∀ (P : Parameters),
-  ↑(atomCoefficient (key (a P) * key (b P)) (c P)) =
+Schubert.RS.Family.atomCoefficient_factorization : ∀ (P : Schubert.RS.Family.Parameters),
+  ↑(Schubert.RS.atomCoefficient (Schubert.RS.key (Schubert.RS.Family.a P) * Schubert.RS.key (Schubert.RS.Family.b P))
+        (Schubert.RS.Family.c P)) =
     ↑P.m / (↑P.p * ↑P.q) * ↑((P.m - 1).choose (P.p - 1)) ^ 2 * (2 - (↑P.p - 2) * (↑P.q - 2))
-atomCoefficient_neg_iff : ∀ (P : Parameters),
-  atomCoefficient (key (a P) * key (b P)) (c P) < 0 ↔ 2 < (↑P.p - 2) * (↑P.q - 2)
-existsUnique_atomExpansion : ∀ (P : Parameters),
-  ∃! t, (key (a P) * key (b P) = t.sum fun u z => z • atom u) ∧ t (c P) = coefficientValue P.m P.p
-not_atomPositive : ∀ (P : Parameters), 2 < (↑P.p - 2) * (↑P.q - 2) → ¬AtomPositive (key (a P) * key (b P))
-rank28_atomCoefficient : atomCoefficient (key Counterexample.a * key Counterexample.b) Counterexample.c = -350
-rank28_not_atomPositive : ¬AtomPositive (key Counterexample.a * key Counterexample.b)
-reiner_shimozono_false : ¬∀ (n : ℕ) (a b : Schubert.RS.Composition n), AtomPositive (key a * key b)
-'Schubert.RS.Representation.orderedRootMonomial_span_eq_top' depends on axioms: [propext, Classical.choice, Quot.sound]
-'Schubert.RS.PBW.differentialWord_principal' depends on axioms: [propext, Classical.choice, Quot.sound]
-'Schubert.RS.Representation.centerPolynomial_word' depends on axioms: [propext, Classical.choice, Quot.sound]
-'Schubert.RS.PBW.partialWord_constant' depends on axioms: [propext, Classical.choice, Quot.sound]
-'Schubert.RS.Representation.orderedRootMonomial_linearIndependent' depends on axioms: [propext,
- Classical.choice,
- Quot.sound]
-'Schubert.RS.Representation.orderedPBWBasis_exists' depends on axioms: [propext, Classical.choice, Quot.sound]
-'Schubert.RS.Representation.compositionFlagJosephPolo' depends on axioms: [propext, Classical.choice, Quot.sound]
-'Schubert.RS.Representation.compositionFlagDemazureCharacter' depends on axioms: [propext, Classical.choice, Quot.sound]
+Schubert.RS.Family.atomCoefficient_neg_iff : ∀ (P : Schubert.RS.Family.Parameters),
+  Schubert.RS.atomCoefficient (Schubert.RS.key (Schubert.RS.Family.a P) * Schubert.RS.key (Schubert.RS.Family.b P))
+        (Schubert.RS.Family.c P) <
+      0 ↔
+    2 < (↑P.p - 2) * (↑P.q - 2)
+Schubert.RS.Family.existsUnique_atomExpansion : ∀ (P : Schubert.RS.Family.Parameters),
+  ∃! t,
+    (Schubert.RS.key (Schubert.RS.Family.a P) * Schubert.RS.key (Schubert.RS.Family.b P) =
+        t.sum fun u z => z • Schubert.RS.atom u) ∧
+      t (Schubert.RS.Family.c P) = Schubert.RS.Family.coefficientValue P.m P.p
+Schubert.RS.Family.not_atomPositive : ∀ (P : Schubert.RS.Family.Parameters),
+  2 < (↑P.p - 2) * (↑P.q - 2) →
+    ¬Schubert.RS.AtomPositive (Schubert.RS.key (Schubert.RS.Family.a P) * Schubert.RS.key (Schubert.RS.Family.b P))
+Schubert.RS.Family.rank28_atomCoefficient : Schubert.RS.atomCoefficient
+    (Schubert.RS.key Schubert.RS.Counterexample.a * Schubert.RS.key Schubert.RS.Counterexample.b)
+    Schubert.RS.Counterexample.c =
+  -350
+Schubert.RS.Family.rank28_not_atomPositive : ¬Schubert.RS.AtomPositive
+    (Schubert.RS.key Schubert.RS.Counterexample.a * Schubert.RS.key Schubert.RS.Counterexample.b)
+Schubert.RS.Family.reiner_shimozono_false : ¬∀ (n : ℕ) (a b : Schubert.RS.Composition n),
+    Schubert.RS.AtomPositive (Schubert.RS.key a * Schubert.RS.key b)
+Schubert.RS.Family.atomCoefficient_eq_narayana : ∀ (P : Schubert.RS.Family.Parameters),
+  Schubert.RS.atomCoefficient (Schubert.RS.key (Schubert.RS.Family.a P) * Schubert.RS.key (Schubert.RS.Family.b P))
+      (Schubert.RS.Family.c P) =
+    ↑(Schubert.RS.Family.narayana (P.p + P.q - 1) P.p) * (2 - (↑P.p - 2) * (↑P.q - 2))
+Schubert.RS.Family.atomCoefficient_eq_paper : ∀ (P : Schubert.RS.Family.Parameters),
+  ↑(Schubert.RS.atomCoefficient (Schubert.RS.key (Schubert.RS.Family.a P) * Schubert.RS.key (Schubert.RS.Family.b P))
+          (Schubert.RS.Family.c P)) =
+      ↑(P.p + P.q - 1) / (↑P.p * ↑P.q) * ↑((P.p + P.q - 2).choose (P.p - 1)) ^ 2 * (2 - (↑P.p - 2) * (↑P.q - 2)) ∧
+    ↑(Schubert.RS.atomCoefficient (Schubert.RS.key (Schubert.RS.Family.a P) * Schubert.RS.key (Schubert.RS.Family.b P))
+          (Schubert.RS.Family.c P)) =
+      ↑(Schubert.RS.Family.narayana (P.p + P.q - 1) P.p) * (2 - (↑P.p - 2) * (↑P.q - 2))
+Schubert.RS.Family.atomCoefficient_threeFive : ∀ (δ : ℕ) (hδ : 8 ≤ δ),
+  Schubert.RS.atomCoefficient
+      (Schubert.RS.key (Schubert.RS.Family.a (Schubert.RS.Family.threeFive δ hδ)) *
+        Schubert.RS.key (Schubert.RS.Family.b (Schubert.RS.Family.threeFive δ hδ)))
+      (Schubert.RS.Family.c (Schubert.RS.Family.threeFive δ hδ)) =
+    -105
+Schubert.RS.Family.atomCoefficient_fourFour : ∀ (δ : ℕ) (hδ : 8 ≤ δ),
+  Schubert.RS.atomCoefficient
+      (Schubert.RS.key (Schubert.RS.Family.a (Schubert.RS.Family.fourFour δ hδ)) *
+        Schubert.RS.key (Schubert.RS.Family.b (Schubert.RS.Family.fourFour δ hδ)))
+      (Schubert.RS.Family.c (Schubert.RS.Family.fourFour δ hδ)) =
+    -350
+Schubert.RS.Family.isLeast_rank_of_negative : IsLeast
+  {r |
+    ∃ P,
+      P.rank = r ∧
+        Schubert.RS.atomCoefficient
+            (Schubert.RS.key (Schubert.RS.Family.a P) * Schubert.RS.key (Schubert.RS.Family.b P))
+            (Schubert.RS.Family.c P) <
+          0}
+  28
+Schubert.RS.Family.narayana : ℕ → ℕ → ℕ
+Schubert.RS.Family.Parameters : Type
+Schubert.RS.Family.a : (P : Schubert.RS.Family.Parameters) → Fin P.rank → ℕ
+Schubert.RS.Family.b : (P : Schubert.RS.Family.Parameters) → Fin P.rank → ℕ
+Schubert.RS.Family.c : (P : Schubert.RS.Family.Parameters) → Fin P.rank → ℕ
+@Schubert.RS.atomCoefficient_spec : ∀ {n : ℕ} (f : Schubert.RS.Polynomial n),
+  f = (Schubert.RS.integralAtomExpansion f).sum fun u z => z • Schubert.RS.atom u
+@Schubert.RS.atomCoefficient_eq_of_expansion : ∀ {n : ℕ} (f : Schubert.RS.Polynomial n)
+  (t : Schubert.RS.Composition n →₀ ℤ),
+  (f = t.sum fun u z => z • Schubert.RS.atom u) →
+    ∀ (u : Schubert.RS.Composition n), Schubert.RS.atomCoefficient f u = t u
+Schubert.RS.Family.isHallTriple_family : ∀ (P : Schubert.RS.Family.Parameters),
+  Schubert.RS.Hall.IsHallTriple (Schubert.RS.Family.a P) (Schubert.RS.Family.b P) (Schubert.RS.Family.c P)
+Schubert.RS.Family.atomCoefficient_eq_paired : ∀ (P : Schubert.RS.Family.Parameters),
+  Schubert.RS.atomCoefficient (Schubert.RS.key (Schubert.RS.Family.a P) * Schubert.RS.key (Schubert.RS.Family.b P))
+      (Schubert.RS.Family.c P) =
+    ((∏ s, (Schubert.RS.Family.familyHallPartition P).blockPolynomial s Schubert.RS.Hall.tVar) *
+          ∏ ij ∈ (Schubert.RS.Family.familyHallPartition P).pairs,
+            (1 - AddMonoidAlgebra.single (Pi.single ij.2 1 - Pi.single ij.1 1) 1)).coeff
+      fun x => 1
+Schubert.RS.Family.not_hasRelativeSchubertFiltration : ∀ (P : Schubert.RS.Family.Parameters),
+  2 < (↑P.p - 2) * (↑P.q - 2) →
+    ¬Schubert.RS.Filtrations.HasRelativeSchubertFiltration (Schubert.RS.Family.familyTensor P)
+Schubert.RS.Family.not_hasSchubertFiltration : ∀ (P : Schubert.RS.Family.Parameters),
+  2 < (↑P.p - 2) * (↑P.q - 2) → ¬Schubert.RS.Filtrations.HasSchubertFiltration (Schubert.RS.Family.familyTensor P)
+Schubert.RS.Family.not_hasSLRelativeSchubertFiltration : ∀ (P : Schubert.RS.Family.Parameters),
+  2 < (↑P.p - 2) * (↑P.q - 2) →
+    ¬Schubert.RS.Filtrations.HasSLRelativeSchubertFiltration (Schubert.RS.Family.familyTensor P)
+Schubert.RS.Family.not_hasSLSchubertFiltration : ∀ (P : Schubert.RS.Family.Parameters),
+  2 < (↑P.p - 2) * (↑P.q - 2) → ¬Schubert.RS.Filtrations.HasSLSchubertFiltration (Schubert.RS.Family.familyTensor P)
+Schubert.RS.Family.rank_sub_one : ∀ (P : Schubert.RS.Family.Parameters), P.rank - 1 = 4 * (P.p + P.q) - 5
+Schubert.RS.Family.typeA27_filtration_failure : ∀ (δ : ℕ) (hδ : 8 ≤ δ),
+  (Schubert.RS.Family.threeFive δ hδ).rank - 1 = 27 ∧
+    ¬Schubert.RS.Filtrations.HasRelativeSchubertFiltration
+          (Schubert.RS.Family.familyTensor (Schubert.RS.Family.threeFive δ hδ)) ∧
+      ¬Schubert.RS.Filtrations.HasSchubertFiltration
+            (Schubert.RS.Family.familyTensor (Schubert.RS.Family.threeFive δ hδ)) ∧
+        ¬Schubert.RS.Filtrations.HasSLRelativeSchubertFiltration
+              (Schubert.RS.Family.familyTensor (Schubert.RS.Family.threeFive δ hδ)) ∧
+          ¬Schubert.RS.Filtrations.HasSLSchubertFiltration
+              (Schubert.RS.Family.familyTensor (Schubert.RS.Family.threeFive δ hδ))
+Schubert.RS.Family.factors_hasExcellentFiltration : ∀ (P : Schubert.RS.Family.Parameters),
+  Schubert.RS.Filtrations.HasExcellentFiltration
+      (Schubert.RS.Filtrations.dualJoseph (Schubert.RS.Filtrations.negComposition (Schubert.RS.Family.a P))) ∧
+    Schubert.RS.Filtrations.HasExcellentFiltration
+      (Schubert.RS.Filtrations.dualJoseph (Schubert.RS.Filtrations.negComposition (Schubert.RS.Family.b P)))
+Schubert.RS.Family.familyTensor : (P : Schubert.RS.Family.Parameters) → Schubert.RS.BModules.BModule P.rank
+Schubert.RS.Family.familyTensor_hasCharacter : ∀ (P : Schubert.RS.Family.Parameters),
+  (Schubert.RS.Family.familyTensor P).HasCharacter
+    (Schubert.RS.toLaurent (Schubert.RS.key (Schubert.RS.Family.a P) * Schubert.RS.key (Schubert.RS.Family.b P)))
+@Schubert.RS.Filtrations.HasRelativeSchubertFiltration : {n : ℕ} → Schubert.RS.BModules.BModule n → Prop
+@Schubert.RS.Filtrations.HasSchubertFiltration : {n : ℕ} → Schubert.RS.BModules.BModule n → Prop
+@Schubert.RS.Filtrations.HasExcellentFiltration : {n : ℕ} → Schubert.RS.BModules.BModule n → Prop
+@Schubert.RS.Filtrations.HasSLRelativeSchubertFiltration : {n : ℕ} → Schubert.RS.BModules.BModule n → Prop
+@Schubert.RS.Filtrations.HasSLSchubertFiltration : {n : ℕ} → Schubert.RS.BModules.BModule n → Prop
+@Schubert.RS.Filtrations.schubertSectionModule : {n : ℕ} →
+  Schubert.RS.Weight n → Finset (Equiv.Perm (Fin n)) → Schubert.RS.BModules.BModule n
+@Schubert.RS.Filtrations.dualJoseph : {n : ℕ} → Schubert.RS.Weight n → Schubert.RS.BModules.BModule n
+@Schubert.RS.Filtrations.minRelSchubert : {n : ℕ} → Schubert.RS.Weight n → Schubert.RS.BModules.BModule n
+@Schubert.RS.HighestWeight.flagOrbitSpan_irreducible : ∀ {n : ℕ} (m : Schubert.RS.Representation.ColumnShape n),
+  ∀ W ≤ Schubert.RS.Representation.flagOrbitSpan m,
+    Schubert.RS.HighestWeight.IsGLStable W → W = ⊥ ∨ W = Schubert.RS.Representation.flagOrbitSpan m
+Schubert.RS.Family.not_lascouxAtomPositive : ∀ (P : Schubert.RS.Family.Parameters),
+  2 < (↑P.p - 2) * (↑P.q - 2) →
+    ¬Schubert.RS.LascouxAtomPositive
+        (Schubert.RS.lascoux (Schubert.RS.Family.a P) * Schubert.RS.lascoux (Schubert.RS.Family.b P))
+Schubert.RS.Family.no_lascouxExpansion_nonnegAtZero : ∀ (P : Schubert.RS.Family.Parameters),
+  2 < (↑P.p - 2) * (↑P.q - 2) →
+    ¬∃ d,
+        (∀ (c : Schubert.RS.Composition P.rank), 0 ≤ (d c).coeff 0) ∧
+          Schubert.RS.lascoux (Schubert.RS.Family.a P) * Schubert.RS.lascoux (Schubert.RS.Family.b P) =
+            d.sum fun c dc =>
+              Polynomial.map (Int.castRingHom (Schubert.RS.Polynomial P.rank)) dc * Schubert.RS.lascouxAtom c
+Schubert.RS.Family.rank28_not_lascouxAtomPositive : ¬Schubert.RS.LascouxAtomPositive
+    (Schubert.RS.lascoux Schubert.RS.Counterexample.a * Schubert.RS.lascoux Schubert.RS.Counterexample.b)
+Schubert.RS.Family.lascoux_product_positivity_false : ¬∀ (n : ℕ) (a b : Schubert.RS.Composition n),
+    Schubert.RS.LascouxAtomPositive (Schubert.RS.lascoux a * Schubert.RS.lascoux b)
+@Schubert.RS.betaIsobaric : {n : ℕ} →
+  Schubert.FinPermutation.AdjacentPosition n → Schubert.RS.BetaPolynomial n → Schubert.RS.BetaPolynomial n
+@Schubert.RS.betaAtomOperator : {n : ℕ} →
+  Schubert.FinPermutation.AdjacentPosition n → Schubert.RS.BetaPolynomial n → Schubert.RS.BetaPolynomial n
+@Schubert.RS.lascoux : {n : ℕ} → Schubert.RS.Composition n → Schubert.RS.BetaPolynomial n
+@Schubert.RS.lascouxAtom : {n : ℕ} → Schubert.RS.Composition n → Schubert.RS.BetaPolynomial n
+@Schubert.RS.betaZero_lascoux : ∀ {n : ℕ} (a : Schubert.RS.Composition n),
+  Schubert.RS.betaZero (Schubert.RS.lascoux a) = Schubert.RS.key a
+@Schubert.RS.betaZero_lascouxAtom : ∀ {n : ℕ} (a : Schubert.RS.Composition n),
+  Schubert.RS.betaZero (Schubert.RS.lascouxAtom a) = Schubert.RS.atom a
+@Schubert.RS.LascouxAtomPositive : {n : ℕ} → Schubert.RS.BetaPolynomial n → Prop
+Schubert.RS.Quiver.Flat.quiverPolytope : List ℕ → List ℕ → List ℕ → Schubert.RS.IntPolyhedron
+@Schubert.RS.Quiver.Flat.quiverTheorem_identity : ∀ {a b c : List ℕ}
+  (h :
+    Schubert.RS.Quiver.IsQuiverTriple (Schubert.RS.Quiver.Flat.listComp c.length a)
+      (Schubert.RS.Quiver.Flat.listComp c.length b) (Schubert.RS.Quiver.Flat.listComp c.length c)),
+  FiniteDimensional ℂ
+      ((Schubert.RS.GL.ratLeviIrrep (Schubert.RS.Quiver.Flat.canonicalQuiver a b c).dim
+            (Schubert.RS.Quiver.Flat.canonicalDominantWeight h)).IntertwiningMap
+        (Schubert.RS.Quiver.Flat.canonicalQuiver a b c).coordRep) ∧
+    Schubert.RS.atomCoefficient
+          (Schubert.RS.key (Schubert.RS.Quiver.Flat.listComp c.length a) *
+            Schubert.RS.key (Schubert.RS.Quiver.Flat.listComp c.length b))
+          (Schubert.RS.Quiver.Flat.listComp c.length c) =
+        ↑(Module.finrank ℂ
+            ((Schubert.RS.GL.ratLeviIrrep (Schubert.RS.Quiver.Flat.canonicalQuiver a b c).dim
+                  (Schubert.RS.Quiver.Flat.canonicalDominantWeight h)).IntertwiningMap
+              (Schubert.RS.Quiver.Flat.canonicalQuiver a b c).coordRep)) ∧
+      Schubert.RS.atomCoefficient
+            (Schubert.RS.key (Schubert.RS.Quiver.Flat.listComp c.length a) *
+              Schubert.RS.key (Schubert.RS.Quiver.Flat.listComp c.length b))
+            (Schubert.RS.Quiver.Flat.listComp c.length c) =
+          ↑(Nat.card ↑(Schubert.RS.Quiver.Flat.quiverPolytope a b c).intPoints) ∧
+        (Schubert.RS.Quiver.Flat.quiverPolytope a b c).intPoints.Finite
+@Schubert.RS.Quiver.Flat.quiverTheorem_counts : ∀ {a b c : List ℕ},
+  Schubert.RS.GLCharacterMultiplicity →
+    ∀
+      (h :
+        Schubert.RS.Quiver.IsQuiverTriple (Schubert.RS.Quiver.Flat.listComp c.length a)
+          (Schubert.RS.Quiver.Flat.listComp c.length b) (Schubert.RS.Quiver.Flat.listComp c.length c)),
+      FiniteDimensional ℂ
+          ((Schubert.RS.GL.ratLeviIrrep (Schubert.RS.Quiver.Flat.canonicalQuiver a b c).dim
+                (Schubert.RS.Quiver.Flat.canonicalDominantWeight h)).IntertwiningMap
+            (Schubert.RS.Quiver.Flat.canonicalQuiver a b c).coordRep) ∧
+        Schubert.RS.atomCoefficient
+              (Schubert.RS.key (Schubert.RS.Quiver.Flat.listComp c.length a) *
+                Schubert.RS.key (Schubert.RS.Quiver.Flat.listComp c.length b))
+              (Schubert.RS.Quiver.Flat.listComp c.length c) =
+            ↑(Module.finrank ℂ
+                ((Schubert.RS.GL.ratLeviIrrep (Schubert.RS.Quiver.Flat.canonicalQuiver a b c).dim
+                      (Schubert.RS.Quiver.Flat.canonicalDominantWeight h)).IntertwiningMap
+                  (Schubert.RS.Quiver.Flat.canonicalQuiver a b c).coordRep)) ∧
+          Schubert.RS.atomCoefficient
+                (Schubert.RS.key (Schubert.RS.Quiver.Flat.listComp c.length a) *
+                  Schubert.RS.key (Schubert.RS.Quiver.Flat.listComp c.length b))
+                (Schubert.RS.Quiver.Flat.listComp c.length c) =
+              ↑(Nat.card ↑(Schubert.RS.Quiver.Flat.quiverPolytope a b c).intPoints) ∧
+            (Schubert.RS.Quiver.Flat.quiverPolytope a b c).intPoints.Finite
+@Schubert.RS.Quiver.Flat.quiverPolytope_card : ∀ {a b c : List ℕ},
+  Schubert.RS.Quiver.IsQuiverTriple (Schubert.RS.Quiver.Flat.listComp c.length a)
+      (Schubert.RS.Quiver.Flat.listComp c.length b) (Schubert.RS.Quiver.Flat.listComp c.length c) →
+    Schubert.RS.atomCoefficient
+          (Schubert.RS.key (Schubert.RS.Quiver.Flat.listComp c.length a) *
+            Schubert.RS.key (Schubert.RS.Quiver.Flat.listComp c.length b))
+          (Schubert.RS.Quiver.Flat.listComp c.length c) =
+        ↑(Nat.card ↑(Schubert.RS.Quiver.Flat.quiverPolytope a b c).intPoints) ∧
+      (Schubert.RS.Quiver.Flat.quiverPolytope a b c).intPoints.Finite
+@Schubert.RS.Quiver.Flat.finiteDimensional_canonicalHom : ∀ {a b c : List ℕ}
+  (h :
+    Schubert.RS.Quiver.IsQuiverTriple (Schubert.RS.Quiver.Flat.listComp c.length a)
+      (Schubert.RS.Quiver.Flat.listComp c.length b) (Schubert.RS.Quiver.Flat.listComp c.length c)),
+  FiniteDimensional ℂ
+    ((Schubert.RS.GL.ratLeviIrrep (Schubert.RS.Quiver.Flat.canonicalQuiver a b c).dim
+          (Schubert.RS.Quiver.Flat.canonicalDominantWeight h)).IntertwiningMap
+      (Schubert.RS.Quiver.Flat.canonicalQuiver a b c).coordRep)
+Schubert.RS.Quiver.Flat.quiverPolytope_bounded : ∀ (a b c : List ℕ),
+  ∃ B,
+    ∀ x ∈ (Schubert.RS.Quiver.Flat.quiverPolytope a b c).points ℝ,
+      ∀ (i : Fin (Schubert.RS.Quiver.Flat.quiverPolytope a b c).dim), |x i| ≤ B
+@Schubert.RS.Quiver.Flat.quiverCoefficient_pos_iff_realPoint : ∀ {a b c : List ℕ},
+  Schubert.RS.Quiver.IsQuiverTriple (Schubert.RS.Quiver.Flat.listComp c.length a)
+      (Schubert.RS.Quiver.Flat.listComp c.length b) (Schubert.RS.Quiver.Flat.listComp c.length c) →
+    (0 <
+        Schubert.RS.atomCoefficient
+          (Schubert.RS.key (Schubert.RS.Quiver.Flat.listComp c.length a) *
+            Schubert.RS.key (Schubert.RS.Quiver.Flat.listComp c.length b))
+          (Schubert.RS.Quiver.Flat.listComp c.length c) ↔
+      ((Schubert.RS.Quiver.Flat.quiverPolytope a b c).points ℝ).Nonempty)
+@Schubert.RS.Quiver.Flat.quiverCoefficient_pos_iff_ratPoint : ∀ {a b c : List ℕ},
+  Schubert.RS.Quiver.IsQuiverTriple (Schubert.RS.Quiver.Flat.listComp c.length a)
+      (Schubert.RS.Quiver.Flat.listComp c.length b) (Schubert.RS.Quiver.Flat.listComp c.length c) →
+    (0 <
+        Schubert.RS.atomCoefficient
+          (Schubert.RS.key (Schubert.RS.Quiver.Flat.listComp c.length a) *
+            Schubert.RS.key (Schubert.RS.Quiver.Flat.listComp c.length b))
+          (Schubert.RS.Quiver.Flat.listComp c.length c) ↔
+      (Schubert.RS.Quiver.Flat.quiverPolytope a b c).RatFeasible)
+@Schubert.RS.Quiver.Flat.quiverCoefficient_pos_iff_nonempty : ∀ {a b c : List ℕ},
+  Schubert.RS.QuiverSaturation →
+    Schubert.RS.Quiver.IsQuiverTriple (Schubert.RS.Quiver.Flat.listComp c.length a)
+        (Schubert.RS.Quiver.Flat.listComp c.length b) (Schubert.RS.Quiver.Flat.listComp c.length c) →
+      (0 <
+          Schubert.RS.atomCoefficient
+            (Schubert.RS.key (Schubert.RS.Quiver.Flat.listComp c.length a) *
+              Schubert.RS.key (Schubert.RS.Quiver.Flat.listComp c.length b))
+            (Schubert.RS.Quiver.Flat.listComp c.length c) ↔
+        ((Schubert.RS.Quiver.Flat.quiverPolytope a b c).points ℝ).Nonempty)
+@Schubert.RS.Quiver.Flat.quiverCoefficient_pos_iff_ratFeasible : ∀ {a b c : List ℕ},
+  Schubert.RS.QuiverSaturation →
+    Schubert.RS.Quiver.IsQuiverTriple (Schubert.RS.Quiver.Flat.listComp c.length a)
+        (Schubert.RS.Quiver.Flat.listComp c.length b) (Schubert.RS.Quiver.Flat.listComp c.length c) →
+      (0 <
+          Schubert.RS.atomCoefficient
+            (Schubert.RS.key (Schubert.RS.Quiver.Flat.listComp c.length a) *
+              Schubert.RS.key (Schubert.RS.Quiver.Flat.listComp c.length b))
+            (Schubert.RS.Quiver.Flat.listComp c.length c) ↔
+        (Schubert.RS.Quiver.Flat.quiverPolytope a b c).RatFeasible)
+@Schubert.RS.Quiver.Flat.nonempty_of_quiverCoefficient_pos : ∀ {a b c : List ℕ},
+  Schubert.RS.Quiver.IsQuiverTriple (Schubert.RS.Quiver.Flat.listComp c.length a)
+      (Schubert.RS.Quiver.Flat.listComp c.length b) (Schubert.RS.Quiver.Flat.listComp c.length c) →
+    0 <
+        Schubert.RS.atomCoefficient
+          (Schubert.RS.key (Schubert.RS.Quiver.Flat.listComp c.length a) *
+            Schubert.RS.key (Schubert.RS.Quiver.Flat.listComp c.length b))
+          (Schubert.RS.Quiver.Flat.listComp c.length c) →
+      ((Schubert.RS.Quiver.Flat.quiverPolytope a b c).points ℝ).Nonempty ∧
+        (Schubert.RS.Quiver.Flat.quiverPolytope a b c).RatFeasible
+@Schubert.RS.Quiver.Flat.quiverPolytope_nonempty_iff_exists_nsmul_pos : ∀ {a b c : List ℕ},
+  Schubert.RS.Quiver.IsQuiverTriple (Schubert.RS.Quiver.Flat.listComp c.length a)
+      (Schubert.RS.Quiver.Flat.listComp c.length b) (Schubert.RS.Quiver.Flat.listComp c.length c) →
+    (((Schubert.RS.Quiver.Flat.quiverPolytope a b c).points ℝ).Nonempty ↔
+      ∃ N ≥ 1,
+        0 <
+          Schubert.RS.atomCoefficient
+            (Schubert.RS.key (N • Schubert.RS.Quiver.Flat.listComp c.length a) *
+              Schubert.RS.key (N • Schubert.RS.Quiver.Flat.listComp c.length b))
+            (N • Schubert.RS.Quiver.Flat.listComp c.length c))
+@Schubert.RS.Quiver.Flat.quiverPolytope_ratFeasible_iff_exists_nsmul_pos : ∀ {a b c : List ℕ},
+  Schubert.RS.Quiver.IsQuiverTriple (Schubert.RS.Quiver.Flat.listComp c.length a)
+      (Schubert.RS.Quiver.Flat.listComp c.length b) (Schubert.RS.Quiver.Flat.listComp c.length c) →
+    ((Schubert.RS.Quiver.Flat.quiverPolytope a b c).RatFeasible ↔
+      ∃ N ≥ 1,
+        0 <
+          Schubert.RS.atomCoefficient
+            (Schubert.RS.key (N • Schubert.RS.Quiver.Flat.listComp c.length a) *
+              Schubert.RS.key (N • Schubert.RS.Quiver.Flat.listComp c.length b))
+            (N • Schubert.RS.Quiver.Flat.listComp c.length c))
+@Schubert.RS.Quiver.Flat.atomCoefficient_nsmul_eq_card : ∀ {a b c : List ℕ},
+  Schubert.RS.Quiver.IsQuiverTriple (Schubert.RS.Quiver.Flat.listComp c.length a)
+      (Schubert.RS.Quiver.Flat.listComp c.length b) (Schubert.RS.Quiver.Flat.listComp c.length c) →
+    ∀ {N : ℕ},
+      0 < N →
+        Schubert.RS.atomCoefficient
+            (Schubert.RS.key (N • Schubert.RS.Quiver.Flat.listComp c.length a) *
+              Schubert.RS.key (N • Schubert.RS.Quiver.Flat.listComp c.length b))
+            (N • Schubert.RS.Quiver.Flat.listComp c.length c) =
+          ↑(Nat.card ↑((Schubert.RS.Quiver.Flat.quiverPolytope a b c).scaleRhs N).intPoints)
+Schubert.RS.quiverSaturation_holds : Schubert.RS.QuiverSaturation
+@Schubert.RS.Quiver.atomCoefficient_eq_multiplicity : ∀ {n : ℕ} {a b c : Schubert.RS.Composition n} {N : ℕ}
+  {I : Schubert.RS.Quiver.IntervalPartition n},
+  Schubert.RS.Quiver.IsQuiverPartition a b c N I →
+    Schubert.RS.atomCoefficient (Schubert.RS.key a * Schubert.RS.key b) c =
+      (Schubert.RS.Quiver.quiverOf a b c N I).multiplicity (Schubert.RS.Quiver.leviWeight a b c I)
+Schubert.RS.Algorithms.quiverTriple_recognition : ∃ f ∈ Complexity.FP,
+  ∀ (a b c : List ℕ),
+    f (Schubert.RS.Algorithms.encodeTriple a b c) = [Schubert.RS.Algorithms.isQuiverTripleListBool a b c]
+Schubert.RS.Algorithms.quiverPolytope_construction : ∃ f ∈ Complexity.FP,
+  ∀ (a b c : List ℕ),
+    f (Schubert.RS.Algorithms.encodeTriple a b c) =
+      Complexity.DataEncode.bitstringEncode (Schubert.RS.Quiver.Flat.quiverPolytope a b c)
+Schubert.RS.Algorithms.quiverPolytope_size : ∃ p,
+  ∀ (a b c : List ℕ),
+    (Complexity.DataEncode.bitstringEncode (Schubert.RS.Quiver.Flat.quiverPolytope a b c)).length ≤
+      Polynomial.eval (Schubert.RS.Algorithms.encodeTriple a b c).length p
+Schubert.RS.Algorithms.quiverPositivity_decision_polyTime : ∃ f ∈ Complexity.FP,
+  ∀ (a b c : List ℕ),
+    f (Schubert.RS.Algorithms.encodeTriple a b c) = [true] ↔
+      Schubert.RS.Algorithms.IsQuiverTripleList a b c ∧ 0 < Schubert.RS.Algorithms.atomCoefficientList a b c
+Schubert.RS.Algorithms.quiverPositivity_decision : Schubert.RS.QuiverSaturation →
+  Schubert.RS.PolyTimeRationalFeasibility →
+    ∃ f ∈ Complexity.FP,
+      ∀ (a b c : List ℕ),
+        f (Schubert.RS.Algorithms.encodeTriple a b c) = [true] ↔
+          Schubert.RS.Algorithms.IsQuiverTripleList a b c ∧ 0 < Schubert.RS.Algorithms.atomCoefficientList a b c
+Schubert.RS.Algorithms.quiverPositivity_decision_of_saturation : Schubert.RS.QuiverSaturation →
+  ∃ f ∈ Complexity.FP,
+    ∀ (a b c : List ℕ),
+      f (Schubert.RS.Algorithms.encodeTriple a b c) = [true] ↔
+        Schubert.RS.Algorithms.IsQuiverTripleList a b c ∧ 0 < Schubert.RS.Algorithms.atomCoefficientList a b c
+Schubert.RS.Algorithms.quiverPositivity_decision_of_criterion : (∀ (a b c : List ℕ),
+    Schubert.RS.Algorithms.IsQuiverTripleList a b c →
+      (0 < Schubert.RS.Algorithms.atomCoefficientList a b c ↔
+        (Schubert.RS.Quiver.Flat.quiverPolytope a b c).RatFeasible)) →
+  ∃ f ∈ Complexity.FP,
+    ∀ (a b c : List ℕ),
+      f (Schubert.RS.Algorithms.encodeTriple a b c) = [true] ↔
+        Schubert.RS.Algorithms.IsQuiverTripleList a b c ∧ 0 < Schubert.RS.Algorithms.atomCoefficientList a b c
+Schubert.RS.Algorithms.quiverPositivity_decision_of_iff : (∀ (a b c : List ℕ),
+    Schubert.RS.Algorithms.IsQuiverTripleList a b c →
+      (0 < Schubert.RS.Algorithms.atomCoefficientList a b c ↔
+        (Schubert.RS.Quiver.Flat.quiverPolytope a b c).RatFeasible)) →
+  Schubert.RS.PolyTimeRationalFeasibility →
+    ∃ f ∈ Complexity.FP,
+      ∀ (a b c : List ℕ),
+        f (Schubert.RS.Algorithms.encodeTriple a b c) = [true] ↔
+          Schubert.RS.Algorithms.IsQuiverTripleList a b c ∧ 0 < Schubert.RS.Algorithms.atomCoefficientList a b c
+Schubert.RS.Algorithms.encodeTriple : List ℕ → List ℕ → List ℕ → List Bool
+Schubert.RS.Algorithms.IsQuiverTripleList : List ℕ → List ℕ → List ℕ → Prop
+Schubert.RS.Algorithms.binarySize_le_length : ∀ (a b c : List ℕ),
+  Schubert.RS.Algorithms.binarySize a b c ≤ (Schubert.RS.Algorithms.encodeTriple a b c).length
+Schubert.RS.Algorithms.length_le_binarySize : ∀ (a b c : List ℕ),
+  (Schubert.RS.Algorithms.encodeTriple a b c).length ≤ 4 * Schubert.RS.Algorithms.binarySize a b c + 8
+Schubert.RS.Algorithms.exists_not_mem_FP : ∃ f, f ∉ Complexity.FP
+Schubert.RS.Algorithms.exists_mem_P_not_mem_DTIME : ∀ (a : ℕ),
+  1 ≤ a → ∃ L ∈ Complexity.P, L ∉ Complexity.DTIME fun x => x ^ a
+Schubert.RS.Quiver.Density.card_positiveQuiverTriples_isTheta : ∀ (n : ℕ),
+  4 ≤ n →
+    (fun H => ↑(Schubert.RS.Quiver.Density.positiveQuiverTriples n H).card) =Θ[Filter.atTop] fun H => ↑H ^ (3 * n - 1)
+Schubert.RS.Quiver.Density.positiveQuiverTriples_proportion : ∀ (n : ℕ),
+  4 ≤ n →
+    ∃ γ,
+      0 < γ ∧
+        ∀ᶠ (H : ℕ) in Filter.atTop,
+          γ * ↑(Schubert.RS.Quiver.Density.balancedTriples n H).card ≤
+            ↑(Schubert.RS.Quiver.Density.positiveQuiverTriples n H).card
+Schubert.RS.Quiver.Density.positiveQuiverTriples : (n : ℕ) →
+  ℕ → Finset (Schubert.RS.Composition n × Schubert.RS.Composition n × Schubert.RS.Composition n)
+@Schubert.RS.atomCoefficient_eq_rectangleCoefficient : ∀ {n : ℕ},
+  (∀ (u : Schubert.RS.Composition n), Schubert.RS.Representation.CompositionFlagJosephPolo u) →
+    (∀ (u : Schubert.RS.Composition n), Schubert.RS.Representation.CompositionFlagDemazureCharacter u) →
+      Schubert.RS.Representation.HasOrderedPBWBasis n →
+        ∀ (w : ℕ) (c : Schubert.RS.Composition n),
+          (∀ (i : Fin n), c i ≤ w) →
+            ∀ (f : Schubert.RS.Polynomial n), Schubert.RS.atomCoefficient f c = Schubert.RS.rectangleCoefficient w c f
+@Schubert.RS.rectangleCoefficient : {n : ℕ} → ℕ → Schubert.RS.Composition n → Schubert.RS.Polynomial n → ℤ
+@Schubert.RS.keyAtom_orthogonality : ∀ {n : ℕ} {E : Schubert.RS.Composition n → Type u_1}
+  [inst : (u : Schubert.RS.Composition n) → AddCommGroup (E u)]
+  [inst_1 : (u : Schubert.RS.Composition n) → Module ℂ (E u)]
+  [inst_2 : (u : Schubert.RS.Composition n) → Module (Schubert.RS.Representation.Enveloping n) (E u)]
+  [∀ (u : Schubert.RS.Composition n), IsScalarTower ℂ (Schubert.RS.Representation.Enveloping n) (E u)]
+  (ρ : (u : Schubert.RS.Composition n) → Schubert.RS.Representation.DiagonalTorus n →* Module.End ℂ (E u))
+  (ξ : (u : Schubert.RS.Composition n) → E u),
+  (∀ (u : Schubert.RS.Composition n), Schubert.RS.HasJosephPoloPresentation u (ρ u) (ξ u)) →
+    (∀ (u : Schubert.RS.Composition n), Schubert.RS.HasDemazureCharacter u (ρ u)) →
+      Schubert.RS.Representation.HasOrderedPBWBasis n →
+        ∀ (u a : Schubert.RS.Composition n),
+          Schubert.RS.keyAtomPairing (Schubert.RS.key a) (Schubert.RS.atom u) = if a = fun i => u i.rev then 1 else 0
+@Schubert.RS.Representation.compositionFlagJosephPolo : ∀ {n : ℕ} (u : Schubert.RS.Composition n),
+  Schubert.RS.Representation.CompositionFlagJosephPolo u
+@Schubert.RS.Representation.compositionFlagDemazureCharacter : ∀ {n : ℕ} (u : Schubert.RS.Composition n),
+  Schubert.RS.Representation.CompositionFlagDemazureCharacter u
+Schubert.RS.Representation.orderedPBWBasis_exists : ∀ (n : ℕ), Schubert.RS.Representation.HasOrderedPBWBasis n
+@Schubert.RS.atomCoefficient_eq_rectangleCoefficient' : ∀ {n : ℕ} (w : ℕ) (c : Schubert.RS.Composition n),
+  (∀ (i : Fin n), c i ≤ w) →
+    ∀ (f : Schubert.RS.Polynomial n), Schubert.RS.atomCoefficient f c = Schubert.RS.rectangleCoefficient w c f
+@Schubert.RS.Window.window_rational_extraction : ∀ {n : ℕ} {a b c : Schubert.RS.Composition n} {N : ℕ},
+  Schubert.RS.Window.Hypotheses a b c N →
+    Schubert.RS.atomCoefficient (Schubert.RS.key a * Schubert.RS.key b) c =
+      (MvPowerSeries.coeff (Schubert.RS.Window.heightDegree a b c))
+        (∏ r,
+          Schubert.RS.Window.cmpFactor
+            (Schubert.RS.Window.cmp (Schubert.RS.Window.triple a b (Schubert.RS.Window.complement N c) (↑r).1)
+              (Schubert.RS.Window.triple a b (Schubert.RS.Window.complement N c) (↑r).2))
+            (Schubert.RS.rootDegree (↑r).1 (↑r).2))
+@Schubert.RS.Window.window_product_indep : ∀ {n : ℕ} (a b : Schubert.RS.Composition n) {c : Schubert.RS.Composition n}
+  {N N' : ℕ},
+  (∀ (i : Fin n), c i ≤ N) →
+    (∀ (i : Fin n), c i ≤ N') →
+      ∏ r,
+          Schubert.RS.Window.cmpFactor
+            (Schubert.RS.Window.cmp (Schubert.RS.Window.triple a b (Schubert.RS.Window.complement N c) (↑r).1)
+              (Schubert.RS.Window.triple a b (Schubert.RS.Window.complement N c) (↑r).2))
+            (Schubert.RS.rootDegree (↑r).1 (↑r).2) =
+        ∏ r,
+          Schubert.RS.Window.cmpFactor
+            (Schubert.RS.Window.cmp (Schubert.RS.Window.triple a b (Schubert.RS.Window.complement N' c) (↑r).1)
+              (Schubert.RS.Window.triple a b (Schubert.RS.Window.complement N' c) (↑r).2))
+            (Schubert.RS.rootDegree (↑r).1 (↑r).2)
+@Schubert.RS.Window.Hypotheses : {n : ℕ} →
+  Schubert.RS.Composition n → Schubert.RS.Composition n → Schubert.RS.Composition n → ℕ → Prop
+@Schubert.RS.Window.WindowInequality : {n : ℕ} → Schubert.RS.Composition n → (ℕ → ℤ) → Prop
+@Schubert.RS.Window.prefixHeight : {n : ℕ} →
+  Schubert.RS.Composition n → Schubert.RS.Composition n → Schubert.RS.Composition n → ℕ → ℤ
+Schubert.RS.Window.cmp : ℕ × ℕ × ℕ → ℕ × ℕ × ℕ → ℤ
+@Schubert.RS.Window.hypotheses_iff_of_le : ∀ {n : ℕ} {c : Schubert.RS.Composition n} {N N' : ℕ}
+  {a b : Schubert.RS.Composition n},
+  (∀ (i : Fin n), c i ≤ N) →
+    (∀ (i : Fin n), c i ≤ N') → (Schubert.RS.Window.Hypotheses a b c N ↔ Schubert.RS.Window.Hypotheses a b c N')
+@Schubert.RS.Hall.hall_determinant : ∀ {R : Type u_1} [inst : CommRing R] {d m : ℕ} (ℓ : Fin m → ℕ),
+  Monotone ℓ →
+    ∀ (t : Fin m → R) (B : ℕ),
+      d ≤ B →
+        ((Schubert.RS.Hall.hallProduct ℓ t B).coeff fun x => 1) = (Schubert.RS.Hall.hallMatrix ℓ t).det ∧
+          (Schubert.RS.Hall.hallMatrix ℓ t).det = Schubert.RS.Hall.hallSum ℓ t
+@Schubert.RS.Hall.hallProduct : {R : Type u_1} →
+  [inst : CommRing R] → {d m : ℕ} → (Fin m → ℕ) → (Fin m → R) → ℕ → AddMonoidAlgebra R (Schubert.RS.Weight d)
+@Schubert.RS.Hall.hallMatrix : {R : Type u_1} →
+  [CommRing R] → {d m : ℕ} → (Fin m → ℕ) → (Fin m → R) → Matrix (Fin d) (Fin d) R
+@Schubert.RS.Hall.completeH : {R : Type u_1} →
+  [CommRing R] → {m : ℕ} → (p : Fin m → Prop) → [DecidablePred p] → (Fin m → R) → ℤ → R
+@Schubert.RS.Hall.hallSum : {R : Type u_1} → [CommRing R] → {d : ℕ} → {m : ℕ} → (Fin m → ℕ) → (Fin m → R) → R
+@Schubert.RS.Hall.IsHallAdmissible : {d m : ℕ} → (Fin m → ℕ) → (Fin d → Fin m) → Prop
+@Schubert.RS.HallLattice.hall_determinant : ∀ {d M : ℕ} (y : Fin d → Fin (M + 1)) {R : Type u_1} [inst : CommRing R]
+  (slot : Fin (M + 1) → R),
+  (Monotone fun i => ↑(y i)) →
+    (Matrix.det fun i j => Schubert.RS.completeHomogeneous slot (y i) (1 - ↑↑i + ↑↑j)) = ∑ r, ∏ i, slot ⟨↑(↑r i), ⋯⟩
+@Schubert.RS.hall_source_extraction : ∀ {R : Type u_1} [inst : CommRing R] {d M : ℕ} (y : Fin d → Fin (M + 1)),
+  (Monotone fun i => ↑(y i)) →
+    ∀ (slot : Fin (M + 1) → R) (B : ℕ),
+      d ≤ B →
+        (((AddMonoidAlgebra.mapRingHom (Schubert.RS.Weight d) (Int.castRingHom R)) (Schubert.RS.weylFactor d) *
+                ∏ i, (Schubert.RS.sourceRow i) (Schubert.RS.flagSourceRow y slot B i)).coeff
+            fun x => 1) =
+          ∑ r, ∏ i, slot ⟨↑(↑r i), ⋯⟩
+@Schubert.RS.Hall.hall_flags : ∀ {d m : ℕ} (ℓ : Fin m → ℕ),
+  Monotone ℓ →
+    ∀ (J : Fin d → Fin m),
+      StrictMono J →
+        ((∀ (k : Fin d), ↑k + 1 ≤ ℓ (J k)) ↔ ∀ (k : Fin d), Schubert.RS.Hall.hallFlag ℓ (↑k + 1) ≤ ↑(J k) + 1)
+@Schubert.RS.Hall.hallFlag : {m : ℕ} → (Fin m → ℕ) → ℕ → ℕ
+@Schubert.RS.Hall.firstAbove : {m : ℕ} → (Fin m → ℕ) → ℕ → ℕ
+@Schubert.RS.Hall.isHallAdmissible_iff_flags : ∀ {d m : ℕ} (ℓ : Fin m → ℕ),
+  Monotone ℓ →
+    ∀ (J : Fin d → Fin m),
+      Schubert.RS.Hall.IsHallAdmissible ℓ J ↔
+        StrictMono J ∧ ∀ (k : Fin d), Schubert.RS.Hall.hallFlag ℓ (↑k + 1) ≤ ↑(J k) + 1
+@Schubert.RS.Hall.HallPartition : {n : ℕ} →
+  Schubert.RS.Composition n → Schubert.RS.Composition n → Schubert.RS.Composition n → ℕ → ℕ → Type
+@Schubert.RS.Hall.IsHallTriple : {n : ℕ} →
+  Schubert.RS.Composition n → Schubert.RS.Composition n → Schubert.RS.Composition n → Prop
+@Schubert.RS.Hall.isHallTriple_iff : ∀ {n : ℕ} {a b c : Schubert.RS.Composition n} {N : ℕ},
+  (∀ (i : Fin n), c i ≤ N) →
+    (Schubert.RS.Hall.IsHallTriple a b c ↔ ∃ r, 1 ≤ r ∧ r ≤ n ∧ Nonempty (Schubert.RS.Hall.HallPartition a b c N r))
+@Schubert.RS.Hall.HallPartition.changeN : {n : ℕ} →
+  {a b c : Schubert.RS.Composition n} →
+    {N r : ℕ} →
+      Schubert.RS.Hall.HallPartition a b c N r →
+        {N' : ℕ} → (∀ (i : Fin n), c i ≤ N') → Schubert.RS.Hall.HallPartition a b c N' r
+Schubert.RS.Family.familyHallPartition : (P : Schubert.RS.Family.Parameters) →
+  Schubert.RS.Hall.HallPartition (Schubert.RS.Family.a P) (Schubert.RS.Family.b P) (Schubert.RS.Family.c P) P.rectangle
+    2
+@Schubert.RS.Hall.paired_reduction : ∀ {n : ℕ} {a b c : Schubert.RS.Composition n} {N r : ℕ}
+  (P : Schubert.RS.Hall.HallPartition a b c N r),
+  Schubert.RS.atomCoefficient (Schubert.RS.key a * Schubert.RS.key b) c =
+    ((∏ s, P.blockPolynomial s Schubert.RS.Hall.tVar) *
+          ∏ ij ∈ P.pairs, (1 - AddMonoidAlgebra.single (Pi.single ij.2 1 - Pi.single ij.1 1) 1)).coeff
+      fun x => 1
+@Schubert.RS.Hall.tVar : {m : ℕ} → Fin m → Schubert.RS.Laurent m
+@Schubert.RS.Hall.HallPartition.q : {n : ℕ} →
+  {a b c : Schubert.RS.Composition n} → {N r : ℕ} → (P : Schubert.RS.Hall.HallPartition a b c N r) → Fin P.m ↪o Fin n
+@Schubert.RS.Hall.HallPartition.pairs : {n : ℕ} →
+  {a b c : Schubert.RS.Composition n} →
+    {N r : ℕ} → (P : Schubert.RS.Hall.HallPartition a b c N r) → Finset (Fin P.m × Fin P.m)
+@Schubert.RS.Hall.HallPartition.height : {n : ℕ} →
+  {a b c : Schubert.RS.Composition n} → {N r : ℕ} → (P : Schubert.RS.Hall.HallPartition a b c N r) → Fin r → Fin P.m → ℕ
+@Schubert.RS.Hall.HallPartition.flag : {n : ℕ} →
+  {a b c : Schubert.RS.Composition n} → {N r : ℕ} → Schubert.RS.Hall.HallPartition a b c N r → Fin r → ℕ → ℕ
+@Schubert.RS.Hall.HallPartition.blockPolynomial : {n : ℕ} →
+  {a b c : Schubert.RS.Composition n} →
+    {N r : ℕ} →
+      (P : Schubert.RS.Hall.HallPartition a b c N r) → {R : Type u_1} → [CommRing R] → Fin r → (Fin P.m → R) → R
+@Schubert.RS.Hall.HallPartition.m_eq_sum_card : ∀ {n : ℕ} {a b c : Schubert.RS.Composition n} {N r : ℕ}
+  (P : Schubert.RS.Hall.HallPartition a b c N r), P.m = ∑ s, (P.dist s).card
+@Schubert.RS.double_source_extraction : ∀ {R : Type u_1} [inst : CommRing R] {d M e : ℕ} (y : Fin d → Fin (M + 1)),
+  (Monotone fun i => ↑(y i)) →
+    ∀ (z : Fin e → Fin (M + 1)),
+      (Monotone fun i => ↑(z i)) →
+        ∀ (slot : Fin (M + 1) → R) (Q : R) (B : ℕ),
+          d ≤ B →
+            e ≤ B →
+              (((Schubert.RS.doubleSourceExpression y z slot Q B).coeff fun x => 1).coeff fun x => 1) =
+                Q * Schubert.RS.hallPolynomial y slot * Schubert.RS.hallPolynomial z slot
+@Schubert.RS.Hall.paired_reduction_of_isHallTriple : ∀ {n : ℕ} {a b c : Schubert.RS.Composition n},
+  Schubert.RS.Hall.IsHallTriple a b c →
+    ∃ N r P,
+      1 ≤ r ∧
+        r ≤ n ∧
+          Schubert.RS.atomCoefficient (Schubert.RS.key a * Schubert.RS.key b) c =
+            ((∏ s, P.blockPolynomial s Schubert.RS.Hall.tVar) *
+                  ∏ ij ∈ P.pairs, (1 - AddMonoidAlgebra.single (Pi.single ij.2 1 - Pi.single ij.1 1) 1)).coeff
+              fun x => 1
+@Schubert.RS.Family.two_source_count : ∀ {m p q : ℕ},
+  0 < p →
+    0 < q →
+      p + q = m + 1 →
+        ∀ (σ : Equiv.Perm (Fin m)),
+          (((Schubert.RS.Family.matchedTargetNumerator σ *
+                    Schubert.RS.Family.earlyLatePolynomial p
+                      (fun i => Schubert.RS.Family.slotVariable (Schubert.RS.Family.slotRight i)) fun i =>
+                      Schubert.RS.Family.slotVariable (Schubert.RS.Family.slotLeft i)) *
+                  Schubert.RS.Family.earlyLatePolynomial q
+                    (fun i => Schubert.RS.Family.slotVariable (Schubert.RS.Family.slotRight i)) fun i =>
+                    Schubert.RS.Family.slotVariable (Schubert.RS.Family.slotLeft i)).coeff
+              fun x => 1) =
+            2 * ↑(m.choose (p - 1)) * ↑(m.choose p) - ↑m * ↑((m - 1).choose (p - 1)) ^ 2
+@Schubert.RS.Quiver.IsQuiverTriple : {n : ℕ} →
+  Schubert.RS.Composition n → Schubert.RS.Composition n → Schubert.RS.Composition n → Prop
+@Schubert.RS.Quiver.IsQuiverPartition : {n : ℕ} →
+  Schubert.RS.Composition n →
+    Schubert.RS.Composition n → Schubert.RS.Composition n → ℕ → Schubert.RS.Quiver.IntervalPartition n → Prop
+@Schubert.RS.Quiver.isQuiverPartition_iff_of_le : ∀ {n : ℕ} {a b c : Schubert.RS.Composition n} {N N' : ℕ}
+  {I : Schubert.RS.Quiver.IntervalPartition n},
+  (∀ (i : Fin n), c i ≤ N) →
+    (∀ (i : Fin n), c i ≤ N') →
+      (Schubert.RS.Quiver.IsQuiverPartition a b c N I ↔ Schubert.RS.Quiver.IsQuiverPartition a b c N' I)
+@Schubert.RS.Quiver.isQuiverTriple_iff_canonical : ∀ {n : ℕ} {a b c : Schubert.RS.Composition n},
+  Schubert.RS.Quiver.IsQuiverTriple a b c ↔
+    Schubert.RS.Quiver.IsQuiverPartition a b c (Finset.univ.sup c) (Schubert.RS.Quiver.canonicalPartition a b c)
+@Schubert.RS.Quiver.IsQuiverPartition.eq_canonical : ∀ {n : ℕ} {a b c : Schubert.RS.Composition n} {N : ℕ}
+  {I : Schubert.RS.Quiver.IntervalPartition n},
+  Schubert.RS.Quiver.IsQuiverPartition a b c N I → I = Schubert.RS.Quiver.canonicalPartition a b c
+@Schubert.RS.Quiver.instDecidableIsQuiverTriple : {n : ℕ} →
+  (a b c : Schubert.RS.Composition n) → Decidable (Schubert.RS.Quiver.IsQuiverTriple a b c)
+@Schubert.RS.Quiver.atomCoefficient_eq_finrank_quiverHom : ∀ {n : ℕ} {a b c : Schubert.RS.Composition n} {N : ℕ}
+  {I : Schubert.RS.Quiver.IntervalPartition n} (h : Schubert.RS.Quiver.IsQuiverPartition a b c N I),
+  Schubert.RS.atomCoefficient (Schubert.RS.key a * Schubert.RS.key b) c =
+    ↑(Module.finrank ℂ
+        ((Schubert.RS.GL.ratLeviIrrep (Schubert.RS.Quiver.quiverOf a b c N I).dim
+              (Schubert.RS.Quiver.leviDominantWeight h)).IntertwiningMap
+          (Schubert.RS.Quiver.quiverOf a b c N I).coordRep))
+@Schubert.RS.Quiver.atomCoefficient_eq_finrank_hom : ∀ {n : ℕ} {a b c : Schubert.RS.Composition n} {N : ℕ}
+  {I : Schubert.RS.Quiver.IntervalPartition n},
+  Schubert.RS.GLCharacterMultiplicity →
+    ∀ (h : Schubert.RS.Quiver.IsQuiverPartition a b c N I),
+      Schubert.RS.atomCoefficient (Schubert.RS.key a * Schubert.RS.key b) c =
+        ↑(Module.finrank ℂ
+            ((Schubert.RS.GL.ratLeviIrrep (Schubert.RS.Quiver.quiverOf a b c N I).dim
+                  (Schubert.RS.Quiver.leviDominantWeight h)).IntertwiningMap
+              (Schubert.RS.Quiver.quiverOf a b c N I).coordRep))
+@Schubert.RS.Quiver.finiteDimensional_quiverHom : ∀ {n : ℕ} {a b c : Schubert.RS.Composition n} {N : ℕ}
+  {I : Schubert.RS.Quiver.IntervalPartition n} (h : Schubert.RS.Quiver.IsQuiverPartition a b c N I),
+  FiniteDimensional ℂ
+    ((Schubert.RS.GL.ratLeviIrrep (Schubert.RS.Quiver.quiverOf a b c N I).dim
+          (Schubert.RS.Quiver.leviDominantWeight h)).IntertwiningMap
+      (Schubert.RS.Quiver.quiverOf a b c N I).coordRep)
+@Schubert.RS.Quiver.atomCoefficient_nonneg : ∀ {n : ℕ} {a b c : Schubert.RS.Composition n},
+  Schubert.RS.Quiver.IsQuiverTriple a b c → 0 ≤ Schubert.RS.atomCoefficient (Schubert.RS.key a * Schubert.RS.key b) c
+@Schubert.RS.Quiver.quiverOf : {n : ℕ} →
+  Schubert.RS.Composition n →
+    Schubert.RS.Composition n →
+      Schubert.RS.Composition n → ℕ → Schubert.RS.Quiver.IntervalPartition n → Schubert.RS.Quiver.ForwardQuiver
+@Schubert.RS.Quiver.leviWeight : {n : ℕ} →
+  Schubert.RS.Composition n →
+    Schubert.RS.Composition n →
+      Schubert.RS.Composition n →
+        (I : Schubert.RS.Quiver.IntervalPartition n) →
+          (p : Fin (Composition.length I)) → Fin (Composition.blocksFun I p) → ℤ
+Schubert.RS.Quiver.ForwardQuiver.multiplicity : (Q : Schubert.RS.Quiver.ForwardQuiver) → Q.Weight → ℤ
+@Schubert.RS.GL.ratLeviIrrep : {s : ℕ} →
+  (d : Fin s → ℕ) →
+    (lam : (p : Fin s) → TauCeti.DominantWeight (d p)) →
+      Representation ℂ (Schubert.RS.GL.LeviGroup d)
+        (TensorProduct ℂ
+          (PiTensorProduct ℂ fun p => ↥(Schubert.RS.Representation.flagOrbitSpan (Schubert.RS.GL.polyShape (lam p)))) ℂ)
+@Schubert.RS.Quiver.twoSource_isQuiverPartition : ∀ {m : ℕ} {a b c : Schubert.RS.Composition (m + 2)} {N : ℕ},
+  Schubert.RS.Window.Hypotheses a b c N →
+    (∀ (i j : Fin (m + 2)),
+        i < j →
+          Schubert.RS.Window.cmp (Schubert.RS.Window.triple a b (Schubert.RS.Window.complement N c) i)
+              (Schubert.RS.Window.triple a b (Schubert.RS.Window.complement N c) j) =
+            Schubert.RS.Quiver.starPattern ↑i ↑j) →
+      Schubert.RS.Quiver.IsQuiverPartition a b c N (Schubert.RS.Quiver.twoSourcePartition m)
+@Schubert.RS.Quiver.twoSource_eq_weylProjector : ∀ {m : ℕ} {a b c : Schubert.RS.Composition (m + 2)} {N ν₁ ν₂ : ℕ}
+  {r : Fin m → ℕ},
+  Schubert.RS.Window.Hypotheses a b c N →
+    (∀ (i j : Fin (m + 2)),
+        i < j →
+          Schubert.RS.Window.cmp (Schubert.RS.Window.triple a b (Schubert.RS.Window.complement N c) i)
+              (Schubert.RS.Window.triple a b (Schubert.RS.Window.complement N c) j) =
+            Schubert.RS.Quiver.starPattern ↑i ↑j) →
+      Schubert.RS.Window.residual a b c 0 = ↑ν₁ →
+        Schubert.RS.Window.residual a b c 1 = ↑ν₂ →
+          (∀ (j : Fin m), Schubert.RS.Window.residual a b c (Schubert.RS.Quiver.singletonPos j) = -↑(r j)) →
+            Schubert.RS.atomCoefficient (Schubert.RS.key a * Schubert.RS.key b) c =
+              Schubert.RS.Quiver.Schur.weylProjector ![↑ν₁, ↑ν₂]
+                (Schubert.RS.toLaurent (∏ j, MvPolynomial.hsymm (Fin 2) ℤ (r j)))
+@Schubert.RS.Quiver.twoSource_eq_kostka : ∀ {m : ℕ} {a b c : Schubert.RS.Composition (m + 2)} {N ν₁ ν₂ : ℕ}
+  {r : Fin m → ℕ} (h : ν₁ ≤ ν₂),
+  Schubert.RS.Window.Hypotheses a b c N →
+    (∀ (i j : Fin (m + 2)),
+        i < j →
+          Schubert.RS.Window.cmp (Schubert.RS.Window.triple a b (Schubert.RS.Window.complement N c) i)
+              (Schubert.RS.Window.triple a b (Schubert.RS.Window.complement N c) j) =
+            Schubert.RS.Quiver.starPattern ↑i ↑j) →
+      Schubert.RS.Window.residual a b c 0 = ↑ν₁ →
+        Schubert.RS.Window.residual a b c 1 = ↑ν₂ →
+          (∀ (j : Fin m), Schubert.RS.Window.residual a b c (Schubert.RS.Quiver.singletonPos j) = -↑(r j)) →
+            Schubert.RS.atomCoefficient (Schubert.RS.key a * Schubert.RS.key b) c =
+              ↑(TauCeti.diagramKostkaNumber (Schubert.RS.Quiver.twoRow h) (Schubert.RS.Quiver.Schur.contentOf r))
+@Schubert.RS.Quiver.twoSource_pos_iff : ∀ {m : ℕ} {a b c : Schubert.RS.Composition (m + 2)} {N ν₁ ν₂ : ℕ}
+  {r : Fin m → ℕ},
+  ν₁ ≤ ν₂ →
+    Schubert.RS.Window.Hypotheses a b c N →
+      (∀ (i j : Fin (m + 2)),
+          i < j →
+            Schubert.RS.Window.cmp (Schubert.RS.Window.triple a b (Schubert.RS.Window.complement N c) i)
+                (Schubert.RS.Window.triple a b (Schubert.RS.Window.complement N c) j) =
+              Schubert.RS.Quiver.starPattern ↑i ↑j) →
+        Schubert.RS.Window.residual a b c 0 = ↑ν₁ →
+          Schubert.RS.Window.residual a b c 1 = ↑ν₂ →
+            (∀ (j : Fin m), Schubert.RS.Window.residual a b c (Schubert.RS.Quiver.singletonPos j) = -↑(r j)) →
+              (0 < Schubert.RS.atomCoefficient (Schubert.RS.key a * Schubert.RS.key b) c ↔ ∀ (j : Fin m), r j ≤ ν₂)
+Schubert.RS.Algorithms.twoSource_coefficient_computable : ∃ f ∈ Complexity.FP,
+  ∀ (m : ℕ) (a b c : Schubert.RS.Composition (m + 2)) (N ν₁ ν₂ : ℕ) (r : Fin m → ℕ),
+    ν₁ ≤ ν₂ →
+      Schubert.RS.Window.Hypotheses a b c N →
+        (∀ (i j : Fin (m + 2)),
+            i < j →
+              Schubert.RS.Window.cmp (Schubert.RS.Window.triple a b (Schubert.RS.Window.complement N c) i)
+                  (Schubert.RS.Window.triple a b (Schubert.RS.Window.complement N c) j) =
+                Schubert.RS.Quiver.starPattern ↑i ↑j) →
+          Schubert.RS.Window.residual a b c 0 = ↑ν₁ →
+            Schubert.RS.Window.residual a b c 1 = ↑ν₂ →
+              (∀ (j : Fin m), Schubert.RS.Window.residual a b c (Schubert.RS.Quiver.singletonPos j) = -↑(r j)) →
+                f (Schubert.RS.Algorithms.encodeTripleUnary (List.ofFn a) (List.ofFn b) (List.ofFn c)) =
+                  Complexity.DataEncode.bitstringEncode
+                    (Schubert.RS.atomCoefficient (Schubert.RS.key a * Schubert.RS.key b) c)
+Schubert.RS.Algorithms.encodeTripleUnary : List ℕ → List ℕ → List ℕ → List Bool
+@Schubert.RS.Algorithms.length_encodeTripleUnary_ofFn : ∀ {n : ℕ} (a b c : Fin n → ℕ),
+  (Schubert.RS.Algorithms.encodeTripleUnary (List.ofFn a) (List.ofFn b) (List.ofFn c)).length =
+    4 * (∑ i, a i + ∑ i, b i + ∑ i, c i) + 6 * n + 8
+@Schubert.RS.Algorithms.encodeTripleUnary_injective : ∀ {a b c a' b' c' : List ℕ},
+  Schubert.RS.Algorithms.encodeTripleUnary a b c = Schubert.RS.Algorithms.encodeTripleUnary a' b' c' →
+    a = a' ∧ b = b' ∧ c = c'
+@Schubert.RS.Algorithms.twoSource_eq_count : ∀ {m : ℕ} {a b c : Schubert.RS.Composition (m + 2)} {N ν₁ ν₂ : ℕ}
+  {r : Fin m → ℕ},
+  Schubert.RS.Window.Hypotheses a b c N →
+    (∀ (i j : Fin (m + 2)),
+        i < j →
+          Schubert.RS.Window.cmp (Schubert.RS.Window.triple a b (Schubert.RS.Window.complement N c) i)
+              (Schubert.RS.Window.triple a b (Schubert.RS.Window.complement N c) j) =
+            Schubert.RS.Quiver.starPattern ↑i ↑j) →
+      Schubert.RS.Window.residual a b c 0 = ↑ν₁ →
+        Schubert.RS.Window.residual a b c 1 = ↑ν₂ →
+          (∀ (j : Fin m), Schubert.RS.Window.residual a b c (Schubert.RS.Quiver.singletonPos j) = -↑(r j)) →
+            Schubert.RS.atomCoefficient (Schubert.RS.key a * Schubert.RS.key b) c =
+              ↑(Schubert.RS.Algorithms.twoSourceCount (List.ofFn r) ν₁) -
+                ↑(Schubert.RS.Algorithms.twoSourceCountZ (List.ofFn r) (↑ν₁ - 1))
+@Schubert.RS.SchubertUnions.key_eq_sum_atom : ∀ {n : ℕ} (dom : Schubert.RS.Composition n),
+  Antitone dom →
+    ∀ (σ : Schubert.FinPermutation n),
+      Schubert.RS.SchubertUnions.IsMinCosetRep dom σ →
+        Schubert.RS.key (Schubert.RS.SchubertUnions.permAct σ dom) =
+          ∑ τ ∈ Schubert.RS.SchubertUnions.minCosetInterval dom σ,
+            Schubert.RS.atom (Schubert.RS.SchubertUnions.permAct τ dom)
+@Schubert.RS.Filtrations.dualJoseph_hasCharacter : ∀ {n : ℕ} (u : Schubert.RS.Composition n),
+  (Schubert.RS.Filtrations.dualJoseph (Schubert.RS.Filtrations.negComposition u)).HasCharacter
+    (Schubert.RS.toLaurent (Schubert.RS.key u))
+@Schubert.RS.Filtrations.minRelSchubert_hasCharacter : ∀ {n : ℕ} (u : Schubert.RS.Composition n),
+  (Schubert.RS.Filtrations.minRelSchubert (Schubert.RS.Filtrations.negComposition u)).HasCharacter
+    (Schubert.RS.toLaurent (Schubert.RS.atom u))
+Schubert.RS.Quiver.ForwardQuiver.multiplicity_pos_of_nsmul_pos : ∀ (Q : Schubert.RS.Quiver.ForwardQuiver)
+  {lam : Q.Weight}, Q.IsDominant lam → ∀ {N : ℕ}, 0 < N → 0 < Q.multiplicity (N • lam) → 0 < Q.multiplicity lam
+QuiverInvariants.FQuiver.exists_semiInvariant_of_nsmul : ∀ (Q : QuiverInvariants.FQuiver) {K : Type u_1}
+  [inst : Field K] {ι : Fin Q.s → Type} [inst_1 : (p : Fin Q.s) → Fintype (ι p)]
+  [inst_2 : (p : Fin Q.s) → DecidableEq (ι p)] [Infinite K] (σ : Fin Q.s → ℤ) {N : ℕ},
+  0 < N → (∃ f, f ≠ 0 ∧ Q.IsSemiInvariant (N • σ) f) → ∃ f, f ≠ 0 ∧ Q.IsSemiInvariant σ f
+QuiverInvariants.FQuiver.exists_generalQuot_euler_add_extDim_nonpos : ∀ (Q : QuiverInvariants.FQuiver) {K : Type u_1}
+  [inst : Field K] [Infinite K] (ι κ : Fin Q.s → Type) [inst_2 : (p : Fin Q.s) → Fintype (ι p)]
+  [(p : Fin Q.s) → DecidableEq (ι p)] [inst_4 : (p : Fin Q.s) → Fintype (κ p)] [(p : Fin Q.s) → DecidableEq (κ p)],
+  ∃ β, Q.GeneralQuot K κ β ∧ ∃ V W, (Q.euler (fun p => ↑(Fintype.card (ι p))) fun p => ↑(β p)) + ↑(Q.extDim V W) ≤ 0
+@QuiverInvariants.FQuiver.isGreatest_genericExt : ∀ {Q : QuiverInvariants.FQuiver} {K : Type u_1} [inst : Field K]
+  [Infinite K] {ι κ : Fin Q.s → Type} [inst_2 : (p : Fin Q.s) → Fintype (ι p)]
+  [inst_3 : (p : Fin Q.s) → DecidableEq (ι p)] [inst_4 : (p : Fin Q.s) → Fintype (κ p)]
+  [inst_5 : (p : Fin Q.s) → DecidableEq (κ p)],
+  IsGreatest {e | ∃ β, Q.GeneralQuot K κ β ∧ e = -Q.euler (fun p => ↑(Fintype.card (ι p))) fun p => ↑(β p)}
+    ↑(Q.genericExt K ι κ)
+QuiverInvariants.FQuiver.exists_extDim_eq_zero : ∀ (Q : QuiverInvariants.FQuiver) {K : Type u_1} [inst : Field K]
+  [Infinite K] (ι κ : Fin Q.s → Type) [inst_2 : (p : Fin Q.s) → Fintype (ι p)] [(p : Fin Q.s) → DecidableEq (ι p)]
+  [inst_4 : (p : Fin Q.s) → Fintype (κ p)] [(p : Fin Q.s) → DecidableEq (κ p)],
+  (∀ (β : Fin Q.s → ℕ), Q.GeneralQuot K κ β → 0 ≤ Q.euler (fun p => ↑(Fintype.card (ι p))) fun p => ↑(β p)) →
+    ∃ V W, Q.extDim V W = 0
+QuiverInvariants.FQuiver.IsSemiInvariant.sum_mul_nonneg_of_generalQuot : ∀ (Q : QuiverInvariants.FQuiver) {K : Type u_1}
+  [inst : Field K] {ι : Fin Q.s → Type} [inst_1 : (p : Fin Q.s) → Fintype (ι p)]
+  [inst_2 : (p : Fin Q.s) → DecidableEq (ι p)] [Infinite K] {σ : Fin Q.s → ℤ} {f : MvPolynomial (Q.Entry ι) K},
+  Q.IsSemiInvariant σ f → f ≠ 0 → ∀ {β : Fin Q.s → ℕ}, Q.GeneralQuot K ι β → 0 ≤ ∑ p, σ p * ↑(β p)
+QuiverInvariants.FQuiver.exists_semiInvariant_iff : ∀ (Q : QuiverInvariants.FQuiver) {K : Type u_1} [inst : Field K]
+  {ι : Fin Q.s → Type} [inst_1 : (p : Fin Q.s) → Fintype (ι p)] [inst_2 : (p : Fin Q.s) → DecidableEq (ι p)]
+  [Infinite K] (σ : Fin Q.s → ℤ),
+  (∃ f, f ≠ 0 ∧ Q.IsSemiInvariant σ f) ↔
+    ∑ p, σ p * ↑(Fintype.card (ι p)) = 0 ∧ ∀ (β : Fin Q.s → ℕ), Q.GeneralQuot K ι β → 0 ≤ ∑ p, σ p * ↑(β p)
+Schubert.RS.Quiver.ForwardQuiver.multiplicity_flag : ∀ (Q : Schubert.RS.Quiver.ForwardQuiver) {lam : Q.Weight},
+  Q.IsDominant lam → Q.flag.multiplicity (Q.flagWeight lam) = Q.multiplicity lam
+Schubert.RS.Quiver.ForwardQuiver.multiplicity_const_pos_iff : ∀ (Q : Schubert.RS.Quiver.ForwardQuiver)
+  (σ : Fin Q.s → ℤ), (0 < Q.multiplicity fun p x => σ p) ↔ ∃ f, f ≠ 0 ∧ Q.toFQuiver.IsSemiInvariant σ f
+Schubert.RS.quiverSaturation_of_semiInvariant : (∀ (P : QuiverInvariants.FQuiver) (n : Fin P.s → ℕ) (σ : Fin P.s → ℤ)
+    (N : ℕ), 0 < N → (∃ f, f ≠ 0 ∧ P.IsSemiInvariant (N • σ) f) → ∃ f, f ≠ 0 ∧ P.IsSemiInvariant σ f) →
+  Schubert.RS.QuiverSaturation
+Schubert.RS.polyTimeRationalFeasibility_holds : Schubert.RS.PolyTimeRationalFeasibility
+LinearProgramming.exists_mem_FP_feasible : ∃ f ∈ Complexity.FP,
+  ∀ (dim : ℕ) (rows : List (List ℤ × ℤ)),
+    f (LinearProgramming.encodeSystem dim rows) = [true] ↔ LinearProgramming.SystemFeasible dim rows
+@LinearProgramming.decideFeasible_iff : ∀ {m n : ℕ} {A : ℕ → ℕ → ℤ} {b : ℕ → ℤ} {U E K R T : ℕ},
+  1 ≤ U →
+    (∀ i < m, ∀ j < n, |A i j| ≤ ↑U) →
+      (∀ i < m, |b i| ≤ ↑U) →
+        LinearProgramming.basicBound m (n + n + (m + 1)) U < 2 ^ E →
+          LinearProgramming.basicBound (m + (n + n + 1 + m)) (n + n + 1 + m + (n + n + 1 + m)) (2 ^ E * (U + 1)) ≤
+              2 ^ K →
+            (n + n + 1 + m) * (K + 1) < R →
+              4 * (n + n + 1 + m) ^ 3 + 1 ≤ T →
+                (LinearProgramming.decideFeasible m n A b E R T = true ↔ LinearProgramming.Feasible m n A b)
+@LinearProgramming.chubanov_iff : ∀ {m N : ℕ} {M : ℕ → ℕ → ℤ},
+  LinearProgramming.RowsIndep M m N →
+    ∀ {U K R T : ℕ},
+      1 ≤ U →
+        (∀ i < m, ∀ j < N, |M i j| ≤ ↑U) →
+          LinearProgramming.basicBound (m + N) (N + N) U ≤ 2 ^ K →
+            N * (K + 1) < R →
+              4 * N ^ 3 + 1 ≤ T →
+                (LinearProgramming.chubanov m N M R T = true ↔ LinearProgramming.StrictlyFeasible m N M)
+Schubert.RS.glCharacterMultiplicity_holds : Schubert.RS.GLCharacterMultiplicity
+Schubert.RS.Quiver.ForwardQuiver.finrank_ratLeviIrrep_coordRep_eq_multiplicity : ∀
+  (Q : Schubert.RS.Quiver.ForwardQuiver) (lam : (p : Fin Q.s) → TauCeti.DominantWeight (Q.dim p)),
+  ↑(Module.finrank ℂ ((Schubert.RS.GL.ratLeviIrrep Q.dim lam).IntertwiningMap Q.coordRep)) =
+    Q.multiplicity fun p => ↑(lam p)
+@GLRep.IsPolynomialLeviRep.exists_leviCharacter_eq_sum : ∀ {K : Type u_1} [inst : Field K] [inst_1 : CharZero K] {s : ℕ}
+  {d : Fin s → ℕ} {W : Type u_2} [inst_2 : AddCommGroup W] [inst_3 : Module K W]
+  {ρ : Representation K (GLRep.LeviGroup K d) W}, GLRep.IsPolynomialLeviRep ρ → GLRep.LeviExpansion ρ
+@GLRep.alternant_mul_glCharacter_of_isGlHighestWeightVector : ∀ {K : Type u_1} [inst : Field K] [CharZero K] {n : ℕ}
+  {M : Type u_2} [inst_2 : AddCommGroup M] [inst_3 : Module K M] [inst_4 : LieRingModule (Matrix (Fin n) (Fin n) K) M]
+  [inst_5 : LieModule K (Matrix (Fin n) (Fin n) K) M] {lam : Fin n → ℤ} {v : M} [FiniteDimensional K M],
+  TauCeti.IsGlHighestWeightVector (fun i => ↑(lam i)) v →
+    LieSubmodule.lieSpan K (Matrix (Fin n) (Fin n) K) {v} = ⊤ →
+      (GLRep.glCharacter K M).IsSymm →
+        GLRep.LaurentPoly.alternant (GLRep.LaurentPoly.staircase n) * GLRep.glCharacter K M =
+          GLRep.LaurentPoly.alternant (lam + GLRep.LaurentPoly.staircase n)
+@GLRep.IsPolynomialRep.isSemisimpleRepresentation : ∀ {K : Type u_1} [inst : Field K] [CharZero K] {n : ℕ}
+  {W : Type u_2} [inst_2 : AddCommGroup W] [inst_3 : Module K W] {ρ : Representation K (GL (Fin n) K) W},
+  GLRep.IsPolynomialRep ρ → ρ.IsSemisimpleRepresentation
+@GLRep.isIrreducible_irrep : ∀ {K : Type u_1} [inst : Field K] [inst_1 : CharZero K] {n : ℕ} {μ : YoungDiagram},
+  μ.colLen 0 ≤ n → (GLRep.irrep K n μ).IsIrreducible
+@GLRep.character_irrep : ∀ {K : Type u_1} [inst : Field K] [inst_1 : CharZero K] {n : ℕ} {μ : YoungDiagram},
+  μ.colLen 0 ≤ n → GLRep.character (GLRep.irrep K n μ) = TauCeti.diagramSchurPoly n ℤ μ
+@GLRep.IsPolynomialRep.exists_nonempty_equiv_irrep : ∀ {K : Type u_1} [inst : Field K] [inst_1 : CharZero K] {n : ℕ}
+  {W : Type u_2} [inst_2 : AddCommGroup W] [inst_3 : Module K W] {ρ : Representation K (GL (Fin n) K) W},
+  GLRep.IsPolynomialRep ρ → ρ.IsIrreducible → ∃ μ, μ.colLen 0 ≤ n ∧ Nonempty (ρ.Equiv (GLRep.irrep K n μ))
+@GLRep.IsPolynomialRep.nonempty_equiv_of_character_eq : ∀ {K : Type u_1} [inst : Field K] [CharZero K] {n : ℕ}
+  {W : Type u_2} [inst_2 : AddCommGroup W] [inst_3 : Module K W] {ρ : Representation K (GL (Fin n) K) W} {V : Type u_3}
+  [inst_4 : AddCommGroup V] [inst_5 : Module K V] {σ : Representation K (GL (Fin n) K) V},
+  GLRep.IsPolynomialRep ρ →
+    GLRep.IsPolynomialRep σ →
+      ρ.IsIrreducible → σ.IsIrreducible → GLRep.character ρ = GLRep.character σ → Nonempty (ρ.Equiv σ)
+@GLRep.finrank_intertwiningMap_irrep_self : ∀ {K : Type u_1} [inst : Field K] [inst_1 : CharZero K] {n : ℕ}
+  {μ : YoungDiagram}, μ.colLen 0 ≤ n → Module.finrank K ((GLRep.irrep K n μ).IntertwiningMap (GLRep.irrep K n μ)) = 1
+@GLRep.finrank_intertwiningMap_irrep_of_ne : ∀ {K : Type u_1} [inst : Field K] [inst_1 : CharZero K] {n : ℕ}
+  {μ ν : YoungDiagram},
+  μ.colLen 0 ≤ n →
+    ν.colLen 0 ≤ n → μ ≠ ν → Module.finrank K ((GLRep.irrep K n μ).IntertwiningMap (GLRep.irrep K n ν)) = 0
+@GLRep.IsPolynomialRep.character_eq_diagramSchurPoly : ∀ {K : Type u_1} [inst : Field K] [inst_1 : CharZero K] {n : ℕ}
+  {W : Type u_2} [inst_2 : AddCommGroup W] [inst_3 : Module K W] {ρ : Representation K (GL (Fin n) K) W}
+  (h : GLRep.IsPolynomialRep ρ) {μ : YoungDiagram},
+  μ.colLen 0 ≤ n →
+    ∀ {v : h.LieRep},
+      TauCeti.IsGlHighestWeightVector (fun i => ↑(μ.rowLen ↑i)) v →
+        LieSubmodule.lieSpan K (Matrix (Fin n) (Fin n) K) {v} = ⊤ → GLRep.character ρ = TauCeti.diagramSchurPoly n ℤ μ
+@GLRep.IsPolynomialRep.exists_character_eq_sum : ∀ {K : Type u_1} [inst : Field K] {n : ℕ} {W : Type u_2}
+  [inst_1 : AddCommGroup W] [inst_2 : Module K W] {ρ : Representation K (GL (Fin n) K) W} [inst_3 : CharZero K],
+  GLRep.IsPolynomialRep ρ →
+    ∃ S,
+      (∀ μ ∈ S, μ.colLen 0 ≤ n) ∧
+        (∀ (μ : YoungDiagram), μ.colLen 0 ≤ n → μ ∉ S → GLRep.multiplicity ρ μ = 0) ∧
+          GLRep.character ρ = ∑ μ ∈ S, ↑(GLRep.multiplicity ρ μ) • TauCeti.diagramSchurPoly n ℤ μ
+@GLRep.IsRationalRep.isSemisimpleRepresentation : ∀ {K : Type u_1} [inst : Field K] {n : ℕ} {W : Type u_2}
+  [inst_1 : AddCommGroup W] [inst_2 : Module K W] {ρ : Representation K (GL (Fin n) K) W} [CharZero K],
+  GLRep.IsRationalRep ρ → ρ.IsSemisimpleRepresentation
+@GLRep.IsRationalRep.exists_nonempty_equiv_ratIrrep : ∀ {K : Type u_1} [inst : Field K] {n : ℕ} {W : Type u_2}
+  [inst_1 : AddCommGroup W] [inst_2 : Module K W] {ρ : Representation K (GL (Fin n) K) W} [inst_3 : CharZero K],
+  GLRep.IsRationalRep ρ → ρ.IsIrreducible → ∃ l, Nonempty (ρ.Equiv (GLRep.ratIrrep K n l))
+@GLRep.IsRationalRep.exists_ratCharacter_eq_sum : ∀ {K : Type u_1} [inst : Field K] {n : ℕ} {W : Type u_2}
+  [inst_1 : AddCommGroup W] [inst_2 : Module K W] {ρ : Representation K (GL (Fin n) K) W} [inst_3 : CharZero K],
+  GLRep.IsRationalRep ρ →
+    ∃ S,
+      (∀ l ∉ S, GLRep.ratMultiplicity ρ l = 0) ∧
+        GLRep.ratCharacter ρ = ∑ l ∈ S, ↑(GLRep.ratMultiplicity ρ l) • GLRep.ratSchur n l
+@GLRep.IsRationalLeviRep.exists_ratLeviCharacter_eq_sum : ∀ {K : Type u_1} [inst : Field K] {s : ℕ} {d : Fin s → ℕ}
+  {W : Type u_2} [inst_1 : AddCommGroup W] [inst_2 : Module K W] {ρ : Representation K (GLRep.LeviGroup K d) W}
+  [inst_3 : CharZero K],
+  GLRep.IsRationalLeviRep ρ →
+    ∃ S,
+      (∀ l ∉ S, GLRep.ratLeviMultiplicity ρ l = 0) ∧
+        GLRep.ratLeviCharacter ρ = ∑ l ∈ S, ↑(GLRep.ratLeviMultiplicity ρ l) • GLRep.ratLeviSchur d l
+Schubert.RS.Algorithms.exists_not_mem_P : ∃ L, L ∉ Complexity.P
+Schubert.RS.Algorithms.FP_countable : Complexity.FP.Countable
 'Schubert.RS.Family.atomCoefficient_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
 'Schubert.RS.Family.atomCoefficient_factorization' depends on axioms: [propext, Classical.choice, Quot.sound]
 'Schubert.RS.Family.atomCoefficient_neg_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
@@ -33,36 +828,200 @@ reiner_shimozono_false : ¬∀ (n : ℕ) (a b : Schubert.RS.Composition n), Atom
 'Schubert.RS.Family.rank28_atomCoefficient' depends on axioms: [propext, Classical.choice, Quot.sound]
 'Schubert.RS.Family.rank28_not_atomPositive' depends on axioms: [propext, Classical.choice, Quot.sound]
 'Schubert.RS.Family.reiner_shimozono_false' depends on axioms: [propext, Classical.choice, Quot.sound]
-def Schubert.RS.Representation.HasOrderedPBWBasis : ℕ → Prop :=
-fun n => ∀ (order : RootOrdering n), ∃ b, ∀ (powers : PositiveRoot n → ℕ), b powers = orderedRootMonomial order powers
-def Schubert.RS.Representation.orderedRootMonomial : {n : ℕ} → RootOrdering n → (PositiveRoot n → ℕ) → Enveloping n :=
-fun {n} order powers =>
-  (List.map (fun r => (UniversalEnvelopingAlgebra.ι ℂ) ((rootBasis n) r) ^ powers r) order.roots).prod
-@[reducible] def Schubert.RS.Representation.Enveloping : ℕ → Type :=
-fun n => UniversalEnvelopingAlgebra ℂ ↥(upperNilpotent n)
-def Schubert.RS.Representation.orderedRootBasis : {n : ℕ} →
-  RootOrdering n → Module.Basis (PositiveRoot n → ℕ) ℂ (Enveloping n) :=
-fun {n} order => Module.Basis.mk ⋯ ⋯
-theorem Schubert.RS.Representation.orderedPBWBasis_exists : ∀ (n : ℕ), HasOrderedPBWBasis n :=
-fun n order => Exists.intro (orderedRootBasis order) (orderedRootBasis_apply order)
-theorem Schubert.RS.Family.atomCoefficient_eq : ∀ (P : Parameters),
-  atomCoefficient (key (a P) * key (b P)) (c P) =
-    2 * ↑(P.m.choose (P.p - 1)) * ↑(P.m.choose P.p) - ↑P.m * ↑((P.m - 1).choose (P.p - 1)) ^ 2 :=
-fun P => atomCoefficient_eq_of_pbw P (orderedPBWBasis_exists P.rank)
-structure Schubert.RS.Family.Parameters : Type
-number of parameters: 0
-fields:
-  Schubert.RS.Family.Parameters.p : ℕ
-  Schubert.RS.Family.Parameters.q : ℕ
-  Schubert.RS.Family.Parameters.K : ℕ
-  Schubert.RS.Family.Parameters.p_pos : 0 < self.p
-  Schubert.RS.Family.Parameters.q_pos : 0 < self.q
-  Schubert.RS.Family.Parameters.scale_bound : self.p + self.q ≤ self.K
-constructor:
-  Schubert.RS.Family.Parameters.mk (p q K : ℕ) (p_pos : 0 < p) (q_pos : 0 < q) (scale_bound : p + q ≤ K) : Parameters
-def Schubert.RS.Counterexample.a : Fin 28 → ℕ :=
-![0, 0, 0, 0, 8, 8, 8, 8, 16, 24, 32, 40, 48, 56, 64, 0, 0, 0, 8, 8, 8, 64, 56, 48, 40, 32, 24, 16]
-def Schubert.RS.Counterexample.b : Fin 28 → ℕ :=
-![8, 8, 8, 8, 0, 0, 0, 0, 64, 56, 48, 40, 32, 24, 16, 8, 8, 8, 0, 0, 0, 16, 24, 32, 40, 48, 56, 64]
-def Schubert.RS.Counterexample.c : Fin 28 → ℕ :=
-![9, 9, 9, 9, 9, 9, 9, 9, 79, 79, 79, 79, 79, 79, 79, 9, 9, 9, 9, 9, 9, 79, 79, 79, 79, 79, 79, 79]
+'Schubert.RS.Family.atomCoefficient_eq_narayana' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Family.atomCoefficient_eq_paper' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Family.atomCoefficient_threeFive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Family.atomCoefficient_fourFour' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Family.isLeast_rank_of_negative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Family.narayana' does not depend on any axioms
+'Schubert.RS.Family.Parameters' does not depend on any axioms
+'Schubert.RS.Family.a' depends on axioms: [propext, Quot.sound]
+'Schubert.RS.Family.b' depends on axioms: [propext, Quot.sound]
+'Schubert.RS.Family.c' depends on axioms: [propext, Quot.sound]
+'Schubert.RS.atomCoefficient_spec' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.atomCoefficient_eq_of_expansion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Family.isHallTriple_family' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Family.atomCoefficient_eq_paired' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Family.not_hasRelativeSchubertFiltration' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Family.not_hasSchubertFiltration' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Family.not_hasSLRelativeSchubertFiltration' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Family.not_hasSLSchubertFiltration' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Family.rank_sub_one' depends on axioms: [propext, Quot.sound]
+'Schubert.RS.Family.typeA27_filtration_failure' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Family.factors_hasExcellentFiltration' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Family.familyTensor' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Family.familyTensor_hasCharacter' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Filtrations.HasRelativeSchubertFiltration' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Filtrations.HasSchubertFiltration' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Filtrations.HasExcellentFiltration' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Filtrations.HasSLRelativeSchubertFiltration' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Filtrations.HasSLSchubertFiltration' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Filtrations.schubertSectionModule' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Filtrations.dualJoseph' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Filtrations.minRelSchubert' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.HighestWeight.flagOrbitSpan_irreducible' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Family.not_lascouxAtomPositive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Family.no_lascouxExpansion_nonnegAtZero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Family.rank28_not_lascouxAtomPositive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Family.lascoux_product_positivity_false' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.betaIsobaric' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.betaAtomOperator' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.lascoux' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.lascouxAtom' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.betaZero_lascoux' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.betaZero_lascouxAtom' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.LascouxAtomPositive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Quiver.Flat.quiverPolytope' depends on axioms: [propext]
+'Schubert.RS.Quiver.Flat.quiverTheorem_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Quiver.Flat.quiverTheorem_counts' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Quiver.Flat.quiverPolytope_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Quiver.Flat.finiteDimensional_canonicalHom' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Quiver.Flat.quiverPolytope_bounded' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Quiver.Flat.quiverCoefficient_pos_iff_realPoint' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Quiver.Flat.quiverCoefficient_pos_iff_ratPoint' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Quiver.Flat.quiverCoefficient_pos_iff_nonempty' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Quiver.Flat.quiverCoefficient_pos_iff_ratFeasible' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Schubert.RS.Quiver.Flat.nonempty_of_quiverCoefficient_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Quiver.Flat.quiverPolytope_nonempty_iff_exists_nsmul_pos' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Schubert.RS.Quiver.Flat.quiverPolytope_ratFeasible_iff_exists_nsmul_pos' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Schubert.RS.Quiver.Flat.atomCoefficient_nsmul_eq_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.quiverSaturation_holds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Quiver.atomCoefficient_eq_multiplicity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Algorithms.quiverTriple_recognition' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Algorithms.quiverPolytope_construction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Algorithms.quiverPolytope_size' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Algorithms.quiverPositivity_decision_polyTime' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Algorithms.quiverPositivity_decision' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Algorithms.quiverPositivity_decision_of_saturation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Schubert.RS.Algorithms.quiverPositivity_decision_of_criterion' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Schubert.RS.Algorithms.quiverPositivity_decision_of_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Algorithms.encodeTriple' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Algorithms.IsQuiverTripleList' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Algorithms.binarySize_le_length' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Algorithms.length_le_binarySize' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Algorithms.exists_not_mem_FP' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Algorithms.exists_mem_P_not_mem_DTIME' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Quiver.Density.card_positiveQuiverTriples_isTheta' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Schubert.RS.Quiver.Density.positiveQuiverTriples_proportion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Quiver.Density.positiveQuiverTriples' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.atomCoefficient_eq_rectangleCoefficient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.rectangleCoefficient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.keyAtom_orthogonality' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Representation.compositionFlagJosephPolo' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Representation.compositionFlagDemazureCharacter' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Representation.orderedPBWBasis_exists' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.atomCoefficient_eq_rectangleCoefficient'' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Window.window_rational_extraction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Window.window_product_indep' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Window.Hypotheses' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Window.WindowInequality' does not depend on any axioms
+'Schubert.RS.Window.prefixHeight' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Window.cmp' does not depend on any axioms
+'Schubert.RS.Window.hypotheses_iff_of_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Hall.hall_determinant' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Hall.hallProduct' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Hall.hallMatrix' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Hall.completeH' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Hall.hallSum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Hall.IsHallAdmissible' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.HallLattice.hall_determinant' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.hall_source_extraction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Hall.hall_flags' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Hall.hallFlag' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Hall.firstAbove' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Hall.isHallAdmissible_iff_flags' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Hall.HallPartition' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Hall.IsHallTriple' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Hall.isHallTriple_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Hall.HallPartition.changeN' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Family.familyHallPartition' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Hall.paired_reduction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Hall.tVar' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Hall.HallPartition.q' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Hall.HallPartition.pairs' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Hall.HallPartition.height' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Hall.HallPartition.flag' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Hall.HallPartition.blockPolynomial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Hall.HallPartition.m_eq_sum_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.double_source_extraction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Hall.paired_reduction_of_isHallTriple' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Family.two_source_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Quiver.IsQuiverTriple' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Quiver.IsQuiverPartition' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Quiver.isQuiverPartition_iff_of_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Quiver.isQuiverTriple_iff_canonical' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Quiver.IsQuiverPartition.eq_canonical' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Quiver.instDecidableIsQuiverTriple' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Quiver.atomCoefficient_eq_finrank_quiverHom' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Quiver.atomCoefficient_eq_finrank_hom' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Quiver.finiteDimensional_quiverHom' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Quiver.atomCoefficient_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Quiver.quiverOf' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Quiver.leviWeight' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Quiver.ForwardQuiver.multiplicity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.GL.ratLeviIrrep' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Quiver.twoSource_isQuiverPartition' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Quiver.twoSource_eq_weylProjector' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Quiver.twoSource_eq_kostka' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Quiver.twoSource_pos_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Algorithms.twoSource_coefficient_computable' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Algorithms.encodeTripleUnary' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Algorithms.length_encodeTripleUnary_ofFn' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Algorithms.encodeTripleUnary_injective' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Algorithms.twoSource_eq_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.SchubertUnions.key_eq_sum_atom' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Filtrations.dualJoseph_hasCharacter' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Filtrations.minRelSchubert_hasCharacter' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Quiver.ForwardQuiver.multiplicity_pos_of_nsmul_pos' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'QuiverInvariants.FQuiver.exists_semiInvariant_of_nsmul' depends on axioms: [propext, Classical.choice, Quot.sound]
+'QuiverInvariants.FQuiver.exists_generalQuot_euler_add_extDim_nonpos' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'QuiverInvariants.FQuiver.isGreatest_genericExt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'QuiverInvariants.FQuiver.exists_extDim_eq_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'QuiverInvariants.FQuiver.IsSemiInvariant.sum_mul_nonneg_of_generalQuot' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'QuiverInvariants.FQuiver.exists_semiInvariant_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Quiver.ForwardQuiver.multiplicity_flag' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Quiver.ForwardQuiver.multiplicity_const_pos_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.quiverSaturation_of_semiInvariant' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.polyTimeRationalFeasibility_holds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'LinearProgramming.exists_mem_FP_feasible' depends on axioms: [propext, Classical.choice, Quot.sound]
+'LinearProgramming.decideFeasible_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'LinearProgramming.chubanov_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.glCharacterMultiplicity_holds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Quiver.ForwardQuiver.finrank_ratLeviIrrep_coordRep_eq_multiplicity' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GLRep.IsPolynomialLeviRep.exists_leviCharacter_eq_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GLRep.alternant_mul_glCharacter_of_isGlHighestWeightVector' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GLRep.IsPolynomialRep.isSemisimpleRepresentation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GLRep.isIrreducible_irrep' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GLRep.character_irrep' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GLRep.IsPolynomialRep.exists_nonempty_equiv_irrep' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GLRep.IsPolynomialRep.nonempty_equiv_of_character_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GLRep.finrank_intertwiningMap_irrep_self' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GLRep.finrank_intertwiningMap_irrep_of_ne' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GLRep.IsPolynomialRep.character_eq_diagramSchurPoly' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GLRep.IsPolynomialRep.exists_character_eq_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GLRep.IsRationalRep.isSemisimpleRepresentation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GLRep.IsRationalRep.exists_nonempty_equiv_ratIrrep' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GLRep.IsRationalRep.exists_ratCharacter_eq_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GLRep.IsRationalLeviRep.exists_ratLeviCharacter_eq_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Algorithms.exists_not_mem_P' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Algorithms.FP_countable' depends on axioms: [propext, Classical.choice, Quot.sound]

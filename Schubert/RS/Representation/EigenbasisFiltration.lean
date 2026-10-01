@@ -8,6 +8,7 @@ open scoped BigOperators
 variable {n L : ℕ} {E : Type*} [AddCommGroup E] [Module ℂ E]
 variable {I : Fin L → Type*} [∀ k, Fintype (I k)]
 
+omit [∀ k, Fintype (I k)] in
 /-- A basis vector of the wrong weight has zero coordinate in a genuine
 simultaneous eigenspace. This is proved by separation of torus characters. -/
 theorem eigenbasis_wrong_weight (ρ : DiagonalTorus n →* Module.End ℂ E)
@@ -32,6 +33,7 @@ def eigenbasisStage (b : Module.Basis (Σ k, I k) ℂ E) (k : ℕ) : Submodule �
   add_mem' := by intro x y hx hy j hj; simp [map_add,hx j hj,hy j hj]
   smul_mem' := by intro c x hx j hj; simp [map_smul,hx j hj]
 
+omit [∀ k, Fintype (I k)] in
 theorem eigenbasisStage_increasing (b : Module.Basis (Σ k, I k) ℂ E) (k : ℕ) :
     eigenbasisStage b k ≤ eigenbasisStage b (k+1) := by
   intro x hx j hj
@@ -76,7 +78,7 @@ def eigenbasisFiltration (ρ : DiagonalTorus n →* Module.End ℂ E)
         have hv := congrArg (fun s : Σ k, I k => s.1.val) he
         change k.val = r.1.val at hv
         omega
-      simp [x,map_sum,map_smul,Module.Basis.repr_self,Finsupp.single_apply,hne,Ne.symm]
+      simp [x,map_sum,map_smul,Module.Basis.repr_self,hne,Ne.symm]
     have hweight : x ∈ torusWeightSpace ρ w := by
       intro t
       simp only [x,map_sum,map_smul,Finset.smul_sum]
@@ -87,7 +89,7 @@ def eigenbasisFiltration (ρ : DiagonalTorus n →* Module.End ℂ E)
     refine ⟨⟨x,hstage,hweight⟩,?_⟩
     ext j
     change b.repr x ⟨k,j.val⟩ = f j
-    simp only [x,map_sum,map_smul,Finsupp.finset_sum_apply,Finsupp.smul_apply,
+    simp only [x,map_sum,map_smul,Finsupp.finsetSum_apply,Finsupp.smul_apply,
       Module.Basis.repr_self,Finsupp.single_apply,smul_eq_mul]
     have he (r : {r : I k // label k r = w}) :
         (⟨k,r.val⟩ : Σ k, I k) = ⟨k,j.val⟩ ↔ r=j := by simp only [Sigma.mk.inj_iff,heq_eq_eq,true_and]; exact Subtype.val_inj

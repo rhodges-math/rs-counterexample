@@ -22,7 +22,7 @@ theorem targetLate_value (P : Parameters) (i : Fin P.m) :
     omega
   change (if (slotRight i).val<P.m then P.m+1+(slotRight i).val
     else 2*P.m+(slotRight i).val)=_
-  rw [if_neg hn]
+  rw [ite_eq_right hn]
   simp only [slotRight,slotLeft,Fin.rev]
   omega
 

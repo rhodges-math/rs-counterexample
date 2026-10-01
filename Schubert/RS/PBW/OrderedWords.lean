@@ -33,7 +33,7 @@ theorem powersWord_count {n : ℕ} (order : RootOrdering n) (powers : PositiveRo
     (r : PositiveRoot n) : (powersWord order powers).count r = powers r := by
   classical
   unfold powersWord
-  exact (replicated_count order.roots powers order.nodup r).trans (if_pos (order.complete r))
+  exact (replicated_count order.roots powers order.nodup r).trans (ite_eq_left (order.complete r))
 
 theorem powersWord_exponent_injective {n : ℕ} (order : RootOrdering n) :
     Function.Injective (fun powers : PositiveRoot n → ℕ =>

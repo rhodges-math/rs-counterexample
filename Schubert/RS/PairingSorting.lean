@@ -28,7 +28,7 @@ theorem pairing_sorting_transfer (a b : Composition n) :
           have he := congrFun hσ (adjacentTransposition i j)
           simpa [swapComposition, adjacentTransposition] using he
         · simpa [swapComposition] using hτ
-        · rw [key_ascent a ha, keyAtomPairing_isobaric, isobaric_key, if_pos hb]
+        · rw [key_ascent a ha, keyAtomPairing_isobaric, isobaric_key, ite_eq_left hb]
           exact hp
       · obtain ⟨u, v, σ, τ, hu, hσ, hτ, hp⟩ :=
           ih _ (sortingMeasure_swap_lt a i hi) b
@@ -36,7 +36,7 @@ theorem pairing_sorting_transfer (a b : Composition n) :
         · funext j
           have he := congrFun hσ (adjacentTransposition i j)
           simpa [swapComposition, adjacentTransposition] using he
-        · rw [key_ascent a ha, keyAtomPairing_isobaric, isobaric_key, if_neg hb]
+        · rw [key_ascent a ha, keyAtomPairing_isobaric, isobaric_key, ite_eq_right hb]
           exact hp
     · refine ⟨a, b, Equiv.refl _, Equiv.refl _, antitone_of_no_ascent a ha,
         rfl, rfl, ?_⟩

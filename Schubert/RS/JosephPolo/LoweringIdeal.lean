@@ -112,7 +112,7 @@ theorem loweringEnveloping_mem_jp {n : ℕ} (u : Composition n) (i : AdjacentPos
   | mem a ha =>
     obtain ⟨r,rfl⟩ := ha
     exact loweringEnveloping_root_relation_mem u i hu r
-  | zero => simpa using (jpLeftIdeal u).zero_mem
+  | zero => simp
   | add a b ha hb ia ib => simpa using (jpLeftIdeal u).add_mem ia ib
   | smul a b hb ib => exact loweringEnveloping_left_factor_mem u i _ a b hb ib
 
@@ -120,7 +120,7 @@ def presentationLowering {n : ℕ} (u : Composition n) (i : AdjacentPosition n)
     (hu : u i.left ≤ u i.right) : Module.End ℂ (PresentationQuotient u) :=
   ((jpLeftIdeal u).restrictScalars ℂ).mapQ ((jpLeftIdeal u).restrictScalars ℂ)
     (loweringEnveloping i (-((u i.right-u i.left : ℕ) : ℂ)))
-    (fun a ha => loweringEnveloping_mem_jp u i hu ha)
+    (fun _ ha => loweringEnveloping_mem_jp u i hu ha)
 
 theorem presentationLowering_mk {n : ℕ} (u : Composition n) (i : AdjacentPosition n)
     (hu : u i.left ≤ u i.right) (a : Enveloping n) :

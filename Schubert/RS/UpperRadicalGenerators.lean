@@ -8,7 +8,7 @@ attribute [local instance 100] LieRing.ofAssociativeRing
 theorem upperSimpleCoefficient_root {n : ℕ} (i : AdjacentPosition n) (r : RadicalRoot i) :
     upperSimpleCoefficient i (rootBasis n r.val)=0 := by
   have hr : r.val≠adjacentPositiveRoot i := fun hh => r.property (congrArg Subtype.val hh)
-  simp [upperSimpleCoefficient,Module.Basis.coord_apply,hr,Ne.symm hr]
+  simp [upperSimpleCoefficient,Module.Basis.coord_apply,Ne.symm hr]
 
 theorem upperRadicalPart_root {n : ℕ} (i : AdjacentPosition n) (r : RadicalRoot i) :
     upperRadicalPart i (rootBasis n r.val)=radicalEndRoot i r := by

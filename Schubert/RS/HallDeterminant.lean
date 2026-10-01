@@ -28,15 +28,15 @@ theorem row_path_sum_eq_completeHomogeneous (i j : Fin d) :
       have hj := j.isLt
       unfold hallSource
       omega
-    rw [completeHomogeneous, if_pos hz]
+    rw [completeHomogeneous, ite_eq_left hz]
     exact row_path_sum y hk slot
   · have hn : hallSource i+1 < hallSource j := by
       have hi := i.isLt
       have hj := j.isLt
       unfold hallSource
       omega
-    letI := no_path_negative_degree y hn
-    simp only [completeHomogeneous, if_neg hz, Finset.univ_eq_empty, Finset.sum_empty]
+    let := no_path_negative_degree y hn
+    simp only [completeHomogeneous, ite_eq_right hz, Finset.univ_eq_empty, Finset.sum_empty]
 
 /-- Complete homogeneous rows yield precisely the strictly increasing
 bounded columns. All repeated-slot terms have been cancelled, not removed. -/

@@ -25,7 +25,7 @@ theorem adjacentCartanMatrix_eq_diagonal {n : ℕ} (i : AdjacentPosition n) :
     have hr : ¬ (i.right=a ∧ i.right=b) := by
       rintro ⟨ha,hb⟩
       exact hab (ha.symm.trans hb)
-    simp [adjacentCartanMatrix, Matrix.single_apply, hl, hr, hab]
+    simp [adjacentCartanMatrix, hl, hr, hab]
 
 theorem cartanMatrix_eq_commutator {n : ℕ} (h : Fin n → ℂ) (A : Square n) :
     cartanMatrix h A = Matrix.diagonal h * A - A * Matrix.diagonal h := by
@@ -66,11 +66,11 @@ theorem loweringRemainderMatrix_upper {n : ℕ} (i : AdjacentPosition n) (A : up
       rw [Matrix.mul_single_apply_same]
       have hll := A.property i.left i.left (lt_irrefl _)
       have hrr := A.property i.right i.right (lt_irrefl _)
-      simp [hll, hrr, adjacentCartanMatrix, Matrix.single_apply, i.left_ne_right, Ne.symm i.left_ne_right]
+      simp [hll, hrr, adjacentCartanMatrix, i.left_ne_right, Ne.symm i.left_ne_right]
     · rw [Matrix.mul_single_apply_of_ne (1 : ℂ) i.right i.left i.right b hb A.val]
       by_cases hbr : b=i.right
       · subst b
-        simp [adjacentCartanMatrix, Matrix.single_apply, i.left_ne_right, Ne.symm i.left_ne_right]
+        simp [adjacentCartanMatrix, i.left_ne_right]
       · have hnot : ¬ i.left < b := by
           have hv := i.right_val
           have hn : b.val≠i.right.val := fun h => hbr (Fin.ext h)
@@ -78,14 +78,14 @@ theorem loweringRemainderMatrix_upper {n : ℕ} (i : AdjacentPosition n) (A : up
           change ¬ i.left.val < b.val
           omega
         rw [A.property i.left b hnot]
-        simp [adjacentCartanMatrix, Matrix.single_apply, i.left_ne_right, Ne.symm hbr]
+        simp [adjacentCartanMatrix, i.left_ne_right, Ne.symm hbr]
   · rw [Matrix.single_mul_apply_of_ne (1 : ℂ) i.right i.left a b ha A.val]
     by_cases hb : b=i.left
     · subst b
       rw [Matrix.mul_single_apply_same]
       by_cases hal : a=i.left
       · subst a
-        simp [adjacentCartanMatrix, Matrix.single_apply, i.left_ne_right, Ne.symm i.left_ne_right]
+        simp [adjacentCartanMatrix, Ne.symm i.left_ne_right]
       · have hnot : ¬ a < i.right := by
           have hv := i.right_val
           have hn : a.val≠i.left.val := fun h => hal (Fin.ext h)
@@ -93,9 +93,9 @@ theorem loweringRemainderMatrix_upper {n : ℕ} (i : AdjacentPosition n) (A : up
           change ¬ a.val < i.right.val
           omega
         rw [A.property a i.right hnot]
-        simp [adjacentCartanMatrix, Matrix.single_apply, Ne.symm ha, Ne.symm hal]
+        simp [adjacentCartanMatrix, Ne.symm ha, Ne.symm hal]
     · rw [Matrix.mul_single_apply_of_ne (1 : ℂ) i.right i.left a b hb A.val]
-      simp [adjacentCartanMatrix, Matrix.single_apply, Ne.symm ha, Ne.symm hb]
+      simp [adjacentCartanMatrix, Ne.symm ha, Ne.symm hb]
 
 def loweringUpper {n : ℕ} (i : AdjacentPosition n) : upperNilpotent n →ₗ[ℂ] upperNilpotent n where
   toFun A := ⟨loweringRemainderMatrix i A, loweringRemainderMatrix_upper i A⟩

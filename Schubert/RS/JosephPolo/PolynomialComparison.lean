@@ -27,7 +27,7 @@ theorem presentation_adjacent_evaluation_scalar :
         c • B.adjacentEvaluation u i hu (presentationToAdjacentCompletion u i hu B q) := by
   let hE := compositionFlag_adjacent_raising_stable (swapComposition u i) i
   let hR := compositionFlag_radical_stable i (swapComposition u i)
-  letI := B.completedUpperModule hE hR
+  let := B.completedUpperModule hE hR
   obtain ⟨c,hc,hgen⟩ := B.adjacentEvaluation_endpoint_scalar u i hu
   refine ⟨c,hc,?_⟩
   let f := presentationToAdjacentCompletion u i hu B
@@ -45,7 +45,7 @@ theorem compositionFlagJosephPolo_iff_adjacent_evaluation_injective
     CompositionFlagJosephPolo u ↔ Function.Injective (B.adjacentEvaluation u i hu) := by
   let hE := compositionFlag_adjacent_raising_stable (swapComposition u i) i
   let hR := compositionFlag_radical_stable i (swapComposition u i)
-  letI := B.completedUpperModule hE hR
+  let := B.completedUpperModule hE hR
   let f := presentationToAdjacentCompletion u i hu B
   obtain ⟨c,hc,hmap⟩ := presentation_adjacent_evaluation_scalar u i hu B
   have hf : Function.Bijective f := presentationToAdjacentCompletion_bijective u i hu B hJP

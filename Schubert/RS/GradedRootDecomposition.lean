@@ -31,7 +31,7 @@ theorem gradedRootDecomposition {n : ℕ} (a b : Fin n) (hab : a≠b)
     exact .zero
   obtain ⟨d,p,hp,v,hv,htop,hzero,K,hK,hdis,hsup,hKE,hKT⟩ :=
     exists_weight_string_complement a b hab S hS hE hT
-  letI : FiniteDimensional ℂ K := Module.Finite.of_injective (Submodule.inclusion hK.le)
+  let : FiniteDimensional ℂ K := Module.Finite.of_injective (Submodule.inclusion hK.le)
     (Submodule.inclusion_injective hK.le)
   exact .split S K p v d hp hv htop hzero hdis hsup (gradedRootDecomposition a b hab K hKE hKT)
 termination_by Module.finrank ℂ S

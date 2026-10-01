@@ -27,7 +27,7 @@ theorem mapped_weylFactor :
     AddMonoidAlgebra.mapRingHom (Weight d) (Int.castRingHom R) (weylFactor d) =
       ∏ r : PositiveRoot d, (1-AddMonoidAlgebra.single (positiveRoot r.val.1 r.val.2) (1 : R)) := by
   unfold weylFactor
-  simp only [map_prod, map_sub, map_one, AddMonoidAlgebra.mapRingHom_single, Int.cast_one]
+  simp only [map_prod, map_sub, map_one, AddMonoidAlgebra.mapRingHom_single]
   exact positiveRoot_product _
 
 theorem flagSourceRow_factors (y : Fin d → Fin (M+1)) (slot : Fin (M+1) → R)
@@ -35,7 +35,7 @@ theorem flagSourceRow_factors (y : Fin d → Fin (M+1)) (slot : Fin (M+1) → R)
     sourceRow i (flagSourceRow y slot B i) =
       ∏ h : Fin ((y i.rev).val+1), ∑ k : Fin (B+1),
         AddMonoidAlgebra.single (Pi.single i (k.val : ℤ))
-          (slot ⟨h.val, by have hh := h.isLt; have hy := (y i.rev).isLt; omega⟩ ^ k.val) := by
+          (slot ⟨h.val, by have hh := h.isLt; have _hy := (y i.rev).isLt; omega⟩ ^ k.val) := by
   rw [← sourceRowRing_apply]
   unfold flagSourceRow finiteSlotProduct
   simp only [map_prod, map_sum, sourceRowRing_single]
@@ -45,7 +45,7 @@ theorem sourceExpression_factors (y : Fin d → Fin (M+1)) (slot : Fin (M+1) →
       (∏ r : PositiveRoot d, (1-AddMonoidAlgebra.single (positiveRoot r.val.1 r.val.2) (1 : R))) *
       ∏ i, ∏ h : Fin ((y i.rev).val+1), ∑ k : Fin (B+1),
         AddMonoidAlgebra.single (Pi.single i (k.val : ℤ))
-          (slot ⟨h.val, by have hh := h.isLt; have hy := (y i.rev).isLt; omega⟩ ^ k.val) := by
+          (slot ⟨h.val, by have hh := h.isLt; have _hy := (y i.rev).isLt; omega⟩ ^ k.val) := by
   rw [sourceExpression, mapped_weylFactor]
   simp_rw [flagSourceRow_factors]
 

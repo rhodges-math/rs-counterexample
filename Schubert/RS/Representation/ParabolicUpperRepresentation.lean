@@ -66,7 +66,7 @@ theorem parabolicUpperEnveloping_ι (A : upperNilpotent n) :
 theorem parabolicUpperTower :
     letI := parabolicUpperModule i X
     IsScalarTower ℂ (Enveloping n) X := by
-  letI := parabolicUpperModule i X
+  let := parabolicUpperModule i X
   exact ⟨fun c a x => by
     change parabolicUpperEnveloping i X (c • a) x = c • parabolicUpperEnveloping i X a x
     rw [map_smul]

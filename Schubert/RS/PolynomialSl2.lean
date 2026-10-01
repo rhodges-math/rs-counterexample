@@ -26,7 +26,7 @@ theorem polynomial_root_h_e {n : ℕ} (a b : Fin n) (hab : a≠b) :
   intro p
   have h1 := matrixUnitDerivation_commutator a a a b p
   have h2 := matrixUnitDerivation_commutator b b a b p
-  simp [hab,hab.symm] at h1 h2
+  simp [hab.symm] at h1 h2
   change (matrixUnitDerivation a a (matrixUnitDerivation a b p)-
     matrixUnitDerivation b b (matrixUnitDerivation a b p))-
     matrixUnitDerivation a b (matrixUnitDerivation a a p-matrixUnitDerivation b b p)=_

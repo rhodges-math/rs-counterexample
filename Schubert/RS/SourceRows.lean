@@ -21,6 +21,7 @@ def laurentCoeffLinear {α : Type*} (a : α) : AddMonoidAlgebra R α →ₗ[R] R
 def sourceRow (i : ι) : AddMonoidAlgebra R ℤ →ₗ[R] AddMonoidAlgebra R (ι → ℤ) :=
   AddMonoidAlgebra.mapDomainLinearMap R R (fun k : ℤ => (Pi.single i k : ι → ℤ))
 
+omit [Fintype ι] in
 @[simp] theorem sourceRow_single (i : ι) (k : ℤ) (r : R) :
     sourceRow i (AddMonoidAlgebra.single k r) =
       AddMonoidAlgebra.single (Pi.single i k) r :=
@@ -61,12 +62,13 @@ theorem coefficient_det_source_rows
       Matrix.det (fun i j => (p i j).coeff (w i)) := by
   rw [← Matrix.det_transpose (fun i j => sourceRow i (p i j)),
     ← Matrix.det_transpose (fun i j => (p i j).coeff (w i))]
-  simp only [Matrix.det_apply, Matrix.transpose_apply, Units.smul_def]
+  simp only [Matrix.det_apply, Units.smul_def]
   change laurentCoeffLinear w (∑ σ : Equiv.Perm ι,
     (σ.sign : ℤ) • ∏ i, sourceRow i (p i (σ i))) = _
   simp only [map_sum, map_zsmul, laurentCoeffLinear_apply, coefficient_source_rows]
   rfl
 
+omit [Fintype ι] in
 theorem sourceRow_mul (i : ι) (p q : AddMonoidAlgebra R ℤ) :
     sourceRow i (p * q) = sourceRow i p * sourceRow i q := by
   let e : ℤ →+ (ι → ℤ) :=

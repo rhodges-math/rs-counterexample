@@ -28,7 +28,7 @@ theorem countWord_perm {n : ℕ} (order : RootOrdering n) (roots : List (Positiv
   classical
   apply List.perm_iff_count.mpr
   intro r
-  rw [countWord, count_expansion _ _ order.nodup, if_pos (order.complete r)]
+  rw [countWord, count_expansion _ _ order.nodup, ite_eq_left (order.complete r)]
 
 theorem rootWord_countWord {n : ℕ} (order : RootOrdering n) (roots : List (PositiveRoot n)) :
     rootWord (countWord order roots) = orderedRootMonomial order (fun r => roots.count r) := by

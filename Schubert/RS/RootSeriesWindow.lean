@@ -27,7 +27,7 @@ theorem keyRootSeries_window {E : Type*} [AddCommGroup E] [Module ℂ E]
       ¬ jpExponent u r • rootDegree r.val.1 r.val.2 ≤ β) :
     WindowEq β (keyRootSeries u) (ascentRootSeries u) := by
   intro d hd
-  change MvPolynomial.coeff d (rootCoordinates (normalizedKey u)) = _
+  change (rootCoordinates (normalizedKey u)).coeff d = _
   rw [rootCoordinates_coeff, normalizedKey_coeff]
   exact key_coefficient_eq_ascent_count u ρ ξ hJP hDCF hpbw β d hd hβ
 

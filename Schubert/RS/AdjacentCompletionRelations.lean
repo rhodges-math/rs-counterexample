@@ -43,9 +43,9 @@ theorem PolynomialRootStringBasis.adjacentSimpleOperator :
         (sl2RaisingElement (polynomialSl2Triple i.left i.right i.left_ne_right)) := by
   let hE := compositionFlag_adjacent_raising_stable (swapComposition u i) i
   let hR := compositionFlag_radical_stable i (swapComposition u i)
-  letI := B.completedRadicalLieRingModule hE hR
-  letI := B.completedRadicalLieModule hE hR
-  letI := B.completedRadical_isLieTower hE hR
+  let := B.completedRadicalLieRingModule hE hR
+  let := B.completedRadicalLieModule hE hR
+  let := B.completedRadical_isLieTower hE hR
   exact parabolicSimpleOperator i (B.completedModule i.left_ne_right)
 
 /-- The remaining simple-root JP relation at the reflected endpoint follows

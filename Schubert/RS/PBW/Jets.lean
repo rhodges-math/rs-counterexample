@@ -1,6 +1,6 @@
 import Mathlib.Algebra.MvPolynomial.PDeriv
 import Mathlib.Algebra.MvPolynomial.CommRing
-import Mathlib.Data.Complex.Basic
+import Mathlib.Basic.Complex.Basic
 
 /-! Vanishing-order estimates for polynomial differential operators. -/
 namespace Schubert.RS.PBW
@@ -12,9 +12,11 @@ variable {σ : Type*} [Fintype σ] [DecidableEq σ]
 
 def exponentDegree (e : σ →₀ ℕ) : ℕ := ∑ i, e i
 
+omit [DecidableEq σ] in
 @[simp] theorem exponentDegree_zero : exponentDegree (0 : σ →₀ ℕ) = 0 := by
   simp [exponentDegree]
 
+omit [DecidableEq σ] in
 @[simp] theorem exponentDegree_add (e f : σ →₀ ℕ) :
     exponentDegree (e + f) = exponentDegree e + exponentDegree f := by
   simp [exponentDegree, Finset.sum_add_distrib]
@@ -25,11 +27,12 @@ def exponentDegree (e : σ →₀ ℕ) : ℕ := ∑ i, e i
 
 /-- All terms of degree strictly less than d vanish. -/
 def jet (d : ℕ) : Submodule ℂ (MvPolynomial σ ℂ) where
-  carrier := {p | ∀ e, exponentDegree e < d → coeff e p = 0}
+  carrier := {p | ∀ e, exponentDegree e < d → p.coeff e = 0}
   zero_mem' := by simp
   add_mem' := by intro p q hp hq e he; simp [hp e he, hq e he]
   smul_mem' := by intro c p hp e he; simp [hp e he]
 
+omit [DecidableEq σ] in
 theorem jet_antitone {d k : ℕ} (h : k ≤ d) : jet (σ := σ) d ≤ jet k := by
   intro p hp e he
   exact hp e (lt_of_lt_of_le he h)
@@ -38,7 +41,7 @@ theorem monomial_mem_jet (e : σ →₀ ℕ) (c : ℂ) :
     monomial e c ∈ jet (exponentDegree e) := by
   intro f hf
   rw [coeff_monomial]
-  exact if_neg (by intro h; subst e; omega)
+  exact ite_eq_right (by intro h; subst e; omega)
 
 theorem pderiv_mem_jet (i : σ) {d : ℕ} {p : MvPolynomial σ ℂ}
     (hp : p ∈ jet (d+1)) : pderiv i p ∈ jet d := by
@@ -69,18 +72,22 @@ theorem X_pderiv_mem_jet (i j : σ) {d : ℕ} {p : MvPolynomial σ ℂ}
 def differentialWord {ι : Type*} (D : ι → Module.End ℂ (MvPolynomial σ ℂ))
     (w : List ι) : Module.End ℂ (MvPolynomial σ ℂ) := (w.map D).prod
 
+omit [Fintype σ] [DecidableEq σ] in
 @[simp] theorem differentialWord_nil {ι : Type*}
     (D : ι → Module.End ℂ (MvPolynomial σ ℂ)) : differentialWord D [] = 1 := rfl
 
+omit [Fintype σ] [DecidableEq σ] in
 theorem differentialWord_cons {ι : Type*}
     (D : ι → Module.End ℂ (MvPolynomial σ ℂ)) (i : ι) (w : List ι) :
     differentialWord D (i :: w) = D i * differentialWord D w := rfl
 
+omit [Fintype σ] [DecidableEq σ] in
 theorem differentialWord_append {ι : Type*}
     (D : ι → Module.End ℂ (MvPolynomial σ ℂ)) (w v : List ι) :
     differentialWord D (w ++ v) = differentialWord D w * differentialWord D v := by
   simp [differentialWord]
 
+omit [DecidableEq σ] in
 theorem differentialWord_mem_jet {ι : Type*}
     (D : ι → Module.End ℂ (MvPolynomial σ ℂ))
     (hD : ∀ i d p, p ∈ jet (d+1) → D i p ∈ jet d)
@@ -93,11 +100,12 @@ theorem differentialWord_mem_jet {ι : Type*}
     exact hD i d _ (ih (d+1) (by simpa [Nat.add_assoc, Nat.add_comm,
       Nat.add_left_comm] using hp))
 
+omit [DecidableEq σ] in
 theorem differentialWord_constant_zero {ι : Type*}
     (D : ι → Module.End ℂ (MvPolynomial σ ℂ))
     (hD : ∀ i d p, p ∈ jet (d+1) → D i p ∈ jet d)
     (w : List ι) {p : MvPolynomial σ ℂ} (hp : p ∈ jet (w.length+1)) :
-    coeff 0 (differentialWord D w p) = 0 := by
+    (differentialWord D w p).coeff 0 = 0 := by
   exact differentialWord_mem_jet D hD w 1
     (by simpa [Nat.add_comm] using hp) 0 (by simp)
 
@@ -107,8 +115,8 @@ theorem differentialWord_principal {ι : Type*}
     (hD : ∀ i d p, p ∈ jet (d+1) → D i p ∈ jet d)
     (herror : ∀ i d p, p ∈ jet d → D i p - pderiv (index i) p ∈ jet d)
     (w : List ι) {p : MvPolynomial σ ℂ} (hp : p ∈ jet w.length) :
-    coeff 0 (differentialWord D w p) =
-      coeff 0 (differentialWord (fun i => (pderiv (index i)).toLinearMap) w p) := by
+    (differentialWord D w p).coeff 0 =
+      (differentialWord (fun i => (pderiv (index i)).toLinearMap) w p).coeff 0 := by
   induction w using List.reverseRecOn generalizing p with
   | nil => rfl
   | append_singleton w i ih =>

@@ -50,7 +50,7 @@ theorem polynomial_grid_weights {n d q : ℕ} (a b : Fin n) (v : Weight n)
     by_cases hk : k.val<d
     · rw [hs k ⟨l,hl'⟩ hk hlq,map_sub,hd k,ih ⟨k.val+1,by omega⟩ t hl']
       have hh : k.val+1+l=k.val+(l+1) := by omega
-      simp only [Fin.val_mk,hh,smul_sub]
+      simp only [hh,smul_sub]
     · have hk' : k=(⟨d,by omega⟩ : Fin (d+1)) := by
         apply Fin.ext
         change k.val=d

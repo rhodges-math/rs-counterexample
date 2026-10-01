@@ -13,7 +13,7 @@ variable {n : ℕ} {a b : Fin n} {S : Submodule ℂ (MatrixPolynomial n)}
 theorem PolynomialRootStringBasis.completedWeyl_cartan (x : B.completedModule hab) :
     ⁅sl2CartanElement (polynomialSl2Triple a b hab),B.completedWeyl hab x⁆ =
       -B.completedWeyl hab ⁅sl2CartanElement (polynomialSl2Triple a b hab),x⁆ := by
-  letI := complexRationalModule (B.completedModule hab)
+  let := complexRationalModule (B.completedModule hab)
   exact nilpotentWeyl_cartan (polynomialSl2Triple a b hab)
     (B.completedRaising_nilpotent hab) (B.completedLowering_nilpotent hab) x
 
@@ -24,7 +24,7 @@ theorem PolynomialRootStringBasis.completedWeyl_highest_endpoint
     (P : (sl2SubalgebraTriple (polynomialSl2Triple a b hab)).HasPrimitiveVectorWith m (d:ℂ)) :
     ∃ c : ℂ, c≠0 ∧ B.completedWeyl hab m =
       c • primitiveStringVector (sl2LoweringElement (polynomialSl2Triple a b hab)) m d := by
-  letI := complexRationalModule (B.completedModule hab)
+  let := complexRationalModule (B.completedModule hab)
   exact nilpotentWeyl_highest_endpoint (polynomialSl2Triple a b hab)
     (B.completedRaising_nilpotent hab) (B.completedLowering_nilpotent hab) P
 

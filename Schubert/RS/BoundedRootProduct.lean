@@ -37,7 +37,7 @@ def boundedDegreeFiberEquiv (degree : ι → σ →₀ ℕ) (cut : ι → σ)
 theorem boundedRootProduct_coefficient (degree : ι → σ →₀ ℕ) (cut : ι → σ)
     (hcut : ∀ r, degree r (cut r) = 1) (β d : σ →₀ ℕ) (hd : d ≤ β)
     [Fintype (DegreeFiber degree d)] :
-    MvPolynomial.coeff d (boundedRootProduct degree cut β) =
+    (boundedRootProduct degree cut β).coeff d =
       (Fintype.card (DegreeFiber degree d) : ℤ) := by
   classical
   rw [boundedRootProduct_expansion, MvPolynomial.coeff_sum]
@@ -72,8 +72,8 @@ def ascentDegreeFiberEquiv (u : Composition n) (d : RootDegree n) :
       AscentDegreeFiber u d where
   toFun a := ⟨a.val, (monomialDegree_extendAscent u a.val).trans a.property⟩
   invFun a := ⟨a.val, (monomialDegree_extendAscent u a.val).symm.trans a.property⟩
-  left_inv a := rfl
-  right_inv a := rfl
+  left_inv _ := rfl
+  right_inv _ := rfl
 
 theorem ascentRootSeries_window_product (u : Composition n) (β : RootDegree n) :
     WindowEq β (ascentRootSeries u)
@@ -82,7 +82,7 @@ theorem ascentRootSeries_window_product (u : Composition n) (β : RootDegree n) 
         (fun r => rootFirstCut r.val.val.1 r.val.val.2 r.val.property) β :
           MvPolynomial (Fin (n-1)) ℤ) : MvPowerSeries (Fin (n-1)) ℤ) := by
   intro d hd
-  letI : Fintype (DegreeFiber (fun r : AscentRoot u => rootDegree r.val.val.1 r.val.val.2) d) :=
+  let : Fintype (DegreeFiber (fun r : AscentRoot u => rootDegree r.val.val.1 r.val.val.2) d) :=
     Fintype.ofEquiv (AscentDegreeFiber u d) (ascentDegreeFiberEquiv u d).symm
   rw [MvPolynomial.coeff_coe, boundedRootProduct_coefficient
     (fun r : AscentRoot u => rootDegree r.val.val.1 r.val.val.2)

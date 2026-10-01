@@ -41,20 +41,20 @@ theorem oneEastPath_classification (s y : ℕ) (P : DiagonalLatticePath s (s+1) 
     have hhi := P.horizontal_le_target t hst hte
     rw [P.source] at hlo
     have hval : P.horizontal t = s := by omega
-    simp only [oneEastHorizontal, if_pos (show t ≤ s+(k-s-1) by omega)]
+    simp only [oneEastHorizontal, ite_eq_left (show t ≤ s+(k-s-1) by omega)]
     exact hval
   · have hlo := (northEast_interval_bounds P.horizontal s (s+1+y) P.step k t
       hk.1 (by omega) hte).1
     have hhi := P.horizontal_le_target t hst hte
     rw [hk.2] at hlo
     have hval : P.horizontal t = (s+1 : ℕ) := by omega
-    simp only [oneEastHorizontal, if_neg (show ¬t ≤ s+(k-s-1) by omega)]
+    simp only [oneEastHorizontal, ite_eq_right (show ¬t ≤ s+(k-s-1) by omega)]
     simpa only [Int.natCast_add, Int.natCast_one] using hval
 
 /-- Adjacent one-east paths meet on their common vertical line exactly
 when the left path's east step is no higher than the right path's step. -/
 theorem adjacent_oneEast_intersection (s y z r q : ℕ)
-    (hr : r ≤ y) (hq : q ≤ z) (hyz : y ≤ z) :
+    (hr : r ≤ y) (hq : q ≤ z) (_hyz : y ≤ z) :
     (∃ t, s+1 ≤ t ∧ t ≤ s+2+y ∧ t ≤ s+1+z ∧
       oneEastHorizontal (s+1) r t = oneEastHorizontal s q t) ↔ q ≤ r := by
   constructor
@@ -64,8 +64,8 @@ theorem adjacent_oneEast_intersection (s y z r q : ℕ)
   · intro hqr
     refine ⟨s+q+1, by omega, by omega, by omega, ?_⟩
     simp only [oneEastHorizontal,
-      if_pos (show s+q+1 ≤ s+1+r by omega),
-      if_neg (show ¬s+q+1 ≤ s+q by omega)]
+      ite_eq_left (show s+q+1 ≤ s+1+r by omega),
+      ite_eq_right (show ¬s+q+1 ≤ s+q by omega)]
     simp
 
 end Schubert.RS

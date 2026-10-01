@@ -53,7 +53,7 @@ theorem shapeWeight_columnsOfWeight {n : ℕ} (v : Composition n) (hv : Antitone
       | zero => simp
       | succ n =>
         have hh := congrFun he 0
-        simp only [shapeWeight, Fin.zero_le, if_true] at hh
+        simp only [shapeWeight, Fin.zero_le, ite_true] at hh
         rw [hh]
         exact hv (Fin.zero_le _)
     funext i

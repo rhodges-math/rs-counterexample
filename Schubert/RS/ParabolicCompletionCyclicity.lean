@@ -15,6 +15,7 @@ variable {n : ℕ} (i : AdjacentPosition n) {X : Type u} [AddCommGroup X] [Modul
     (radicalEndLie i) X]
   [Module.Finite ℂ X]
 
+omit [Module.Finite ℂ X] in
 theorem raisingRadicalCyclicSpan_enveloping (z : X) (a : Enveloping n) {x : X}
     (hx : x∈raisingRadicalCyclicSpan (polynomialSl2Triple i.left i.right i.left_ne_right)
       (R := radicalEndLie i) z) :

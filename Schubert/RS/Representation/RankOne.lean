@@ -1,5 +1,5 @@
 import Mathlib.RingTheory.AdjoinRoot
-import Mathlib.Data.Complex.Basic
+import Mathlib.Basic.Complex.Basic
 import Mathlib.LinearAlgebra.FiniteDimensional.Basic
 import Mathlib.Algebra.MvPolynomial.Basic
 

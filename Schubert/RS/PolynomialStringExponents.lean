@@ -29,7 +29,7 @@ theorem PolynomialRootStringBasis.partialExponent_weight (j : Σ i,Fin (B.length
   · subst c
     simp [PolynomialRootStringBasis.residualWeight] at hc
     simp [PolynomialRootStringBasis.partialExponent,PolynomialRootStringBasis.normalizedWeight,
-      positiveRoot,hab.symm,Nat.cast_sub hk,hc]
+      positiveRoot,hab.symm,hc]
     omega
   · simp [PolynomialRootStringBasis.residualWeight,hcb] at hc
     simpa [PolynomialRootStringBasis.partialExponent,PolynomialRootStringBasis.normalizedWeight,

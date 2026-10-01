@@ -46,7 +46,7 @@ theorem rootDegree_prefix (a b : Fin n) (hab : a < b) (k : Fin (n - 1)) :
   rw [rootDegree_apply, prefixWeight_positiveRoot a b hab]
   have h : (a.val ≤ k.val ∧ k.val < b.val) ↔
       (a.val < k.val + 1 ∧ k.val + 1 ≤ b.val) := by omega
-  simp only [Fin.val_mk, ← h]
+  simp only [← h]
   split_ifs <;> norm_num
 
 def rootFirstCut (a b : Fin n) (hab : a < b) : Fin (n - 1) :=

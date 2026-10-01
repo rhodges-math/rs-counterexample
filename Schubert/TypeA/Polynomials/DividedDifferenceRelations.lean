@@ -11,8 +11,6 @@ product is introduced and then cancelled in the polynomial domain.
 
 namespace Schubert
 
-namespace Schubert
-
 noncomputable section
 
 open FinPermutation
@@ -609,7 +607,5 @@ theorem adjacentDividedDifference_commute_of_separated
       ring
 
 end
-
-end Schubert
 
 end Schubert

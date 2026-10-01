@@ -10,10 +10,10 @@ theorem polynomialTorus_scalar_of_homogeneous {n D : ℕ} (p : MatrixPolynomial 
   have he := basis_coord_eigenmap (MvPolynomial.basisMonomials (Fin n × Fin n) ℂ)
     (polynomialTorus n (scalarTorus n c)) (fun d => (c:ℂ)^d.sum (fun _ k => k))
     (fun d => polynomialTorus_scalar_monomial c d) d p
-  change MvPolynomial.coeff d (polynomialTorus n (scalarTorus n c) p)=
-    (c:ℂ)^d.sum (fun _ k => k) * MvPolynomial.coeff d p at he
+  change (polynomialTorus n (scalarTorus n c) p).coeff d=
+    (c:ℂ)^d.sum (fun _ k => k) * p.coeff d at he
   rw [he,MvPolynomial.coeff_smul,smul_eq_mul]
-  by_cases hd : MvPolynomial.coeff d p=0
+  by_cases hd : p.coeff d=0
   · rw [hd,mul_zero,mul_zero]
   · have hdeg := hp hd
     have hs : d.sum (fun _ k => k)=D := by

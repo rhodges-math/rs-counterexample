@@ -32,7 +32,7 @@ theorem radicalWeyl_val {n : ℕ} (i : AdjacentPosition n) (r : radicalEndLie i)
         r.val + ⁅(matrixUnitDerivation i.left i.right).toLinearMap,r.val⁆ -
           ⁅(matrixUnitDerivation i.right i.left).toLinearMap,
             r.val + ⁅(matrixUnitDerivation i.left i.right).toLinearMap,r.val⁆⁆⁆ := by
-  have hn : (-radicalLoweringEnd i)^2=0 := by rw [neg_sq,radicalLoweringEnd_sq]
+  have hn : (-radicalLoweringEnd i)^2=0 := by rw [neg_sq (radicalLoweringEnd i),radicalLoweringEnd_sq]
   change (nilpotentWeylEquiv _ _ _ _ r).val = _
   rw [nilpotentWeylEquiv_apply,exp_of_square_zero _ (radicalRaisingEnd_sq i),exp_of_square_zero _ hn]
   simp only [sub_eq_add_neg]

@@ -43,8 +43,7 @@ theorem tensorFlipCurry_intertwines (x : L) (D : Module.End ℂ M)
 theorem tensorBoundary_intertwines (x : L) (D : Module.End ℂ M) (ι : M →ₗ[ℂ] X)
     (hι : ∀ m, ι (D m) = ⁅x,ι m⁆) (z : R ⊗[ℂ] M) :
     ι.lTensor R (tensorBorelOperator x D z) = ⁅x,ι.lTensor R z⁆ := by
-  induction z using TensorProduct.induction_on with
-  | zero => simp
+  induction z using TensorProduct.inductionOn with
   | tmul r m =>
       simp only [tensorBorelOperator_tmul,map_add,LinearMap.lTensor_tmul,
         TensorProduct.LieModule.lie_tmul_right,hι]
@@ -73,8 +72,7 @@ def tensorFlipLiftLie (g : X →ₗ⁅ℂ,L⁆ R →ₗ[ℂ] N) : (R ⊗[ℂ] X)
     intro a z
     change (TensorProduct.lift g.toLinearMap.flip) ⁅a,z⁆ =
       ⁅a,(TensorProduct.lift g.toLinearMap.flip) z⁆
-    induction z using TensorProduct.induction_on with
-    | zero => simp
+    induction z using TensorProduct.inductionOn with
     | tmul r x =>
         rw [TensorProduct.LieModule.lie_tmul_right,map_add]
         change g x ⁅a,r⁆ + g ⁅a,x⁆ r = ⁅a,g x r⁆
@@ -90,8 +88,7 @@ theorem tensorFlipCurryLie_injective :
   intro Φ Ψ h
   apply LieModuleHom.ext
   intro z
-  induction z using TensorProduct.induction_on with
-  | zero => simp
+  induction z using TensorProduct.inductionOn with
   | tmul r x =>
       exact congrArg (fun g : X →ₗ⁅ℂ,L⁆ R →ₗ[ℂ] N => g x r) h
   | add z w hz hw => simp only [map_add,hz,hw]

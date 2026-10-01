@@ -22,11 +22,11 @@ theorem reverseNegWeight_positiveRoot (a b : Fin n) :
   have ha : k.rev = a ↔ k = a.rev := by
     constructor <;> intro h
     · simpa using congrArg Fin.rev h
-    · simpa [h]
+    · simp [h]
   have hb : k.rev = b ↔ k = b.rev := by
     constructor <;> intro h
     · simpa using congrArg Fin.rev h
-    · simpa [h]
+    · simp [h]
   simp only [ha, hb]
   ring
 
@@ -65,7 +65,7 @@ theorem weightSwap_positiveRoot (i : AdjacentPosition n) (a b : Fin n) :
   have he (a : Fin n) : adjacentTransposition i k = a ↔ k = adjacentTransposition i a := by
     constructor <;> intro h
     · simpa [adjacentTransposition] using congrArg (adjacentTransposition i) h
-    · simpa [h, adjacentTransposition]
+    · simp [h, adjacentTransposition]
   simp [weightSwap, positiveRoot, Pi.single_apply, he]
 
 /-- Swapping two adjacent coordinates permutes all positive roots except

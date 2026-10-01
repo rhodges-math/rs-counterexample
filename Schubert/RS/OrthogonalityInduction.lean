@@ -28,14 +28,14 @@ theorem pairing_orthogonality_step (u : Composition n) (i : AdjacentPosition n)
     keyAtomPairing (key a) (atom u) = if a = (fun k => u k.rev) then 1 else 0 := by
   rw [keyAtomPairing_key_atom_ascent a u i hu]
   by_cases hd : a (mirrorAdjacent i).right < a (mirrorAdjacent i).left
-  · rw [if_pos hd, ih, ih]
+  · rw [ite_eq_left hd, ih, ih]
     have hn : a ≠ (fun k => swapComposition u i k.rev) := by
       intro h
       subst a
       simp only [mirrorAdjacent_left, mirrorAdjacent_right, Fin.rev_rev,
         swapComposition_left, swapComposition_right] at hd
       omega
-    rw [if_neg hn, sub_zero, reverse_swapComposition]
+    rw [ite_eq_right hn, sub_zero, reverse_swapComposition]
     have he : swapComposition a (mirrorAdjacent i) =
         swapComposition (fun k => u k.rev) (mirrorAdjacent i) ↔ a = (fun k => u k.rev) := by
       constructor
@@ -44,13 +44,13 @@ theorem pairing_orthogonality_step (u : Composition n) (i : AdjacentPosition n)
       · intro h
         rw [h]
     simp only [he]
-  · rw [if_neg hd]
+  · rw [ite_eq_right hd]
     have hn : a ≠ (fun k => u k.rev) := by
       intro h
       subst a
       simp only [mirrorAdjacent_left, mirrorAdjacent_right, Fin.rev_rev] at hd
       exact hd hu
-    rw [if_neg hn]
+    rw [ite_eq_right hn]
 
 /-- Conditional assembly of the induction; the named dominant base is
 explicitly open and must be proved before this can certify duality. -/

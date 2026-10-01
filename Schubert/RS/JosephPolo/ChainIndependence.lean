@@ -13,8 +13,8 @@ columns, not on a character formula or a straightening assertion. -/
 theorem flagColumnProduct_relation_zero {n d : ℕ} :
     ∀ (h : Fin d → Fin n) {ι : Type u} [Fintype ι]
       (T : ι → (j : Fin d) → FlagMinorRowSet (h j))
-      (hT : Function.Injective T) (W : ι → FinPermutation n)
-      (hchain : ∀ i, HasFlagDefiningChain h (T i) (W i)) (c : ι → ℂ),
+      (_hT : Function.Injective T) (W : ι → FinPermutation n)
+      (_hchain : ∀ i, HasFlagDefiningChain h (T i) (W i)) (c : ι → ℂ),
       (∀ i, flagOrbitRestriction (W i) (∑ j, c j • flagColumnProduct h (T j)) = 0) →
       ∀ i, c i = 0 := by
   classical

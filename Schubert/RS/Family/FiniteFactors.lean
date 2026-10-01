@@ -36,7 +36,7 @@ theorem finite_root_product_grouped (P : Parameters) (B : ℕ) :
   intro r hr
   have hc : coordinateClass P r.val.1 ≠ coordinateClass P r.val.2 := fun h => hr (Or.inl h)
   have hs : ¬(sourceClass P r.val.1 ∧ ¬sourceClass P r.val.2) := fun h => hr (Or.inr h)
-  simp only [finiteLaurentRootFactor,if_neg hc,if_neg hs]
+  simp only [finiteLaurentRootFactor,ite_eq_right hc,ite_eq_right hs]
 
 end
 end Schubert.RS.Family

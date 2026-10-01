@@ -55,7 +55,8 @@ theorem shiftedCartanEnveloping_lowering {n : ℕ} (i : AdjacentPosition n) (w :
       (-2 : ℂ) • loweringEnveloping i w := by
   rw [add_mul, mul_add, smul_mul_assoc, mul_smul_comm, one_mul, mul_one]
   have h := loweringEnveloping_cartan i w
-  convert h using 1 <;> abel
+  convert h using 1
+  abel
 
 end
 end Schubert.RS.Representation

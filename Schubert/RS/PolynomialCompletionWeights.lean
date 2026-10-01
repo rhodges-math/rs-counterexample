@@ -30,13 +30,13 @@ theorem PolynomialRootStringBasis.completionWeight_nonnegative (j : B.completion
   by_cases hc : c=a
   · subst c
     simp only [PolynomialRootStringBasis.completionWeight,Pi.add_apply,Pi.smul_apply,
-      positiveRoot,Pi.sub_apply,Pi.single_apply,ite_true,if_neg hab,sub_zero,
+      positiveRoot,Pi.sub_apply,Pi.single_apply,ite_true,ite_eq_right hab,sub_zero,
       smul_eq_mul,mul_one]
     omega
   by_cases hc' : c=b
   · subst c
     simp only [PolynomialRootStringBasis.completionWeight,Pi.add_apply,Pi.smul_apply,
-      positiveRoot,Pi.sub_apply,Pi.single_apply,ite_true,if_neg hab.symm,zero_sub,
+      positiveRoot,Pi.sub_apply,Pi.single_apply,ite_true,ite_eq_right hab.symm,zero_sub,
       smul_eq_mul,mul_neg,mul_one]
     omega
   · simpa [PolynomialRootStringBasis.completionWeight,positiveRoot,hc,hc'] using ht c

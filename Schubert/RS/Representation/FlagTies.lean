@@ -91,7 +91,7 @@ theorem stabilizer_highestFlag {n : ℕ} (m : ColumnShape n) (w : Equiv.Perm (Fi
   intro k hk
   rw [map_pow]
   by_cases hm : 0 < m k
-  · rw [dif_pos hm, stabilizer_flagMinor m w hw k hm, smul_pow]
+  · rw [dite_eq_left hm, stabilizer_flagMinor m w hw k hm, smul_pow]
   · have hz : m k = 0 := by omega
     simp [hz]
 

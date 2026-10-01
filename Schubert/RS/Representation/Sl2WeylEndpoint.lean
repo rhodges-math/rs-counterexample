@@ -34,7 +34,7 @@ variable {L M : Type*} [LieRing L] [LieAlgebra ℂ L] {h e f : L} (t : IsSl2Trip
 theorem nilpotentWeyl_cartan (x : M) :
     ⁅sl2CartanElement t,nilpotentWeylEquiv _ _ hE hF x⁆ =
       -nilpotentWeylEquiv _ _ hE hF ⁅sl2CartanElement t,x⁆ := by
-  letI := complexRationalModule (t.toLieSubalgebra ℂ)
+  let := complexRationalModule (t.toLieSubalgebra ℂ)
   let w := nilpotentWeylEquiv _ _ hE hF
   have hw : w ⁅sl2CartanElement t,x⁆ = ⁅sl2AdjointWeyl t (sl2CartanElement t),w x⁆ :=
     LieModuleHom.weyl_tensor_covariance (LieModule.toModuleHom ℂ (t.toLieSubalgebra ℂ) M)
@@ -47,6 +47,7 @@ theorem nilpotentWeyl_cartan (x : M) :
 variable [Module.Finite ℂ M] {m : M} {d : ℕ}
   (P : (sl2SubalgebraTriple t).HasPrimitiveVectorWith m (d:ℂ))
 
+omit [Module ℚ M] in
 theorem fullPrimitive_lowest_line (x : fullPrimitiveModule t P)
     (hx : ⁅sl2CartanElement t,x⁆=-(d:ℂ) • x) :
     x = (fullPrimitiveBasis t P).repr x ⟨d,by omega⟩ • fullPrimitiveBasis t P ⟨d,by omega⟩ := by
@@ -59,7 +60,7 @@ theorem fullPrimitive_lowest_line (x : fullPrimitiveModule t P)
   · subst k
     simp
   · simp only [map_smul,Module.Basis.repr_self,Finsupp.smul_apply,smul_eq_mul,Finsupp.single_apply]
-    rw [if_neg (Ne.symm hk),mul_zero]
+    rw [ite_eq_right (Ne.symm hk),mul_zero]
     have heq := basis_coord_eigenmap b
       (LieModule.toEnd ℂ _ (fullPrimitiveModule t P) (sl2CartanElement t))
       (fun j : Fin (d+1) => (d:ℂ)-2*j.val) (fullPrimitiveBasis_h t P) k x

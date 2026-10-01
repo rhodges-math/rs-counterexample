@@ -52,7 +52,7 @@ theorem nested_internalA (P : Parameters) (B : ℕ) (r : PositiveRoot (2*P.p-1))
       1-AddMonoidAlgebra.single (positiveRoot r.val.1 r.val.2) (1 : SourceBLaurent P) := by
   change nestedLaurent P (if coordinateClass P (sourceA P r.val.1)=coordinateClass P (sourceA P r.val.2)
     then _ else _)=_
-  simp only [Fin.ext_iff,sourceA_class,if_true,map_sub,map_one,nestedLaurent_single,groupedRoot,splitWeight_sourceA]
+  simp only [Fin.ext_iff,sourceA_class,ite_true,map_sub,map_one,nestedLaurent_single,groupedRoot,splitWeight_sourceA]
   rfl
 
 theorem nested_internalB (P : Parameters) (B : ℕ) (r : PositiveRoot (2*P.q-1)) :
@@ -61,7 +61,7 @@ theorem nested_internalB (P : Parameters) (B : ℕ) (r : PositiveRoot (2*P.q-1))
         (1-AddMonoidAlgebra.single (positiveRoot r.val.1 r.val.2) (1 : SlotLaurent P.m)) := by
   change nestedLaurent P (if coordinateClass P (sourceB P r.val.1)=coordinateClass P (sourceB P r.val.2)
     then _ else _)=_
-  simp only [Fin.ext_iff,sourceB_class,if_true,map_sub,map_one,nestedLaurent_single,groupedRoot,splitWeight_sourceB]
+  simp only [Fin.ext_iff,sourceB_class,ite_true,map_sub,map_one,nestedLaurent_single,groupedRoot,splitWeight_sourceB]
   rw [AddMonoidAlgebra.single_sub]
   rfl
 
@@ -71,7 +71,7 @@ theorem nested_targetPair (P : Parameters) (B : ℕ) (i : Fin P.m) :
         (1-AddMonoidAlgebra.single (positiveRoot (slotLeft i) (slotRight i)) (1 : ℤ))) := by
   change nestedLaurent P (if coordinateClass P (targetEarly P i)=coordinateClass P (targetLate P i)
     then _ else _)=_
-  simp only [targetPair_same_class,if_true,map_sub,map_one,nestedLaurent_single,groupedRoot,splitWeight_targetPair]
+  simp only [targetPair_same_class,ite_true,map_sub,map_one,nestedLaurent_single,groupedRoot,splitWeight_targetPair]
   rw [AddMonoidAlgebra.single_sub,AddMonoidAlgebra.single_sub]
   rfl
 
@@ -81,8 +81,8 @@ theorem nested_crossA (P : Parameters) (B : ℕ) (s : SourceTargetA P) :
         (AddMonoidAlgebra.single 0 (slotVariable s.val.2.rev^k.val)) := by
   change nestedLaurent P (if coordinateClass P (sourceA P s.val.1)=coordinateClass P (target P s.val.2)
     then _ else if sourceClass P (sourceA P s.val.1) ∧ ¬sourceClass P (target P s.val.2) then _ else _)=_
-  simp only [sourceA_target_different,if_false,sourceA_isSource,target_not_source,
-    not_false_eq_true,true_and,if_true,map_sum,groupedRoot]
+  simp only [sourceA_target_different,ite_false,sourceA_isSource,target_not_source,
+    not_false_eq_true,true_and,ite_true,map_sum,groupedRoot]
   apply Finset.sum_congr rfl
   intro k _
   rw [nestedLaurent_single,splitWeight_nsmul,splitWeight_sourceA_target,slotVariable_pow]
@@ -95,8 +95,8 @@ theorem nested_crossB (P : Parameters) (B : ℕ) (s : SourceTargetB P) :
           (slotVariable s.val.2.rev^k.val)) := by
   change nestedLaurent P (if coordinateClass P (sourceB P s.val.1)=coordinateClass P (target P s.val.2)
     then _ else if sourceClass P (sourceB P s.val.1) ∧ ¬sourceClass P (target P s.val.2) then _ else _)=_
-  simp only [sourceB_target_different,if_false,sourceB_isSource,target_not_source,
-    not_false_eq_true,true_and,if_true,map_sum,groupedRoot]
+  simp only [sourceB_target_different,ite_false,sourceB_isSource,target_not_source,
+    not_false_eq_true,true_and,ite_true,map_sum,groupedRoot]
   rw [single_zero_sum]
   apply Finset.sum_congr rfl
   intro k _

@@ -25,7 +25,7 @@ theorem extended_coefficientBox (P : Parameters) (k : Fin (P.rank+1)) :
   · change (beta P ⟨k.val-1+1,by omega⟩ : ℤ)=(beta P k : ℤ)
     have he : (⟨k.val-1+1,by omega⟩ : Fin (P.rank+1))=k := by
       apply Fin.ext
-      simp only [Fin.val_mk]
+      simp only
       omega
     rw [he]
   · have he : k=0 ∨ k=Fin.last P.rank := by

@@ -91,7 +91,7 @@ theorem cartanEnveloping_mem_jp {n : ℕ} (h : Fin n → ℂ) (u : Composition n
     obtain ⟨r,rfl⟩ := ha
     rw [cartanEnveloping_root_pow]
     exact ((jpLeftIdeal u).restrictScalars ℂ).smul_mem _ (Submodule.subset_span ⟨r,rfl⟩)
-  | zero => simpa using (jpLeftIdeal u).zero_mem
+  | zero => simp
   | add a b ha hb ia ib => simpa using (jpLeftIdeal u).add_mem ia ib
   | smul a b hb ib =>
     change cartanEnveloping h (a*b) ∈ jpLeftIdeal u

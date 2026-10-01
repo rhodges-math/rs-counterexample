@@ -30,7 +30,7 @@ theorem boxExponent_injective : Function.Injective (boxExponent (n:=n) (w:=w)) :
 theorem boxComposition_bound (u : BoxIndex n w) (i : Fin n) : boxComposition u i≤w :=
   Nat.le_of_lt_succ (u i).isLt
 
-def boxCoordinates (f : Polynomial n) : BoxIndex n w → ℤ := fun u => MvPolynomial.coeff (boxExponent u) f
+def boxCoordinates (f : Polynomial n) : BoxIndex n w → ℤ := fun u => f.coeff (boxExponent u)
 
 def boxDecode (v : BoxIndex n w → ℤ) : Polynomial n :=
   ∑ u,v u • compositionMonomial (boxComposition u)
@@ -57,10 +57,10 @@ theorem boxDecode_coordinates (f : Polynomial n) (hf : f∈exponentBox n w) :
     have he : boxExponent u=d := by ext i; rfl
     rw [← he]
     exact congrFun (boxCoordinates_decode (boxCoordinates (w:=w) f)) u
-  · have hz : MvPolynomial.coeff d f=0 := by
+  · have hz : f.coeff d=0 := by
       by_contra h
       exact hd (hf d h)
-    have hz' : MvPolynomial.coeff d (boxDecode (boxCoordinates (w:=w) f))=0 := by
+    have hz' : (boxDecode (boxCoordinates (w:=w) f)).coeff d=0 := by
       by_contra h
       exact hd (boxDecode_mem (boxCoordinates (w:=w) f) d h)
     rw [hz,hz']

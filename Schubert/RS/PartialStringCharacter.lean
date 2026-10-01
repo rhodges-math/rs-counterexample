@@ -42,7 +42,7 @@ theorem partialStringCharacter_sum {n : ℕ} (i : AdjacentPosition n) (a : Fin n
   rw [partialStringCharacter,twoVariableStringCharacter_sum,Finset.sum_mul]
   apply Finset.sum_congr rfl
   intro k hk
-  simp only [MvPolynomial.monomial_mul,one_mul]
+  simp only [MvPolynomial.monomial_mul_monomial,one_mul]
   apply congrArg (fun w : Fin n →₀ ℕ => MvPolynomial.monomial w (1:ℤ))
   abel
 
@@ -67,7 +67,7 @@ theorem completedStringCharacter_sum {n : ℕ} (i : AdjacentPosition n)
   rw [Finset.mul_sum]
   apply Finset.sum_congr rfl
   intro l hl
-  rw [MvPolynomial.monomial_mul,one_mul]
+  rw [MvPolynomial.monomial_mul_monomial,one_mul]
 
 end
 end Schubert.RS.Representation

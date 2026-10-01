@@ -55,12 +55,6 @@ theorem integerWeightScalar_cut (w : Weight n) (k : Fin (n-1)) :
     _ = _ := by
       rw [hp]
       congr 1
-      unfold prefixWeight
-      apply Finset.sum_congr
-      · ext i
-        simp only [Finset.mem_filter, Finset.mem_univ, true_and, Fin.val_mk]
-        omega
-      · intros; rfl
 
 theorem rootWeight_monomialDegree (a : PositiveRoot n → ℕ) :
     rootWeight (monomialDegree a) = ∑ r, a r • positiveRoot r.val.1 r.val.2 := by

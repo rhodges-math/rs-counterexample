@@ -13,7 +13,7 @@ theorem matrixUnitDerivation_X {n : ℕ} (a b i j : Fin n) :
   rw [matrixUnitDerivation, rowDerivation_X]
   by_cases hi : i=b
   · subst i; simp [Matrix.single, ite_smul]
-  · simp [Matrix.single, ite_smul, hi, Ne.symm hi]
+  · simp [Matrix.single, hi, Ne.symm hi]
 
 theorem derivation_det_zero {A ι : Type*} [CommRing A] [Algebra ℂ A]
     [Fintype ι] [DecidableEq ι] (D : Derivation ℂ A A) (M : Matrix ι ι A)
@@ -29,7 +29,7 @@ theorem matrixUnitDerivation_minor_absent {n : ℕ} (a b k : Fin n) (hb : k < b)
     matrixUnitDerivation a b (flagMinor k) = 0 := by
   apply derivation_det_zero
   intro i j
-  rw [matrixUnitDerivation_X, if_neg]
+  rw [matrixUnitDerivation_X, ite_eq_right]
   intro he
   have h := congrArg Fin.val he
   have hi := i.isLt
@@ -53,12 +53,12 @@ theorem matrixUnitDerivation_minor_present {n : ℕ} (a b k : Fin n)
   · have hr : (fun c => D (M j c)) = M i := by
       funext c
       change matrixUnitDerivation a b (MvPolynomial.X (prefixIndex k j,prefixIndex k c)) = MvPolynomial.X (prefixIndex k i,prefixIndex k c)
-      rw [hi, hj, matrixUnitDerivation_X, if_pos rfl]
+      rw [hi, hj, matrixUnitDerivation_X, ite_eq_left rfl]
     rw [hr]
     exact Matrix.det_updateRow_eq_zero (M := M) hij
   · intro s hs c
     change matrixUnitDerivation a b (MvPolynomial.X (prefixIndex k s,prefixIndex k c)) = 0
-    rw [matrixUnitDerivation_X, if_neg]
+    rw [matrixUnitDerivation_X, ite_eq_right]
     intro he
     exact hs (prefixIndex_injective k (he.trans hj.symm))
 
@@ -91,7 +91,7 @@ theorem matrixUnitDerivation_minor_active {n : ℕ} (a b k : Fin n)
       simp [Matrix.updateRow_apply, hs, M, rowRename, Equiv.swap_apply_of_ne_of_ne (hna s) hnb]
   · intro s hs c
     change matrixUnitDerivation a b (MvPolynomial.X (prefixIndex k s,prefixIndex k c)) = 0
-    rw [matrixUnitDerivation_X, if_neg]
+    rw [matrixUnitDerivation_X, ite_eq_right]
     intro he
     exact hs (prefixIndex_injective k (he.trans hj.symm))
 
@@ -105,7 +105,7 @@ theorem matrixUnitDerivation_minor_active_twice {n : ℕ} (a b k : Fin n)
   apply derivation_det_zero
   intro i j
   simp only [AlgHom.mapMatrix_apply, Matrix.map_apply, rowRename, MvPolynomial.rename_X]
-  rw [matrixUnitDerivation_X, if_neg]
+  rw [matrixUnitDerivation_X, ite_eq_right]
   intro h
   have he : prefixIndex k i = a := by
     have hh := congrArg (Equiv.swap a b) h

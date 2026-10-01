@@ -41,7 +41,7 @@ theorem target_sum (P : Parameters) (i : Fin P.rank) (h : ¬sourceClass P i) :
     change ¬(coordinateClass P i).val < 2 at h
     omega
   simp only [a,b,show (coordinateClass P i).val ≠ 0 by omega,
-    show (coordinateClass P i).val ≠ 1 by omega,if_false]
+    show (coordinateClass P i).val ≠ 1 by omega,ite_false]
   rw [← Nat.add_mul]
   congr 1
   omega
@@ -50,11 +50,11 @@ theorem residual_pattern (P : Parameters) (i : Fin P.rank) :
     (c P i : ℤ)-a P i-b P i=if sourceClass P i then 1 else -1 := by
   by_cases h : sourceClass P i
   · have hs := source_sum P i h
-    simp only [c,h,if_true]
+    simp only [c,h,ite_true]
     omega
   · have ht := target_sum P i h
     have hp : 0 < (P.m+3)*P.K := Nat.mul_pos (by omega) P.K_pos
-    simp only [c,h,if_false,Parameters.rectangle]
+    simp only [c,h,ite_false,Parameters.rectangle]
     omega
 
 def beta (P : Parameters) (i : Fin (P.rank+1)) : ℕ :=

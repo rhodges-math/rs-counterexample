@@ -31,9 +31,9 @@ exhibited completion. Its Jacobi axiom is derived by tensor uniqueness. -/
     exact (sub_eq_iff_eq_add.mp hj.symm)
 
 /-- Scalar compatibility of the newly constructed radical action. -/
-@[instance_reducible] def IsRankOneCompletion.radicalLieModule :
+theorem IsRankOneCompletion.radicalLieModule :
     @LieModule ℂ R X _ _ _ _ _ (C.radicalLieRingModule ρ he hh hder hρ) := by
-  letI := C.radicalLieRingModule ρ he hh hder hρ
+  let := C.radicalLieRingModule ρ he hh hder hρ
   exact
     { smul_lie := fun c r x => by
         change C.extendAction ρ he hh ((c • r) ⊗ₜ[ℂ] x) = c • C.extendAction ρ he hh (r ⊗ₜ[ℂ] x)
@@ -47,7 +47,7 @@ radical action, as required for the corresponding semidirect product. -/
 theorem IsRankOneCompletion.radical_isLieTower :
     letI := C.radicalLieRingModule ρ he hh hder hρ
     IsLieTower L R X := by
-  letI := C.radicalLieRingModule ρ he hh hder hρ
+  let := C.radicalLieRingModule ρ he hh hder hρ
   refine ⟨?_⟩
   intro a r x
   exact C.extendAction_equivariant ρ he hh a r x

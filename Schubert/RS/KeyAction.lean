@@ -42,8 +42,7 @@ theorem key_isobaric_of_equal (a : Composition n) (i : AdjacentPosition n)
         have h2 : (swapComposition (swapComposition a j) i) j.left =
             (swapComposition (swapComposition a j) i) j.right := by
           simp [swapComposition, adjacentTransposition, ← hadj,
-            Equiv.swap_apply_def, i.left_ne_right, i.left_ne_right.symm,
-            hxz, hxz.symm, hzy, heq]
+            Equiv.swap_apply_def, i.left_ne_right, hxz, hxz.symm, hzy, heq]
         have h2lt := (sortingMeasure_swap_lt (swapComposition a j) i h1).trans hjlt
         rw [key_ascent a ha, key_any_ascent _ i h1]
         rw [isobaric_braid i j hadj]
@@ -59,8 +58,8 @@ theorem key_isobaric_of_equal (a : Composition n) (i : AdjacentPosition n)
           have h2 : (swapComposition (swapComposition a j) i) j.left =
               (swapComposition (swapComposition a j) i) j.right := by
             simp [swapComposition, adjacentTransposition, hadj',
-              Equiv.swap_apply_def, hxy, hxy.symm, hxz, hxz.symm,
-              i.left_ne_right, i.left_ne_right.symm, heq]
+              Equiv.swap_apply_def, hxy, hxz, hxz.symm,
+              i.left_ne_right.symm, heq]
           have h2lt := (sortingMeasure_swap_lt (swapComposition a j) i h1).trans hjlt
           rw [key_ascent a ha, key_any_ascent _ i h1]
           rw [← isobaric_braid j i hadj']

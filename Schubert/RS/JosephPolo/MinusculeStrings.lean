@@ -28,16 +28,16 @@ def minusculeTensorStringEquiv (L : ℕ) :
       · have hb' : b = 0 := Fin.ext hb
         subst b
         simp
-      · simp only [Fin.val_zero,ite_true,dif_neg hb]
+      · simp only [Fin.val_zero,ite_true,dite_eq_right hb]
         apply Prod.ext
         · rfl
         · apply Fin.ext
-          simp only [Fin.val_mk]
+          simp only
           omega
     · have ha' : a = 1 := Fin.ext (by have := a.isLt; omega)
       subst a
-      simp only [Fin.val_one,one_ne_zero,ite_false,Fin.val_mk,Nat.add_eq_zero_iff,
-        and_false,dif_neg]
+      simp only [Fin.val_one,one_ne_zero,ite_false,Nat.add_eq_zero_iff,
+        and_false]
       apply Prod.ext
       · rfl
       · apply Fin.ext
@@ -49,10 +49,10 @@ def minusculeTensorStringEquiv (L : ℕ) :
       · have hk' : k = 0 := Fin.ext hk
         subst k
         simp
-      · simp only [dif_neg hk,Fin.val_one,one_ne_zero,ite_false,Fin.val_mk]
+      · simp only [dite_eq_right hk,Fin.val_one,one_ne_zero,ite_false,Fin.val_mk]
         apply congrArg Sum.inl
         apply Fin.ext
-        simp only [Fin.val_mk]
+        simp only
         omega
     | inr k =>
       simp
