@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: "If you use or adapt this code, please cite the paper and this repository."
 type: software
-title: "rs-counterexample: Lean verification of the key-product counterexamples"
+title: "rs-counterexample: Lean verification of Counterexamples to the Reiner–Shimozono conjecture and the failure of Schubert filtrations"
 abstract: >-
   A Lean 4 formalization of R. Hodges, "Counterexamples to the Reiner-Shimozono
   conjecture and the failure of Schubert filtrations": the coefficient formula

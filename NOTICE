@@ -1,4 +1,4 @@
-rs-counterexample: Lean verification of the key-product counterexamples
+rs-counterexample: Lean verification of Counterexamples to the Reiner–Shimozono conjecture and the failure of Schubert filtrations
 Copyright 2026 Reuven Hodges
 
 This formalization accompanies R. Hodges, *Counterexamples to the

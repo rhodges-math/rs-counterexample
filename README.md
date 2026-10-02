@@ -1,4 +1,4 @@
-# Lean verification of the key-product counterexamples
+# Lean verification of *Counterexamples to the Reiner–Shimozono conjecture and the failure of Schubert filtrations*
 
 This repository (release 2.0.0) contains a Lean 4 formalization of
 the main results of Reuven Hodges, *Counterexamples to the Reiner–Shimozono
