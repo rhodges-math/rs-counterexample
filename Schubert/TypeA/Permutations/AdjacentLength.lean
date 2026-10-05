@@ -84,13 +84,13 @@ def adjacentPairSwap (a : AdjacentPosition n) :
       (adjacentTransposition a p.1, adjacentTransposition a p.2) :=
   rfl
 
-@[simp] theorem adjacentPairSwap_involutive
+theorem adjacentPairSwap_involutive
     (a : AdjacentPosition n) (p : Fin n × Fin n) :
     adjacentPairSwap a (adjacentPairSwap a p) = p := by
   rcases p with ⟨x, y⟩
   simp [adjacentPairSwap, adjacentTransposition]
 
-@[simp] theorem adjacentPairSwap_adjacentPair
+theorem adjacentPairSwap_adjacentPair
     (a : AdjacentPosition n) :
     adjacentPairSwap a (a.left, a.right) = (a.right, a.left) := by
   simp [adjacentPairSwap, adjacentTransposition]

@@ -1,4 +1,4 @@
-import Schubert.RS.Support.BruhatRanks
+import Schubert.TypeA.Permutations.BruhatRanks
 
 /-!
 # Elementary bounds for northwest rank matrices

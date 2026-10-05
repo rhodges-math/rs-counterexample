@@ -1,4 +1,4 @@
-import Schubert.RS.Support.PolynomialRing
+import Schubert.TypeA.Polynomials.PolynomialRing
 import Schubert.TypeA.Permutations.AdjacentTranspositions
 
 /-!
@@ -533,7 +533,7 @@ private theorem replaceAdjacentExponents_single_right_zero
   rw [MvPolynomial.X, adjacentDividedDifference_monomial_one]
   exact monomialDividedDifference_right_variable i
 
-@[simp] theorem monomialDividedDifference_other_variable
+theorem monomialDividedDifference_other_variable
     (i : AdjacentPosition n) (j : Fin n)
     (hjleft : j ≠ i.left) (hjright : j ≠ i.right) :
     monomialDividedDifference i (Finsupp.single j 1) = 0 := by

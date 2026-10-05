@@ -18,6 +18,7 @@ With this convention the identity permutation is the minimum element. -/
 def StrongBruhatLE (u v : FinPermutation n) : Prop :=
   ∀ p q, u.bruhatRank p q ≤ v.bruhatRank p q
 
+/-- The strong Bruhat order on permutations of `Fin n`. -/
 infix:50 " ≤ᴮ " => StrongBruhatLE
 
 theorem strongBruhat_refl (w : FinPermutation n) : w ≤ᴮ w :=
@@ -100,7 +101,7 @@ pointwise order inherited by equivalences. -/
   le_antisymm := fun _ _ ↦ strongBruhat_antisymm
 
 /-- The permutations minimal in strong Bruhat order among those not below `w`.
-This is the order-theoretic essential set used in the paper. -/
+This is the order-theoretic essential set. -/
 def bruhatEssentialSet (w : FinPermutation n) : Set (FinPermutation n) :=
   {v | ¬ v ≤ᴮ w ∧
     ∀ u, u ≤ᴮ v → u ≠ v → u ≤ᴮ w}

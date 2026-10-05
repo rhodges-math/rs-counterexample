@@ -32,6 +32,39 @@ transitive axiom dependencies. The expected axioms are only `propext`,
 #check @Schubert.RS.atomCoefficient_eq_of_expansion
 #check @Schubert.RS.Family.isHallTriple_family
 #check @Schubert.RS.Family.atomCoefficient_eq_paired
+#check @Schubert.RS.Geometric.not_hasGeometricRelativeSchubertFiltration
+#check @Schubert.RS.Geometric.not_hasGeometricSchubertFiltration
+#check @Schubert.RS.Geometric.not_hasGeometricSLRelativeSchubertFiltration
+#check @Schubert.RS.Geometric.not_hasGeometricSLSchubertFiltration
+#check @Schubert.RS.Geometric.typeA27_geometricFiltration_failure
+#check @Schubert.RS.Geometric.geometricFamilyTensor
+#check @Schubert.RS.Geometric.ch_geometricFamilyTensor
+#check @FlagVarieties.dualJoseph
+#check @Schubert.RS.Geometric.geometricMinimalRelativeSchubert
+#check @Schubert.RS.Geometric.geometricBoundaryRestrict
+#check @Schubert.RS.Geometric.IsGeometricSchubertLayer
+#check @Schubert.RS.Geometric.IsGeometricMinimalRelativeSchubertLayer
+#check @Schubert.RS.Geometric.HasGeometricRelativeSchubertFiltration
+#check @Schubert.RS.Geometric.HasGeometricSchubertFiltration
+#check @Schubert.RS.Geometric.HasGeometricSLRelativeSchubertFiltration
+#check @Schubert.RS.Geometric.HasGeometricSLSchubertFiltration
+#check @FlagVarieties.schubertVariety
+#check @FlagVarieties.schubertUnion
+#check @FlagVarieties.schubertBoundary
+#check @FlagVarieties.lineBundle
+#check @FlagVarieties.sections
+#check @FlagVarieties.sectionsRep
+#check @FlagVarieties.sectionsEquivSemiInvariants
+#check @FlagVarieties.sectionsRestrict
+#check @FlagVarieties.sectionsRestrictHom_eq_sectionsRestrict
+#check @FlagVarieties.preimageIdeal_schubertUnion_eq_orbitIdeal_complex
+#check @FlagVarieties.globalSectionsConstant_complex
+#check @FlagVarieties.geometricSectionEquiv
+#check @FlagVarieties.dualJosephEquiv
+#check @Schubert.RS.Geometric.geometricMinimalRelativeSchubertEquiv
+#check @Schubert.RS.Geometric.isGeometricSchubertLayer_iff
+#check @Schubert.RS.Geometric.isGeometricMinimalRelativeSchubertLayer_iff
+#check @FlagVarieties.sectionBModuleIso
 #check @Schubert.RS.Family.not_hasRelativeSchubertFiltration
 #check @Schubert.RS.Family.not_hasSchubertFiltration
 #check @Schubert.RS.Family.not_hasSLRelativeSchubertFiltration
@@ -160,6 +193,9 @@ transitive axiom dependencies. The expected axioms are only `propext`,
 #check @Schubert.RS.Algorithms.encodeTripleUnary_injective
 #check @Schubert.RS.Algorithms.twoSource_eq_count
 #check @Schubert.RS.SchubertUnions.key_eq_sum_atom
+#check @FlagVarieties.ch_dualJoseph_negWeight
+#check @Schubert.RS.Geometric.ch_geometricMinimalRelativeSchubert_negWeight
+#check @Schubert.RS.Geometric.geometricMinimalRelativeSchubert_weightSpace_ne_bot
 #check @Schubert.RS.Filtrations.dualJoseph_hasCharacter
 #check @Schubert.RS.Filtrations.minRelSchubert_hasCharacter
 #check @Schubert.RS.Quiver.ForwardQuiver.multiplicity_pos_of_nsmul_pos
@@ -195,6 +231,61 @@ transitive axiom dependencies. The expected axioms are only `propext`,
 #check @GLRep.IsRationalLeviRep.exists_ratLeviCharacter_eq_sum
 #check @Schubert.RS.Algorithms.exists_not_mem_P
 #check @Schubert.RS.Algorithms.FP_countable
+#check @Schubert.RS.key
+#check @Schubert.RS.atom
+#check @Schubert.RS.atomCoefficient
+#check @Schubert.RS.GLCharacterMultiplicity
+#check @Schubert.RS.QuiverSaturation
+#check @Schubert.RS.PolyTimeRationalFeasibility
+#check @LinearProgramming.encodeSystem
+#check @FlagVarieties.FlagScheme
+#check @FlagVarieties.FlagScheme.isProper_toSpec
+#check @FlagVarieties.isColimitOrbitMap
+#check @FlagVarieties.exists_mulRight_eq
+#check @FlagVarieties.isIntegral_schubertVariety
+#check @FlagVarieties.schubertVariety_globalSections_const
+#check @FlagVarieties.PointModel.schubertVariety_le_iff
+#check @FlagVarieties.oppositeSchubertVariety
+#check @FlagVarieties.richardsonVariety
+#check @FlagVarieties.Richardson.richardsonVariety_ne_top_iff
+#check @FlagVarieties.isInvertible_lineBundle
+#check @FlagVarieties.sectionsMul
+#check @FlagVarieties.sectionsComodule
+#check @FlagVarieties.contract_sectionsComodule
+#check @GLRep.rationalBorelRepEquivComodule
+#check @GLRep.indBorelFrobeniusEquiv
+#check @GLRep.IsRationalBorelRep.toBModule
+#check @FlagVarieties.PointModel.sectionsRestrict_surjective
+#check @FlagVarieties.PointModel.schubertSectionsBasis
+#check @FlagVarieties.PointModel.geometricSectionRingEquiv
+#check @FlagVarieties.PointModel.geometricSectionRingEquiv_symm_of_mul_of
+#check @FlagVarieties.PointModel.minorSpanEquivSections
+#check @FlagVarieties.borelWeil_ratIrrep
+#check @Demazure.FlagModule.flagDemazure
+#check @Demazure.FlagModule.compositionFlagJosephPolo
+#check @Demazure.SchubertUnions.flagDemazure_hasTorusCharacter
+#check @Demazure.SchubertUnions.key_eq_sum_atom
+#check @FlagVarieties.nonempty_sectionDemazureEquiv_ratIrrep
+#check @FlagVarieties.PointModel.orbitIdeal_lowerSet_eq_fultonIdeal
+#check @FlagVarieties.PointModel.isRadical_map_fultonIdeal
+#check @FlagVarieties.PointModel.map_kazhdanLusztigSubst_fultonIdeal
+#check @FlagVarieties.PointModel.isRadical_map_kazhdanLusztigSubst_fultonIdeal
+#check @FlagVarieties.PointModel.cellRingEquiv
+#check @FlagVarieties.Dimension.topologicalKrullDim_schubertVariety
+#check @FlagVarieties.Bruhat.permCoxeterSystem
+#check @FlagVarieties.Bruhat.bruhatLE_iff_strongBruhatLE
+#check @FlagVarieties.Plucker.plucker
+#check @FlagVarieties.Plucker.pluckerSegre
+#check @FlagVarieties.Plucker.isClosedImmersion_pluckerSegre
+#check @FlagVarieties.Plucker.pluckerSectionBasis_apply
+#check @FlagVarieties.PointModel.pluckerVector_proportional_iff
+#check @FlagVarieties.rankOneInduction
+#check @FlagVarieties.rankOneInductionSectionsEquiv
+#check @FlagVarieties.simpleSchubertSectionsEquiv
+#check @FlagVarieties.ch_rankOneInduction_charCoaction
+#check @Schubert.FinPermutation
+#check @Schubert.FinPermutation.strongBruhatLE_iff_northwestRankNat
+#check @Schubert.FinPermutation.strongBruhatLE_iff_reduced_adjacent_subword
 
 #print axioms Schubert.RS.Family.atomCoefficient_eq
 #print axioms Schubert.RS.Family.atomCoefficient_factorization
@@ -218,6 +309,39 @@ transitive axiom dependencies. The expected axioms are only `propext`,
 #print axioms Schubert.RS.atomCoefficient_eq_of_expansion
 #print axioms Schubert.RS.Family.isHallTriple_family
 #print axioms Schubert.RS.Family.atomCoefficient_eq_paired
+#print axioms Schubert.RS.Geometric.not_hasGeometricRelativeSchubertFiltration
+#print axioms Schubert.RS.Geometric.not_hasGeometricSchubertFiltration
+#print axioms Schubert.RS.Geometric.not_hasGeometricSLRelativeSchubertFiltration
+#print axioms Schubert.RS.Geometric.not_hasGeometricSLSchubertFiltration
+#print axioms Schubert.RS.Geometric.typeA27_geometricFiltration_failure
+#print axioms Schubert.RS.Geometric.geometricFamilyTensor
+#print axioms Schubert.RS.Geometric.ch_geometricFamilyTensor
+#print axioms FlagVarieties.dualJoseph
+#print axioms Schubert.RS.Geometric.geometricMinimalRelativeSchubert
+#print axioms Schubert.RS.Geometric.geometricBoundaryRestrict
+#print axioms Schubert.RS.Geometric.IsGeometricSchubertLayer
+#print axioms Schubert.RS.Geometric.IsGeometricMinimalRelativeSchubertLayer
+#print axioms Schubert.RS.Geometric.HasGeometricRelativeSchubertFiltration
+#print axioms Schubert.RS.Geometric.HasGeometricSchubertFiltration
+#print axioms Schubert.RS.Geometric.HasGeometricSLRelativeSchubertFiltration
+#print axioms Schubert.RS.Geometric.HasGeometricSLSchubertFiltration
+#print axioms FlagVarieties.schubertVariety
+#print axioms FlagVarieties.schubertUnion
+#print axioms FlagVarieties.schubertBoundary
+#print axioms FlagVarieties.lineBundle
+#print axioms FlagVarieties.sections
+#print axioms FlagVarieties.sectionsRep
+#print axioms FlagVarieties.sectionsEquivSemiInvariants
+#print axioms FlagVarieties.sectionsRestrict
+#print axioms FlagVarieties.sectionsRestrictHom_eq_sectionsRestrict
+#print axioms FlagVarieties.preimageIdeal_schubertUnion_eq_orbitIdeal_complex
+#print axioms FlagVarieties.globalSectionsConstant_complex
+#print axioms FlagVarieties.geometricSectionEquiv
+#print axioms FlagVarieties.dualJosephEquiv
+#print axioms Schubert.RS.Geometric.geometricMinimalRelativeSchubertEquiv
+#print axioms Schubert.RS.Geometric.isGeometricSchubertLayer_iff
+#print axioms Schubert.RS.Geometric.isGeometricMinimalRelativeSchubertLayer_iff
+#print axioms FlagVarieties.sectionBModuleIso
 #print axioms Schubert.RS.Family.not_hasRelativeSchubertFiltration
 #print axioms Schubert.RS.Family.not_hasSchubertFiltration
 #print axioms Schubert.RS.Family.not_hasSLRelativeSchubertFiltration
@@ -346,6 +470,9 @@ transitive axiom dependencies. The expected axioms are only `propext`,
 #print axioms Schubert.RS.Algorithms.encodeTripleUnary_injective
 #print axioms Schubert.RS.Algorithms.twoSource_eq_count
 #print axioms Schubert.RS.SchubertUnions.key_eq_sum_atom
+#print axioms FlagVarieties.ch_dualJoseph_negWeight
+#print axioms Schubert.RS.Geometric.ch_geometricMinimalRelativeSchubert_negWeight
+#print axioms Schubert.RS.Geometric.geometricMinimalRelativeSchubert_weightSpace_ne_bot
 #print axioms Schubert.RS.Filtrations.dualJoseph_hasCharacter
 #print axioms Schubert.RS.Filtrations.minRelSchubert_hasCharacter
 #print axioms Schubert.RS.Quiver.ForwardQuiver.multiplicity_pos_of_nsmul_pos
@@ -381,3 +508,58 @@ transitive axiom dependencies. The expected axioms are only `propext`,
 #print axioms GLRep.IsRationalLeviRep.exists_ratLeviCharacter_eq_sum
 #print axioms Schubert.RS.Algorithms.exists_not_mem_P
 #print axioms Schubert.RS.Algorithms.FP_countable
+#print axioms Schubert.RS.key
+#print axioms Schubert.RS.atom
+#print axioms Schubert.RS.atomCoefficient
+#print axioms Schubert.RS.GLCharacterMultiplicity
+#print axioms Schubert.RS.QuiverSaturation
+#print axioms Schubert.RS.PolyTimeRationalFeasibility
+#print axioms LinearProgramming.encodeSystem
+#print axioms FlagVarieties.FlagScheme
+#print axioms FlagVarieties.FlagScheme.isProper_toSpec
+#print axioms FlagVarieties.isColimitOrbitMap
+#print axioms FlagVarieties.exists_mulRight_eq
+#print axioms FlagVarieties.isIntegral_schubertVariety
+#print axioms FlagVarieties.schubertVariety_globalSections_const
+#print axioms FlagVarieties.PointModel.schubertVariety_le_iff
+#print axioms FlagVarieties.oppositeSchubertVariety
+#print axioms FlagVarieties.richardsonVariety
+#print axioms FlagVarieties.Richardson.richardsonVariety_ne_top_iff
+#print axioms FlagVarieties.isInvertible_lineBundle
+#print axioms FlagVarieties.sectionsMul
+#print axioms FlagVarieties.sectionsComodule
+#print axioms FlagVarieties.contract_sectionsComodule
+#print axioms GLRep.rationalBorelRepEquivComodule
+#print axioms GLRep.indBorelFrobeniusEquiv
+#print axioms GLRep.IsRationalBorelRep.toBModule
+#print axioms FlagVarieties.PointModel.sectionsRestrict_surjective
+#print axioms FlagVarieties.PointModel.schubertSectionsBasis
+#print axioms FlagVarieties.PointModel.geometricSectionRingEquiv
+#print axioms FlagVarieties.PointModel.geometricSectionRingEquiv_symm_of_mul_of
+#print axioms FlagVarieties.PointModel.minorSpanEquivSections
+#print axioms FlagVarieties.borelWeil_ratIrrep
+#print axioms Demazure.FlagModule.flagDemazure
+#print axioms Demazure.FlagModule.compositionFlagJosephPolo
+#print axioms Demazure.SchubertUnions.flagDemazure_hasTorusCharacter
+#print axioms Demazure.SchubertUnions.key_eq_sum_atom
+#print axioms FlagVarieties.nonempty_sectionDemazureEquiv_ratIrrep
+#print axioms FlagVarieties.PointModel.orbitIdeal_lowerSet_eq_fultonIdeal
+#print axioms FlagVarieties.PointModel.isRadical_map_fultonIdeal
+#print axioms FlagVarieties.PointModel.map_kazhdanLusztigSubst_fultonIdeal
+#print axioms FlagVarieties.PointModel.isRadical_map_kazhdanLusztigSubst_fultonIdeal
+#print axioms FlagVarieties.PointModel.cellRingEquiv
+#print axioms FlagVarieties.Dimension.topologicalKrullDim_schubertVariety
+#print axioms FlagVarieties.Bruhat.permCoxeterSystem
+#print axioms FlagVarieties.Bruhat.bruhatLE_iff_strongBruhatLE
+#print axioms FlagVarieties.Plucker.plucker
+#print axioms FlagVarieties.Plucker.pluckerSegre
+#print axioms FlagVarieties.Plucker.isClosedImmersion_pluckerSegre
+#print axioms FlagVarieties.Plucker.pluckerSectionBasis_apply
+#print axioms FlagVarieties.PointModel.pluckerVector_proportional_iff
+#print axioms FlagVarieties.rankOneInduction
+#print axioms FlagVarieties.rankOneInductionSectionsEquiv
+#print axioms FlagVarieties.simpleSchubertSectionsEquiv
+#print axioms FlagVarieties.ch_rankOneInduction_charCoaction
+#print axioms Schubert.FinPermutation
+#print axioms Schubert.FinPermutation.strongBruhatLE_iff_northwestRankNat
+#print axioms Schubert.FinPermutation.strongBruhatLE_iff_reduced_adjacent_subword

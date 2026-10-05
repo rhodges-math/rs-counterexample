@@ -162,7 +162,7 @@ theorem extend_one_add_smul {B : Type*} [CommRing B] [Algebra K B] (e : B) (he :
 
 /-- The map `A ↦ 1 + e • A` is injective on matrices over `K`, for `e = ε` in the dual
 numbers. -/
-theorem eps_smul_map_injective {ι : Type*} [Fintype ι] [DecidableEq ι] {A B : Matrix ι ι K}
+theorem eps_smul_map_injective {ι : Type*} [DecidableEq ι] {A B : Matrix ι ι K}
     (hAB : (1 : Matrix ι ι (DualNumber K)) + (ε : DualNumber K) • A.map (algebraMap K _) =
       1 + (ε : DualNumber K) • B.map (algebraMap K _)) : A = B := by
   ext i j
@@ -202,7 +202,7 @@ theorem lieMatrix_add (X Y : Matrix (Fin n) (Fin n) K) :
   exact eps_smul_map_injective h1
 
 /-- The algebra `K[ε₁][ε₂]` with two independent square-zero elements. -/
-private abbrev Dual2 (K : Type*) [Field K] := DualNumber (DualNumber K)
+private abbrev Dual2 (K : Type*) := DualNumber (DualNumber K)
 
 omit [Infinite K] in
 private theorem dual2_eps₁ : (ε : Dual2 K) * ε = 0 := eps_mul_eps

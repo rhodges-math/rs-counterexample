@@ -1,5 +1,5 @@
 import Schubert.TypeA.Permutations.BruhatGraded
-import Schubert.RS.Support.BruhatRanks
+import Schubert.TypeA.Permutations.BruhatRanks
 import Schubert.TypeA.Permutations.LongestBruhatDuality
 
 namespace Schubert.RS.Representation

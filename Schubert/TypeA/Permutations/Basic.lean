@@ -1,10 +1,10 @@
-import Schubert.Algebra.Basic
 import Mathlib.GroupTheory.Perm.Fin
 
 /-! # Finite permutations and descents -/
 
 namespace Schubert
 
+/-- Permutations of `Fin n`. -/
 abbrev FinPermutation (n : ℕ) := Equiv.Perm (Fin n)
 
 namespace FinPermutation

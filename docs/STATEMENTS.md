@@ -9,7 +9,7 @@ are relative to the repository root. Statements are referred to by their LaTeX l
 | Label | Result | Status |
 | --- | --- | --- |
 | `thm:intro-family` | Theorem 1.1 | formalized |
-| `cor:intro-filtrations` | Corollary 1.2 | formalized (equivalent form) |
+| `cor:intro-filtrations` | Corollary 1.2 | formalized |
 | `cor:intro-lascoux` | Corollary 1.3 | formalized |
 | `thm:intro-quiver-polytope` | Theorem 1.4 | formalized |
 | `cor:intro-quiver-density` | Corollary 1.5 | formalized |
@@ -97,7 +97,43 @@ The parameters are `P : Parameters` with delta = `P.K` and 4(p+q-1) variables = 
 
 ### `cor:intro-filtrations` (Corollary 1.2)
 
-Status: **formalized (equivalent form)**
+Status: **formalized**
+
+- `Geometric.not_hasGeometricRelativeSchubertFiltration` ([Schubert/RS/Geometric/SchemeRelative.lean](../Schubert/RS/Geometric/SchemeRelative.lean))
+- `Geometric.not_hasGeometricSchubertFiltration` ([Schubert/RS/Geometric/SchemeCorollary.lean](../Schubert/RS/Geometric/SchemeCorollary.lean))
+- `Geometric.not_hasGeometricSLRelativeSchubertFiltration` ([Schubert/RS/Geometric/SchemeRelative.lean](../Schubert/RS/Geometric/SchemeRelative.lean))
+- `Geometric.not_hasGeometricSLSchubertFiltration` ([Schubert/RS/Geometric/SchemeRelative.lean](../Schubert/RS/Geometric/SchemeRelative.lean))
+- `Geometric.typeA27_geometricFiltration_failure` ([Schubert/RS/Geometric/SchemeRelative.lean](../Schubert/RS/Geometric/SchemeRelative.lean))
+- `Geometric.geometricFamilyTensor` ([Schubert/RS/Geometric/SchemeCorollary.lean](../Schubert/RS/Geometric/SchemeCorollary.lean))
+- `Geometric.ch_geometricFamilyTensor` ([Schubert/RS/Geometric/SchemeCorollary.lean](../Schubert/RS/Geometric/SchemeCorollary.lean))
+- `FlagVarieties.dualJoseph` ([Schubert/FlagVarieties/Modules/Geometric.lean](../Schubert/FlagVarieties/Modules/Geometric.lean))
+- `Geometric.geometricMinimalRelativeSchubert` ([Schubert/RS/Geometric/SchemeRelative.lean](../Schubert/RS/Geometric/SchemeRelative.lean))
+- `Geometric.geometricBoundaryRestrict` ([Schubert/RS/Geometric/SchemeRelative.lean](../Schubert/RS/Geometric/SchemeRelative.lean))
+- `Geometric.IsGeometricSchubertLayer` ([Schubert/RS/Geometric/SchemeCorollary.lean](../Schubert/RS/Geometric/SchemeCorollary.lean))
+- `Geometric.IsGeometricMinimalRelativeSchubertLayer` ([Schubert/RS/Geometric/SchemeRelative.lean](../Schubert/RS/Geometric/SchemeRelative.lean))
+- `Geometric.HasGeometricRelativeSchubertFiltration` ([Schubert/RS/Geometric/SchemeRelative.lean](../Schubert/RS/Geometric/SchemeRelative.lean))
+- `Geometric.HasGeometricSchubertFiltration` ([Schubert/RS/Geometric/SchemeRelative.lean](../Schubert/RS/Geometric/SchemeRelative.lean))
+- `Geometric.HasGeometricSLRelativeSchubertFiltration` ([Schubert/RS/Geometric/SchemeRelative.lean](../Schubert/RS/Geometric/SchemeRelative.lean))
+- `Geometric.HasGeometricSLSchubertFiltration` ([Schubert/RS/Geometric/SchemeRelative.lean](../Schubert/RS/Geometric/SchemeRelative.lean))
+- `FlagVarieties.schubertVariety` ([Schubert/FlagVarieties/Schubert/Basic.lean](../Schubert/FlagVarieties/Schubert/Basic.lean))
+- `FlagVarieties.schubertUnion` ([Schubert/FlagVarieties/Schubert/Basic.lean](../Schubert/FlagVarieties/Schubert/Basic.lean))
+- `FlagVarieties.schubertBoundary` ([Schubert/FlagVarieties/Schubert/Basic.lean](../Schubert/FlagVarieties/Schubert/Basic.lean))
+- `FlagVarieties.lineBundle` ([Schubert/FlagVarieties/LineBundle/Basic.lean](../Schubert/FlagVarieties/LineBundle/Basic.lean))
+- `FlagVarieties.sections` ([Schubert/FlagVarieties/LineBundle/Basic.lean](../Schubert/FlagVarieties/LineBundle/Basic.lean))
+- `FlagVarieties.sectionsRep` ([Schubert/FlagVarieties/LineBundle/BorelRep.lean](../Schubert/FlagVarieties/LineBundle/BorelRep.lean))
+- `FlagVarieties.sectionsEquivSemiInvariants` ([Schubert/FlagVarieties/LineBundle/SectionsAsSemiInvariants.lean](../Schubert/FlagVarieties/LineBundle/SectionsAsSemiInvariants.lean))
+- `FlagVarieties.sectionsRestrict` ([Schubert/FlagVarieties/LineBundle/SectionsRestriction.lean](../Schubert/FlagVarieties/LineBundle/SectionsRestriction.lean))
+- `FlagVarieties.sectionsRestrictHom_eq_sectionsRestrict` ([Schubert/FlagVarieties/LineBundle/SectionsRestriction.lean](../Schubert/FlagVarieties/LineBundle/SectionsRestriction.lean))
+- `FlagVarieties.preimageIdeal_schubertUnion_eq_orbitIdeal_complex` ([Schubert/FlagVarieties/Schubert/UnionPreimage.lean](../Schubert/FlagVarieties/Schubert/UnionPreimage.lean))
+- `FlagVarieties.globalSectionsConstant_complex` ([Schubert/FlagVarieties/Schubert/GlobalSectionsRingForm.lean](../Schubert/FlagVarieties/Schubert/GlobalSectionsRingForm.lean))
+- `FlagVarieties.geometricSectionEquiv` ([Schubert/FlagVarieties/Modules/Geometric.lean](../Schubert/FlagVarieties/Modules/Geometric.lean))
+- `FlagVarieties.dualJosephEquiv` ([Schubert/FlagVarieties/Modules/Geometric.lean](../Schubert/FlagVarieties/Modules/Geometric.lean))
+- `Geometric.geometricMinimalRelativeSchubertEquiv` ([Schubert/RS/Geometric/SchemeRelative.lean](../Schubert/RS/Geometric/SchemeRelative.lean))
+- `Geometric.isGeometricSchubertLayer_iff` ([Schubert/RS/Geometric/SchemeCorollary.lean](../Schubert/RS/Geometric/SchemeCorollary.lean))
+- `Geometric.isGeometricMinimalRelativeSchubertLayer_iff` ([Schubert/RS/Geometric/SchemeRelative.lean](../Schubert/RS/Geometric/SchemeRelative.lean))
+- `FlagVarieties.sectionBModuleIso` ([Schubert/FlagVarieties/Modules/BModuleModel.lean](../Schubert/FlagVarieties/Modules/BModuleModel.lean))
+
+Algebraic model:
 
 - `Family.not_hasRelativeSchubertFiltration` ([Schubert/RS/Family/FiltrationCorollary.lean](../Schubert/RS/Family/FiltrationCorollary.lean))
 - `Family.not_hasSchubertFiltration` ([Schubert/RS/Family/FiltrationCorollary.lean](../Schubert/RS/Family/FiltrationCorollary.lean))
@@ -118,7 +154,7 @@ Status: **formalized (equivalent form)**
 - `Filtrations.minRelSchubert` ([Schubert/RS/Filtrations/SectionModules.lean](../Schubert/RS/Filtrations/SectionModules.lean))
 - `HighestWeight.flagOrbitSpan_irreducible` ([Schubert/RS/HighestWeight/Irreducible.lean](../Schubert/RS/HighestWeight/Irreducible.lean))
 
-Module-level formalization. B-modules are finite-dimensional modules for the strictly upper triangular matrices and the diagonal torus with integral weight spaces (`BModules.BModule`). The section module over a union X_S of Schubert varieties is the twisted dual of the sum of the Demazure modules D_w, w in S, in the flag-minor model (`schubertSectionModule`); P(nu) and Q(nu) are defined from it as in the paper (`dualJoseph`, `minRelSchubert`), with ch P(-a) = kappa_a and ch Q(-a) = A_a proved. The flag-minor span is proved irreducible and identified with V(lambda) (`HighestWeight`); the identification of this algebraic model with spaces of sections of line bundles on Schubert varieties is classical and not formalized. 'Admits a relative Schubert filtration' is `HasRelativeSchubertFiltration` (layers isomorphic to Q(nu)); 'Schubert filtration in Polo's sense' is `HasSchubertFiltration` (layers isomorphic to section modules over unions of Schubert varieties). The Polo case is proved through the characters of the Polo layers (sums of atoms) rather than by refining with van der Kallen's Proposition 2.3.11. The SL_n forms and type A_27 at (p,q) = (3,5) are included.
+Formalized for the sheaf-theoretic modules over C. The Schubert varieties X_w (the scheme-theoretic images of the B-orbit maps), the unions X_S and the Schubert boundaries are closed subschemes of the flag scheme Fl_n (`schubertVariety`, `schubertUnion`, `schubertBoundary`); L(eta) is the line bundle GL_n x^B C_eta (`lineBundle`), and H^0(X, L(eta)) is the module of global sections of its pullback to X (`sections`), with B acting by left translation (`sectionsRep`) and restriction of sections along X' in X (`sectionsRestrict`). P(nu) = H^0(X_sigma, L(eta)) (`FlagVarieties.dualJoseph`), Q(nu) is the kernel of the restriction from P(nu) to the sections over the Schubert boundary (`geometricMinimalRelativeSchubert`), and the module of the corollary is P(-a) (x) P(-b) (`geometricFamilyTensor`, of character kappa_a kappa_b: `ch_geometricFamilyTensor`). 'Admits a relative Schubert filtration' is `HasGeometricRelativeSchubertFiltration` (layers isomorphic to the geometric Q(nu)); 'Schubert filtration in Polo's sense' is `HasGeometricSchubertFiltration` (layers isomorphic to H^0(X_S, L(eta)) over a nonempty union X_S, S a Bruhat order ideal, eta antidominant); the SL_n forms ask for the layers over the Borel subgroup of SL_n. The SL_n forms and type A_27 at (p,q) = (3,5) are included. The identification of the sheaf-theoretic modules with the algebraic model is proved: H^0(X, L(eta)) is the module of B-semi-invariants of weight eta in the coordinate ring of the preimage of X in GL_n (`sectionsEquivSemiInvariants`, over every commutative ring), which for X = X_S is the ring model of the section module (`geometricSectionEquiv`, using `preimageIdeal_schubertUnion_eq_orbitIdeal_complex`: the ideal of the preimage of X_S is that of the union of the double cosets BwB, w in S); P(nu) and Q(nu) are the ring-model modules (`dualJosephEquiv`, `geometricMinimalRelativeSchubertEquiv`); and for eta = -lambda the section module is the B-module (demazureUnionModule m S).dual of `BModules.BModule` (`sectionBModuleIso`), the module underlying `schubertSectionModule` of the algebraic model. The equality Gamma(X_w, O) = C used by the section bases is proved (`globalSectionsConstant_complex`). The proof is the paper's: a filtration would make kappa_a kappa_b a nonnegative integral combination of atoms, contradicting Theorem 1.1. The Polo case is proved through the characters of the Polo layers (sums of atoms) rather than by refining with van der Kallen's Proposition 2.3.11. The module-level endpoints of release 2.0.0 are listed separately as the algebraic model: B-modules are finite-dimensional modules for the strictly upper triangular matrices and the diagonal torus with integral weight spaces (`BModules.BModule`), the section module over X_S is the twisted dual of the sum of the Demazure modules D_w, w in S, in the flag-minor model (`schubertSectionModule`), P(nu) and Q(nu) are defined from it (`dualJoseph`, `minRelSchubert`), and the flag-minor span is proved irreducible and identified with V(lambda) (`HighestWeight`).
 
 ### `cor:intro-lascoux` (Corollary 1.3)
 
@@ -336,12 +372,18 @@ kappa_{sigma lambda} = sum over u in W^lambda, u <= sigma of A_{u lambda}.
 
 ### `eq:intro-geometric-characters`
 
-Status: **formalized (equivalent form)**
+Status: **formalized**
+
+- `FlagVarieties.ch_dualJoseph_negWeight` ([Schubert/FlagVarieties/Modules/Geometric.lean](../Schubert/FlagVarieties/Modules/Geometric.lean))
+- `Geometric.ch_geometricMinimalRelativeSchubert_negWeight` ([Schubert/RS/Geometric/SchemeRelative.lean](../Schubert/RS/Geometric/SchemeRelative.lean))
+- `Geometric.geometricMinimalRelativeSchubert_weightSpace_ne_bot` ([Schubert/RS/Geometric/SchemeRelative.lean](../Schubert/RS/Geometric/SchemeRelative.lean))
+
+Algebraic model:
 
 - `Filtrations.dualJoseph_hasCharacter` ([Schubert/RS/Filtrations/SectionModules.lean](../Schubert/RS/Filtrations/SectionModules.lean))
 - `Filtrations.minRelSchubert_hasCharacter` ([Schubert/RS/Filtrations/RelativeSchubertCharacters.lean](../Schubert/RS/Filtrations/RelativeSchubertCharacters.lean))
 
-ch P(-a) = kappa_a and ch Q(-a) = A_a for the module-level P and Q of Corollary 1.2.
+ch P(-u) = kappa_u and ch Q(-u) = A_u for the sheaf-theoretic modules over C: P(nu) = H^0(X_sigma, L(eta)) (`FlagVarieties.dualJoseph`) and Q(nu) the kernel of the restriction to the Schubert boundary (`geometricMinimalRelativeSchubert`); the weight nu occurs in Q(nu). They are computed through the identification with the ring model (`dualJosephEquiv`, `geometricMinimalRelativeSchubertEquiv`, from `sectionsEquivSemiInvariants`). The same identities for the module-level P and Q of release 2.0.0 are listed separately as the algebraic model.
 
 ### `eq:intro-duality`
 

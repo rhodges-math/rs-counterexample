@@ -6,11 +6,19 @@ Reiner-Shimozono conjecture and the failure of Schubert filtrations*
 (arXiv:2609.28169). If you use or adapt this code, please cite the paper and
 this repository.
 
-The file Schubert/RS/JosephPolo/GrinbergCauchyBinet.lean contains adapted
+Release 2.1.0 of this repository includes version 0.1.0 of the flag-variety
+module: the directories Schubert/FlagVarieties, Schubert/Demazure,
+Schubert/GLRep and Schubert/TypeA, listed with their SHA-256 hashes in
+FLAG_MODULE_MANIFEST.json. The module is covered by the copyright and license
+of this repository, except for the Cauchy–Binet file described below.
+
+The files Schubert/RS/JosephPolo/GrinbergCauchyBinet.lean and
+Schubert/Demazure/JosephPolo/GrinbergCauchyBinet.lean contain adapted
 third-party material (Copyright Meta Platforms, Inc. and affiliates) licensed
 under the Creative Commons Attribution-NonCommercial 4.0 International License
-(CC BY-NC 4.0), not under the Apache License. Its license is reproduced in
-Schubert/RS/JosephPolo/Grinberg.LICENSE.
+(CC BY-NC 4.0), not under the Apache License. Its license is reproduced next
+to each file, in Schubert/RS/JosephPolo/Grinberg.LICENSE and
+Schubert/Demazure/JosephPolo/Grinberg.LICENSE.
 
 The directory vendor/complexitylib contains unmodified source files of
 complexitylib (github.com/SamuelSchlesinger/complexitylib), licensed under the

@@ -16,6 +16,7 @@ variable {n : ℕ}
 
 /-- A position of `Fin n` which has an immediate right neighbor. -/
 structure AdjacentPosition (n : ℕ) where
+  /-- The left member of the adjacent pair. -/
   left : Fin n
   hasRight : left.1 + 1 < n
 
@@ -117,7 +118,7 @@ theorem leftAdjacentSwap_ne
   simp [leftAdjacentSwap, adjacentTransposition] at happly
   exact a.left_ne_right happly.symm
 
-/-- The paper's descent predicate at `a.left` is the usual adjacent
+/-- The descent predicate at `a.left` is the usual adjacent
 inequality. -/
 theorem hasDescent_left_iff
     (w : FinPermutation n) (a : AdjacentPosition n) :

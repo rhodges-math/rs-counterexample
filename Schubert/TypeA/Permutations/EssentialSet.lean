@@ -8,7 +8,7 @@ namespace FinPermutation
 
 variable {n : ℕ}
 
-/-- The paper's essential permutations: Bruhat-minimal permutations outside
+/-- The essential permutations: Bruhat-minimal permutations outside
 the interval below `w`. -/
 abbrev essentialSet (w : FinPermutation n) : Set (FinPermutation n) :=
   w.bruhatEssentialSet

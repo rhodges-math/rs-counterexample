@@ -8,16 +8,22 @@ abstract: >-
   for the full counterexample family, its exact negativity criterion and an
   explicit negative coefficient in 28 variables (Theorem 1.1); the failure of
   relative Schubert filtrations and of Schubert filtrations in Polo's sense
+  for modules of global sections of line bundles on Schubert varieties
   (Corollary 1.2); the failure of Lascoux-atom positivity (Corollary 1.3); the
   quiver-theoretic results of Theorems 1.4 and 5.3 and Corollary 1.5. The
   standard results used for them are proved in three accompanying libraries:
   representations of general linear groups and their Levi subgroups,
   polynomial-time rational feasibility of linear inequalities, and the
-  saturation of semi-invariants of quivers.
+  saturation of semi-invariants of quivers. Release 2.1.0 includes version
+  0.1.0 of a self-contained flag-variety module, meant for reuse: the flag
+  scheme, Schubert, opposite Schubert and Richardson varieties, line bundles
+  and the representations of the Borel subgroup on their sections, projective
+  normality, Borel-Weil, Demazure modules, Bruhat cells and the Plücker
+  embedding.
 authors:
   - family-names: Hodges
     given-names: Reuven
-version: "2.0.0"
+version: "2.1.0"
 repository-code: "https://github.com/rhodges-math/rs-counterexample"
 license: Apache-2.0
 keywords:
@@ -31,6 +37,10 @@ keywords:
   - quiver representations
   - representation theory
   - linear programming
+  - flag varieties
+  - Schubert varieties
+  - Demazure modules
+  - Borel-Weil theorem
 preferred-citation:
   type: article
   title: "Counterexamples to the Reiner-Shimozono conjecture and the failure of Schubert filtrations"

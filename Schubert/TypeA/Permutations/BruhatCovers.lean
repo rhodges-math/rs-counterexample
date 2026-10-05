@@ -20,6 +20,7 @@ variable {n : ℕ}
 def StrongBruhatLT (u v : FinPermutation n) : Prop :=
   u ≤ᴮ v ∧ u ≠ v
 
+/-- The strict strong Bruhat order on permutations of `Fin n`. -/
 infix:50 " <ᴮ " => StrongBruhatLT
 
 theorem strongBruhatLT_irrefl (w : FinPermutation n) : ¬ w <ᴮ w := by

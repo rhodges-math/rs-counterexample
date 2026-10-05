@@ -1,6 +1,6 @@
 import Schubert.RS.JosephPolo.WeylSaturation
 import Schubert.TypeA.Permutations.BruhatGraded
-import Schubert.RS.Support.BruhatRanks
+import Schubert.TypeA.Permutations.BruhatRanks
 
 namespace Schubert.RS.Representation
 noncomputable section

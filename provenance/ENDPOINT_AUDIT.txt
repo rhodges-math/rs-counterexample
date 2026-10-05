@@ -79,6 +79,130 @@ Schubert.RS.Family.atomCoefficient_eq_paired : ∀ (P : Schubert.RS.Family.Param
           ∏ ij ∈ (Schubert.RS.Family.familyHallPartition P).pairs,
             (1 - AddMonoidAlgebra.single (Pi.single ij.2 1 - Pi.single ij.1 1) 1)).coeff
       fun x => 1
+@Schubert.RS.Geometric.not_hasGeometricRelativeSchubertFiltration : ∀ {P : Schubert.RS.Family.Parameters},
+  2 < (↑P.p - 2) * (↑P.q - 2) →
+    ¬Schubert.RS.Geometric.HasGeometricRelativeSchubertFiltration (Schubert.RS.Geometric.geometricFamilyTensor P)
+@Schubert.RS.Geometric.not_hasGeometricSchubertFiltration : ∀ {P : Schubert.RS.Family.Parameters},
+  2 < (↑P.p - 2) * (↑P.q - 2) →
+    ¬GLRep.HasFiltrationBy Schubert.RS.Geometric.IsGeometricSchubertLayer
+        (Schubert.RS.Geometric.geometricFamilyTensor P)
+@Schubert.RS.Geometric.not_hasGeometricSLRelativeSchubertFiltration : ∀ {P : Schubert.RS.Family.Parameters},
+  2 < (↑P.p - 2) * (↑P.q - 2) →
+    ¬Schubert.RS.Geometric.HasGeometricSLRelativeSchubertFiltration (Schubert.RS.Geometric.geometricFamilyTensor P)
+@Schubert.RS.Geometric.not_hasGeometricSLSchubertFiltration : ∀ {P : Schubert.RS.Family.Parameters},
+  2 < (↑P.p - 2) * (↑P.q - 2) →
+    ¬Schubert.RS.Geometric.HasGeometricSLSchubertFiltration (Schubert.RS.Geometric.geometricFamilyTensor P)
+Schubert.RS.Geometric.typeA27_geometricFiltration_failure : ∀ (δ : ℕ) (hδ : 8 ≤ δ),
+  (Schubert.RS.Family.threeFive δ hδ).rank - 1 = 27 ∧
+    ¬Schubert.RS.Geometric.HasGeometricRelativeSchubertFiltration
+          (Schubert.RS.Geometric.geometricFamilyTensor (Schubert.RS.Family.threeFive δ hδ)) ∧
+      ¬Schubert.RS.Geometric.HasGeometricSchubertFiltration
+            (Schubert.RS.Geometric.geometricFamilyTensor (Schubert.RS.Family.threeFive δ hδ)) ∧
+        ¬Schubert.RS.Geometric.HasGeometricSLRelativeSchubertFiltration
+              (Schubert.RS.Geometric.geometricFamilyTensor (Schubert.RS.Family.threeFive δ hδ)) ∧
+          ¬Schubert.RS.Geometric.HasGeometricSLSchubertFiltration
+              (Schubert.RS.Geometric.geometricFamilyTensor (Schubert.RS.Family.threeFive δ hδ))
+Schubert.RS.Geometric.geometricFamilyTensor : (P : Schubert.RS.Family.Parameters) →
+  Representation ℂ (↥(GLRep.borel ℂ P.rank))
+    (TensorProduct ℂ
+      (FlagVarieties.sections ℂ P.rank
+        (FlagVarieties.schubertVariety ℂ P.rank
+          (FlagVarieties.schubertIndex (FlagVarieties.negWeight (Schubert.RS.Family.a P))))
+        (FlagVarieties.fibreWeight (FlagVarieties.negWeight (Schubert.RS.Family.a P))))
+      (FlagVarieties.sections ℂ P.rank
+        (FlagVarieties.schubertVariety ℂ P.rank
+          (FlagVarieties.schubertIndex (FlagVarieties.negWeight (Schubert.RS.Family.b P))))
+        (FlagVarieties.fibreWeight (FlagVarieties.negWeight (Schubert.RS.Family.b P)))))
+@Schubert.RS.Geometric.ch_geometricFamilyTensor : ∀ {P : Schubert.RS.Family.Parameters},
+  FlagVarieties.ch (Schubert.RS.Geometric.geometricFamilyTensor P) =
+    Schubert.RS.toLaurent (Schubert.RS.key (Schubert.RS.Family.a P) * Schubert.RS.key (Schubert.RS.Family.b P))
+@FlagVarieties.dualJoseph : {n : ℕ} →
+  (ν : Fin n → ℤ) →
+    Representation ℂ (↥(GLRep.borel ℂ n))
+      (FlagVarieties.sections ℂ n (FlagVarieties.schubertVariety ℂ n (FlagVarieties.schubertIndex ν))
+        (FlagVarieties.fibreWeight ν))
+@Schubert.RS.Geometric.geometricMinimalRelativeSchubert : {n : ℕ} →
+  (ν : Fin n → ℤ) →
+    Representation ℂ ↥(GLRep.borel ℂ n) ↥(Schubert.RS.Geometric.geometricMinimalRelativeSchubertSubrep ν).toSubmodule
+@Schubert.RS.Geometric.geometricBoundaryRestrict : {n : ℕ} →
+  (ν : Fin n → ℤ) → (FlagVarieties.dualJoseph ν).IntertwiningMap (Schubert.RS.Geometric.geometricBoundarySections ν)
+@Schubert.RS.Geometric.IsGeometricSchubertLayer : {n : ℕ} →
+  (V : Type u_1) → [inst : AddCommGroup V] → [inst_1 : Module ℂ V] → Representation ℂ (↥(GLRep.borel ℂ n)) V → Prop
+@Schubert.RS.Geometric.IsGeometricMinimalRelativeSchubertLayer : {n : ℕ} →
+  (V : Type u_1) → [inst : AddCommGroup V] → [inst_1 : Module ℂ V] → Representation ℂ (↥(GLRep.borel ℂ n)) V → Prop
+@Schubert.RS.Geometric.HasGeometricRelativeSchubertFiltration : {n : ℕ} →
+  {W : Type u_1} → [inst : AddCommGroup W] → [inst_1 : Module ℂ W] → Representation ℂ (↥(GLRep.borel ℂ n)) W → Prop
+@Schubert.RS.Geometric.HasGeometricSchubertFiltration : {n : ℕ} →
+  {W : Type u_1} → [inst : AddCommGroup W] → [inst_1 : Module ℂ W] → Representation ℂ (↥(GLRep.borel ℂ n)) W → Prop
+@Schubert.RS.Geometric.HasGeometricSLRelativeSchubertFiltration : {n : ℕ} →
+  {W : Type u_1} → [inst : AddCommGroup W] → [inst_1 : Module ℂ W] → Representation ℂ (↥(GLRep.borel ℂ n)) W → Prop
+@Schubert.RS.Geometric.HasGeometricSLSchubertFiltration : {n : ℕ} →
+  {W : Type u_1} → [inst : AddCommGroup W] → [inst_1 : Module ℂ W] → Representation ℂ (↥(GLRep.borel ℂ n)) W → Prop
+FlagVarieties.schubertVariety : (R : Type u_1) →
+  [inst : CommRing R] → (n : ℕ) → Equiv.Perm (Fin n) → (FlagVarieties.FlagScheme R n).IdealSheafData
+FlagVarieties.schubertUnion : (R : Type u_1) →
+  [inst : CommRing R] → (n : ℕ) → Finset (Equiv.Perm (Fin n)) → (FlagVarieties.FlagScheme R n).IdealSheafData
+FlagVarieties.schubertBoundary : (R : Type u_1) →
+  [inst : CommRing R] → (n : ℕ) → Equiv.Perm (Fin n) → (FlagVarieties.FlagScheme R n).IdealSheafData
+FlagVarieties.lineBundle : (R : Type u_1) →
+  [inst : CommRing R] → (n : ℕ) → (Fin n → ℤ) → (FlagVarieties.FlagScheme R n).Modules
+FlagVarieties.sections : (R : Type u_1) →
+  [inst : CommRing R] → (n : ℕ) → (FlagVarieties.FlagScheme R n).IdealSheafData → (Fin n → ℤ) → Type u_1
+FlagVarieties.sectionsRep : (R : Type u_1) →
+  [inst : CommRing R] →
+    (n : ℕ) →
+      (I : (FlagVarieties.FlagScheme R n).IdealSheafData) →
+        (η : Fin n → ℤ) →
+          FlagVarieties.IsLeftTranslStable (FlagVarieties.preimageIdeal R n I) →
+            Representation R (↥(GLRep.borel R n)) (FlagVarieties.sections R n I η)
+FlagVarieties.sectionsEquivSemiInvariants : (R : Type u_1) →
+  [inst : CommRing R] →
+    (n : ℕ) →
+      (I : (FlagVarieties.FlagScheme R n).IdealSheafData) →
+        (η : Fin n → ℤ) →
+          FlagVarieties.sections R n I η ≃ₗ[R]
+            ↥(FlagVarieties.quotientSemiInvariants R n (FlagVarieties.preimageIdeal R n I) η)
+FlagVarieties.sectionsRestrict : (R : Type u_1) →
+  [inst : CommRing R] →
+    (n : ℕ) →
+      {I I' : (FlagVarieties.FlagScheme R n).IdealSheafData} →
+        I ≤ I' → (η : Fin n → ℤ) → FlagVarieties.sections R n I η →ₗ[R] FlagVarieties.sections R n I' η
+@FlagVarieties.sectionsRestrictHom_eq_sectionsRestrict : ∀ {R : Type u_1} [inst : CommRing R] {n : ℕ}
+  {I I' : (FlagVarieties.FlagScheme R n).IdealSheafData} (h : I ≤ I') (η : Fin n → ℤ)
+  (hJ : FlagVarieties.IsLeftTranslStable (FlagVarieties.preimageIdeal R n I))
+  (hJ' : FlagVarieties.IsLeftTranslStable (FlagVarieties.preimageIdeal R n I')),
+  (FlagVarieties.sectionsRestrictHom R n h η hJ hJ').toLinearMap = FlagVarieties.sectionsRestrict R n h η
+FlagVarieties.preimageIdeal_schubertUnion_eq_orbitIdeal_complex : ∀ (n : ℕ) (S : Finset (Equiv.Perm (Fin n))),
+  S.Nonempty →
+    Demazure.SchubertUnions.BruhatLower S →
+      FlagVarieties.preimageIdeal ℂ n (FlagVarieties.schubertUnion ℂ n S) =
+        FlagVarieties.PointModel.Complex.orbitIdeal S
+FlagVarieties.globalSectionsConstant_complex : ∀ (n : ℕ) (w : Equiv.Perm (Fin n)),
+  FlagVarieties.PointModel.Complex.GlobalSectionsConstant w
+@FlagVarieties.geometricSectionEquiv : {n : ℕ} →
+  {S : Finset (Equiv.Perm (Fin n))} →
+    (I : (FlagVarieties.FlagScheme ℂ n).IdealSheafData) →
+      FlagVarieties.preimageIdeal ℂ n I = FlagVarieties.PointModel.Complex.orbitIdeal S →
+        (hJ : FlagVarieties.IsLeftTranslStable (FlagVarieties.preimageIdeal ℂ n I)) →
+          (η : Fin n → ℤ) → (FlagVarieties.sectionsRep ℂ n I η hJ).Equiv (FlagVarieties.SectionRep.sectionRep S η)
+@FlagVarieties.dualJosephEquiv : {n : ℕ} →
+  (ν : Fin n → ℤ) → (FlagVarieties.dualJoseph ν).Equiv (FlagVarieties.SectionRep.dualJoseph ν)
+@Schubert.RS.Geometric.geometricMinimalRelativeSchubertEquiv : {n : ℕ} →
+  (ν : Fin n → ℤ) →
+    (Schubert.RS.Geometric.geometricMinimalRelativeSchubert ν).Equiv
+      (FlagVarieties.SectionRep.minimalRelativeSchubert ν)
+@Schubert.RS.Geometric.isGeometricSchubertLayer_iff : ∀ {n : ℕ} {V : Type u_1} [inst : AddCommGroup V]
+  [inst_1 : Module ℂ V] (L : Representation ℂ (↥(GLRep.borel ℂ n)) V),
+  Schubert.RS.Geometric.IsGeometricSchubertLayer V L ↔ FlagVarieties.SectionRep.IsSchubertLayer V L
+@Schubert.RS.Geometric.isGeometricMinimalRelativeSchubertLayer_iff : ∀ {n : ℕ} {V : Type u_1} [inst : AddCommGroup V]
+  [inst_1 : Module ℂ V] (L : Representation ℂ (↥(GLRep.borel ℂ n)) V),
+  Schubert.RS.Geometric.IsGeometricMinimalRelativeSchubertLayer V L ↔
+    FlagVarieties.SectionRep.IsMinimalRelativeSchubertLayer V L
+@FlagVarieties.sectionBModuleIso : {n : ℕ} →
+  {m : Demazure.FlagModule.ColumnShape n} →
+    {S : Finset (Equiv.Perm (Fin n))} →
+      (hS : Demazure.SchubertUnions.BruhatLower S) →
+        FlagVarieties.sectionBModule m hS ≃ᴮ (Demazure.Filtrations.demazureUnionModule m S).dual
 Schubert.RS.Family.not_hasRelativeSchubertFiltration : ∀ (P : Schubert.RS.Family.Parameters),
   2 < (↑P.p - 2) * (↑P.q - 2) →
     ¬Schubert.RS.Filtrations.HasRelativeSchubertFiltration (Schubert.RS.Family.familyTensor P)
@@ -681,6 +805,13 @@ Schubert.RS.Algorithms.encodeTripleUnary : List ℕ → List ℕ → List ℕ �
         Schubert.RS.key (Schubert.RS.SchubertUnions.permAct σ dom) =
           ∑ τ ∈ Schubert.RS.SchubertUnions.minCosetInterval dom σ,
             Schubert.RS.atom (Schubert.RS.SchubertUnions.permAct τ dom)
+@FlagVarieties.ch_dualJoseph_negWeight : ∀ {n : ℕ} (u : Demazure.Composition n),
+  FlagVarieties.ch (FlagVarieties.dualJoseph (FlagVarieties.negWeight u)) = Demazure.toLaurent (Demazure.key u)
+@Schubert.RS.Geometric.ch_geometricMinimalRelativeSchubert_negWeight : ∀ {n : ℕ} (u : Fin n → ℕ),
+  FlagVarieties.ch (Schubert.RS.Geometric.geometricMinimalRelativeSchubert (FlagVarieties.negWeight u)) =
+    Demazure.toLaurent (Demazure.atom u)
+@Schubert.RS.Geometric.geometricMinimalRelativeSchubert_weightSpace_ne_bot : ∀ {n : ℕ} (ν : Fin n → ℤ),
+  GLRep.borelWeightSpace (Schubert.RS.Geometric.geometricMinimalRelativeSchubert ν) ν ≠ ⊥
 @Schubert.RS.Filtrations.dualJoseph_hasCharacter : ∀ {n : ℕ} (u : Schubert.RS.Composition n),
   (Schubert.RS.Filtrations.dualJoseph (Schubert.RS.Filtrations.negComposition u)).HasCharacter
     (Schubert.RS.toLaurent (Schubert.RS.key u))
@@ -820,6 +951,269 @@ Schubert.RS.Quiver.ForwardQuiver.finrank_ratLeviIrrep_coordRep_eq_multiplicity :
         GLRep.ratLeviCharacter ρ = ∑ l ∈ S, ↑(GLRep.ratLeviMultiplicity ρ l) • GLRep.ratLeviSchur d l
 Schubert.RS.Algorithms.exists_not_mem_P : ∃ L, L ∉ Complexity.P
 Schubert.RS.Algorithms.FP_countable : Complexity.FP.Countable
+@Schubert.RS.key : {n : ℕ} → Schubert.RS.Composition n → Schubert.RS.Polynomial n
+@Schubert.RS.atom : {n : ℕ} → Schubert.RS.Composition n → Schubert.RS.Polynomial n
+@Schubert.RS.atomCoefficient : {n : ℕ} → Schubert.RS.Polynomial n → Schubert.RS.Composition n → ℤ
+Schubert.RS.GLCharacterMultiplicity : Prop
+Schubert.RS.QuiverSaturation : Prop
+Schubert.RS.PolyTimeRationalFeasibility : Prop
+LinearProgramming.encodeSystem : ℕ → List (List ℤ × ℤ) → List Bool
+FlagVarieties.FlagScheme : (R : Type u_1) → [CommRing R] → ℕ → AlgebraicGeometry.Scheme
+FlagVarieties.FlagScheme.isProper_toSpec : ∀ (R : Type u_1) [inst : CommRing R] (n : ℕ),
+  AlgebraicGeometry.IsProper (FlagVarieties.FlagScheme.toSpec R n)
+@FlagVarieties.isColimitOrbitMap : {R : Type u_1} →
+  [inst : CommRing R] →
+    {n : ℕ} →
+      CategoryTheory.Limits.IsColimit (CategoryTheory.Limits.Cofork.ofπ (FlagVarieties.FlagScheme.orbitMap R n) ⋯)
+@FlagVarieties.exists_mulRight_eq : ∀ {R : Type u_1} [inst : CommRing R] {n : ℕ} {T : AlgebraicGeometry.Scheme}
+  [AlgebraicGeometry.IsAffine T] (a a' : T ⟶ FlagVarieties.GLScheme R n),
+  CategoryTheory.CategoryStruct.comp a (FlagVarieties.FlagScheme.orbitMap R n) =
+      CategoryTheory.CategoryStruct.comp a' (FlagVarieties.FlagScheme.orbitMap R n) →
+    ∃ β,
+      ∃ (hβ :
+        CategoryTheory.CategoryStruct.comp a (FlagVarieties.GLOver R n).hom =
+          CategoryTheory.CategoryStruct.comp β (FlagVarieties.BorelScheme.toSpec R n)),
+        CategoryTheory.CategoryStruct.comp (CategoryTheory.Limits.pullback.lift a β hβ) (FlagVarieties.mulRight R n) =
+          a'
+FlagVarieties.isIntegral_schubertVariety : ∀ (K : Type u_1) [inst : Field K] (n : ℕ) (w : Equiv.Perm (Fin n)),
+  AlgebraicGeometry.IsIntegral (FlagVarieties.schubertVariety K n w).subscheme
+FlagVarieties.schubertVariety_globalSections_const : ∀ (K : Type u_1) [inst : Field K] (n : ℕ) (w : Equiv.Perm (Fin n))
+  (a : ↑((FlagVarieties.schubertVariety K n w).subscheme.presheaf.obj (Opposite.op ⊤))),
+  ∃ c,
+    a = (AlgebraicGeometry.Scheme.Modules.baseRingToGlobalSections K (FlagVarieties.schubertVariety K n w).subscheme) c
+@FlagVarieties.PointModel.schubertVariety_le_iff : ∀ {K : Type u_1} [inst : Field K] {n : ℕ} [CharZero K]
+  {v w : Equiv.Perm (Fin n)}, FlagVarieties.schubertVariety K n w ≤ FlagVarieties.schubertVariety K n v ↔ v ≤ᴮ w
+FlagVarieties.oppositeSchubertVariety : (R : Type u_1) →
+  [inst : CommRing R] → (n : ℕ) → Equiv.Perm (Fin n) → (FlagVarieties.FlagScheme R n).IdealSheafData
+FlagVarieties.richardsonVariety : (R : Type u_1) →
+  [inst : CommRing R] →
+    (n : ℕ) → Equiv.Perm (Fin n) → Equiv.Perm (Fin n) → (FlagVarieties.FlagScheme R n).IdealSheafData
+@FlagVarieties.Richardson.richardsonVariety_ne_top_iff : ∀ {n : ℕ} (K : Type u_1) [inst : Field K] [CharZero K]
+  {w v : Equiv.Perm (Fin n)}, FlagVarieties.richardsonVariety K n w v ≠ ⊤ ↔ v ≤ᴮ w
+FlagVarieties.isInvertible_lineBundle : ∀ (R : Type u_1) [inst : CommRing R] (n : ℕ) (η : Fin n → ℤ),
+  TauCeti.AlgebraicGeometry.SheafOfModules.isInvertible (FlagVarieties.FlagScheme R n) (FlagVarieties.lineBundle R n η)
+FlagVarieties.sectionsMul : (R : Type u_1) →
+  [inst : CommRing R] →
+    (n : ℕ) →
+      (I : (FlagVarieties.FlagScheme R n).IdealSheafData) →
+        (η η' : Fin n → ℤ) →
+          FlagVarieties.sections R n I η →ₗ[R]
+            FlagVarieties.sections R n I η' →ₗ[R] FlagVarieties.sections R n I (η + η')
+FlagVarieties.sectionsComodule : (R : Type u_1) →
+  [inst : CommRing R] →
+    (n : ℕ) →
+      (I : (FlagVarieties.FlagScheme R n).IdealSheafData) →
+        (η : Fin n → ℤ) →
+          FlagVarieties.IsLeftCoactionStable (FlagVarieties.preimageIdeal R n I) →
+            TauCeti.Comodule R (↑(TauCeti.GeneralLinear.UpperTriangular.coordinateHopfAlgebra R n))
+              (FlagVarieties.sections R n I η)
+@FlagVarieties.contract_sectionsComodule : ∀ {R : Type u_1} [inst : CommRing R] {n : ℕ}
+  (I : (FlagVarieties.FlagScheme R n).IdealSheafData) (η : Fin n → ℤ)
+  (hJ : FlagVarieties.IsLeftCoactionStable (FlagVarieties.preimageIdeal R n I)) (b : ↥(GLRep.borel R n)),
+  GLRep.contract (FlagVarieties.borelPoint b) TauCeti.Comodule.coact = (FlagVarieties.sectionsRep R n I η ⋯) b
+GLRep.rationalBorelRepEquivComodule : (K : Type u_1) →
+  [inst : Field K] →
+    (n : ℕ) →
+      [Infinite K] →
+        (W : Type u_2) →
+          [inst_2 : AddCommGroup W] →
+            [inst_3 : Module K W] →
+              [FiniteDimensional K W] →
+                { ρ // GLRep.IsRationalBorelRep ρ } ≃ TauCeti.Comodule K (↑(GLRep.borelHopf K n)) W
+@GLRep.indBorelFrobeniusEquiv : {K : Type u_1} →
+  [inst : Field K] →
+    {n : ℕ} →
+      (η : Fin n → ℤ) →
+        [Infinite K] →
+          {V : Type u_2} →
+            [inst_2 : AddCommGroup V] →
+              [inst_3 : Module K V] →
+                {ρ : Representation K (GL (Fin n) K) V} →
+                  GLRep.IsRationalRep ρ →
+                    ρ.IntertwiningMap (GLRep.indBorelRep K n η) ≃ₗ[K]
+                      Representation.IntertwiningMap (MonoidHom.comp ρ (GLRep.borel K n).subtype)
+                        (GLRep.borelCharRep K n η)
+@GLRep.IsRationalBorelRep.toBModule : {n : ℕ} →
+  {W : Type} →
+    [inst : AddCommGroup W] →
+      [inst_1 : Module ℂ W] →
+        {ρ : Representation ℂ (↥(GLRep.borel ℂ n)) W} → GLRep.IsRationalBorelRep ρ → Demazure.BModules.BModule n
+@FlagVarieties.PointModel.sectionsRestrict_surjective : ∀ {K : Type u_1} [inst : Field K] [IsAlgClosed K] [CharZero K]
+  {n : ℕ} {S : Finset (Equiv.Perm (Fin n))},
+  Demazure.SchubertUnions.BruhatLower S →
+    ∀ (m : Demazure.FlagModule.ColumnShape n),
+      Function.Surjective ⇑(FlagVarieties.sectionsRestrict K n ⋯ (-FlagVarieties.PointModel.shapeWeightZ m))
+@FlagVarieties.PointModel.schubertSectionsBasis : {K : Type u_1} →
+  [inst : Field K] →
+    [IsAlgClosed K] →
+      [CharZero K] →
+        {n : ℕ} →
+          {S : Finset (Equiv.Perm (Fin n))} →
+            Demazure.SchubertUnions.BruhatLower S →
+              {d : ℕ} →
+                (h : Fin d → Fin n) →
+                  Module.Basis (↥(Demazure.SchubertUnions.chainSet h S)) K
+                    (FlagVarieties.sections K n (FlagVarieties.schubertUnion K n S)
+                      (-FlagVarieties.PointModel.shapeWeightZ (Demazure.FlagModule.columnMultiplicity h)))
+@FlagVarieties.PointModel.geometricSectionRingEquiv : {K : Type u_1} →
+  [inst : Field K] →
+    [IsAlgClosed K] →
+      [CharZero K] →
+        {n : ℕ} →
+          {S : Finset (Equiv.Perm (Fin n))} →
+            Demazure.SchubertUnions.BruhatLower S →
+              (FlagVarieties.PointModel.FlagMinorAlgebra K n ⧸ FlagVarieties.PointModel.flagMinorIdeal K S) ≃ₐ[K]
+                FlagVarieties.dominantSectionRing (FlagVarieties.preimageIdeal K n (FlagVarieties.schubertUnion K n S))
+@FlagVarieties.PointModel.geometricSectionRingEquiv_symm_of_mul_of : ∀ {n : ℕ} {S : Finset (Equiv.Perm (Fin n))}
+  (hS : Demazure.SchubertUnions.BruhatLower S) {m m' : Demazure.FlagModule.ColumnShape n}
+  (s : FlagVarieties.sections ℂ n (FlagVarieties.schubertUnion ℂ n S) (-FlagVarieties.PointModel.shapeWeightZ m))
+  (t : FlagVarieties.sections ℂ n (FlagVarieties.schubertUnion ℂ n S) (-FlagVarieties.PointModel.shapeWeightZ m')),
+  (FlagVarieties.PointModel.geometricSectionRingEquiv hS).symm
+        ((FlagVarieties.sectionsDirectSumEquiv ℂ n (FlagVarieties.schubertUnion ℂ n S))
+          ((DirectSum.of
+              (fun m =>
+                FlagVarieties.sections ℂ n (FlagVarieties.schubertUnion ℂ n S)
+                  (-FlagVarieties.PointModel.shapeWeightZ m))
+              m)
+            s)) *
+      (FlagVarieties.PointModel.geometricSectionRingEquiv hS).symm
+        ((FlagVarieties.sectionsDirectSumEquiv ℂ n (FlagVarieties.schubertUnion ℂ n S))
+          ((DirectSum.of
+              (fun m =>
+                FlagVarieties.sections ℂ n (FlagVarieties.schubertUnion ℂ n S)
+                  (-FlagVarieties.PointModel.shapeWeightZ m))
+              m')
+            t)) =
+    (FlagVarieties.PointModel.geometricSectionRingEquiv hS).symm
+      ((FlagVarieties.sectionsDirectSumEquiv ℂ n (FlagVarieties.schubertUnion ℂ n S))
+        ((DirectSum.of
+            (fun m =>
+              FlagVarieties.sections ℂ n (FlagVarieties.schubertUnion ℂ n S) (-FlagVarieties.PointModel.shapeWeightZ m))
+            (m + m'))
+          ((FlagVarieties.sectionsCongr ℂ n (FlagVarieties.schubertUnion ℂ n S) ⋯)
+            (((FlagVarieties.sectionsMul ℂ n (FlagVarieties.schubertUnion ℂ n S)
+                  (-FlagVarieties.PointModel.shapeWeightZ m) (-FlagVarieties.PointModel.shapeWeightZ m'))
+                s)
+              t))))
+@FlagVarieties.PointModel.minorSpanEquivSections : {K : Type u_1} →
+  [inst : Field K] →
+    [IsAlgClosed K] →
+      [CharZero K] →
+        {n : ℕ} →
+          (m : Demazure.FlagModule.ColumnShape n) →
+            ↥(FlagVarieties.PointModel.minorSpan K m) ≃ₗ[K]
+              FlagVarieties.sections K n ⊥ (-FlagVarieties.PointModel.shapeWeightZ m)
+@FlagVarieties.borelWeil_ratIrrep : ∀ {n : ℕ} (l : TauCeti.DominantWeight n),
+  Nonempty ((GLRep.indBorelRep ℂ n (-↑l)).Equiv (GLRep.ratIrrep ℂ n l).dual)
+@Demazure.FlagModule.flagDemazure : {n : ℕ} →
+  Demazure.FlagModule.ColumnShape n → Equiv.Perm (Fin n) → Submodule ℂ (Demazure.FlagModule.MatrixPolynomial n)
+@Demazure.FlagModule.compositionFlagJosephPolo : ∀ {n : ℕ} (u : Demazure.Composition n),
+  Demazure.FlagModule.CompositionFlagJosephPolo u
+@Demazure.SchubertUnions.flagDemazure_hasTorusCharacter : ∀ {n : ℕ} (m : Demazure.FlagModule.ColumnShape n)
+  (w : Equiv.Perm (Fin n)),
+  Demazure.FlagModule.HasTorusCharacter (Demazure.FlagModule.flagTorus m w)
+    (Demazure.key (Demazure.FlagModule.extremalWeight m w))
+@Demazure.SchubertUnions.key_eq_sum_atom : ∀ {n : ℕ} (dom : Demazure.Composition n),
+  Antitone dom →
+    ∀ (σ : Schubert.FinPermutation n),
+      Demazure.SchubertUnions.IsMinCosetRep dom σ →
+        Demazure.key (Demazure.SchubertUnions.permAct σ dom) =
+          ∑ τ ∈ Demazure.SchubertUnions.minCosetInterval dom σ, Demazure.atom (Demazure.SchubertUnions.permAct τ dom)
+@FlagVarieties.nonempty_sectionDemazureEquiv_ratIrrep : ∀ {n : ℕ} (l : TauCeti.DominantWeight n),
+  ∃ v,
+    (∀ (b : ↥(GLRep.borel ℂ n)), ((GLRep.ratIrrep ℂ n l) ↑b) v = ↑((GLRep.borelChar ℂ n (-↑l)) b)⁻¹ • v) ∧
+      ∀ {S : Finset (Equiv.Perm (Fin n))},
+        Demazure.SchubertUnions.BruhatLower S →
+          Nonempty
+            ((FlagVarieties.demazureRep (GLRep.ratIrrep ℂ n l) v S).dual.Equiv
+              (FlagVarieties.SectionRep.sectionRep S (-↑l)))
+@FlagVarieties.PointModel.orbitIdeal_lowerSet_eq_fultonIdeal : ∀ {K : Type u_1} [inst : Field K] {n : ℕ} [IsAlgClosed K]
+  [CharZero K] (w : Equiv.Perm (Fin n)),
+  FlagVarieties.PointModel.orbitIdeal K (FlagVarieties.PointModel.lowerSet w) =
+    Ideal.map (algebraMap (FlagVarieties.PointModel.MatrixEntryPolynomial K n) (FlagVarieties.GLCoord K n))
+      (FlagVarieties.PointModel.fultonIdeal K w)
+@FlagVarieties.PointModel.isRadical_map_fultonIdeal : ∀ {K : Type u_1} [inst : Field K] {n : ℕ} [IsAlgClosed K]
+  [CharZero K] (w : Equiv.Perm (Fin n)),
+  (Ideal.map (algebraMap (FlagVarieties.PointModel.MatrixEntryPolynomial K n) (FlagVarieties.GLCoord K n))
+      (FlagVarieties.PointModel.fultonIdeal K w)).IsRadical
+@FlagVarieties.PointModel.map_kazhdanLusztigSubst_fultonIdeal : ∀ {K : Type u_1} [inst : Field K] {n : ℕ}
+  [IsAlgClosed K] [CharZero K] (v w : Equiv.Perm (Fin n)),
+  Ideal.map (FlagVarieties.PointModel.kazhdanLusztigSubst K v) (FlagVarieties.PointModel.fultonIdeal K w) =
+    MvPolynomial.vanishingIdeal K (FlagVarieties.PointModel.kazhdanLusztigPatch K v w)
+@FlagVarieties.PointModel.isRadical_map_kazhdanLusztigSubst_fultonIdeal : ∀ {K : Type u_1} [inst : Field K] {n : ℕ}
+  [IsAlgClosed K] [CharZero K] (v w : Equiv.Perm (Fin n)),
+  (Ideal.map (FlagVarieties.PointModel.kazhdanLusztigSubst K v) (FlagVarieties.PointModel.fultonIdeal K w)).IsRadical
+@FlagVarieties.PointModel.cellRingEquiv : {K : Type u_1} →
+  [inst : Field K] →
+    {n : ℕ} →
+      (w : Equiv.Perm (Fin n)) →
+        MvPolynomial (FlagVarieties.PointModel.ChartVar w) K ⧸
+            Ideal.span (MvPolynomial.X '' {x | w (↑x).2 < (↑x).1}) ≃+*
+          MvPolynomial (FlagVarieties.PointModel.CellVar w) K
+FlagVarieties.Dimension.topologicalKrullDim_schubertVariety : ∀ (K : Type u_1) [inst : Field K] {n : ℕ}
+  (w : Equiv.Perm (Fin n)) [IsAlgClosed K] [CharZero K],
+  topologicalKrullDim ↥(FlagVarieties.schubertVariety K n w).subscheme = ↑(Schubert.FinPermutation.length w)
+FlagVarieties.Bruhat.permCoxeterSystem : (n : ℕ) → CoxeterSystem (CoxeterMatrix.A n) (Equiv.Perm (Fin (n + 1)))
+@FlagVarieties.Bruhat.bruhatLE_iff_strongBruhatLE : ∀ {n : ℕ} (u v : Equiv.Perm (Fin (n + 1))),
+  (FlagVarieties.Bruhat.permCoxeterSystem n).BruhatLE u v ↔ u ≤ᴮ v
+FlagVarieties.Plucker.plucker : (R : Type u_1) →
+  [inst : CommRing R] →
+    (n : ℕ) →
+      (k : Fin n) →
+        FlagVarieties.FlagScheme R n ⟶ FlagVarieties.Plucker.projSpace R (Demazure.FlagModule.FlagMinorRowSet k)
+FlagVarieties.Plucker.pluckerSegre : (R : Type u_1) →
+  [inst : CommRing R] →
+    (n : ℕ) → FlagVarieties.FlagScheme R n ⟶ FlagVarieties.Plucker.projSpace R (FlagVarieties.Plucker.SegreIndex n)
+FlagVarieties.Plucker.isClosedImmersion_pluckerSegre : ∀ (R : Type u_1) [inst : CommRing R] {n : ℕ},
+  AlgebraicGeometry.IsClosedImmersion (FlagVarieties.Plucker.pluckerSegre R n)
+@FlagVarieties.Plucker.pluckerSectionBasis_apply : ∀ {n : ℕ} {K : Type u_1} [inst : Field K] [inst_1 : IsAlgClosed K]
+  [inst_2 : CharZero K] (k : Fin n) (T : Demazure.FlagModule.FlagMinorRowSet k),
+  (FlagVarieties.PointModel.pluckerSectionBasis k) T =
+    Submodule.Quotient.mk ⟨FlagVarieties.Plucker.minor (FlagVarieties.genericMatrix K n) T, ⋯⟩
+@FlagVarieties.PointModel.pluckerVector_proportional_iff : ∀ {K : Type u_1} [inst : Field K] {n : ℕ}
+  (g g' : GL (Fin n) K),
+  (∀ (k : Fin n),
+      ∃ c, c ≠ 0 ∧ FlagVarieties.PointModel.pluckerVector k ↑g' = c • FlagVarieties.PointModel.pluckerVector k ↑g) ↔
+    ∃ b, b.IsUpperTriangular ∧ ↑g' = ↑g * b
+FlagVarieties.rankOneInduction : (R : Type u_1) →
+  [inst : CommRing R] →
+    (n i : ℕ) →
+      {M : Type u_2} →
+        [inst_1 : AddCommGroup M] →
+          [inst_2 : Module R M] →
+            (M →ₗ[R] TensorProduct R M (FlagVarieties.BorelCoord R n)) →
+              Submodule R (TensorProduct R (FlagVarieties.ParabolicCoord R n i) M)
+FlagVarieties.rankOneInductionSectionsEquiv : (R : Type u_1) →
+  [inst : CommRing R] →
+    (n i : ℕ) →
+      (hi : i + 1 < n) →
+        (η : Fin n → ℤ) →
+          ↥(FlagVarieties.rankOneInduction R n i (FlagVarieties.charCoaction R η)) ≃ₗ[R]
+            FlagVarieties.sections R n (FlagVarieties.simpleSchubert R n i hi) η
+FlagVarieties.simpleSchubertSectionsEquiv : (R : Type u_1) →
+  [inst : CommRing R] →
+    {n : ℕ} →
+      (i : ℕ) →
+        (hi : i + 1 < n) →
+          (η : Fin n → ℤ) →
+            FlagVarieties.sections R n (FlagVarieties.simpleSchubert R n i hi) η ≃ₗ[R]
+              ↥(Polynomial.degreeLT R (η (FlagVarieties.rowB n i hi) - η (FlagVarieties.rowA n i hi) + 1).toNat)
+@FlagVarieties.ch_rankOneInduction_charCoaction : ∀ {n i : ℕ} (hi : i + 1 < n) {K : Type u_1} [inst : Field K]
+  [Infinite K] (η : Fin n → ℤ),
+  η (FlagVarieties.rowA n i hi) ≤ η (FlagVarieties.rowB n i hi) + 1 →
+    FlagVarieties.ch (FlagVarieties.rankOneInductionRep K n i (FlagVarieties.charCoaction K η)) =
+      FlagVarieties.laurentIsobaric (FlagVarieties.adjacentOfLt i hi) (AddMonoidAlgebra.single (-η) 1)
+Schubert.FinPermutation : ℕ → Type
+@Schubert.FinPermutation.strongBruhatLE_iff_northwestRankNat : ∀ {n : ℕ} (u v : Schubert.FinPermutation n),
+  u ≤ᴮ v ↔ ∀ (p q : Fin n), v.northwestRankNat (↑p + 1) ↑q ≤ u.northwestRankNat (↑p + 1) ↑q
+@Schubert.FinPermutation.strongBruhatLE_iff_reduced_adjacent_subword : ∀ {n : ℕ} (u v : Schubert.FinPermutation n)
+  (word : List (Schubert.FinPermutation.AdjacentPosition n)),
+  Schubert.FinPermutation.applyRightAdjacentWord word (Equiv.refl (Fin n)) = v →
+    word.length = v.length →
+      (u ≤ᴮ v ↔
+        ∃ sub,
+          sub.Sublist word ∧
+            Schubert.FinPermutation.applyRightAdjacentWord sub (Equiv.refl (Fin n)) = u ∧ sub.length = u.length)
 'Schubert.RS.Family.atomCoefficient_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
 'Schubert.RS.Family.atomCoefficient_factorization' depends on axioms: [propext, Classical.choice, Quot.sound]
 'Schubert.RS.Family.atomCoefficient_neg_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
@@ -842,6 +1236,53 @@ Schubert.RS.Algorithms.FP_countable : Complexity.FP.Countable
 'Schubert.RS.atomCoefficient_eq_of_expansion' depends on axioms: [propext, Classical.choice, Quot.sound]
 'Schubert.RS.Family.isHallTriple_family' depends on axioms: [propext, Classical.choice, Quot.sound]
 'Schubert.RS.Family.atomCoefficient_eq_paired' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Geometric.not_hasGeometricRelativeSchubertFiltration' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Schubert.RS.Geometric.not_hasGeometricSchubertFiltration' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Geometric.not_hasGeometricSLRelativeSchubertFiltration' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Schubert.RS.Geometric.not_hasGeometricSLSchubertFiltration' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Geometric.typeA27_geometricFiltration_failure' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Geometric.geometricFamilyTensor' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Geometric.ch_geometricFamilyTensor' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FlagVarieties.dualJoseph' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Geometric.geometricMinimalRelativeSchubert' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Geometric.geometricBoundaryRestrict' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Geometric.IsGeometricSchubertLayer' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Geometric.IsGeometricMinimalRelativeSchubertLayer' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Schubert.RS.Geometric.HasGeometricRelativeSchubertFiltration' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Schubert.RS.Geometric.HasGeometricSchubertFiltration' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Geometric.HasGeometricSLRelativeSchubertFiltration' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Schubert.RS.Geometric.HasGeometricSLSchubertFiltration' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FlagVarieties.schubertVariety' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FlagVarieties.schubertUnion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FlagVarieties.schubertBoundary' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FlagVarieties.lineBundle' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FlagVarieties.sections' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FlagVarieties.sectionsRep' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FlagVarieties.sectionsEquivSemiInvariants' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FlagVarieties.sectionsRestrict' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FlagVarieties.sectionsRestrictHom_eq_sectionsRestrict' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FlagVarieties.preimageIdeal_schubertUnion_eq_orbitIdeal_complex' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FlagVarieties.globalSectionsConstant_complex' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FlagVarieties.geometricSectionEquiv' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FlagVarieties.dualJosephEquiv' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Geometric.geometricMinimalRelativeSchubertEquiv' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Geometric.isGeometricSchubertLayer_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Geometric.isGeometricMinimalRelativeSchubertLayer_iff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FlagVarieties.sectionBModuleIso' depends on axioms: [propext, Classical.choice, Quot.sound]
 'Schubert.RS.Family.not_hasRelativeSchubertFiltration' depends on axioms: [propext, Classical.choice, Quot.sound]
 'Schubert.RS.Family.not_hasSchubertFiltration' depends on axioms: [propext, Classical.choice, Quot.sound]
 'Schubert.RS.Family.not_hasSLRelativeSchubertFiltration' depends on axioms: [propext, Classical.choice, Quot.sound]
@@ -982,6 +1423,13 @@ Schubert.RS.Algorithms.FP_countable : Complexity.FP.Countable
 'Schubert.RS.Algorithms.encodeTripleUnary_injective' depends on axioms: [propext, Classical.choice, Quot.sound]
 'Schubert.RS.Algorithms.twoSource_eq_count' depends on axioms: [propext, Classical.choice, Quot.sound]
 'Schubert.RS.SchubertUnions.key_eq_sum_atom' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FlagVarieties.ch_dualJoseph_negWeight' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.Geometric.ch_geometricMinimalRelativeSchubert_negWeight' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Schubert.RS.Geometric.geometricMinimalRelativeSchubert_weightSpace_ne_bot' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
 'Schubert.RS.Filtrations.dualJoseph_hasCharacter' depends on axioms: [propext, Classical.choice, Quot.sound]
 'Schubert.RS.Filtrations.minRelSchubert_hasCharacter' depends on axioms: [propext, Classical.choice, Quot.sound]
 'Schubert.RS.Quiver.ForwardQuiver.multiplicity_pos_of_nsmul_pos' depends on axioms: [propext,
@@ -1025,3 +1473,66 @@ Schubert.RS.Algorithms.FP_countable : Complexity.FP.Countable
 'GLRep.IsRationalLeviRep.exists_ratLeviCharacter_eq_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
 'Schubert.RS.Algorithms.exists_not_mem_P' depends on axioms: [propext, Classical.choice, Quot.sound]
 'Schubert.RS.Algorithms.FP_countable' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.key' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.atom' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.atomCoefficient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.GLCharacterMultiplicity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.QuiverSaturation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.RS.PolyTimeRationalFeasibility' depends on axioms: [propext, Classical.choice, Quot.sound]
+'LinearProgramming.encodeSystem' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FlagVarieties.FlagScheme' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FlagVarieties.FlagScheme.isProper_toSpec' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FlagVarieties.isColimitOrbitMap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FlagVarieties.exists_mulRight_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FlagVarieties.isIntegral_schubertVariety' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FlagVarieties.schubertVariety_globalSections_const' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FlagVarieties.PointModel.schubertVariety_le_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FlagVarieties.oppositeSchubertVariety' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FlagVarieties.richardsonVariety' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FlagVarieties.Richardson.richardsonVariety_ne_top_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FlagVarieties.isInvertible_lineBundle' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FlagVarieties.sectionsMul' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FlagVarieties.sectionsComodule' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FlagVarieties.contract_sectionsComodule' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GLRep.rationalBorelRepEquivComodule' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GLRep.indBorelFrobeniusEquiv' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GLRep.IsRationalBorelRep.toBModule' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FlagVarieties.PointModel.sectionsRestrict_surjective' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FlagVarieties.PointModel.schubertSectionsBasis' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FlagVarieties.PointModel.geometricSectionRingEquiv' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FlagVarieties.PointModel.geometricSectionRingEquiv_symm_of_mul_of' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FlagVarieties.PointModel.minorSpanEquivSections' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FlagVarieties.borelWeil_ratIrrep' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Demazure.FlagModule.flagDemazure' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Demazure.FlagModule.compositionFlagJosephPolo' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Demazure.SchubertUnions.flagDemazure_hasTorusCharacter' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Demazure.SchubertUnions.key_eq_sum_atom' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FlagVarieties.nonempty_sectionDemazureEquiv_ratIrrep' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FlagVarieties.PointModel.orbitIdeal_lowerSet_eq_fultonIdeal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FlagVarieties.PointModel.isRadical_map_fultonIdeal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FlagVarieties.PointModel.map_kazhdanLusztigSubst_fultonIdeal' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FlagVarieties.PointModel.isRadical_map_kazhdanLusztigSubst_fultonIdeal' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FlagVarieties.PointModel.cellRingEquiv' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FlagVarieties.Dimension.topologicalKrullDim_schubertVariety' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FlagVarieties.Bruhat.permCoxeterSystem' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FlagVarieties.Bruhat.bruhatLE_iff_strongBruhatLE' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FlagVarieties.Plucker.plucker' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FlagVarieties.Plucker.pluckerSegre' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FlagVarieties.Plucker.isClosedImmersion_pluckerSegre' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FlagVarieties.Plucker.pluckerSectionBasis_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FlagVarieties.PointModel.pluckerVector_proportional_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FlagVarieties.rankOneInduction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FlagVarieties.rankOneInductionSectionsEquiv' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FlagVarieties.simpleSchubertSectionsEquiv' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FlagVarieties.ch_rankOneInduction_charCoaction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.FinPermutation' does not depend on any axioms
+'Schubert.FinPermutation.strongBruhatLE_iff_northwestRankNat' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Schubert.FinPermutation.strongBruhatLE_iff_reduced_adjacent_subword' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
