@@ -582,8 +582,7 @@ updating the hash inventory before that integrity check can pass again.
 
 This repository is licensed under the [Apache License 2.0](LICENSE), except
 for the third-party files described below. Redistributions must retain the
-[NOTICE](NOTICE) file. If you use or adapt this code, please cite the paper
-([arXiv:2609.28169](https://arxiv.org/abs/2609.28169)) and this repository;
+[NOTICE](NOTICE) file. If you use or adapt this code, please cite this repository;
 citation metadata is in [CITATION.cff](CITATION.cff).
 
 [GrinbergCauchyBinet.lean](Schubert/RS/JosephPolo/GrinbergCauchyBinet.lean)

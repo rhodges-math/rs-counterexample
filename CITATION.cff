@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "If you use or adapt this code, please cite the paper and this repository."
+message: "If you use or adapt this code, please cite this repository."
 type: software
 title: "rs-counterexample: Lean verification of Counterexamples to the Reiner–Shimozono conjecture and the failure of Schubert filtrations"
 abstract: >-
@@ -41,17 +41,17 @@ keywords:
   - Schubert varieties
   - Demazure modules
   - Borel-Weil theorem
-preferred-citation:
-  type: article
-  title: "Counterexamples to the Reiner-Shimozono conjecture and the failure of Schubert filtrations"
-  authors:
-    - family-names: Hodges
-      given-names: Reuven
-  year: 2026
-  identifiers:
-    - type: other
-      value: "arXiv:2609.28169"
-      description: "arXiv identifier"
-    - type: url
-      value: "https://arxiv.org/abs/2609.28169"
-  url: "https://arxiv.org/abs/2609.28169"
+references:
+  - type: article
+    title: "Counterexamples to the Reiner-Shimozono conjecture and the failure of Schubert filtrations"
+    authors:
+      - family-names: Hodges
+        given-names: Reuven
+    year: 2026
+    identifiers:
+      - type: other
+        value: "arXiv:2609.28169"
+        description: "arXiv identifier"
+      - type: url
+        value: "https://arxiv.org/abs/2609.28169"
+    url: "https://arxiv.org/abs/2609.28169"

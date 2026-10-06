@@ -3,8 +3,7 @@ Copyright 2026 Reuven Hodges
 
 This formalization accompanies R. Hodges, *Counterexamples to the
 Reiner-Shimozono conjecture and the failure of Schubert filtrations*
-(arXiv:2609.28169). If you use or adapt this code, please cite the paper and
-this repository.
+(arXiv:2609.28169). If you use or adapt this code, please cite this repository.
 
 Release 2.1.0 of this repository includes version 0.1.0 of the flag-variety
 module: the directories Schubert/FlagVarieties, Schubert/Demazure,
