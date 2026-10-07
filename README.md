@@ -1,9 +1,9 @@
 # Lean verification of *Counterexamples to the Reiner–Shimozono conjecture and the failure of Schubert filtrations*
 
-This repository (release 2.1.0) contains a Lean 4 formalization of
-the main results of Reuven Hodges, *Counterexamples to the Reiner–Shimozono
-conjecture and the failure of Schubert filtrations* (2026),
-[arXiv:2609.28169](https://arxiv.org/abs/2609.28169).
+This repository, `rhodges-math/rs-counterexample` (release 2.1.0), contains a
+Lean 4 formalization of the main results of *Counterexamples to the
+Reiner–Shimozono conjecture and the failure of Schubert filtrations* (Reuven
+Hodges, 2026), [arXiv:2609.28169](https://arxiv.org/abs/2609.28169).
 
 It proves the coefficient formula for the full counterexample family, its
 exact negativity criterion, and an explicit negative coefficient in 28
@@ -74,14 +74,14 @@ For positive integers $p,q$ and an integer scale $\delta\ge p+q$, the paper
 defines compositions $a,b,c$ in $4(p+q-1)$ variables and proves
 
 $$
-[\mathcal A_c](\kappa_a\kappa_b)
+\[\mathcal A\_c\](\kappa\_a\kappa\_b)
 =\frac{p+q-1}{pq}\binom{p+q-2}{p-1}^{2}
  \bigl(2-(p-2)(q-2)\bigr)
 =N(p+q-1,p)\bigl(2-(p-2)(q-2)\bigr),
 $$
 
 where $N(r,k)=\frac1r\binom rk\binom r{k-1}$ is the Narayana number.
-The coefficient is negative exactly when $(p-2)(q-2)>2$. The instances
+The coefficient is negative exactly when $(p-2)(q-2)\gt 2$. The instances
 $(p,q)=(3,5)$ and $(4,4)$ give $-105$ and $-350$ in 28 variables for every
 $\delta\ge8$, and the first negative cases within the family occur in 28
 variables.
@@ -107,42 +107,42 @@ These declarations are in `Schubert.RS.Family`
 | $\delta$ | `P.K` |
 | $p+q-1$ | `P.m` |
 | $4(p+q-1)$ variables | `P.rank` |
-| $\kappa_a$ | `key a` |
-| $\mathcal A_c$ | `atom c` |
-| $[\mathcal A_c]f$ | `atomCoefficient f c` |
+| $\kappa\_a$ | `key a` |
+| $\mathcal A\_c$ | `atom c` |
+| $\[\mathcal A\_c\]f$ | `atomCoefficient f c` |
 
 ### Corollary 1.2: Schubert filtrations
 
-For $(p-2)(q-2)>2$, the tensor product $P(-a)\otimes P(-b)$ of dual Joseph
+For $(p-2)(q-2)\gt 2$, the tensor product $P(-a)\otimes P(-b)$ of dual Joseph
 modules admits neither a relative Schubert filtration nor a Schubert
-filtration in Polo's sense, over $\mathrm{GL}_n$ or over $\mathrm{SL}_n$,
-already in type $A_{27}$; each factor has an excellent filtration.
+filtration in Polo's sense, over $\mathrm{GL}\_n$ or over $\mathrm{SL}\_n$,
+already in type $A\_{27}$; each factor has an excellent filtration.
 
 This is formalized for the modules of the paper, which are spaces of global
 sections of line bundles on Schubert varieties over $\mathbb C$. The flag
-variety is the flag scheme $\mathrm{Fl}_n=\mathrm{GL}_n/B$ of the
+variety is the flag scheme $\mathrm{Fl}\_n=\mathrm{GL}\_n/B$ of the
 [flag-variety library](#the-flag-variety-library), with $B$ the Borel subgroup
-of upper triangular matrices. The Schubert variety $X_w$ is the
-scheme-theoretic image of the orbit map $b\mapsto b\dot w$; unions $X_S$ of
-Schubert varieties and Schubert boundaries $\partial X_\sigma$ are closed
-subschemes of $\mathrm{Fl}_n$ as well. The line bundle
-$\mathcal L(\eta)=\mathrm{GL}_n\times^B\mathbb C_\eta$ is pulled back to each
+of upper triangular matrices. The Schubert variety $X\_w$ is the
+scheme-theoretic image of the orbit map $b\mapsto b\dot w$; unions $X\_S$ of
+Schubert varieties and Schubert boundaries $\partial X\_\sigma$ are closed
+subschemes of $\mathrm{Fl}\_n$ as well. The line bundle
+$\mathcal L(\eta)=\mathrm{GL}\_n\times^B\mathbb C\_\eta$ is pulled back to each
 of them, and $B$ acts on the global sections by left translation. With
 $\sigma=\sigma(\nu)$ and $\eta=\eta(\nu)$ as in the paper,
 
 $$
-P(\nu)=H^0\bigl(X_\sigma,\mathcal L(\eta)\bigr),\qquad
-Q(\nu)=\ker\Bigl(H^0\bigl(X_\sigma,\mathcal L(\eta)\bigr)\to H^0\bigl(\partial X_\sigma,\mathcal L(\eta)\bigr)\Bigr),
+P(\nu)=H^0\bigl(X\_\sigma,\mathcal L(\eta)\bigr),\qquad
+Q(\nu)=\ker\Bigl(H^0\bigl(X\_\sigma,\mathcal L(\eta)\bigr)\to H^0\bigl(\partial X\_\sigma,\mathcal L(\eta)\bigr)\Bigr),
 $$
 
-with $\mathrm{ch}\,P(-u)=\kappa_u$ and $\mathrm{ch}\,Q(-u)=\mathcal A_u$. The
+with $\mathrm{ch}\\,P(-u)=\kappa\_u$ and $\mathrm{ch}\\,Q(-u)=\mathcal A\_u$. The
 layers of a Schubert filtration in Polo's sense are the modules
-$H^0(X_S,\mathcal L(\eta))$ for nonempty Bruhat order ideals $S$ and
+$H^0(X\_S,\mathcal L(\eta))$ for nonempty Bruhat order ideals $S$ and
 antidominant weights $\eta$.
 
 | Paper | Lean |
 | --- | --- |
-| $X_w$, $X_S$, $\partial X_\sigma\subseteq\mathrm{Fl}_n$ | `FlagVarieties.schubertVariety`, `FlagVarieties.schubertUnion`, `FlagVarieties.schubertBoundary` |
+| $X\_w$, $X\_S$, $\partial X\_\sigma\subseteq\mathrm{Fl}\_n$ | `FlagVarieties.schubertVariety`, `FlagVarieties.schubertUnion`, `FlagVarieties.schubertBoundary` |
 | $\mathcal L(\eta)$, $H^0(X,\mathcal L(\eta))$ | `FlagVarieties.lineBundle`, `FlagVarieties.sections` |
 | The action of $B$ on $H^0(X,\mathcal L(\eta))$ | `FlagVarieties.sectionsRep` |
 | Restriction of sections from $X$ to $X'\subseteq X$ | `FlagVarieties.sectionsRestrict` |
@@ -150,20 +150,20 @@ antidominant weights $\eta$.
 | $P(-a)\otimes P(-b)$ | `Geometric.geometricFamilyTensor P` |
 | $M$ admits a relative Schubert filtration | `Geometric.HasGeometricRelativeSchubertFiltration M` |
 | $M$ admits a Schubert filtration in Polo's sense (layers from unions) | `Geometric.HasGeometricSchubertFiltration M` |
-| The same over $\mathrm{SL}_n$ | `Geometric.HasGeometricSLRelativeSchubertFiltration M`, `Geometric.HasGeometricSLSchubertFiltration M` |
+| The same over $\mathrm{SL}\_n$ | `Geometric.HasGeometricSLRelativeSchubertFiltration M`, `Geometric.HasGeometricSLSchubertFiltration M` |
 
 The statements are `Geometric.not_hasGeometricRelativeSchubertFiltration`,
-`Geometric.not_hasGeometricSchubertFiltration`, their $\mathrm{SL}_n$ forms
+`Geometric.not_hasGeometricSchubertFiltration`, their $\mathrm{SL}\_n$ forms
 `Geometric.not_hasGeometricSLRelativeSchubertFiltration` and
 `Geometric.not_hasGeometricSLSchubertFiltration`, and
 `Geometric.typeA27_geometricFiltration_failure`
 ([Geometric/SchemeRelative.lean](Schubert/RS/Geometric/SchemeRelative.lean),
 [Geometric/SchemeCorollary.lean](Schubert/RS/Geometric/SchemeCorollary.lean)).
-Their only hypothesis is $(p-2)(q-2)>2$, and $\delta\ge8$ in type $A_{27}$.
+Their only hypothesis is $(p-2)(q-2)\gt 2$, and $\delta\ge8$ in type $A\_{27}$.
 The characters are `FlagVarieties.ch_dualJoseph_negWeight`,
 `Geometric.ch_geometricMinimalRelativeSchubert_negWeight` and
 `Geometric.ch_geometricFamilyTensor`. As in the paper, a filtration of either
-kind would make $\kappa_a\kappa_b$ a nonnegative integral combination of
+kind would make $\kappa\_a\kappa\_b$ a nonnegative integral combination of
 atoms, contradicting Theorem 1.1.
 
 #### The algebraic model
@@ -171,9 +171,9 @@ atoms, contradicting Theorem 1.1.
 The characters are computed in an algebraic model, which was the form of
 Corollary 1.2 in release 2.0.0 and is kept in this release. Global sections
 are semi-invariants: $H^0(X,\mathcal L(\eta))$ is the module of functions on
-the preimage of $X$ in $\mathrm{GL}_n$ that transform by the weight $\eta$
+the preimage of $X$ in $\mathrm{GL}\_n$ that transform by the weight $\eta$
 under right translation by $B$ (`FlagVarieties.sectionsEquivSemiInvariants`,
-over every commutative ring). For $X=X_S$ this is the ring model of the
+over every commutative ring). For $X=X\_S$ this is the ring model of the
 section module (`FlagVarieties.geometricSectionEquiv`), and $P(\nu)$ and
 $Q(\nu)$ agree with their ring-model versions
 (`FlagVarieties.dualJosephEquiv`,
@@ -187,7 +187,7 @@ In the algebraic model, the formalization works at the level of modules for
 the upper-triangular Borel subalgebra: section modules over unions of
 Schubert varieties are twisted duals of sums of Demazure modules in the
 flag-minor model, and $P(\nu)$ and $Q(\nu)$ are built from them as in the
-paper, with $\mathrm{ch}\,P(-a)=\kappa_a$ and $\mathrm{ch}\,Q(-a)=\mathcal A_a$.
+paper, with $\mathrm{ch}\\,P(-a)=\kappa\_a$ and $\mathrm{ch}\\,Q(-a)=\mathcal A\_a$.
 The ambient flag-minor span is proved to be the irreducible module
 $V(\lambda)$.
 
@@ -199,27 +199,27 @@ $V(\lambda)$.
 | $P(-a)\otimes P(-b)$ | `Family.familyTensor P` |
 
 The module-level statements are `Family.not_hasRelativeSchubertFiltration`,
-`Family.not_hasSchubertFiltration`, their $\mathrm{SL}_n$ forms
+`Family.not_hasSchubertFiltration`, their $\mathrm{SL}\_n$ forms
 `Family.not_hasSLRelativeSchubertFiltration` and
 `Family.not_hasSLSchubertFiltration`, and `Family.typeA27_filtration_failure`
 ([Family/FiltrationCorollary.lean](Schubert/RS/Family/FiltrationCorollary.lean)).
 
 ### Corollary 1.3: Lascoux polynomials
 
-For $(p-2)(q-2)>2$, the product of the Lascoux polynomials of $a$ and $b$ has
+For $(p-2)(q-2)\gt 2$, the product of the Lascoux polynomials of $a$ and $b$ has
 no expansion in Lascoux atoms with coefficients in
-$\mathbb Z_{\ge0}[\beta]$ (`Family.not_lascouxAtomPositive`), nor even one
-with coefficients in $\mathbb Z[\beta]$ that are nonnegative at $\beta=0$
+$\mathbb Z\_{\ge0}\[\beta\]$ (`Family.not_lascouxAtomPositive`), nor even one
+with coefficients in $\mathbb Z\[\beta\]$ that are nonnegative at $\beta=0$
 (`Family.no_lascouxExpansion_nonnegAtZero`). Lascoux polynomials are
 defined, as in Lascoux's original definition, by the K-theoretic isobaric
 divided difference operators
-$\pi_i^{(\beta)}f=\pi_i\bigl((1+\beta x_{i+1})f\bigr)$, and Lascoux atoms by the
-operators $\pi_i^{(\beta)}-1$ ([Lascoux/](Schubert/RS/Lascoux)).
+$\pi\_i^{(\beta)}f=\pi\_i\bigl((1+\beta x\_{i+1})f\bigr)$, and Lascoux atoms by the
+operators $\pi\_i^{(\beta)}-1$ ([Lascoux/](Schubert/RS/Lascoux)).
 
 ### Corollary 1.5: positive quiver triples have positive density
 
 For $n\ge4$, the number of quiver triples $a,b,c\in\lbrace0,\ldots,H\rbrace^n$
-with $[\mathcal A_c](\kappa_a\kappa_b)>0$ is $\Theta(H^{3n-1})$, a proportion
+with $\[\mathcal A\_c\](\kappa\_a\kappa\_b)\gt 0$ is $\Theta(H^{3n-1})$, a proportion
 bounded away from zero among the triples with $|a|+|b|=|c|$
 (`Quiver.Density.card_positiveQuiverTriples_isTheta`,
 `Quiver.Density.positiveQuiverTriples_proportion`). The proof goes through the
@@ -236,8 +236,8 @@ inequalities `Quiver.Flat.quiverPolytope a b c`, with $M=2n^3+2n^4$ variables
 and coefficients in $\lbrace -1,0,1\rbrace$. The counting identity
 
 $$
-[\mathcal A_c](\kappa_a\kappa_b)
-=\dim\mathrm{Hom}_{L_{\mathcal I}}\Bigl(\bigotimes_{p}V_p^{\lambda^{(p)}},\mathcal R_Q\Bigr)
+\[\mathcal A\_c\](\kappa\_a\kappa\_b)
+=\dim\mathrm{Hom}\_{L\_{\mathcal I}}\Bigl(\bigotimes\_{p}V\_p^{\lambda^{(p)}},\mathcal R\_Q\Bigr)
 =\bigl\lvert P(a,b,c)\cap\mathbb Z^M\bigr\rvert
 $$
 
@@ -273,9 +273,9 @@ explicit hypotheses; the corresponding rows of the table apply the proofs of
 ([Main/Unconditional.lean](Schubert/RS/Main/Unconditional.lean)).
 
 Polynomial time is `Complexity.FP` from complexitylib (deterministic
-multi-tape Turing machines), with the input encoded in binary
-(`Algorithms.encodeTriple`, whose length is linear in the binary size of
-$(a,b,c)$).
+multi-tape Turing machines), with the input encoded in binary by
+`Algorithms.encodeTriple`, whose length is linear in the binary size of
+$(a,b,c)$.
 
 ### Theorem 5.3: the quiver multiplicity
 
@@ -283,16 +283,16 @@ For a quiver partition $\mathcal I$ of $(a,b,c)$,
 `Quiver.atomCoefficient_eq_finrank_quiverHom` gives
 
 $$
-[\mathcal A_c](\kappa_a\kappa_b)
-=\dim\mathrm{Hom}_{L_{\mathcal I}}\Bigl(\bigotimes_p V_p^{\lambda^{(p)}},\mathcal R_Q\Bigr),
+\[\mathcal A\_c\](\kappa\_a\kappa\_b)
+=\dim\mathrm{Hom}\_{L\_{\mathcal I}}\Bigl(\bigotimes\_p V\_p^{\lambda^{(p)}},\mathcal R\_Q\Bigr),
 $$
 
-where $L_{\mathcal I}=\prod_p\mathrm{GL}(V_p)$ acts on the coordinate ring
-$\mathcal R_Q$ of the representation space of the quiver $Q$, and the
-$V_p^{\lambda^{(p)}}$ are irreducible rational representations
+where $L\_{\mathcal I}=\prod\_p\mathrm{GL}(V\_p)$ acts on the coordinate ring
+$\mathcal R\_Q$ of the representation space of the quiver $Q$, and the
+$V\_p^{\lambda^{(p)}}$ are irreducible rational representations
 (`GL.ratLeviIrrep`, built from flag minors). At the level of characters, the
-coefficient is the multiplicity of $\prod_p s_{\lambda^{(p)}}$ in the graded
-character of $\mathcal R_Q$ (`Quiver.atomCoefficient_eq_multiplicity`), and
+coefficient is the multiplicity of $\prod\_p s\_{\lambda^{(p)}}$ in the graded
+character of $\mathcal R\_Q$ (`Quiver.atomCoefficient_eq_multiplicity`), and
 it is nonnegative (`Quiver.atomCoefficient_nonneg`). The passage from
 characters to Hom spaces is the multiplicity theorem of the GLRep library,
 through the proof `glCharacterMultiplicity_holds` of
@@ -302,13 +302,13 @@ through the proof `glCharacterMultiplicity_holds` of
 ### The GLRep library
 
 [Schubert/GLRep/](Schubert/GLRep) (namespace `GLRep`) develops the polynomial
-and rational representations of $\mathrm{GL}_n(K)$ and of Levi groups
-$\prod_p\mathrm{GL}_{d_p}(K)$ over a field $K$ of characteristic zero,
-through the representations of the Lie algebra $\mathfrak{gl}_n(K)$; no
+and rational representations of $\mathrm{GL}\_n(K)$ and of Levi groups
+$\prod\_p\mathrm{GL}\_{d\_p}(K)$ over a field $K$ of characteristic zero,
+through the representations of the Lie algebra $\mathfrak{gl}\_n(K)$; no
 algebraic closure is needed. It proves the Weyl character formula for
-$\mathfrak{gl}_n$, complete reducibility, the classification of the
+$\mathfrak{gl}\_n$, complete reducibility, the classification of the
 irreducible polynomial representations $V(\mu)$ by Young diagrams $\mu$ with
-at most $n$ rows, with the Schur polynomials $s_\mu$ as characters, and the
+at most $n$ rows, with the Schur polynomials $s\_\mu$ as characters, and the
 expansion of every character in Schur polynomials with the multiplicities
 $\dim\mathrm{Hom}(V(\mu),\rho)$. Twists by powers of the determinant
 extend these results to rational representations. Together with these
@@ -321,13 +321,13 @@ the rational representations of the Borel subgroup (`Schubert/GLRep/Borel/`,
 
 | Declaration | Result |
 | --- | --- |
-| `GLRep.alternant_mul_glCharacter_of_isGlHighestWeightVector` | The Weyl character formula for $\mathfrak{gl}_n$ |
+| `GLRep.alternant_mul_glCharacter_of_isGlHighestWeightVector` | The Weyl character formula for $\mathfrak{gl}\_n$ |
 | `GLRep.IsPolynomialRep.isSemisimpleRepresentation` | Complete reducibility of polynomial representations |
-| `GLRep.isIrreducible_irrep`, `GLRep.character_irrep` | $V(\mu)$ is irreducible, with character $s_\mu$ |
+| `GLRep.isIrreducible_irrep`, `GLRep.character_irrep` | $V(\mu)$ is irreducible, with character $s\_\mu$ |
 | `GLRep.IsPolynomialRep.exists_nonempty_equiv_irrep` | Every irreducible polynomial representation is some $V(\mu)$ |
 | `GLRep.IsPolynomialRep.nonempty_equiv_of_character_eq` | Irreducible polynomial representations with equal characters are equivalent |
 | `GLRep.finrank_intertwiningMap_irrep_self`, `GLRep.finrank_intertwiningMap_irrep_of_ne` | Schur's lemma for the $V(\mu)$ |
-| `GLRep.IsPolynomialRep.exists_character_eq_sum` | $\mathrm{ch}\,\rho=\sum_\mu\dim\mathrm{Hom}(V(\mu),\rho)\,s_\mu$ |
+| `GLRep.IsPolynomialRep.exists_character_eq_sum` | $\mathrm{ch}\\,\rho=\sum\_\mu\dim\mathrm{Hom}(V(\mu),\rho)\\,s\_\mu$ |
 | `GLRep.IsPolynomialLeviRep.exists_leviCharacter_eq_sum` | The same expansion for Levi groups, in products of Schur polynomials |
 | `GLRep.IsRationalRep.isSemisimpleRepresentation` | Complete reducibility of rational representations |
 | `GLRep.IsRationalRep.exists_nonempty_equiv_ratIrrep` | Every irreducible rational representation is some $V(\lambda)$, $\lambda\in\mathbb Z^n$ dominant |
@@ -340,7 +340,7 @@ the rational representations of the Borel subgroup (`Schubert/GLRep/Borel/`,
 $Ax\le b$ of linear inequalities with integer coefficients has a rational
 solution (`LinearProgramming.exists_mem_FP_feasible`, on the binary encoding
 `LinearProgramming.encodeSystem`). The algorithm is of Chubanov type: after a
-perturbation, the system becomes a homogeneous system $My=0$, $y>0$, which is
+perturbation, the system becomes a homogeneous system $My=0$, $y\gt 0$, which is
 solved by alternating projections and rescalings, with exact integer
 arithmetic throughout (Bareiss elimination for the projections). Polynomial
 time is `Complexity.FP` from complexitylib, as above. This proves
@@ -405,40 +405,40 @@ The schemes are defined over an arbitrary commutative ring $R$. Results about
 points, dimension, normality and Fulton's conditions are over a field, with
 the hypotheses (infinite, characteristic zero, algebraically closed) stated in
 each declaration; the Demazure library and the comparison with
-representations of $\mathrm{GL}_n(\mathbb C)$ are over $\mathbb C$. The main
+representations of $\mathrm{GL}\_n(\mathbb C)$ are over $\mathbb C$. The main
 namespaces are `FlagVarieties` (with `FlagVarieties.PointModel`, the model by
-functions on $\mathrm{GL}_n(K)$ over a field $K$), `Demazure`, `GLRep` and
+functions on $\mathrm{GL}\_n(K)$ over a field $K$), `Demazure`, `GLRep` and
 `Schubert.FinPermutation`. In the table, names without one of the prefixes
 `Demazure.`, `GLRep.` or `Schubert.` are in the namespace `FlagVarieties`.
 
 | Topic | Declarations | Content |
 | --- | --- | --- |
-| The flag scheme and $\mathrm{GL}_n/B$ | `FlagScheme`, `FlagScheme.isProper_toSpec`, `isColimitOrbitMap`, `exists_mulRight_eq` | The complete flag scheme $\mathrm{Fl}_n$ over $\mathrm{Spec}\,R$ is proper. The orbit map $\pi:\mathrm{GL}_n\to\mathrm{Fl}_n$ is the coequalizer of the projection and the right action $\mathrm{GL}_n\times_R B\rightrightarrows\mathrm{GL}_n$ in the category of schemes, and its fibres over affine schemes are $B$-orbits |
-| Schubert varieties | `schubertVariety`, `schubertUnion`, `schubertBoundary`, `isIntegral_schubertVariety`, `schubertVariety_globalSections_const`, `PointModel.schubertVariety_le_iff` | $X_w$ is the scheme-theoretic image of $b\mapsto b\dot w$ from $B$ to $\mathrm{Fl}_n$; unions and boundaries are given by their ideal sheaves. Over a field $K$, $X_w$ is integral with $\Gamma(X_w,\mathcal O)=K$, and $X_v\subseteq X_w$ iff $v\le w$ (characteristic zero) |
-| Opposite Schubert and Richardson varieties | `oppositeSchubertVariety`, `richardsonVariety`, `Richardson.richardsonVariety_ne_top_iff` | $X^w$, the closure of $B^-\dot wB/B$, and $X_w^v=X_w\cap X^v$ as a scheme-theoretic intersection, which is nonempty iff $v\le w$ (characteristic zero) |
-| Line bundles and sections | `lineBundle`, `isInvertible_lineBundle`, `sections`, `sectionsEquivSemiInvariants`, `sectionsRestrict`, `sectionsMul` | $\mathcal L(\eta)=\mathrm{GL}_n\times^B R_\eta$ is invertible. For a closed subscheme $X$, $H^0(X,\mathcal L(\eta))$ is the module of semi-invariants of weight $\eta$ in the coordinate ring of $\pi^{-1}(X)$; restriction and multiplication of sections |
+| The flag scheme and $\mathrm{GL}\_n/B$ | `FlagScheme`, `FlagScheme.isProper_toSpec`, `isColimitOrbitMap`, `exists_mulRight_eq` | The complete flag scheme $\mathrm{Fl}\_n$ over $\mathrm{Spec}\\,R$ is proper. The orbit map $\pi:\mathrm{GL}\_n\to\mathrm{Fl}\_n$ is the coequalizer of the projection and the right action $\mathrm{GL}\_n\times\_R B\rightrightarrows\mathrm{GL}\_n$ in the category of schemes, and its fibres over affine schemes are $B$-orbits |
+| Schubert varieties | `schubertVariety`, `schubertUnion`, `schubertBoundary`, `isIntegral_schubertVariety`, `schubertVariety_globalSections_const`, `PointModel.schubertVariety_le_iff` | $X\_w$ is the scheme-theoretic image of $b\mapsto b\dot w$ from $B$ to $\mathrm{Fl}\_n$; unions and boundaries are given by their ideal sheaves. Over a field $K$, $X\_w$ is integral with $\Gamma(X\_w,\mathcal O)=K$, and $X\_v\subseteq X\_w$ iff $v\le w$ (characteristic zero) |
+| Opposite Schubert and Richardson varieties | `oppositeSchubertVariety`, `richardsonVariety`, `Richardson.richardsonVariety_ne_top_iff` | $X^w$, the closure of $B^-\dot wB/B$, and $X\_w^v=X\_w\cap X^v$ as a scheme-theoretic intersection, which is nonempty iff $v\le w$ (characteristic zero) |
+| Line bundles and sections | `lineBundle`, `isInvertible_lineBundle`, `sections`, `sectionsEquivSemiInvariants`, `sectionsRestrict`, `sectionsMul` | $\mathcal L(\eta)=\mathrm{GL}\_n\times^B R\_\eta$ is invertible. For a closed subscheme $X$, $H^0(X,\mathcal L(\eta))$ is the module of semi-invariants of weight $\eta$ in the coordinate ring of $\pi^{-1}(X)$; restriction and multiplication of sections |
 | The action of $B$ | `sectionsRep`, `sectionsComodule`, `contract_sectionsComodule` | $B(R)$ acts on $H^0(X,\mathcal L(\eta))$ by left translation when $\pi^{-1}(X)$ is stable under $B$. The same action as a comodule over the coordinate ring $\mathcal O(B)$, which gives back the action on points |
-| Rational representations of $B$ | `GLRep.rationalBorelRepEquivComodule`, `GLRep.indBorelFrobeniusEquiv`, `GLRep.IsRationalBorelRep.toBModule` | Weights, characters and filtrations of rational representations of $B(K)$. Over an infinite field, the finite-dimensional ones are the same as $\mathcal O(B)$-comodules; induction from $B$ to $\mathrm{GL}_n$ and Frobenius reciprocity. Over $\mathbb C$, a rational representation is a module for $\mathfrak n^+$ with a compatible torus action, with the same subrepresentations and intertwining maps |
-| Projective normality | `PointModel.sectionsRestrict_surjective`, `PointModel.schubertSectionsBasis`, `PointModel.geometricSectionRingEquiv` | For a Bruhat order ideal $S$ and a partition $\lambda$, restriction $H^0(\mathrm{Fl}_n,\mathcal L(-\lambda))\to H^0(X_S,\mathcal L(-\lambda))$ is surjective and $H^0(X_S,\mathcal L(-\lambda))$ has a standard-monomial basis; the section ring $\bigoplus_\lambda H^0(X_S,\mathcal L(-\lambda))$ is the quotient of the flag-minor algebra by the ideal of $X_S$ (algebraically closed fields of characteristic zero) |
-| Borel–Weil | `PointModel.minorSpanEquivSections`, `borelWeil_ratIrrep` | For a partition $\lambda$, $H^0(\mathrm{Fl}_n,\mathcal L(-\lambda))$ is spanned by the products of flag minors of shape $\lambda$; for a dominant weight $\lambda$, it is $V(\lambda)^\vee$ as a representation of $\mathrm{GL}_n(\mathbb C)$ |
-| Demazure modules | `Demazure.FlagModule.flagDemazure`, `Demazure.FlagModule.compositionFlagJosephPolo`, `Demazure.SchubertUnions.flagDemazure_hasTorusCharacter`, `Demazure.SchubertUnions.key_eq_sum_atom`, `nonempty_sectionDemazureEquiv_ratIrrep`, `sectionBModuleIso` | The Demazure modules $D_w(\lambda)$ in the flag-minor model, their Joseph–Polo presentation, the character formula $\mathrm{ch}\,D_w(\lambda)=\kappa_{w\lambda}$, and $\kappa_{\sigma\lambda}=\sum_{u\le\sigma}\mathcal A_{u\lambda}$. For a Bruhat order ideal $S$, $H^0(X_S,\mathcal L(-\lambda))\cong\bigl(\sum_{w\in S}D_w(\lambda)\bigr)^\vee$ as representations of $B$, and as modules for $\mathfrak n^+$ and the torus |
-| Fulton's rank conditions and Kazhdan–Lusztig patches | `PointModel.orbitIdeal_lowerSet_eq_fultonIdeal`, `PointModel.isRadical_map_fultonIdeal`, `PointModel.map_kazhdanLusztigSubst_fultonIdeal`, `PointModel.isRadical_map_kazhdanLusztigSubst_fultonIdeal` | Fulton's rank conditions generate the ideal of $\pi^{-1}(X_w)$ in $\mathcal O(\mathrm{GL}_n)$ and the ideal of the Kazhdan–Lusztig patch of $X_w$ at $v$, and both ideals are radical (algebraically closed fields of characteristic zero) |
-| Bruhat cells and dimension | `PointModel.cellRingEquiv`, `Dimension.topologicalKrullDim_schubertVariety`, `Bruhat.permCoxeterSystem`, `Bruhat.bruhatLE_iff_strongBruhatLE` | Over a field, the Bruhat cell of $w$ is an affine space of dimension $\ell(w)$; $\dim X_w=\ell(w)$ (algebraically closed fields of characteristic zero). $S_{n+1}$ is the Coxeter group of type $A_n$, and its Bruhat order is the rank-matrix order |
-| The Plücker embedding | `Plucker.plucker`, `Plucker.pluckerSegre`, `Plucker.isClosedImmersion_pluckerSegre`, `PointModel.pluckerVector_proportional_iff` | The Plücker morphisms $\mathrm{Fl}_n\to\mathbb P(\wedge^{k}R^n)$, given by the flag minors, and the Segre–Plücker morphism to $\mathbb P(\bigotimes_k\wedge^kR^n)$, a closed immersion over every commutative ring. Over a field, $gB=g'B$ iff the Plücker vectors of $g$ and $g'$ are proportional |
-| The rank-one functor | `rankOneInduction`, `rankOneInductionSectionsEquiv`, `simpleSchubertSectionsEquiv`, `ch_rankOneInduction_charCoaction` | $H_{s_i}(M)=(\mathcal O(P_i)\otimes M)^B$ for the minimal parabolic subgroup $P_i$. For a character, $H_{s_i}(R_\eta)\cong H^0(X_{s_i},\mathcal L(\eta))$, a free module of rank $\max(0,d+1)$, $d=-\langle\eta,\alpha_i^\vee\rangle$, identified with the binary forms of degree $d$; over a field its character is $\pi_i(x^{-\eta})$ for $d\ge-1$ |
+| Rational representations of $B$ | `GLRep.rationalBorelRepEquivComodule`, `GLRep.indBorelFrobeniusEquiv`, `GLRep.IsRationalBorelRep.toBModule` | Weights, characters and filtrations of rational representations of $B(K)$. Over an infinite field, the finite-dimensional ones are the same as $\mathcal O(B)$-comodules; induction from $B$ to $\mathrm{GL}\_n$ and Frobenius reciprocity. Over $\mathbb C$, a rational representation is a module for $\mathfrak n^+$ with a compatible torus action, with the same subrepresentations and intertwining maps |
+| Projective normality | `PointModel.sectionsRestrict_surjective`, `PointModel.schubertSectionsBasis`, `PointModel.geometricSectionRingEquiv` | For a Bruhat order ideal $S$ and a partition $\lambda$, restriction $H^0(\mathrm{Fl}\_n,\mathcal L(-\lambda))\to H^0(X\_S,\mathcal L(-\lambda))$ is surjective and $H^0(X\_S,\mathcal L(-\lambda))$ has a standard-monomial basis; the section ring $\bigoplus\_\lambda H^0(X\_S,\mathcal L(-\lambda))$ is the quotient of the flag-minor algebra by the ideal of $X\_S$ (algebraically closed fields of characteristic zero) |
+| Borel–Weil | `PointModel.minorSpanEquivSections`, `borelWeil_ratIrrep` | For a partition $\lambda$, $H^0(\mathrm{Fl}\_n,\mathcal L(-\lambda))$ is spanned by the products of flag minors of shape $\lambda$; for a dominant weight $\lambda$, it is $V(\lambda)^\vee$ as a representation of $\mathrm{GL}\_n(\mathbb C)$ |
+| Demazure modules | `Demazure.FlagModule.flagDemazure`, `Demazure.FlagModule.compositionFlagJosephPolo`, `Demazure.SchubertUnions.flagDemazure_hasTorusCharacter`, `Demazure.SchubertUnions.key_eq_sum_atom`, `nonempty_sectionDemazureEquiv_ratIrrep`, `sectionBModuleIso` | The Demazure modules $D\_w(\lambda)$ in the flag-minor model, their Joseph–Polo presentation, the character formula $\mathrm{ch}\\,D\_w(\lambda)=\kappa\_{w\lambda}$, and $\kappa\_{\sigma\lambda}=\sum\_{u\le\sigma}\mathcal A\_{u\lambda}$. For a Bruhat order ideal $S$, $H^0(X\_S,\mathcal L(-\lambda))\cong\bigl(\sum\_{w\in S}D\_w(\lambda)\bigr)^\vee$ as representations of $B$, and as modules for $\mathfrak n^+$ and the torus |
+| Fulton's rank conditions and Kazhdan–Lusztig patches | `PointModel.orbitIdeal_lowerSet_eq_fultonIdeal`, `PointModel.isRadical_map_fultonIdeal`, `PointModel.map_kazhdanLusztigSubst_fultonIdeal`, `PointModel.isRadical_map_kazhdanLusztigSubst_fultonIdeal` | Fulton's rank conditions generate the ideal of $\pi^{-1}(X\_w)$ in $\mathcal O(\mathrm{GL}\_n)$ and the ideal of the Kazhdan–Lusztig patch of $X\_w$ at $v$, and both ideals are radical (algebraically closed fields of characteristic zero) |
+| Bruhat cells and dimension | `PointModel.cellRingEquiv`, `Dimension.topologicalKrullDim_schubertVariety`, `Bruhat.permCoxeterSystem`, `Bruhat.bruhatLE_iff_strongBruhatLE` | Over a field, the Bruhat cell of $w$ is an affine space of dimension $\ell(w)$; $\dim X\_w=\ell(w)$ (algebraically closed fields of characteristic zero). $S\_{n+1}$ is the Coxeter group of type $A\_n$, and its Bruhat order is the rank-matrix order |
+| The Plücker embedding | `Plucker.plucker`, `Plucker.pluckerSegre`, `Plucker.isClosedImmersion_pluckerSegre`, `PointModel.pluckerVector_proportional_iff` | The Plücker morphisms $\mathrm{Fl}\_n\to\mathbb P(\wedge^{k}R^n)$, given by the flag minors, and the Segre–Plücker morphism to $\mathbb P(\bigotimes\_k\wedge^kR^n)$, a closed immersion over every commutative ring. Over a field, $gB=g'B$ iff the Plücker vectors of $g$ and $g'$ are proportional |
+| The rank-one functor | `rankOneInduction`, `rankOneInductionSectionsEquiv`, `simpleSchubertSectionsEquiv`, `ch_rankOneInduction_charCoaction` | $H\_{s\_i}(M)=(\mathcal O(P\_i)\otimes M)^B$ for the minimal parabolic subgroup $P\_i$. For a character, $H\_{s\_i}(R\_\eta)\cong H^0(X\_{s\_i},\mathcal L(\eta))$, a free module of rank $\max(0,d+1)$, $d=-\langle\eta,\alpha\_i^\vee\rangle$, identified with the binary forms of degree $d$; over a field its character is $\pi\_i(x^{-\eta})$ for $d\ge-1$ |
 | Permutations | `Schubert.FinPermutation.strongBruhatLE_iff_northwestRankNat`, `Schubert.FinPermutation.strongBruhatLE_iff_reduced_adjacent_subword` | The Bruhat order by rank matrices and by subwords of reduced words, essential sets, and divided differences ([Schubert/TypeA/](Schubert/TypeA)) |
 
 Not formalized in version 0.1.0 of the library:
 
 - Twisting sheaves. $\mathcal O(d)$ on $\mathrm{Proj}$, and on
   $\mathbb P^1$, is not defined in the module or in the pinned Mathlib. So
-  $\mathcal L(\eta)|_{X_{s_i}}\cong\mathcal O(d)$ is proved only on global
+  $\mathcal L(\eta)|\_{X\_{s\_i}}\cong\mathcal O(d)$ is proved only on global
   sections (the binary forms of degree $d$ above); the Plücker coordinates
-  pulled back to $\mathrm{Fl}_n$ are identified with a basis of
-  $H^0(\mathrm{Fl}_n,\mathcal L(-\varpi_k))$
+  pulled back to $\mathrm{Fl}\_n$ are identified with a basis of
+  $H^0(\mathrm{Fl}\_n,\mathcal L(-\varpi\_k))$
   (`Plucker.pluckerSectionBasis_apply`), but the pullback of $\mathcal O(1)$
-  is not identified with $\mathcal L(-\varpi_k)$; and $X_S$ is not described
-  as the multi-$\mathrm{Proj}$ of its section ring.
+  is not identified with $\mathcal L(-\varpi\_k)$; and $X\_S$ is not described
+  as the multigraded $\mathrm{Proj}$ of its section ring.
 - The product in the section ring. `PointModel.geometricSectionRingEquiv` is
   an isomorphism of algebras over every algebraically closed field of
   characteristic zero, but the statement that it matches the multiplication
@@ -447,8 +447,8 @@ Not formalized in version 0.1.0 of the library:
   (`PointModel.geometricSectionRingEquiv_symm_of_mul_of`).
 - The rank-one functor on higher-dimensional modules. It is compared with
   global sections only for characters; for instance
-  $H_{s_i}\bigl(H^0(X_w,\mathcal L(\eta))\bigr)\cong H^0(X_{s_iw},\mathcal L(\eta))$
-  for $s_iw>w$ is not formalized, and only the corresponding character
+  $H\_{s\_i}\bigl(H^0(X\_w,\mathcal L(\eta))\bigr)\cong H^0(X\_{s\_iw},\mathcal L(\eta))$
+  for $s\_iw\gt w$ is not formalized, and only the corresponding character
   recurrences are proved.
 
 ## Standard results proved here
