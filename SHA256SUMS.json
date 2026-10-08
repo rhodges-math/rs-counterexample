@@ -1313,7 +1313,7 @@
   "Schubert/TypeA/Polynomials/PolynomialRing.lean": "36c89d629c25131f97c77ebbc3290551ec0bf5c96f2307b809c3164a2e87e91c",
   "THIRD_PARTY_NOTICES.md": "55c3e7817379594849597b272effbe6e57448b9fe6a56a3f2041718599f04038",
   "build.py": "f7355c553e82ff56eab1fd9f3b5ae2ef53ef326a259a7967348f20b8a62ccbdf",
-  "docs/STATEMENTS.md": "d969ff9c461030ae4c0d7d9d70da360eaade2722d2d25d100a1df5fddd6e4805",
+  "docs/STATEMENTS.md": "33b1a849a9a7aa5ccc566efc39a8a60d81d271f68ddc5ddc279108965fd7c4fe",
   "lake-manifest.json": "81647005f20c129d83573a02172e0752d97b7df91ea137275d2a17703e021973",
   "lakefile.toml": "710e16072f9aedb902c4f7695aff1edd2ce9358028b7102bd3233fb0e4e71b04",
   "lean-toolchain": "bc84812c94489d1e3e191baa1dc10d5eb684382d7fe9d2a5ab085e72c1c67e47",
