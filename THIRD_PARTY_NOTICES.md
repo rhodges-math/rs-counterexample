@@ -2,13 +2,13 @@
 
 ## Cauchy–Binet lemmas
 
-- Files: `Schubert/RS/JosephPolo/GrinbergCauchyBinet.lean`, `Schubert/Demazure/JosephPolo/GrinbergCauchyBinet.lean`
+- Files: `RSCounterexample/Paper/JosephPolo/GrinbergCauchyBinet.lean`, `RSCounterexample/Demazure/JosephPolo/GrinbergCauchyBinet.lean`
 - Copyright: Meta Platforms, Inc. and affiliates.
 - Source: [facebookresearch/algebraic-combinatorics](https://github.com/facebookresearch/algebraic-combinatorics),
   commit `b6022318e986a0c20764569208ba8ebbe1c04dbf`,
   `AlgebraicCombinatorics/CauchyBinet.lean`, rectangular Cauchy–Binet section.
 - License: Creative Commons Attribution–NonCommercial 4.0 International
-  (CC BY-NC 4.0), reproduced in [Grinberg.LICENSE](Schubert/RS/JosephPolo/Grinberg.LICENSE) and [Grinberg.LICENSE](Schubert/Demazure/JosephPolo/Grinberg.LICENSE).
+  (CC BY-NC 4.0), reproduced in [Grinberg.LICENSE](RSCounterexample/Paper/JosephPolo/Grinberg.LICENSE) and [Grinberg.LICENSE](RSCounterexample/Demazure/JosephPolo/Grinberg.LICENSE).
 - Adaptations recorded in the source: narrower imports, a separate namespace,
   and Lean compatibility. The publication namespaces are `Schubert.RS.GrinbergCauchyBinet`, `Demazure.GrinbergCauchyBinet`.
 

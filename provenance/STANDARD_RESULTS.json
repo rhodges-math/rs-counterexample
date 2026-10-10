@@ -1,5 +1,5 @@
 {
-  "note": "For each standard result stated in Schubert/RS/Statements/ (each is proved in this repository), the audited declarations whose types, as printed by Lean in ENDPOINT_AUDIT.txt, take it as a hypothesis.",
+  "note": "For each standard result stated in RSCounterexample/Paper/Statements/ (each is proved in this repository), the audited declarations whose types, as printed by Lean in ENDPOINT_AUDIT.txt, take it as a hypothesis.",
   "used_by": {
     "Schubert.RS.QuiverSaturation": [
       "Schubert.RS.Algorithms.quiverPositivity_decision",

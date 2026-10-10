@@ -58,7 +58,7 @@ tauceti = set()
 for name, r in modules.items():
     imports = header_imports((ROOT / r['path']).read_text(encoding='utf-8-sig'))
     tauceti.update(d for d in imports if d.startswith('TauCeti.'))
-    local = [d for d in imports if d.startswith('Schubert.')]
+    local = [d for d in imports if d.startswith('RSCounterexample.')]
     missing = [d for d in local if d not in modules]
     missing += [d for d in imports if d.startswith('Complexitylib.') and d not in vendored_modules]
     if missing:

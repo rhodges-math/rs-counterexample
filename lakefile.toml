@@ -1,6 +1,6 @@
 name = "rs-counterexample"
-version = "2.1.0"
-defaultTargets = ["Schubert.RS.Audit"]
+version = "3.0.0"
+defaultTargets = ["RSCounterexample.Paper.Audit"]
 
 [[require]]
 name = "mathlib"
@@ -13,8 +13,8 @@ git = "https://github.com/TauCetiProject/TauCeti"
 rev = "48fe7a5f9ba49e3b1c11a72f54f665abc128b36a"
 
 [[lean_lib]]
-name = "Schubert"
-globs = ["Schubert.+"]
+name = "RSCounterexample"
+globs = ["RSCounterexample.+"]
 
 [[lean_lib]]
 name = "Complexitylib"

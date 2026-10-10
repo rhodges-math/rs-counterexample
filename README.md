@@ -1,6 +1,6 @@
 # Lean verification of *Counterexamples to the Reiner–Shimozono conjecture and the failure of Schubert filtrations*
 
-This repository, `rhodges-math/rs-counterexample` (release 2.1.0), contains a
+This repository, `rhodges-math/rs-counterexample` (release 3.0.0), contains a
 Lean 4 formalization of the main results of *Counterexamples to the
 Reiner–Shimozono conjecture and the failure of Schubert filtrations* (Reuven
 Hodges, 2026), [arXiv:2609.28169](https://arxiv.org/abs/2609.28169).
@@ -49,12 +49,12 @@ statements and the paper, which Lean's proof checking alone does not establish.
 
 ## Main results
 
-The entry point is [Schubert/RS/Main.lean](Schubert/RS/Main.lean), which
+The entry point is [RSCounterexample/Paper/Main.lean](RSCounterexample/Paper/Main.lean), which
 imports every result below; [docs/STATEMENTS.md](docs/STATEMENTS.md) lists each
 labelled statement of the paper with its Lean counterparts.
 
 ```lean
-import Schubert.RS.Main
+import RSCounterexample.Paper.Main
 
 open Schubert.RS
 
@@ -87,8 +87,8 @@ $\delta\ge8$, and the first negative cases within the family occur in 28
 variables.
 
 These declarations are in `Schubert.RS.Family`
-([Family/Main.lean](Schubert/RS/Family/Main.lean),
-[Family/Extras.lean](Schubert/RS/Family/Extras.lean)).
+([Family/Main.lean](RSCounterexample/Paper/Family/Main.lean),
+[Family/Extras.lean](RSCounterexample/Paper/Family/Extras.lean)).
 
 | Declaration | Result |
 | --- | --- |
@@ -157,8 +157,8 @@ The statements are `Geometric.not_hasGeometricRelativeSchubertFiltration`,
 `Geometric.not_hasGeometricSLRelativeSchubertFiltration` and
 `Geometric.not_hasGeometricSLSchubertFiltration`, and
 `Geometric.typeA27_geometricFiltration_failure`
-([Geometric/SchemeRelative.lean](Schubert/RS/Geometric/SchemeRelative.lean),
-[Geometric/SchemeCorollary.lean](Schubert/RS/Geometric/SchemeCorollary.lean)).
+([Geometric/SchemeRelative.lean](RSCounterexample/Paper/Geometric/SchemeRelative.lean),
+[Geometric/SchemeCorollary.lean](RSCounterexample/Paper/Geometric/SchemeCorollary.lean)).
 Their only hypothesis is $(p-2)(q-2)\gt 2$, and $\delta\ge8$ in type $A\_{27}$.
 The characters are `FlagVarieties.ch_dualJoseph_negWeight`,
 `Geometric.ch_geometricMinimalRelativeSchubert_negWeight` and
@@ -202,7 +202,7 @@ The module-level statements are `Family.not_hasRelativeSchubertFiltration`,
 `Family.not_hasSchubertFiltration`, their $\mathrm{SL}\_n$ forms
 `Family.not_hasSLRelativeSchubertFiltration` and
 `Family.not_hasSLSchubertFiltration`, and `Family.typeA27_filtration_failure`
-([Family/FiltrationCorollary.lean](Schubert/RS/Family/FiltrationCorollary.lean)).
+([Family/FiltrationCorollary.lean](RSCounterexample/Paper/Family/FiltrationCorollary.lean)).
 
 ### Corollary 1.3: Lascoux polynomials
 
@@ -214,7 +214,7 @@ with coefficients in $\mathbb Z\[\beta\]$ that are nonnegative at $\beta=0$
 defined, as in Lascoux's original definition, by the K-theoretic isobaric
 divided difference operators
 $\pi\_i^{(\beta)}f=\pi\_i\bigl((1+\beta x\_{i+1})f\bigr)$, and Lascoux atoms by the
-operators $\pi\_i^{(\beta)}-1$ ([Lascoux/](Schubert/RS/Lascoux)).
+operators $\pi\_i^{(\beta)}-1$ ([Lascoux/](RSCounterexample/Paper/Lascoux)).
 
 ### Corollary 1.5: positive quiver triples have positive density
 
@@ -270,7 +270,7 @@ The intermediate theorems `Quiver.Flat.quiverTheorem_counts`,
 explicit hypotheses; the corresponding rows of the table apply the proofs of
 `GLCharacterMultiplicity`, `QuiverSaturation` and
 `PolyTimeRationalFeasibility` to them
-([Main/Unconditional.lean](Schubert/RS/Main/Unconditional.lean)).
+([Main/Unconditional.lean](RSCounterexample/Paper/Main/Unconditional.lean)).
 
 Polynomial time is `Complexity.FP` from complexitylib (deterministic
 multi-tape Turing machines), with the input encoded in binary by
@@ -301,7 +301,7 @@ through the proof `glCharacterMultiplicity_holds` of
 
 ### The GLRep library
 
-[Schubert/GLRep/](Schubert/GLRep) (namespace `GLRep`) develops the polynomial
+[RSCounterexample/GLRep/](RSCounterexample/GLRep) (namespace `GLRep`) develops the polynomial
 and rational representations of $\mathrm{GL}\_n(K)$ and of Levi groups
 $\prod\_p\mathrm{GL}\_{d\_p}(K)$ over a field $K$ of characteristic zero,
 through the representations of the Lie algebra $\mathfrak{gl}\_n(K)$; no
@@ -314,10 +314,10 @@ $\dim\mathrm{Hom}(V(\mu),\rho)$. Twists by powers of the determinant
 extend these results to rational representations. Together with these
 twists, the multiplicity theorem for Levi groups proves
 `GLCharacterMultiplicity` (`glCharacterMultiplicity_holds`,
-[GL/CharacterMultiplicity.lean](Schubert/RS/GL/CharacterMultiplicity.lean)).
+[GL/CharacterMultiplicity.lean](RSCounterexample/Paper/GL/CharacterMultiplicity.lean)).
 The [flag-variety library](#the-flag-variety-library) builds on it and adds
-the rational representations of the Borel subgroup (`Schubert/GLRep/Borel/`,
-`Schubert/GLRep/BorelLie/`).
+the rational representations of the Borel subgroup (`RSCounterexample/GLRep/Borel/`,
+`RSCounterexample/GLRep/BorelLie/`).
 
 | Declaration | Result |
 | --- | --- |
@@ -335,7 +335,7 @@ the rational representations of the Borel subgroup (`Schubert/GLRep/Borel/`,
 
 ### The LinearProgramming library
 
-[Schubert/LinearProgramming/](Schubert/LinearProgramming) (namespace
+[RSCounterexample/LinearProgramming/](RSCounterexample/LinearProgramming) (namespace
 `LinearProgramming`) decides in polynomial time whether a finite system
 $Ax\le b$ of linear inequalities with integer coefficients has a rational
 solution (`LinearProgramming.exists_mem_FP_feasible`, on the binary encoding
@@ -345,7 +345,7 @@ solved by alternating projections and rescalings, with exact integer
 arithmetic throughout (Bareiss elimination for the projections). Polynomial
 time is `Complexity.FP` from complexitylib, as above. This proves
 `PolyTimeRationalFeasibility` (`polyTimeRationalFeasibility_holds`,
-[Complexity/RationalFeasibility.lean](Schubert/RS/Complexity/RationalFeasibility.lean)).
+[Complexity/RationalFeasibility.lean](RSCounterexample/Paper/Complexity/RationalFeasibility.lean)).
 
 | Declaration | Result |
 | --- | --- |
@@ -355,7 +355,7 @@ time is `Complexity.FP` from complexitylib, as above. This proves
 
 ### The QuiverInvariants library
 
-[Schubert/QuiverInvariants/](Schubert/QuiverInvariants) (namespace
+[RSCounterexample/QuiverInvariants/](RSCounterexample/QuiverInvariants) (namespace
 `QuiverInvariants`) proves, over any infinite field, the theorem of Derksen
 and Weyman that the weights of semi-invariants of a quiver without oriented
 cycles are saturated, following Baldoni, Vergne and Walter. The steps are
@@ -367,12 +367,12 @@ for a general pair of representations, homomorphisms are unobstructed, and
 dividing by the image of a homomorphism does not change $\mathrm{Ext}$; the
 proof uses only polynomial identities, ranks, minors and Zariski density,
 rather than the geometric argument. The library depends only on Mathlib and
-on `Schubert/GLRep/Polynomial/Functions.lean`. Together with the identity
+on `RSCounterexample/GLRep/Polynomial/Functions.lean`. Together with the identity
 that expresses a quiver multiplicity as the multiplicity of a constant weight
 on a flag quiver, and the description of positive multiplicities of constant
 weights by semi-invariants, this proves `QuiverSaturation`
 (`quiverSaturation_holds`,
-[Quiver/Saturation.lean](Schubert/RS/Quiver/Saturation.lean)).
+[Quiver/Saturation.lean](RSCounterexample/Paper/Quiver/Saturation.lean)).
 
 | Declaration | Result |
 | --- | --- |
@@ -387,16 +387,16 @@ weights by semi-invariants, this proves `QuiverSaturation`
 
 ### The flag-variety library
 
-The folders [Schubert/FlagVarieties/](Schubert/FlagVarieties),
-[Schubert/Demazure/](Schubert/Demazure) and [Schubert/TypeA/](Schubert/TypeA),
+The folders [RSCounterexample/FlagVarieties/](RSCounterexample/FlagVarieties),
+[RSCounterexample/Demazure/](RSCounterexample/Demazure) and [RSCounterexample/TypeA/](RSCounterexample/TypeA),
 together with the [GLRep library](#the-glrep-library) and its extension to the
-Borel subgroup (`Schubert/GLRep/Borel/`, `Schubert/GLRep/BorelLie/`), develop
+Borel subgroup (`RSCounterexample/GLRep/Borel/`, `RSCounterexample/GLRep/BorelLie/`), develop
 flag varieties, Schubert varieties, and the representations of the Borel
 subgroup on the sections of line bundles over them. Corollary 1.2 is stated
 and proved for the objects defined here
-([Schubert/RS/Geometric/](Schubert/RS/Geometric)). The library imports only
-Mathlib and Tau Ceti, and nothing from `Schubert/RS/`, so it can be reused by
-other projects. It is versioned separately: release 2.1.0 contains
+([RSCounterexample/Paper/Geometric/](RSCounterexample/Paper/Geometric)). The library imports only
+Mathlib and Tau Ceti, and nothing from `RSCounterexample/Paper/`, so it can be reused by
+other projects. It is versioned separately: release 3.0.0 contains
 its version 0.1.0, and [FLAG_MODULE_MANIFEST.json](FLAG_MODULE_MANIFEST.json)
 records its folders and the SHA-256 hash of each of its 785 files, so that a
 copy elsewhere can be compared with this one file by file.
@@ -426,7 +426,7 @@ functions on $\mathrm{GL}\_n(K)$ over a field $K$), `Demazure`, `GLRep` and
 | Bruhat cells and dimension | `PointModel.cellRingEquiv`, `Dimension.topologicalKrullDim_schubertVariety`, `Bruhat.permCoxeterSystem`, `Bruhat.bruhatLE_iff_strongBruhatLE` | Over a field, the Bruhat cell of $w$ is an affine space of dimension $\ell(w)$; $\dim X\_w=\ell(w)$ (algebraically closed fields of characteristic zero). $S\_{n+1}$ is the Coxeter group of type $A\_n$, and its Bruhat order is the rank-matrix order |
 | The Plücker embedding | `Plucker.plucker`, `Plucker.pluckerSegre`, `Plucker.isClosedImmersion_pluckerSegre`, `PointModel.pluckerVector_proportional_iff` | The Plücker morphisms $\mathrm{Fl}\_n\to\mathbb P(\wedge^{k}R^n)$, given by the flag minors, and the Segre–Plücker morphism to $\mathbb P(\bigotimes\_k\wedge^kR^n)$, a closed immersion over every commutative ring. Over a field, $gB=g'B$ iff the Plücker vectors of $g$ and $g'$ are proportional |
 | The rank-one functor | `rankOneInduction`, `rankOneInductionSectionsEquiv`, `simpleSchubertSectionsEquiv`, `ch_rankOneInduction_charCoaction` | $H\_{s\_i}(M)=(\mathcal O(P\_i)\otimes M)^B$ for the minimal parabolic subgroup $P\_i$. For a character, $H\_{s\_i}(R\_\eta)\cong H^0(X\_{s\_i},\mathcal L(\eta))$, a free module of rank $\max(0,d+1)$, $d=-\langle\eta,\alpha\_i^\vee\rangle$, identified with the binary forms of degree $d$; over a field its character is $\pi\_i(x^{-\eta})$ for $d\ge-1$ |
-| Permutations | `Schubert.FinPermutation.strongBruhatLE_iff_northwestRankNat`, `Schubert.FinPermutation.strongBruhatLE_iff_reduced_adjacent_subword` | The Bruhat order by rank matrices and by subwords of reduced words, essential sets, and divided differences ([Schubert/TypeA/](Schubert/TypeA)) |
+| Permutations | `Schubert.FinPermutation.strongBruhatLE_iff_northwestRankNat`, `Schubert.FinPermutation.strongBruhatLE_iff_reduced_adjacent_subword` | The Bruhat order by rank matrices and by subwords of reduced words, essential sets, and divided differences ([RSCounterexample/TypeA/](RSCounterexample/TypeA)) |
 
 Not formalized in version 0.1.0 of the library:
 
@@ -455,9 +455,9 @@ Not formalized in version 0.1.0 of the library:
 
 The paper relies on four bodies of standard results, and each is proved here by
 a library of its own. The three cited for Theorems 1.4 and 5.3 are stated as
-Lean propositions in [Schubert/RS/Statements/](Schubert/RS/Statements). Some
+Lean propositions in [RSCounterexample/Paper/Statements/](RSCounterexample/Paper/Statements). Some
 intermediate theorems take one of them as an explicit hypothesis;
-[Main/Unconditional.lean](Schubert/RS/Main/Unconditional.lean) applies the
+[Main/Unconditional.lean](RSCounterexample/Paper/Main/Unconditional.lean) applies the
 proofs to them, and the audit prints every signature. The last row is the theory
 of flag varieties, Schubert varieties, line bundles and Demazure modules behind
 Corollary 1.2, which is stated and proved directly for the objects defined in
@@ -465,10 +465,10 @@ the flag-variety library.
 
 | Result | Source | Proof | Library |
 | --- | --- | --- | --- |
-| [`QuiverSaturation`](Schubert/RS/Statements/QuiverSaturation.lean) | H. Derksen, J. Weyman, Semi-invariants of quivers and saturation for Littlewood-Richardson coefficients, J. Amer. Math. Soc. 13 (2000); in the form for multiplicities in the coordinate ring: V. Baldoni, M. Vergne, M. Walter, arXiv:1901.07194, Section 8. | `quiverSaturation_holds` | [`Schubert/QuiverInvariants/`](Schubert/QuiverInvariants) |
-| [`PolyTimeRationalFeasibility`](Schubert/RS/Statements/PolyTimeRationalFeasibility.lean) | L. G. Khachiyan, A polynomial algorithm in linear programming, Dokl. Akad. Nauk SSSR 244 (1979); E. Tardos, A strongly polynomial algorithm to solve combinatorial linear programs, Oper. Res. 34 (1986). | `polyTimeRationalFeasibility_holds` | [`Schubert/LinearProgramming/`](Schubert/LinearProgramming) |
-| [`GLCharacterMultiplicity`](Schubert/RS/Statements/GLCharacterMultiplicity.lean) | Complete reducibility, characters of irreducible polynomial representations, and Schur's lemma: W. Fulton, J. Harris, Representation Theory, Lectures 6 and 15; R. Stanley, Enumerative Combinatorics 2, Appendix 2, Theorem A2.4. | `glCharacterMultiplicity_holds` | [`Schubert/GLRep/`](Schubert/GLRep) |
-| Flag varieties, Schubert varieties, line bundles, Borel–Weil and Demazure modules (Corollary 1.2) | J. C. Jantzen, Representations of Algebraic Groups, 2nd ed., Part II; P. Polo, Variétés de Schubert et excellentes filtrations, Astérisque 173–174 (1989); V. Lakshmibai, K. N. Raghavan, Standard Monomial Theory (2008); W. Fulton, Flags, Schubert polynomials, degeneracy loci, and determinantal formulas, Duke Math. J. 65 (1992). | `FlagVarieties.PointModel.sectionsRestrict_surjective`, `FlagVarieties.borelWeil_ratIrrep`, `FlagVarieties.nonempty_sectionDemazureEquiv_ratIrrep` | [`Schubert/FlagVarieties/`](Schubert/FlagVarieties), [`Schubert/Demazure/`](Schubert/Demazure), [`Schubert/GLRep/`](Schubert/GLRep), [`Schubert/TypeA/`](Schubert/TypeA) |
+| [`QuiverSaturation`](RSCounterexample/Paper/Statements/QuiverSaturation.lean) | H. Derksen, J. Weyman, Semi-invariants of quivers and saturation for Littlewood-Richardson coefficients, J. Amer. Math. Soc. 13 (2000); in the form for multiplicities in the coordinate ring: V. Baldoni, M. Vergne, M. Walter, arXiv:1901.07194, Section 8. | `quiverSaturation_holds` | [`RSCounterexample/QuiverInvariants/`](RSCounterexample/QuiverInvariants) |
+| [`PolyTimeRationalFeasibility`](RSCounterexample/Paper/Statements/PolyTimeRationalFeasibility.lean) | L. G. Khachiyan, A polynomial algorithm in linear programming, Dokl. Akad. Nauk SSSR 244 (1979); E. Tardos, A strongly polynomial algorithm to solve combinatorial linear programs, Oper. Res. 34 (1986). | `polyTimeRationalFeasibility_holds` | [`RSCounterexample/LinearProgramming/`](RSCounterexample/LinearProgramming) |
+| [`GLCharacterMultiplicity`](RSCounterexample/Paper/Statements/GLCharacterMultiplicity.lean) | Complete reducibility, characters of irreducible polynomial representations, and Schur's lemma: W. Fulton, J. Harris, Representation Theory, Lectures 6 and 15; R. Stanley, Enumerative Combinatorics 2, Appendix 2, Theorem A2.4. | `glCharacterMultiplicity_holds` | [`RSCounterexample/GLRep/`](RSCounterexample/GLRep) |
+| Flag varieties, Schubert varieties, line bundles, Borel–Weil and Demazure modules (Corollary 1.2) | J. C. Jantzen, Representations of Algebraic Groups, 2nd ed., Part II; P. Polo, Variétés de Schubert et excellentes filtrations, Astérisque 173–174 (1989); V. Lakshmibai, K. N. Raghavan, Standard Monomial Theory (2008); W. Fulton, Flags, Schubert polynomials, degeneracy loci, and determinantal formulas, Duke Math. J. 65 (1992). | `FlagVarieties.PointModel.sectionsRestrict_surjective`, `FlagVarieties.borelWeil_ratIrrep`, `FlagVarieties.nonempty_sectionDemazureEquiv_ratIrrep` | [`RSCounterexample/FlagVarieties/`](RSCounterexample/FlagVarieties), [`RSCounterexample/Demazure/`](RSCounterexample/Demazure), [`RSCounterexample/GLRep/`](RSCounterexample/GLRep), [`RSCounterexample/TypeA/`](RSCounterexample/TypeA) |
 
 ## Build and verify
 
@@ -482,7 +482,7 @@ From the repository directory, run:
 ```text
 lake exe cache get
 python build.py --jobs 3
-lake env lean Schubert/RS/Audit.lean
+lake env lean RSCounterexample/Paper/Audit.lean
 ```
 
 On Windows, `py -3` can replace `python`; a short project path is recommended.
@@ -491,7 +491,7 @@ The first command downloads public dependency caches. The Python helper first
 has Lake build the Tau Ceti modules used here and the vendored complexitylib
 files, then recompiles all **1303 local Lean modules** in dependency
 order, and exits with a nonzero status if a module fails. With three jobs the
-full build takes about three hours on a laptop.
+full build takes about two and a half hours on a laptop.
 
 To resume an interrupted build, or to check that every module was compiled
 from the current sources:
@@ -525,51 +525,51 @@ updating the hash inventory before that integrity check can pass again.
 
 ## Source layout
 
-- `Schubert/RS/Family/`: family data, coefficient evaluation, and the final
+- `RSCounterexample/Paper/Family/`: family data, coefficient evaluation, and the final
   theorems of Theorem 1.1, Corollary 1.3 and the algebraic model of
   Corollary 1.2.
-- `Schubert/RS/Geometric/`: Corollary 1.2 for the modules of global sections
+- `RSCounterexample/Paper/Geometric/`: Corollary 1.2 for the modules of global sections
   on Schubert varieties, and their identification with the algebraic model.
-- `Schubert/RS/`: keys, atoms, duality, and coefficient extraction.
-- `Schubert/RS/Window/`: the rational extraction formula.
-- `Schubert/RS/Hall/`: the Hall polynomial extraction of Section 3 for general
+- `RSCounterexample/Paper/`: keys, atoms, duality, and coefficient extraction.
+- `RSCounterexample/Paper/Window/`: the rational extraction formula.
+- `RSCounterexample/Paper/Hall/`: the Hall polynomial extraction of Section 3 for general
   Hall triples (Lemmas 3.1 and 3.8, Definition 3.9, Proposition 3.11).
-- `Schubert/RS/BModules/`, `Schubert/RS/SchubertUnions/`,
-  `Schubert/RS/Filtrations/`: modules for the Borel subalgebra, sums of
+- `RSCounterexample/Paper/BModules/`, `RSCounterexample/Paper/SchubertUnions/`,
+  `RSCounterexample/Paper/Filtrations/`: modules for the Borel subalgebra, sums of
   Demazure modules, and filtrations (the algebraic model of Corollary 1.2).
-- `Schubert/RS/HighestWeight/`: the flag-minor span as the irreducible module
+- `RSCounterexample/Paper/HighestWeight/`: the flag-minor span as the irreducible module
   $V(\lambda)$.
-- `Schubert/RS/Lascoux/`: Lascoux polynomials and atoms.
-- `Schubert/RS/Quiver/`, `Schubert/RS/GL/`: quiver triples, their
+- `RSCounterexample/Paper/Lascoux/`: Lascoux polynomials and atoms.
+- `RSCounterexample/Paper/Quiver/`, `RSCounterexample/Paper/GL/`: quiver triples, their
   multiplicities, the representations of Theorem 5.3, and the polytope
   $P(a,b,c)$ (`Quiver/Polytope/`).
-- `Schubert/RS/LR/`: the Littlewood–Richardson rule used for the counting
+- `RSCounterexample/Paper/LR/`: the Littlewood–Richardson rule used for the counting
   identity.
-- `Schubert/RS/Polyhedra/`: systems of integer linear inequalities, their
+- `RSCounterexample/Paper/Polyhedra/`: systems of integer linear inequalities, their
   real, rational and integer points.
-- `Schubert/RS/Complexity/`: encodings and polynomial-time algorithms.
-- `Schubert/RS/Statements/`: the standard results cited by the paper, stated
+- `RSCounterexample/Paper/Complexity/`: encodings and polynomial-time algorithms.
+- `RSCounterexample/Paper/Statements/`: the standard results cited by the paper, stated
   as Lean propositions (each proved here).
-- `Schubert/RS/Main/`: the endpoints of each part; `Main/Unconditional.lean`
+- `RSCounterexample/Paper/Main/`: the endpoints of each part; `Main/Unconditional.lean`
   applies the proofs of the standard results to the theorems that take them
   as hypotheses.
-- `Schubert/FlagVarieties/`: the flag scheme and its foundations
+- `RSCounterexample/FlagVarieties/`: the flag scheme and its foundations
   (`Foundations/`), Schubert, opposite Schubert and Richardson varieties, line
   bundles and their sections, normality, Bruhat cells, and the Plücker
   embedding; part of the flag-variety library.
-- `Schubert/Demazure/`: flag minors, Demazure modules, keys and atoms, and
+- `RSCounterexample/Demazure/`: flag minors, Demazure modules, keys and atoms, and
   the Joseph–Polo presentation; part of the flag-variety library.
-- `Schubert/GLRep/`: polynomial and rational representations of general
+- `RSCounterexample/GLRep/`: polynomial and rational representations of general
   linear groups and their Levi groups in characteristic zero, and rational
   representations of the Borel subgroup; part of the flag-variety library.
-- `Schubert/LinearProgramming/`: polynomial-time rational feasibility of
+- `RSCounterexample/LinearProgramming/`: polynomial-time rational feasibility of
   systems of linear inequalities.
-- `Schubert/QuiverInvariants/`: semi-invariants of quivers, Schofield's
+- `RSCounterexample/QuiverInvariants/`: semi-invariants of quivers, Schofield's
   formula and the Derksen–Weyman saturation theorem.
-- `Schubert/RS/JosephPolo/`, `Schubert/RS/PBW/`,
-  `Schubert/RS/Representation/`: presentation, character-formula and PBW
+- `RSCounterexample/Paper/JosephPolo/`, `RSCounterexample/Paper/PBW/`,
+  `RSCounterexample/Paper/Representation/`: presentation, character-formula and PBW
   proofs.
-- `Schubert/TypeA/`: permutations, the Bruhat order and divided differences;
+- `RSCounterexample/TypeA/`: permutations, the Bruhat order and divided differences;
   part of the flag-variety library.
 - `vendor/complexitylib/`: 197 vendored source files of complexitylib.
 - `FLAG_MODULE_MANIFEST.json`: the version, folders and file hashes of the
@@ -585,14 +585,14 @@ for the third-party files described below. Redistributions must retain the
 [NOTICE](NOTICE) file. If you use or adapt this code, please cite this repository;
 citation metadata is in [CITATION.cff](CITATION.cff).
 
-[GrinbergCauchyBinet.lean](Schubert/RS/JosephPolo/GrinbergCauchyBinet.lean)
+[GrinbergCauchyBinet.lean](RSCounterexample/Paper/JosephPolo/GrinbergCauchyBinet.lean)
 and its copy in the flag-variety library,
-[Demazure/JosephPolo/GrinbergCauchyBinet.lean](Schubert/Demazure/JosephPolo/GrinbergCauchyBinet.lean),
+[Demazure/JosephPolo/GrinbergCauchyBinet.lean](RSCounterexample/Demazure/JosephPolo/GrinbergCauchyBinet.lean),
 contain adapted third-party material under **CC BY-NC 4.0** and are not
 covered by the Apache License. Their copyright notices, source attribution,
 and adjacent license files
-([Schubert/RS/JosephPolo/Grinberg.LICENSE](Schubert/RS/JosephPolo/Grinberg.LICENSE),
-[Schubert/Demazure/JosephPolo/Grinberg.LICENSE](Schubert/Demazure/JosephPolo/Grinberg.LICENSE))
+([RSCounterexample/Paper/JosephPolo/Grinberg.LICENSE](RSCounterexample/Paper/JosephPolo/Grinberg.LICENSE),
+[RSCounterexample/Demazure/JosephPolo/Grinberg.LICENSE](RSCounterexample/Demazure/JosephPolo/Grinberg.LICENSE))
 are retained; a copy of the flag-variety library carries this file under the
 same terms. The files in [vendor/complexitylib](vendor/complexitylib) are
 unmodified sources of complexitylib under the Apache License 2.0, with its

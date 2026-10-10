@@ -1,7 +1,7 @@
 """Check the integrity and import completeness of this source bundle.
 
 * every file listed in SHA256SUMS.json is present with the recorded hash;
-* every `Schubert.*` and `Complexitylib.*` import of a local or vendored module is present;
+* every `RSCounterexample.*` and `Complexitylib.*` import of a local or vendored module is present;
 * the Lake requirements in lakefile.toml match the revisions pinned in lake-manifest.json;
 * every vendored complexitylib file matches its recorded upstream hash; for an edited file,
   reversing the recorded diff gives back the upstream file with the recorded upstream hash.
@@ -36,7 +36,7 @@ for name, path in list(modules.items()) + list(vendored.items()):
         for dep in match.group(1).split():
             if dep.startswith('--'):
                 break
-            if dep.startswith(('Schubert.', 'Complexitylib.')) and dep not in known:
+            if dep.startswith(('RSCounterexample.', 'Complexitylib.')) and dep not in known:
                 raise SystemExit(f'Missing dependency of {name}: {dep}')
 
 # Lake requirements and the manifest

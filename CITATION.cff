@@ -14,7 +14,7 @@ abstract: >-
   standard results used for them are proved in three accompanying libraries:
   representations of general linear groups and their Levi subgroups,
   polynomial-time rational feasibility of linear inequalities, and the
-  saturation of semi-invariants of quivers. Release 2.1.0 includes version
+  saturation of semi-invariants of quivers. Release 3.0.0 includes version
   0.1.0 of a self-contained flag-variety module, meant for reuse: the flag
   scheme, Schubert, opposite Schubert and Richardson varieties, line bundles
   and the representations of the Borel subgroup on their sections, projective
@@ -23,7 +23,7 @@ abstract: >-
 authors:
   - family-names: Hodges
     given-names: Reuven
-version: "2.1.0"
+version: "3.0.0"
 repository-code: "https://github.com/rhodges-math/rs-counterexample"
 license: Apache-2.0
 keywords:

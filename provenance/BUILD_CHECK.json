@@ -1,15 +1,15 @@
 {
   "success": true,
-  "verified_utc": "2026-10-05T00:40:58.642919+00:00",
+  "verified_utc": "2026-10-10T02:24:51.349428+00:00",
   "lean_toolchain": "leanprover/lean4:v4.35.0-rc3",
   "mathlib_rev": "b2bf051988bf69448bce88722cc09a05fea31662",
   "tauceti_rev": "48fe7a5f9ba49e3b1c11a72f54f665abc128b36a",
-  "entry": "Schubert.RS.Audit",
+  "entry": "RSCounterexample.Paper.Audit",
   "local_modules": 1303,
   "vendored_complexitylib_modules": 197,
   "source_lines": 174426,
   "build_method": "python build.py --jobs 3: lake build of the imported Tau Ceti modules and of the vendored complexitylib library, then all local sources compiled with lake env lean and dependency-sensitive source fingerprints",
-  "lake_phase_seconds": 12.05,
+  "lake_phase_seconds": 728.66,
   "final_source_fingerprints_match_build": true,
   "copied_local_olean_files": 0,
   "public_dependencies": "Pinned public Lake dependencies (lake-manifest.json): .lake/packages is a directory junction to the .lake/packages of the development project, which holds the same revisions, with Mathlib objects from the public Mathlib build cache. No compiled local module was reused.",
@@ -27,9 +27,10 @@
     "Schubert.RS.GLCharacterMultiplicity": 3
   },
   "origin_kinds": {
-    "unchanged": 1301,
+    "unchanged": 1273,
+    "docstring": 28,
     "generated": 2
   },
   "nonfatal_compiler_warnings": 0,
-  "build_seconds": 899.85
+  "build_seconds": 8974.67
 }

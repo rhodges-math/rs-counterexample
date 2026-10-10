@@ -1,1 +1,0 @@
-import Schubert.TypeA.Polynomials.PolynomialRing
